@@ -663,14 +663,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
-                          <div class="landscape-subcategory-box">
+                          {/* <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Documentation"
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIDocumentation}
                           />
-                          </div>
+                          </div> */}
                           <div class="landscape-subcategory-box">
                           
                           <HomepageSubcategory 

@@ -24,6 +24,9 @@ export default function Header() {
           <li className="nav-link active">
           <Link className="nav-link flex-grow-1" aria-current="page" href="/companiesCards">Companies</Link>
           </li>
+          <li className="nav-link active">
+          <Link className="nav-link flex-grow-1" aria-current="page" href="/">About</Link>
+          </li>
         </ul>
       </div>
       </div>

@@ -416,7 +416,7 @@ const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
 );
 
 
-const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.filter((company,index)=>{
+const test = data.values.filter((company,index)=>{
   return company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="Headless E-commerce APIs"
 })
 
@@ -605,10 +605,12 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           </section> */}
 
           <section className="intro-text py-3">
-          <div className="container hero d-flex justify-content-between  align-items-center">
+          <div className="container hero  d-flex justify-content-center  align-items-center">
           {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
-            <h4 className="text-white  py-2 m-0">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <span class="badge bg-light text-black shadow">{data.values.length}</span> 
+            <div className="text-center flex-grow-1">
+            <h4 className="text-white text-center py-2 ">A comprehensive view of all stakeholders creating the programmable economy</h4>
+            </div>
+            <div className=""><h3><span class="badge bg-light text-black shadow ">{data.values.length}</span> </h3></div>
           </div>
           </section>
           

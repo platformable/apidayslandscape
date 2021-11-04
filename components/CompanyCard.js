@@ -18,13 +18,14 @@ export default function CompanyCard({company,index}) {
             </div>
             <div className="card-description">
               <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>
-              <span className="xs-text">{company?.url?.length>6? "find out more":""}</span>
+              <h6><span class="badge bg-light text-main-color">Find out more</span></h6>
+              {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">
                 <div className="founded-icon">
                 <img src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/users-icon.png" alt="" class="icon" />
                 </div>
                 <div className="founded-year">
-                  <p className="xs-text">{company.yearFounded}</p>
+                  <p className="xs-text">{company.yearFounded ? company.yearFounded: "-"}</p>
                 </div>
               </div> {/*  <!--card founded--> */}
               <div className="card-founded-container">
@@ -39,10 +40,10 @@ export default function CompanyCard({company,index}) {
           </div> {/* <!--cardtop--> */}
         <div className="card-middle mt-1">
                 {company.parentCategorySlug?.split(",").map((category,index)=>{
-                  return (<span className={`card-middle-tag mb-1 me-1 text-white
+                  return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
-                  ${category==="API standards and Protocols" && "ApiStandardsandProtocolsBg"}
-                  ${category==="Backend Building Tools/MBaaS" && "BackendBuildingToolsANDMBaasBg"}
+                  ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
+                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg"}
                   ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}

@@ -1,6 +1,6 @@
 export const categories = [
     "API Lifecycle Platform",
-    "API standards and Protocols",
+    "API Standards and Protocols",
     "Backend Building Tools",
     "Business processes as an API/API-as a Product",
     "Integration Platform as a Service",

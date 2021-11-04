@@ -13,7 +13,9 @@ a {
   box-sizing: border-box;
 }
 
-
+.text-main-color {
+  color:#ccc !important;
+}
 
 .logo {
   height: 34px;
@@ -35,6 +37,20 @@ a {
 
 }
 
+.navigation a {
+  color:var(--turquoise) !important;
+  font-weight: 500;
+}
+
+.navigation a:hover {
+  color:var(--main-blue) !important;
+  font-weight: 500;
+}
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
 .bg-lightpink {
   background-color: var(--lightpink);
 }
@@ -285,7 +301,7 @@ a {
 }
 
 .apilifecycleplatformBg {
-  background-color:#f9b552;
+  background-color:#fccf91;
 }
 .apilifecycleplatform {
   width:40px;
@@ -297,11 +313,11 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#f9b552;
+  background-color:#fccf91;
 }
 
 .ApiStandardsandProtocolsBg {
-  background-color:#ec774c;
+  background-color:#f4a986;
 }
 .ApiStandardsandProtocols {
   width:40px;
@@ -313,11 +329,11 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#ec774c;
+  background-color:#f4a986;
 }
 
 .BackendBuildingToolsANDMBaasBg {
-  background-color:#e8511b;
+  background-color:#f29262;
 }
 .BackendBuildingToolsANDMBaas {
   width:40px;
@@ -329,11 +345,11 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#e8511b;
+  background-color:#f29262;
 }
 
 .BusinessprocessesasanAPIAPIasaProductBg {
-  background-color:#35bad2;
+  background-color:#95d3e2;
 }
 .BusinessprocessesasanAPIAPIasaProduct {
   width:40px;
@@ -345,11 +361,11 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#35bad2;
+  background-color:#95d3e2;
 }
 
 .BusinessprocessesasanAPIAPIasaProductsBg {
-  background-color:#4f6eb3;
+  background-color:#8e9bcf;
 }
 
 .BusinessprocessesasanAPIAPIasaProducts {
@@ -362,11 +378,11 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#4f6eb3;
+  background-color:#8e9bcf;
 }
 
 .IntegrationPlatformAsAServiceBg {
-  background-color:#2e4a98;
+  background-color:#767ebb;
 }
 .IntegrationPlatformAsAService {
   width:40px;
@@ -378,7 +394,7 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#2e4a98;
+  background-color:#767ebb;
 }
 .VerticalAPIAbstractionsBg {
   background-color:#39b49d;

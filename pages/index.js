@@ -25,10 +25,9 @@ export default function Homepage({ data }) {
 
   const categories = [
     "API Lifecycle Platform",
-    "API standards and Protocols",
-    "Backend Building Tools/MBaaS",
+    "API Standards and Protocols",
+    "Backend Building Tools",
     "Business processes as an API/API-as a Product",
-    "Business processes as an API/API-as a Products",
     "Integration Platform as a Service",
     "Vertical API Abstraction",
   ];
@@ -39,12 +38,12 @@ export default function Homepage({ data }) {
     "API Design/Documentation Platforms",
     "API Developer Portals",
     "API Documentation",
-    "API Industry Specifications",
+    "API Security",
     "API Management/API Gateway",
     "API Oriented IT Consulting Firms",
     "API Testing",
-    "IoT Platforms/Networks/Devices APIs",
-    "Streaming APIs",
+    "IoT Platforms/Networks/Devices",
+    "Streaming & Event Architecture",
     "AsyncAPI",
     "FIDO",
     "GraphQL",
@@ -91,56 +90,58 @@ export default function Homepage({ data }) {
     "Login APIs",
     "Marketing/Analytics",
     "Smart Home",
+    "API protocols",
+    "API standards"
   ];
 
 
   const APILifecyclePlatform = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform")
+      company.parentCategorySlug===
+        "API Lifecycle Platform"
   );
 
    const  APILifecyclePlatformANDAccessLevelandIdentityManagement =  data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("Access Level and Identity Management") 
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="Access and Identity Management" 
   );
   
 
   const APILifecyclePlatformANDAPIAnalyticsMonitoring = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Analytics/Monitoring")
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Analytics/Monitoring"
   );
 
   const APILifecyclePlatformANDAPIDesignDocumentationPlatforms = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("AAPI Design/Documentation Platforms") 
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Design/Documentation Platforms" 
   );
 
   const APILifecyclePlatformANDAPIDeveloperPortals = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Developer Portals") 
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Developer Portals"
   );
 
   const APILifecyclePlatformANDAPIDocumentation = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Documentation") 
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Documentation" 
   );
 
-  const APILifecyclePlatformANDAPIIndustrySpecifications = data.values.filter(
+  const APILifecyclePlatformANDApiSecurity = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Industry Specifications")
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Security"
   );
   const APILifecyclePlatformANDAPIManagementAPIGateway = data.values.filter(
     (company, index) =>
@@ -151,30 +152,30 @@ export default function Homepage({ data }) {
 
   const APILifecyclePlatformANDAPIOrientedITConsultingFirms = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Oriented IT Consulting Firms") 
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Oriented IT Consulting Firms" 
   );
 
   const APILifecyclePlatformANDAPITesting = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("API Testing")
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="API Testing"
   );
 
   const APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("IoT Platforms/Networks/Devices APIs")
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="IoT Platforms/Networks/Devices"
   );
 
   const APILifecyclePlatformANDStreamingAPIs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Lifecycle Platform") &&
-      company.subcategory.includes("Streaming APIs")
+      company.parentCategorySlug===
+        "API Lifecycle Platform" &&
+      company.subcategory==="Streaming & Event Architecture"
   );
   
 
@@ -182,219 +183,241 @@ export default function Homepage({ data }) {
 
   const ApiStandardsandProtocols = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols")
+      company.parentCategorySlug===
+        "API Standards and Protocols"
   );
 
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("AsyncAPI")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="API protocols"
   );
 
   const ApiStandardsandProtocolsANDFIDO = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("FIDO")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="API standards"
   );
 
   const ApiStandardsandProtocolsANDGraphQL = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("GraphQL")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="GraphQL"
   );
 
   const ApiStandardsandProtocolsANDGRPC = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("gRPC") 
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="gRPC"
   );
 
   const ApiStandardsandProtocolsANDOpenApiSpecs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("Open API Specs") 
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="Open API Specs" 
   );
 
   const ApiStandardsandProtocolsANDOpenID = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("OpenID")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="OpenID"
   );
 
   const ApiStandardsandProtocolsANDPSD2APIAbstractions = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("PSD2 API Abstractions")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="PSD2 API Abstractions"
   );
 
   const ApiStandardsandProtocolsANDSTETBerlinGroup = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "API Standards and Protocols") &&
-      company.subcategory.includes("STET Berlin Group")
+      company.parentCategorySlug===
+        "API Standards and Protocols" &&
+      company.subcategory==="STET Berlin Group"
   );
 
 
   /* Backend Building Tools/MBaaS */
 
-  const BackendBuildingToolsMBaaS = data.values.filter(
+  const BackendBuildingTools = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "Backend Building Tools/MBaaS")
+      company.parentCategorySlug===
+        "Backend Building Tools"
   );
 
-const BackendBuildingToolsMBaaSANDBlockchainAPIs = data.values.filter(
+const BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "Backend Building Tools/MBaaS") &&
-      company.subcategory.includes("Blockchain APIs")
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="API Deployment/Back-end Building"
   );
-  const BackendBuildingToolsMBaaSANDInfrastructureCloudServerlessAPIs = data.values.filter(
+  const BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "Backend Building Tools/MBaaS") &&
-      company.subcategory.includes("Infrastructure/Cloud/Serverless APIs")
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Banking, Finance, Insurance Backends"
   );
   
-  const BackendBuildingToolsANDMBaas = data.values.filter(
+  const BackendBuildingToolsANDBlockchain = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug.includes(
-        "Backend Building Tools/MBaaS") &&
-      company.subcategory.includes("MBaaS")
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Blockchain"
   );
+
+  const BackendBuildingToolsANDHeadlessCMS = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Headless CMS"
+  );
+
+  const BackendBuildingToolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Infrastructure/Cloud/Serverless APIs"
+  );
+
+  const BackendBuildingToolsANDMobileBackendasaService = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Mobile Backend as a Service"
+  );
+
 
 /*   Business processes as an API/API-as a Product */
   
 const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDDataManagementAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Data Management APIs")
-);
-
-
-const BusinessprocessesasanAPIAPIasaProductANDDataasaservice = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Data-as-a-service") 
-);
-
-const BusinessprocessesasanAPIAPIasaProductANDEcommerceAPIs = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("E-commerce APIs")
-);
-
-const BusinessprocessesasanAPIAPIasaProductANDEmailAPIs = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("E-mail APIs")
-);
-
-const BusinessprocessesasanAPIAPIasaProductANDFaxMailVoice = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Fax/Mail/Voice")
-);
-const BusinessprocessesasanAPIAPIasaProductANDHumanasaserviceAPIs = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Human as a service APIs")
-);
-
-const BusinessprocessesasanAPIAPIasaProductANDHumanResourcesAPIs = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Human Resources APIs")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Accounting"
 );
 
 
-const BusinessprocessesasanAPIAPIasaProductANDIotAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("IoT APIs")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="AI & ML"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDKYCAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("KYC APIs")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Audio & Video"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDMessagingAPIsCpass = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Messaging APIs/Cpass") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Legal & Regulatory"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDTimeCalendar = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Time & Calendar"
+);
+const BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Data governance & Data management"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="E-commerce"
+);
+
+
+const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Data"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDEmailMessaging = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Email, Messaging, Communications Platforms as a Service"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Identity verification & KYC"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Online Forms") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Forms" 
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDOpenBankingApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDHumanresources = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("OpenBankingApis")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Human Resources"
 );
-const BusinessprocessesasanAPIAPIasaProductANDPaymentApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDHumanasaservice = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Payment APIs")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Human-as-a-service"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDSearchEngineApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDPayments = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Search Engine Apis")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Payments"
 );
 
 const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Video")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Video"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce2 = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Product") &&
-    company.subcategory.includes("Headless E-commerce APIs")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Search"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.filter((company,index)=>{
-  return company.parentCategorySlug.includes("Business processes as an API/API-as a Product") && company.subcategory.includes("Headless E-commerce APIs")
+  return company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="Headless E-commerce APIs"
 })
 
 
@@ -402,45 +425,45 @@ const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.fi
   
 const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products")
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products") &&
-    company.subcategory.includes("Accounting APIs") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products" &&
+    company.subcategory==="Accounting APIs"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products") &&
-    company.subcategory.includes("AI APIs") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products" &&
+    company.subcategory==="AI APIs" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products") &&
-    company.subcategory.includes("API Aggregators") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products" &&
+    company.subcategory==="API Aggregators" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products") &&
-    company.subcategory.includes("API Deployment/Back-end Building") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products" &&
+    company.subcategory==="API Deployment/Back-end Building" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Business processes as an API/API-as a Products") &&
-    company.subcategory.includes("Data (B2B, B2C)") 
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products" &&
+    company.subcategory==="Data (B2B, B2C)"
 );
 
 
@@ -449,111 +472,111 @@ const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
 /* Integration Platform as a service */
 const IntegrationPlatformAsAService = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service")
+    company.parentCategorySlug===
+      "Integration Platform as a Service"
 );
 
-const IntegrationPlatformAsAServiceANDAutomationOrchestrationAPIs = data.values.filter(
+const IntegrationPlatformAsAServiceANDAPIAggregators= data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("Automation/Orchestration APIs") 
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="API Aggregators (General)" 
 );
 
-const IntegrationPlatformAsAServiceANDBankasaservice = data.values.filter(
+const IntegrationPlatformAsAServiceANDAutomationOrchestration = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("Bank-as-a-service") 
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="Automation/Orchestration" 
 );
 
 const IntegrationPlatformAsAServiceANDDatabaseasaservice = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("Database-as-a-service") 
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="Database-as-a-service"
 );
 
-const IntegrationPlatformAsAServiceANDInsuranceasaservice = data.values.filter(
+const IntegrationPlatformAsAServiceANDAPIAggregatorsFinance = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("Insurance-as-a-service") 
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="API Aggregators (Finance)" 
 );
-const IntegrationPlatformAsAServiceANDIpass = data.values.filter(
+/* const IntegrationPlatformAsAServiceANDIpass = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("IPaaS") 
-);
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="IPaaS" 
+); */
 
-const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.filter(
+/* const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Integration Platform as a Service") &&
-    company.subcategory.includes("Horizontal API Abstractions")
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="Horizontal API Abstractions"
 );
-
+ */
 /* Vertical API Abstractions */
 
 const VerticalAPIAbstractions = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions")
+    company.parentCategorySlug===
+      "Vertical API Abstractions"
 );
 
-const VerticalAPIAbstractionsANDCloudStorageAPI = data.values.filter(
+const VerticalAPIAbstractionsANDCloudStorage = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Cloud Storage API") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Cloud Storage" 
 );
 
 const VerticalAPIAbstractionsANDDeliveryAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Delivery APIs") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Delivery, Transport and Logistics" 
 );
 
-const VerticalAPIAbstractionsANDHeadlessCMSAPI = data.values.filter(
+const VerticalAPIAbstractionsANDLogin = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Headless CMS API") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="login" 
 );
 const VerticalAPIAbstractionsANDHealthcare = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Healthcare") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Healthcare" 
 );
-const VerticalAPIAbstractionsANDLastPass = data.values.filter(
+const VerticalAPIAbstractionsANDFinance = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("LastPass") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Finance" 
 );
 
 const VerticalAPIAbstractionsANDLoginAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Login APIs") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Login APIs" 
 );
 
 const VerticalAPIAbstractionsANDMarketingAnalytics = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Marketing/Analytics") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Marketing/Analytics"
 );
 
 const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug.includes(
-      "Vertical API Abstractions") &&
-    company.subcategory.includes("Smart Home") 
+    company.parentCategorySlug===
+      "Vertical API Abstractions" &&
+    company.subcategory==="Smart Home and Smart Facilities" 
 );
 
 
@@ -604,7 +627,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                             {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Access Level and Identity Management"
+                          subcategoryName="Access and Identity Management"
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
                           />
@@ -621,7 +644,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="AAPI Design/Documentation Platforms"
+                          subcategoryName="API Design/Documentation Platforms"
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
                           />
@@ -649,9 +672,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box">
                           
                           <HomepageSubcategory 
-                          subcategoryName="API Industry Specifications"
+                          subcategoryName="API Security"
                           handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIIndustrySpecifications}
+                          filteredCategory={APILifecyclePlatformANDApiSecurity}
                           />
                          
                           </div>
@@ -687,7 +710,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="IoT Platforms/Networks/Devices APIs"
+                          subcategoryName="IoT Platforms/Networks/Devices"
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs}
                           />
@@ -695,7 +718,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Streaming APIs"
+                          subcategoryName="Streaming & Event Architecture"
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDStreamingAPIs}
                           />
@@ -718,7 +741,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="AsyncAPI"
+                          subcategoryName="API protocols"
                           handleCompany={handleCompany}
                           filteredCategory={ ApiStandardsandProtocolsANDAsyncAPI}
                           />
@@ -726,30 +749,30 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="FIDO"
+                          subcategoryName="API standards"
                           handleCompany={handleCompany}
                           filteredCategory={ApiStandardsandProtocolsANDFIDO}
                           />
                           </div>
-                          <div class="landscape-subcategory-box ">
+                          {/* <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="GraphQL"
                           handleCompany={handleCompany}
                           filteredCategory={ApiStandardsandProtocolsANDGraphQL}
                           />
-                          </div>
-                          <div class="landscape-subcategory-box ">
+                          </div> */}
+                          {/* <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="gRPC"
                           handleCompany={handleCompany}
                           filteredCategory={ApiStandardsandProtocolsANDGRPC}
                           />
-                          </div>
+                          </div> */}
                         </div>
                       </div>
-                      <div class="landscape-container">
+                      {/* <div class="landscape-container">
                         <div class="landscape-category-container">
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
@@ -787,7 +810,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           </div>
                         </div>
                         
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div> {/* col-md-12 */}
@@ -799,7 +822,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="BackendBuildingToolsANDMBaas">
-                      <span className="text-white">Backend Building <br /> Tools/MBaaS ({BackendBuildingToolsMBaaS.length})</span>
+                      <span className="text-white">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -807,9 +830,38 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Blockchain APIs"
+                          subcategoryName="API Deployment/Back-end Building"
                           handleCompany={handleCompany}
-                          filteredCategory={ BackendBuildingToolsMBaaSANDBlockchainAPIs}
+                          filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Banking, Finance, Insurance Backends"
+                          handleCompany={handleCompany}
+                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Blockchain"
+                          handleCompany={handleCompany}
+                          filteredCategory={BackendBuildingToolsANDBlockchain}
+                          />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                          <div class="landscape-subcategory-box b1">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Headless CMS"
+                          handleCompany={handleCompany}
+                          filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
@@ -817,15 +869,15 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <HomepageSubcategory 
                           subcategoryName="Infrastructure/Cloud/Serverless APIs"
                           handleCompany={handleCompany}
-                          filteredCategory={BackendBuildingToolsMBaaSANDInfrastructureCloudServerlessAPIs}
+                          filteredCategory={BackendBuildingToolsANDInfrastructureCloudServerlessAPIs}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="MBaas"
+                          subcategoryName="Mobile Backend as a Service"
                           handleCompany={handleCompany}
-                          filteredCategory={BackendBuildingToolsANDMBaas}
+                          filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
                           />
                           </div>
                         </div>
@@ -847,41 +899,41 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Data Management APIs"
+                          subcategoryName="Accounting"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDataManagementAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAccounting}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Data-as-a-service"
+                          subcategoryName="AI & ML"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDataasaservice}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAIML}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="E-mail APIs"
+                          subcategoryName="Audio & Video"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Fax/Mail/Voice"
+                          subcategoryName="Legal & Regulatory"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDFaxMailVoice}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Human as a service APIs"
+                          subcategoryName="Time & Calendar"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaserviceAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDTimeCalendar}
                           />
                           </div>
                         </div>
@@ -892,33 +944,33 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Human Resources APIs"
+                          subcategoryName="Data governance & Data management"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanResourcesAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="IoT APIs"
+                          subcategoryName="E-commerce"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIotAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="KYC APIs"
+                          subcategoryName="Data"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDKYCAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDData}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Messaging APIs/Cpass"
+                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDMessagingAPIsCpass}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
                           </div>
                         </div>
@@ -930,7 +982,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Online Forms"
+                          subcategoryName="Forms"
                           handleCompany={handleCompany}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOnlineForms}
                           />
@@ -938,17 +990,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Open Banking APIs"
+                          subcategoryName="Identity verification & KYC"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOpenBankingApis}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Payment APIs"
+                          subcategoryName="Human Resources"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPaymentApis}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanresources}
                           />
                           </div>
                         </div>
@@ -959,35 +1011,35 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Search Engine APIs"
+                          subcategoryName="Human-as-a-service"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearchEngineApis}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Video"
+                          subcategoryName="Payments"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDVideo}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPayments}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Headless E-commerce APIs"
+                          subcategoryName="Search"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
                           />
                           </div>
-                          <div class="landscape-subcategory-box ">
+                         {/*  <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="E-commerce APIs"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerceAPIs}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
                           />
-                          </div>
+                          </div> */}
                           
                         </div>
                       </div> {/* landscape container */}
@@ -998,7 +1050,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
          
 
 
-                <div className="col-md-12 my-1">
+                {/* <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="BusinessprocessesasanAPIAPIasaProducts">
                       <span className="text-white">Business processes as an <br /> API/API-as a Products ({BusinessprocessesasanAPIAPIasaProducts.length})</span>
@@ -1057,7 +1109,8 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                       </div>
                     </div>
                   </div>
-                </div> {/* col-md-12 */}
+                </div>  */}
+                {/* col-md-12 */}
 
 
                 <div className="col-md-12 my-1">
@@ -1071,17 +1124,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Automation/Orchestration APIs"
+                          subcategoryName="API Aggregators (General)"
                           handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestrationAPIs}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregators}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Bank-as-a-service"
+                          subcategoryName="Automation/Orchestration"
                           handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDBankasaservice}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestration}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
@@ -1092,6 +1145,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={IntegrationPlatformAsAServiceANDDatabaseasaservice}
                           />
                           </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Aggregators (Finance)"
+                          handleCompany={handleCompany}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
+                          />
+                          </div>
                         </div>
                       </div>
                       
@@ -1100,14 +1161,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
 
 
-                      <div class="landscape-container">
+                      {/* <div class="landscape-container">
                         <div class="landscape-category-container">
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Insurance-as-a-service"
                           handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDInsuranceasaservice}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
@@ -1115,7 +1176,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <HomepageSubcategory 
                           subcategoryName="IPaaS"
                           handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDIpass}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
@@ -1123,13 +1184,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <HomepageSubcategory 
                           subcategoryName="Horizontal API Abstractions"
                           handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
-                         
-                        
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div> {/* col-md-12 */}
@@ -1146,15 +1205,15 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Cloud Storage API"
+                          subcategoryName="Cloud Storage"
                           handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDCloudStorageAPI}
+                          filteredCategory={VerticalAPIAbstractionsANDCloudStorage}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Delivery APIs"
+                          subcategoryName="Delivery, Transport and Logistics"
                           handleCompany={handleCompany}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
@@ -1162,9 +1221,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Headless CMS API"
+                          subcategoryName="Login"
                           handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDHeadlessCMSAPI}
+                          filteredCategory={VerticalAPIAbstractionsANDLogin}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
@@ -1183,19 +1242,19 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="LastPass"
+                          subcategoryName="Finance"
                           handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDLastPass}
+                          filteredCategory={VerticalAPIAbstractionsANDFinance}
                           />
                           </div>
-                          <div class="landscape-subcategory-box">
+                         {/*  <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Login APIs"
                           handleCompany={handleCompany}
                           filteredCategory={VerticalAPIAbstractionsANDLoginAPIs}
                           />
-                          </div>
+                          </div> */}
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1207,7 +1266,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box ">
                             {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Smart Home"
+                          subcategoryName="Smart Home and Smart Facilities"
                           handleCompany={handleCompany}
                           filteredCategory={VerticalAPIAbstractionsANDSmartHome}
                           />
@@ -1229,7 +1288,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
 export async function getServerSideProps(context) {
 
-  const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app` || `http://localhost:5000`);
+  const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/` || `http://localhost:5000`);
   const data = await res.json();
 
   if (!data) {

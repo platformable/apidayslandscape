@@ -16,9 +16,10 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
+    console.log("liveData",liveData)
    
     const handleCompanyName= (text)=>{
-        console.log("working")
+    
         /* if(search===""){
         setLiveData(data.values)
         } else {
@@ -50,7 +51,7 @@ export default function companiesCards({data}) {
 
     const handleFilter = () => {
         
-        
+        console.log("selectedCategory",selectedCategory)
         if(selectedSubcategory === "All" && selectedCategory === "All"){
             setLoading(true)
             setLiveData(data.values)
@@ -60,11 +61,7 @@ export default function companiesCards({data}) {
 
         if (selectedCategory !=="All" && selectedSubcategory === "All"){
             setLoading(true)
-            const result =  data.values.filter(
-                (company, index) =>
-                company.parentCategorySlug.includes(
-                    selectedCategory)
-            );
+            const result =  data.values.filter((company, index) =>company.parentCategorySlug===selectedCategory);
             setLiveData(result)
             setLoading(false)
         }
@@ -73,9 +70,9 @@ export default function companiesCards({data}) {
             setLoading(true)
             const result =  data.values.filter(
                 (company, index) =>
-                company.parentCategorySlug.includes(
-                    selectedCategory) &&
-                company.subcategory.includes(selectedSubcategory)
+                company.parentCategorySlug===
+                    selectedCategory &&
+                company.subcategory===selectedSubcategory
             );
             setLiveData(result)
             setLoading(false)
@@ -85,7 +82,7 @@ export default function companiesCards({data}) {
             setLoading(true)
             const result =  data.values.filter(
                 (company, index) =>
-                company.subcategory.includes(selectedSubcategory)
+                company.subcategory===selectedSubcategory
             );
             setLiveData(result)
             setLoading(false)

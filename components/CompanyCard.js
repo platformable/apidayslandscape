@@ -38,7 +38,7 @@ export default function CompanyCard({company,index}) {
             </div>
           </div> {/* <!--cardtop--> */}
         <div className="card-middle mt-1">
-              {/*   {company.parentCategorySlug.split(",").map((category,index)=>{
+                {company.parentCategorySlug?.split(",").map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-white
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
                   ${category==="API standards and Protocols" && "ApiStandardsandProtocolsBg"}
@@ -48,9 +48,9 @@ export default function CompanyCard({company,index}) {
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
                   ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg"}
                   `}>{category}</span>)
-                })} */}
+                })}
    
-        </div>{/* <!--card middle--> */}
+              </div>{/* <!--card middle--> */}
         
         <div className="card-bottom">
           <div className="card-bottom-left">

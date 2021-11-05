@@ -616,7 +616,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           
           <section className="home-landscape heroBg">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
-            <div className="container">
+            <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12 mb-1">
                   <div class="home-main-container ">
@@ -635,25 +635,31 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           />
             
                           </div>
+                        
+                     
+
+                          <div class="landscape-subcategory-box"> 
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Oriented IT Consulting Firms"
+                          handleCompany={handleCompany}
+                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          />
+                          </div>
+
+                         
+
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="API Analytics/Monitoring"
+                          subcategoryName="API Management/APIGateway"
                           handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Design/Documentation Platforms"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
+                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
                         </div>
                       </div>
-                      <div class="landscape-container">
+                      {/* <div class="landscape-container">
                         <div class="landscape-category-container">
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
@@ -663,14 +669,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
-                          {/* <div class="landscape-subcategory-box">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Documentation"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIDocumentation}
-                          />
-                          </div> */}
+                    
                           <div class="landscape-subcategory-box">
                           
                           <HomepageSubcategory 
@@ -689,17 +688,42 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           />
                           </div>
                         </div>
-                      </div>
+                      </div> */}
 
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box"> 
+                        <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
+                          subcategoryName="API Analytics/Monitoring"
                           handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
                           />
+                          </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Design/Documentation Platforms"
+                          handleCompany={handleCompany}
+                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
+                          />
+                          </div>
+                        <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Developer Portals"
+                          handleCompany={handleCompany}
+                          filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
+                          />
+                          </div>
+                        <div class="landscape-subcategory-box">
+                          
+                          <HomepageSubcategory 
+                          subcategoryName="API Security"
+                          handleCompany={handleCompany}
+                          filteredCategory={APILifecyclePlatformANDApiSecurity}
+                          />
+                         
                           </div>
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
@@ -829,35 +853,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                     <div class="category-container ">
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Deployment/Back-end Building"
-                          handleCompany={handleCompany}
-                          filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Banking, Finance, Insurance Backends"
-                          handleCompany={handleCompany}
-                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Blockchain"
-                          handleCompany={handleCompany}
-                          filteredCategory={BackendBuildingToolsANDBlockchain}
-                          />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
+                         
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -884,6 +880,35 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           </div>
                         </div>
                       </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box b1">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Deployment/Back-end Building"
+                          handleCompany={handleCompany}
+                          filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Banking, Finance, Insurance Backends"
+                          handleCompany={handleCompany}
+                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Blockchain"
+                          handleCompany={handleCompany}
+                          filteredCategory={BackendBuildingToolsANDBlockchain}
+                          />
+                          </div>
+                        </div>
+                      </div>
                      
                     </div>
                   </div>
@@ -896,6 +921,48 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                       <span className="text-white">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
+                      
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                          <div class="landscape-subcategory-box b1">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Data governance & Data management"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="E-commerce"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
+                          />
+                          </div>
+                          
+                          <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Payments"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPayments}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
+                          />
+                          </div>
+                        </div>
+                      </div>
+
+
+
                       <div class="landscape-container">
                         <div class="landscape-category-container">
                           <div class="landscape-subcategory-box b1">
@@ -914,7 +981,22 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAIML}
                           />
                           </div>
-                          <div class="landscape-subcategory-box ">
+                          <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Identity verification & KYC"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC}
+                          />
+                          </div>
+                         
+                        </div>
+                      </div>
+
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Audio & Video"
@@ -938,25 +1020,30 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDTimeCalendar}
                           />
                           </div>
-                        </div>
-                      </div>
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Data governance & Data management"
+                          subcategoryName="Forms"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOnlineForms}
                           />
                           </div>
-                          <div class="landscape-subcategory-box">
+
+                          <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="E-commerce"
+                          subcategoryName="Human-as-a-service"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
+                          />
+                          </div>
+                        
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Search"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
@@ -970,31 +1057,41 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          subcategoryName="Human Resources"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanresources}
                           />
                           </div>
+                          
+                         
                         </div>
-                      </div>
+                      </div> {/* landscape container */}
 
-
-                      <div class="landscape-container">
+                     {/*  <div class="landscape-container">
                         <div class="landscape-category-container">
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Forms"
+                          subcategoryName="Human-as-a-service"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOnlineForms}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
                           />
                           </div>
-                          <div class="landscape-subcategory-box">
+                        
+                          <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Identity verification & KYC"
+                          subcategoryName="Search"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box ">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Data"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDData}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
@@ -1005,46 +1102,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanresources}
                           />
                           </div>
-                        </div>
-                      </div> {/* landscape container */}
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Human-as-a-service"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Payments"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPayments}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Search"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
-                          />
-                          </div>
-                         {/*  <div class="landscape-subcategory-box ">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="E-commerce APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
-                          />
-                          </div> */}
+              
                           
                         </div>
-                      </div> {/* landscape container */}
+                      </div>  */}
+                      {/* landscape container */}
                      
                     </div>
                   </div>
@@ -1118,7 +1180,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="IntegrationPlatformAsAService">
-                      <span className="text-white">Integration Platform as a Service ({IntegrationPlatformAsAService.length})</span>
+                      <span className="text-white">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1236,11 +1298,6 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={VerticalAPIAbstractionsANDHealthcare}
                           />
                           </div>
-                        </div>
-                      </div>
- 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1249,14 +1306,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={VerticalAPIAbstractionsANDFinance}
                           />
                           </div>
-                         {/*  <div class="landscape-subcategory-box">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Login APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDLoginAPIs}
-                          />
-                          </div> */}
+                     
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1275,9 +1325,16 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           </div>
                         </div>
                       </div>
+ 
+                     {/*  <div class="landscape-container">
+                        <div class="landscape-category-container">
+                         
+                        </div>
+                      </div> */}
                     </div>
                   </div>
-                </div> {/* col-md-12 */}
+                </div> 
+                {/* col-md-12 */}
 
               </div>
             </div>

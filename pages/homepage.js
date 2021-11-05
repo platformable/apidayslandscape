@@ -3,10 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../components/Layout";
-import HomeHero from "../components/HomeHero";
+
 import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
-import ReactTooltip from "react-tooltip";
+
 import HomepageSubcategory from "../components/HomepageSubcategory";
 
 export default function Homepage({ data }) {
@@ -16,7 +16,7 @@ export default function Homepage({ data }) {
 
   const router = useRouter();
 
-  console.log("data.values.length",data.values.length)
+
 
   const handleCompany = (company) => {
     setCompany(company);
@@ -25,10 +25,9 @@ export default function Homepage({ data }) {
 
   const categories = [
     "API Lifecycle Platform",
-    "API standards and Protocols",
-    "Backend Building Tools/MBaaS",
+    "API Standards and Protocols",
+    "Backend Building Tools",
     "Business processes as an API/API-as a Product",
-    "Business processes as an API/API-as a Products",
     "Integration Platform as a Service",
     "Vertical API Abstraction",
   ];
@@ -39,12 +38,12 @@ export default function Homepage({ data }) {
     "API Design/Documentation Platforms",
     "API Developer Portals",
     "API Documentation",
-    "API Industry Specifications",
+    "API Security",
     "API Management/API Gateway",
     "API Oriented IT Consulting Firms",
     "API Testing",
-    "IoT Platforms/Networks/Devices APIs",
-    "Streaming APIs",
+    "IoT Platforms/Networks/Devices",
+    "Streaming & Event Architecture",
     "AsyncAPI",
     "FIDO",
     "GraphQL",
@@ -91,50 +90,58 @@ export default function Homepage({ data }) {
     "Login APIs",
     "Marketing/Analytics",
     "Smart Home",
+    "API protocols",
+    "API standards"
   ];
 
 
+  const APILifecyclePlatform = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "API Lifecycle Platform"
+  );
+
    const  APILifecyclePlatformANDAccessLevelandIdentityManagement =  data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "Access Level and Identity Management" 
+      company.subcategory==="Access and Identity Management" 
   );
   
-
+console.log("APILifecyclePlatformANDAccessLevelandIdentityManagement",APILifecyclePlatformANDAccessLevelandIdentityManagement.lenght)
   const APILifecyclePlatformANDAPIAnalyticsMonitoring = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Analytics/Monitoring"
+      company.subcategory==="API Analytics/Monitoring"
   );
 
   const APILifecyclePlatformANDAPIDesignDocumentationPlatforms = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "AAPI Design/Documentation Platforms" 
+      company.subcategory==="API Design/Documentation Platforms" 
   );
 
   const APILifecyclePlatformANDAPIDeveloperPortals = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Developer Portals" 
+      company.subcategory==="API Developer Portals"
   );
 
   const APILifecyclePlatformANDAPIDocumentation = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Documentation" 
+      company.subcategory==="API Documentation" 
   );
 
-  const APILifecyclePlatformANDAPIIndustrySpecifications = data.values.filter(
+  const APILifecyclePlatformANDApiSecurity = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Industry Specifications"
+      company.subcategory==="API Security"
   );
   const APILifecyclePlatformANDAPIManagementAPIGateway = data.values.filter(
     (company, index) =>
@@ -145,382 +152,431 @@ export default function Homepage({ data }) {
 
   const APILifecyclePlatformANDAPIOrientedITConsultingFirms = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Oriented IT Consulting Firms" 
+      company.subcategory==="API Oriented IT Consulting Firms" 
   );
 
   const APILifecyclePlatformANDAPITesting = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "API Testing"
+      company.subcategory==="API Testing"
   );
 
   const APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "IoT Platforms/Networks/Devices APIs"
+      company.subcategory==="IoT Platforms/Networks/Devices"
   );
 
   const APILifecyclePlatformANDStreamingAPIs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Lifecycle Platform" &&
-      company.subcategory === "Streaming APIs"
+      company.subcategory==="Streaming & Event Architecture"
   );
   
 
   /* API Standards and Protocols */
 
+  const ApiStandardsandProtocols = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "API Standards and Protocols"
+  );
+
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "AsyncAPI"
+      company.subcategory==="API protocols"
   );
 
   const ApiStandardsandProtocolsANDFIDO = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "FIDO"
+      company.subcategory==="API standards"
   );
 
   const ApiStandardsandProtocolsANDGraphQL = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "GraphQL"
+      company.subcategory==="GraphQL"
   );
 
   const ApiStandardsandProtocolsANDGRPC = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "gRPC" 
+      company.subcategory==="gRPC"
   );
 
   const ApiStandardsandProtocolsANDOpenApiSpecs = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "Open API Specs" 
+      company.subcategory==="Open API Specs" 
   );
 
   const ApiStandardsandProtocolsANDOpenID = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "OpenID"
+      company.subcategory==="OpenID"
   );
 
   const ApiStandardsandProtocolsANDPSD2APIAbstractions = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "PSD2 API Abstractions"
+      company.subcategory==="PSD2 API Abstractions"
   );
 
   const ApiStandardsandProtocolsANDSTETBerlinGroup = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
+      company.parentCategorySlug===
         "API Standards and Protocols" &&
-      company.subcategory === "STET Berlin Group" 
+      company.subcategory==="STET Berlin Group"
   );
 
 
   /* Backend Building Tools/MBaaS */
 
-
-const ApiStandardsandProtocolsANDBlockchainAPIs = data.values.filter(
+  const BackendBuildingTools = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
-        "Backend Building Tools/MBaaS" &&
-      company.subcategory === "Blockchain APIs"
+      company.parentCategorySlug===
+        "Backend Building Tools"
   );
-  const ApiStandardsandProtocolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
+
+const BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
-        "Backend Building Tools/MBaaS" &&
-      company.subcategory === "Infrastructure/Cloud/Serverless APIs"
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="API Deployment/Back-end Building"
+  );
+  const BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Banking, Finance, Insurance Backends"
   );
   
-  const ApiStandardsandProtocolsANDMBaas = data.values.filter(
+  const BackendBuildingToolsANDBlockchain = data.values.filter(
     (company, index) =>
-      company.parentCategorySlug ===
-        "Backend Building Tools/MBaaS" &&
-      company.subcategory === "MBaaS"
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Blockchain"
   );
+
+  const BackendBuildingToolsANDHeadlessCMS = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Headless CMS"
+  );
+
+  const BackendBuildingToolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Infrastructure/Cloud/Serverless APIs"
+  );
+
+  const BackendBuildingToolsANDMobileBackendasaService = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug===
+        "Backend Building Tools" &&
+      company.subcategory==="Mobile Backend as a Service"
+  );
+
 
 /*   Business processes as an API/API-as a Product */
   
-
-
-const BusinessprocessesasanAPIAPIasaProductANDDataManagementAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Data Management APIs"
+    company.subcategory==="Accounting"
 );
 
 
-const BusinessprocessesasanAPIAPIasaProductANDDataasaservice = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Data-as-a-service" 
+    company.subcategory==="AI & ML"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDEcommerceAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "E-commerce APIs"
+    company.subcategory==="Audio & Video"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDEmailAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "E-mail APIs"
+    company.subcategory==="Legal & Regulatory"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDFaxMailVoice = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDTimeCalendar = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Fax/Mail/Voice"
+    company.subcategory==="Time & Calendar"
 );
-const BusinessprocessesasanAPIAPIasaProductANDHumanasaserviceAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Human as a service APIs"
-);
-
-const BusinessprocessesasanAPIAPIasaProductANDHumanResourcesAPIs = data.values.filter(
-  (company, index) =>
-    company.parentCategorySlug ===
-      "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Human Resources APIs"
+    company.subcategory==="Data governance & Data management"
 );
 
-
-const BusinessprocessesasanAPIAPIasaProductANDIotAPIs = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "IoT APIs"
+    company.subcategory==="E-commerce"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDKYCAPIs = data.values.filter(
+
+const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "KYC APIs"
+    company.subcategory==="Data"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDMessagingAPIsCpass = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDEmailMessaging = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Messaging APIs/Cpass" 
+    company.subcategory==="Email, Messaging, Communications Platforms as a Service"
+);
+
+const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Product" &&
+    company.subcategory==="Identity verification & KYC"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Online Forms" 
+    company.subcategory==="Forms" 
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDOpenBankingApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDHumanresources = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "OpenBankingApis"
+    company.subcategory==="Human Resources"
 );
-const BusinessprocessesasanAPIAPIasaProductANDPaymentApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDHumanasaservice = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Payment APIs"
+    company.subcategory==="Human-as-a-service"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDSearchEngineApis = data.values.filter(
+const BusinessprocessesasanAPIAPIasaProductANDPayments = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Search Engine Apis"
+    company.subcategory==="Payments"
 );
 
 const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory === "Video"
+    company.subcategory==="Video"
 );
 
-const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.filter(
-  (company, index) => {
-    return (
-    company.parentCategorySlug ===
+const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory.includes("Headless E-commerce APIs") 
-    )
-  }
+    company.subcategory==="Search"
 );
 
-const prueba = data.values.filter((company,index)=>{
-  return company.parentCategorySlug.includes("Business processes as an API/API-as a Product") && company.subcategory.includes("Headless E-commerce APIs")
+
+const test = data.values.filter((company,index)=>{
+  return company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="Headless E-commerce APIs"
 })
-
 
 
 /*   Business processes as an API/API-as a Products */
   
+const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Business processes as an API/API-as a Products"
+);
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Products" &&
-    company.subcategory === "Accounting APIs" 
+    company.subcategory==="Accounting APIs"
 );
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Products" &&
-    company.subcategory === "AI APIs" 
+    company.subcategory==="AI APIs" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
-  (company, index) => 
-    company.parentCategorySlug ===
+  (company, index) =>
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Products" &&
-    company.subcategory === "API Aggregators" 
+    company.subcategory==="API Aggregators" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Products" &&
-    company.subcategory === "API Deployment/Back-end Building" 
+    company.subcategory==="API Deployment/Back-end Building" 
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Business processes as an API/API-as a Products" &&
-    company.subcategory === "Data (B2B, B2C)" 
+    company.subcategory==="Data (B2B, B2C)"
 );
 
 
 
 
 /* Integration Platform as a service */
-
-
-const IntegrationPlatformAsAServiceANDAutomationOrchestrationAPIs = data.values.filter(
+const IntegrationPlatformAsAService = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
-      "Integration Platform as a Service" &&
-    company.subcategory === "Automation/Orchestration APIs" 
+    company.parentCategorySlug===
+      "Integration Platform as a Service"
 );
 
-const IntegrationPlatformAsAServiceANDBankasaservice = data.values.filter(
+const IntegrationPlatformAsAServiceANDAPIAggregators= data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Integration Platform as a Service" &&
-    company.subcategory === "Bank-as-a-service" 
+    company.subcategory==="API Aggregators (General)" 
+);
+
+const IntegrationPlatformAsAServiceANDAutomationOrchestration = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
+      "Integration Platform as a Service" &&
+    company.subcategory==="Automation/Orchestration" 
 );
 
 const IntegrationPlatformAsAServiceANDDatabaseasaservice = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Integration Platform as a Service" &&
-    company.subcategory === "Database-as-a-service" 
+    company.subcategory==="Database-as-a-service"
 );
 
-const IntegrationPlatformAsAServiceANDInsuranceasaservice = data.values.filter(
+const IntegrationPlatformAsAServiceANDAPIAggregatorsFinance = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Integration Platform as a Service" &&
-    company.subcategory === "Insurance-as-a-service" 
+    company.subcategory==="API Aggregators (Finance)" 
 );
-const IntegrationPlatformAsAServiceANDIpass = data.values.filter(
+/* const IntegrationPlatformAsAServiceANDIpass = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Integration Platform as a Service" &&
-    company.subcategory === "IPaaS" 
-);
+    company.subcategory==="IPaaS" 
+); */
 
-const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.filter(
+/* const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Integration Platform as a Service" &&
-    company.subcategory === "Horizontal API Abstractions" 
+    company.subcategory==="Horizontal API Abstractions"
 );
-
+ */
 /* Vertical API Abstractions */
 
-const VerticalAPIAbstractionsANDCloudStorageAPI = data.values.filter(
+const VerticalAPIAbstractions = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
+      "Vertical API Abstractions"
+);
+
+const VerticalAPIAbstractionsANDCloudStorage = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Cloud Storage API" 
+    company.subcategory==="Cloud Storage" 
 );
 
 const VerticalAPIAbstractionsANDDeliveryAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Delivery APIs" 
+    company.subcategory==="Delivery, Transport and Logistics" 
 );
 
-const VerticalAPIAbstractionsANDHeadlessCMSAPI = data.values.filter(
+const VerticalAPIAbstractionsANDLogin = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Headless CMS API" 
+    company.subcategory==="login" 
 );
 const VerticalAPIAbstractionsANDHealthcare = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Healthcare" 
+    company.subcategory==="Healthcare" 
 );
-const VerticalAPIAbstractionsANDLastPass = data.values.filter(
+const VerticalAPIAbstractionsANDFinance = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "LastPass" 
+    company.subcategory==="Finance" 
 );
 
 const VerticalAPIAbstractionsANDLoginAPIs = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Login APIs" 
+    company.subcategory==="Login APIs" 
 );
 
 const VerticalAPIAbstractionsANDMarketingAnalytics = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Marketing/Analytics" 
+    company.subcategory==="Marketing/Analytics"
 );
 
 const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
   (company, index) =>
-    company.parentCategorySlug ===
+    company.parentCategorySlug===
       "Vertical API Abstractions" &&
-    company.subcategory === "Smart Home" 
+    company.subcategory==="Smart Home and Smart Facilities" 
 );
 
 
@@ -534,8 +590,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
     } else {
     }
   }, []); */
-
-
+console.log(APILifecyclePlatformANDAccessLevelandIdentityManagement.length)
   return (
     <Layout>
       <div className="">
@@ -545,602 +600,135 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
         </Head>
 
         <main>
-          <section className="hero heroBg">
+         {/*  <section className="hero heroBg">
             <HomeHero />
-          </section>
-{console.log("prueba",prueba)}
-          <section className="intro-text">
-          <div className="container ">
-            <h3 className="text-white text-center py-5 m-0">A comprehensive view of all stakeholders creating the programmable economy</h3>
+          </section> */}
+
+          <section className="intro-text py-3">
+          <div className="container hero  d-flex justify-content-center  align-items-center">
+          {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
+            <div className="text-center flex-grow-1">
+            <h4 className="text-white text-center py-2 ">A comprehensive view of all stakeholders creating the programmable economy</h4>
+            </div>
+            <div className=""><h3><span class="badge bg-light text-black shadow ">{data.values.length}</span> </h3></div>
           </div>
           </section>
           
-          <section className="home-landscape">
-          <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
-            <div className="container-fluid">
+          <section className="home-landscape heroBg">
+       
+            <div className="container">
               <div className="row">
                 <div className="col-md-12 mb-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>API Lifecycle <br/>Platform</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                          <HomepageSubcategory 
-                          subcategoryName="Access Level and Identity Management"
+                 
+
+                <div class="apilandscape-container ">
+    
+                  <div class="apilandscape-container-left apilifecycleplatformBg landscape-border-box">
+                    <h3 class="landscape-category-title">API Platform Protocols (129)</h3>
+                  </div> {/* <!--container left--> */}
+                  
+                  <div class="apilandscape-container-right">
+                    
+                    <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg">Access and <br /> Identity <br /> Management {`(${APILifecyclePlatformANDAccessLevelandIdentityManagement.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
                           />
-            
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="API Analytics/Monitoring"
+                      </div>
+                    </div> {/* <!--subcategory-box --> */}
+                      <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg">API <br /> Analytics/Monitoring {`(${APILifecyclePlatformANDAPIAnalyticsMonitoring.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
                           />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="AAPI Design/Documentation Platforms"
+                      </div>
+
+                    </div>{/*  <!--subcategory-box --> */}
+                      <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg">API Design/Documentation <br /> Platforms {`(${APILifecyclePlatformANDAPIDesignDocumentationPlatforms.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
                           />
-                          </div>
-                        </div>
                       </div>
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="API Developer Portals"
+                    </div> {/* <!--subcategory-box --> */}
+                    
+                      <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg"> API Developer <br /> Portals  {`(${APILifecyclePlatformANDAPIDeveloperPortals.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="API Documentation"
+                      </div>
+                    </div> {/* <!--subcategory-box --> */}
+
+
+                    <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg"> API <br /> Security  {`(${APILifecyclePlatformANDApiSecurity.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIDocumentation}
+                          filteredCategory={APILifecyclePlatformANDApiSecurity}
                           />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="API Industry Specifications"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIIndustrySpecifications}
-                          />
-                         
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="API Management/APIGateway"
+                      </div>
+                    </div> {/* <!--subcategory-box --> */}
+                    <div class="apilandscape-subcategory-box landscape-border-box">
+                      <h3 class="landscape-subcategory-title apilifecycleplatformBg"> API <br /> Management/APIGateway  {`(${APILifecyclePlatformANDAPIManagementAPIGateway.length})`}</h3>
+                      <div className="centered-subcategory">
+                      <HomepageSubcategory 
+                          subcategoryName=""
                           handleCompany={handleCompany}
                           filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
-                          </div>
-                        </div>
                       </div>
+                    </div> {/* <!--subcategory-box --> */}
+                    
+                  </div> {/* <!--container right--> */}
+                </div>{/*  <!--apilandscape-container--> */}
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box"> 
-                          <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="API Testing"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDAPITesting}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="IoT Platforms/Networks/Devices APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="Streaming APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={APILifecyclePlatformANDStreamingAPIs}
-                          />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+
                 </div> {/* col-md-12 */}
 
 
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>API Standards <br/>  and Protocols</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="AsyncAPI"
-                          handleCompany={handleCompany}
-                          filteredCategory={ ApiStandardsandProtocolsANDAsyncAPI}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="FIDO"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDFIDO}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="GraphQL"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDGraphQL}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="gRPC"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDGRPC}
-                          />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Open API Specs"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDOpenApiSpecs}
-                          />
-                          
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="OpenID"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDOpenID}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-
-                          <HomepageSubcategory 
-                          subcategoryName="PSD2 API Abstractions"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDPSD2APIAbstractions}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="STET Berlin Group"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDSTETBerlinGroup}
-                          />
-                          
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
-
-
-
-
-
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>Backend Building <br /> Tools/MBaaS</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Blockchain APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={ ApiStandardsandProtocolsANDBlockchainAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Infrastructure/Cloud/Serverless APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDInfrastructureCloudServerlessAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="MBaas"
-                          handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDMBaas}
-                          />
-                          </div>
-                        </div>
-                      </div>
-                     
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
                 
 
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>Business processes as an <br /> API/API-as a Product</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Data Management APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDataManagementAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Data-as-a-service"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDataasaservice}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="E-mail APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Fax/Mail/Voice"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDFaxMailVoice}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Human as a service APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaserviceAPIs}
-                          />
-                          </div>
-                        </div>
-                      </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Human Resources APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanResourcesAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="IoT APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIotAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="KYC APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDKYCAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Messaging APIs/Cpass"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDMessagingAPIsCpass}
-                          />
-                          </div>
-                        </div>
-                      </div>
+                  {/* BORRAR */}
 
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Online Forms"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOnlineForms}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Open Banking APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOpenBankingApis}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Payment APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPaymentApis}
-                          />
-                          </div>
-                        </div>
-                      </div> {/* landscape container */}
+                
+                
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Search Engine APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearchEngineApis}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Video"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDVideo}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Headless E-commerce APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="E-commerce APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerceAPIs}
-                          />
-                          </div>
-                          
-                        </div>
-                      </div> {/* landscape container */}
-                     
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
+                
          
 
 
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>Business processes as an <br /> API/API-as a Products</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Accounting APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="AI APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAIAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="API Aggregators"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators}
-                          />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="API Deployment/Back-end Building"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Data (B2B, B2C)"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDDataB2}
-                          />
-                          </div>
-                         
-                        
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
+                
 
 
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>Integration Platform as a Service</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Automation/Orchestration APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestrationAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Bank-as-a-service"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDBankasaservice}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Database-as-a-service"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDDatabaseasaservice}
-                          />
-                          </div>
-                        </div>
-                      </div>
+                
                       
 
 
 
 
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                         
-                          <HomepageSubcategory 
-                          subcategoryName="Insurance-as-a-service"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDInsuranceasaservice}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="IPaaS"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDIpass}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Horizontal API Abstractions"
-                          handleCompany={handleCompany}
-                          filteredCategory={IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions}
-                          />
-                          </div>
-                         
-                        
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
+                     
 
 
-                <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="title">
-                      <span>Vertical API Abstractions</span>
-                    </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                          <HomepageSubcategory 
-                          subcategoryName="Cloud Storage API"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDCloudStorageAPI}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Delivery APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Headless CMS API"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDHeadlessCMSAPI}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Healthcare"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDHealthcare}
-                          />
-                          </div>
-                        </div>
-                      </div>
- 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box b1">
-                          <HomepageSubcategory 
-                          subcategoryName="LastPass"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDLastPass}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Login APIs"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDLoginAPIs}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box">
-                          <HomepageSubcategory 
-                          subcategoryName="Marketing/Analytics"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box ">
-                          <HomepageSubcategory 
-                          subcategoryName="Smart Home"
-                          handleCompany={handleCompany}
-                          filteredCategory={VerticalAPIAbstractionsANDSmartHome}
-                          />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> {/* col-md-12 */}
+               
 
               </div>
             </div>
@@ -1153,7 +741,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
 export async function getServerSideProps(context) {
 
-  const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app` || `http://localhost:5000`);
+  const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/` || `http://localhost:5000`);
   const data = await res.json();
 
   if (!data) {

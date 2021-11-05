@@ -139,33 +139,37 @@ a {
 
 .xs-text {
 
-  font-size:10px !important;
+  font-size:7px !important;
 }
 
+.landscape-img {
+  width:34px;
+  height:34px;
+display: grid;
+place-items: center;
 
+}
 
 .landscape-card:hover {
   cursor:pointer;
 }
 
 /* LANDSCAPE */
-.img-test {
-  max-width: 64px;
-}
-.landscape-card {
+
+/* .landscape-card {
     padding:0 2px 2px 0;
     transform: translateZ(0);
     display: grid;
     place-items: center;
 
-  }
+  } */
 
-  .landscape-card img {
+/*   .landscape-card img {
     width:64px;
     max-width: 64px;
     margin-right: 2px !important;
     align-self: flex-start;
-  }
+  } */
   
 
 
@@ -205,7 +209,12 @@ a {
   background-color: #0ab;
   margin:0;
 }
-
+.landscape-box-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .bg-landscape-box {
   background-color:#eee;
 }
@@ -426,9 +435,9 @@ a {
 }
 
 .landscape-category-container {
-    display:flex;
-      flex: 1;
-      min-height:100px;
+display:flex;
+flex: 1;
+min-height:100px;
 }
 .landscape-subcategory-box {
 border:2px solid #eee;
@@ -651,3 +660,78 @@ max-width: 60px;
   .company-card:hover {
     cursor:pointer;
     }
+
+/* NEW LANDSCAPE LAYOUT 5-11-21 */
+
+.landscape-category-title {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+/*   background-color:; */
+  color:white
+}
+
+.landscape-category-title,.landscape-subcategory-title {
+margin:0 !important; 
+
+}
+
+.landscape-subcategory-title {
+
+  min-width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+
+}
+
+.landscape-border-box {
+  border:1px solid #eee;
+}
+
+.apilandscape-container {
+  display:flex;
+
+
+}
+
+.apilandscape-container-left {
+display:flex;
+
+}
+
+.apilandscape-container-right {
+background-color:white;
+flex: 1;
+
+}
+
+.apilandscape-subcategory-box {
+  display:flex;
+  flex: 1;
+}
+/* .fullWidth {
+  background-color: red;
+  width:100% !important;
+} */
+
+.centered-subcategory {
+  flex:1;
+
+  display:flex;
+
+
+}
+/* NEW LANDSCAPE LAYOUT 5-11-21 */

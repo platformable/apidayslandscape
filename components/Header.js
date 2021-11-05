@@ -15,14 +15,14 @@ export default function Header() {
           <li className="nav-link active">
           <Link className="nav-link active flex-grow-1" aria-current="page" href="/">Home</Link>
           </li>
-          <li className="nav-link active">
+         {/*  <li className="nav-link active">
           <Link className="nav-link flex-grow-1" aria-current="page" href="/home-alt">Home-alt</Link>
-          </li>
+          </li> */}
           <li className="nav-link ">
           <Link className="nav-link flex-grow-1 disabled" aria-current="page" href="/homepage" disabled>Key Indicators</Link>
           </li>
           <li className="nav-link active">
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/companiesCards">Companies</Link>
+          <Link className="nav-link flex-grow-1" aria-current="page" href="/companies">Companies</Link>
           </li>
           <li className="nav-link active">
           <Link className="nav-link flex-grow-1" aria-current="page" href="/">About</Link>

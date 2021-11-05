@@ -621,7 +621,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 mb-1">
                   <div class="home-main-container ">
                     <div class="apilifecycleplatform">
-                      <span className="text-white">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
+                      <span className="">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -759,7 +759,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="ApiStandardsandProtocols" >
-                      <span className="text-white">API Standards <br/>  and Protocols({ApiStandardsandProtocols.length})</span>
+                      <span className="">API Standards <br/>  and Protocols({ApiStandardsandProtocols.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -848,7 +848,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="BackendBuildingToolsANDMBaas">
-                      <span className="text-white">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
+                      <span className="">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -918,7 +918,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="BusinessprocessesasanAPIAPIasaProduct"> 
-                      <span className="text-white">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
+                      <span className="">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
                       
@@ -1181,7 +1181,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="IntegrationPlatformAsAService">
-                      <span className="text-white">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
+                      <span className="">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1262,7 +1262,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="VerticalAPIAbstractions">
-                      <span className="text-white">Vertical API Abstractions ({VerticalAPIAbstractions.length})</span>
+                      <span className="">Vertical API Abstractions ({VerticalAPIAbstractions.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">

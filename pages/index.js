@@ -933,14 +933,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
                           />
                           </div>
-                          <div class="landscape-subcategory-box">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="E-commerce"
-                          handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
-                          />
-                          </div>
+
                           
                           <div class="landscape-subcategory-box">
                           {data<=0 &&  <Loader/>}
@@ -965,6 +958,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
                       <div class="landscape-container">
                         <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="E-commerce"
+                          handleCompany={handleCompany}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
+                          />
+                          </div>
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 

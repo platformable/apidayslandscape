@@ -82,8 +82,8 @@ export default function CompanyDetailsName({ data }) {
              <a href={url} target="_blank">{url}</a>
            </div> {/* company url */}
            <div className="company-category">
-            <h3 
-            className={`text-center px-3 py-3 my-2 text-white
+    {/*         <h3 
+            className={`text-center px-3 py-3 my-2 text-black
             ${parentCategorySlug==="API Lifecycle Platform" && "apilifecycleplatformBg"}
             ${parentCategorySlug==="API standards and Protocols" && "ApiStandardsandProtocolsBg"}
             ${parentCategorySlug==="Backend Building Tools/MBaaS" && "BackendBuildingToolsANDMBaasBg"}
@@ -91,11 +91,27 @@ export default function CompanyDetailsName({ data }) {
             ${parentCategorySlug==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
             ${parentCategorySlug==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
             ${parentCategorySlug==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg"}
-            `}>{parentCategorySlug}</h3>
+            `}>{parentCategorySlug}</h3> */}
+
+      
+            {parentCategorySlug?.split(",").map((category,index)=>{
+
+                  return (<span className={`text-center px-3 py-3 my-2 text-black d-block
+                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
+                  ${category.includes("API Standards and Protocols") && "ApiStandardsandProtocolsBg"}
+                  ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg"}
+                  ${category.includes("Business processes as an API/API-as a Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
+                  ${category.includes("Business processes as an API/API-as a Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
+                  ${category.includes("Integration Platform as a Service") && "IntegrationPlatformAsAServiceBg"}
+                  ${category.includes("Vertical API Abstractions") && "VerticalAPIAbstractionsBg"}
+                  `}>{category}</span>)
+                })}
            </div> {/* company category */}
-           <div className="company-subcategory border mt-2 mb-3">
-            <h3 className="text-center px-3 py-2 my-2">{subcategory}</h3>
-           </div> {/* company subcategory */}
+           {subcategory?subcategory.split(",").map((subcat,index)=>{
+              return <div className="company-subcategory border mt-1 mb-1"><h3 className="text-center px-3 py-2 my-2">{subcat}</h3>   </div> /* company subcategory */
+             })
+             
+            :""}
            <div className="description">
            <p className="fst-italic">{description}</p>
            </div> {/* company description */}

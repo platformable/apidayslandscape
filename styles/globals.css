@@ -34,6 +34,7 @@ a {
   --pink:#f8c700;
   --turquoise:#28c8dd;
   --darkturquoise:darkturquoise;
+  --dark-orange:#f29262;
 
 }
 
@@ -63,6 +64,22 @@ a {
 
 .bg-lightyellow {
   background-color: var(--lightyellow);
+}
+
+.bg-dark-orange {
+  background-color:var(--dark-orange) !important;
+}
+
+.bg-dark-orange:hover {
+  background-color:#fccf91 !important;
+}
+
+.btn-download {
+  background-color:#fccf91 !important;
+  color:white !important;
+}
+.btn-download:hover {
+  background-color:#e0895e !important;
 }
 
 img {
@@ -145,6 +162,15 @@ a {
 .landscape-img {
   width:24px;
   height:24px;
+display: grid;
+place-items: center;
+
+}
+
+.homepage-landscape-img {
+  width:64px;
+  height:64px;
+  margin-bottom:2px;
 display: grid;
 place-items: center;
 

@@ -112,7 +112,7 @@ export default function CompanyDetailsName({ data }) {
              })
              
             :""}
-           <div className="description">
+           <div className="description my-3">
            <p className="fst-italic">{description}</p>
            </div> {/* company description */}
            <div className="founded">
@@ -148,14 +148,14 @@ export default function CompanyDetailsName({ data }) {
                <div className="map-location-left d-flex  alig-items-center">
                  <div className="d-flex gap-3 map-headquarter">
                  <img src="../../apilandscape__headquarter_40x40.png" alt="" className="md-icon align-self-center" />
-                 <p className="-mt-1">Headquarter</p> 
+                {/*  <p className="-mt-1">Headquarter</p>  */}
                  </div>
                </div> {/* map-location-left */}
                <div className="map-location-right  d-flex align-items-center align-middle">
-              <p className="fw-bold align-middle">{headquartersCity}-{headquartersCountry}</p>
+              <p className="fw-bold align-middle">Headquarter: {headquartersCity}-{headquartersCountry}</p>
                </div> {/* map-location-right */}
              </div> {/* map-location */}
-           </div>
+           </div> 
 
            <div className="company-social-urls mt-5">
               <div className="company-social-url d-flex gap-3 crunchbase mb-3 align-items-center">

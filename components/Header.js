@@ -19,7 +19,7 @@ export default function Header() {
           <Link className="nav-link flex-grow-1" aria-current="page" href="/home-alt">Home-alt</Link>
           </li> */}
           <li className="nav-link ">
-          <Link className="nav-link flex-grow-1 disabled" aria-current="page" href="/homepage" disabled>Key Indicators</Link>
+          <Link className="nav-link flex-grow-1 disabled" aria-current="page" href="/homepage" disabled>Enhanced</Link>
           </li>
           <li className="nav-link active">
           <Link className="nav-link flex-grow-1" aria-current="page" href="/companies">Companies</Link>

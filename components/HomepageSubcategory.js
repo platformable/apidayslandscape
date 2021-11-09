@@ -1,8 +1,12 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
+import { useRouter } from 'next/router'
+
 
 export default function homepageSubcategory({handleCompany,subcategoryName,filteredCategory}) {
+  const router = useRouter()
+  console.log(router)
   return (
     <div className="fullWidth py-2">
       <h6 className="text-center sm-text py-2">{subcategoryName}({filteredCategory.length})</h6>
@@ -16,10 +20,10 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
                   className="landscape-card landscape-box-card mb-0 me-1"
                   key={index}
                 >
-                  <div onClick={() => handleCompany(row)} data-tip={row.name} className="landscape-img">
+                  <div onClick={() => handleCompany(row)} data-tip={row.name} className={router.pathname!=="/homepage" ? "landscape-img" : "homepage-landscape-img"}>
                    {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${row.logo} 2x`} alt="" className="img-fluid" /> }
                   </div>
-                  <p className="xs-text text-center">{row.name}</p>
+                  {router.pathname!=="/homepage"? <p className="xs-text text-center">{row.name}</p> : ""} 
                 </div>
               );
             })

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Layout from '../components/Layout'
 import CompanyCard from '../components/CompanyCard'
-
+import TopBarProgress from "react-topbar-progress-indicator";
 import { categories,subcategories } from '../utils/categoriesAndSubcategories';
 import Loader from '../components/Loader';
 
@@ -16,20 +16,16 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
- 
+    TopBarProgress.config({
+        barColors: {
+          "0": "#fdb43e",
+          "1.0": "#fdb43e"
+        },
+        shadowBlur: 5
+      });
    
     const handleCompanyName= (text)=>{
     
-        /* if(search===""){
-        setLiveData(data.values)
-        } else {
-            const result =  data.values.filter(
-                (company, index) =>
-                company.name.toLowerCase().includes(text)
-            );
-            setLiveData(result)
-        } */
-
    
                 const result =  data.values.filter(
                     (company, index) =>
@@ -51,7 +47,7 @@ export default function companiesCards({data}) {
 
     const handleFilter = () => {
         
-        console.log("selectedCategory",selectedCategory)
+
         if(selectedSubcategory === "All" && selectedCategory === "All"){
             setLoading(true)
             setLiveData(data.values)
@@ -88,27 +84,18 @@ export default function companiesCards({data}) {
             setLoading(false)
         }
 
-    /*     const result =  data.values.filter(
-            (company, index) =>
-            company.parentCategorySlug.includes(
-                selectedCategory) &&
-            company.subcategory.includes(selectedSubcategory) 
-        );
-    
-        if(selectedCategory === "All" && selectedSubcategory === "All"){
-        setLiveData(data.values)
-        console.log("la data a usar es data.values")
-        } else {
-            console.log("la data a usar es result")
-        setLiveData(result)
-        } */
     }
     handleFilter()
    },[selectedCategory,selectedSubcategory,sorted])
- 
+
+   const handleLoading = ()=>{
+       console.log("loading de companies",loading)
+    setLoading(!loading)
+  }
 
     return (
         <Layout>
+        {loading && <TopBarProgress />}
         <section className="filter bg-white py-5">
             <div className="container">
                 <div className="row">
@@ -164,7 +151,7 @@ export default function companiesCards({data}) {
                 <div className="card-container">
                     {liveData?liveData.map((company,index)=>{
                         return (
-                            <CompanyCard company={company} index={index}/>
+                            <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
                         )
                     }):<Loader />}
                     {liveData.length <=0 && <h3 className="fw-bold">No Data</h3>}

@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from '../components/Modal'
-
+import TopBarProgress from "react-topbar-progress-indicator";
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -18,7 +18,11 @@ export default function Homepage({ data }) {
 
   const router = useRouter();
 
-  console.log(data.values)
+  const [loading,setLoading]=useState(false)
+
+  const handleLoading = ()=>{
+    setLoading(!loading)
+  }
 
   const handleCompany = (company) => {
     setCompany(company);
@@ -96,7 +100,13 @@ export default function Homepage({ data }) {
     "API standards"
   ];
 
-
+  TopBarProgress.config({
+    barColors: {
+      "0": "#fdb43e",
+      "1.0": "#fdb43e"
+    },
+    shadowBlur: 5
+  });
   const prueba = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug.includes(
@@ -606,9 +616,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
   }
 
 
-
   return (
     <Layout>
+      {loading && <TopBarProgress />}
       <div className="">
         <Head>
           <title>apidays landscape</title>
@@ -650,6 +660,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           subcategoryName="Access and Identity Management"
                           handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
+                          handleLoading={handleLoading}
                           />
             
                           </div>
@@ -1371,7 +1382,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           </section>
         </main>
       </div>
-      <Modal  selectedEntity={selectedEntity}/>
+      <Modal  selectedEntity={selectedEntity} handleLoading={handleLoading}/>
     
 
     </Layout>

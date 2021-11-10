@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { useRouter } from "next/router";
-export default function CompanyCard({company,index}) {
+export default function CompanyCard({company,index,handleLoading}) {
   const handleCompany = (company) => {
-
+    handleLoading()
     router.push(`/company/${company.name}`);
   };
   const reduceNumber=(total)=>{
@@ -68,9 +68,9 @@ export default function CompanyCard({company,index}) {
         <div className="card-middle mt-1">
                 {company.parentCategorySlug?.split(",").map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
-                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
+                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
-                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg"}
+                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}

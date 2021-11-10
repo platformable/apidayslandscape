@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useRouter } from "next/router";
 import Unknown from './Unknown';
-export default function CompanyCardModal({company,index}) {
+export default function CompanyCardModal({company,index,loading}) {
   const handleCompany = (company) => {
 
     router.push(`/company/${company.name}`);

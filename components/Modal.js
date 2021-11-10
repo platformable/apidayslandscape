@@ -5,7 +5,13 @@ import CompanyCardModal from './CompanyCardModal'
 
 
 
-export default function Modal({selectedEntity}) {
+export default function Modal({selectedEntity,handleLoading}) {
+
+  const handleRoute = () =>{
+    handleLoading()
+    router.push(`/company/${selectedEntity.name}`)
+  }
+
 
   const router = useRouter()
     return (
@@ -23,7 +29,7 @@ export default function Modal({selectedEntity}) {
                     <CompanyCardModal company={selectedEntity} data-bs-dismiss="modal"/>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn bg-dark-orange text-white" data-bs-dismiss="modal" onClick={()=>router.push(`/company/${selectedEntity.name}`)}>Go deeper</button>
+                    <button type="button" class="btn bg-dark-orange text-white" data-bs-dismiss="modal" onClick={()=>handleRoute(selectedEntity)}>Go deeper</button>
                   </div>
                 </div>
               </div>

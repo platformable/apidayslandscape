@@ -16,7 +16,7 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
-    console.log("liveData",liveData)
+ 
    
     const handleCompanyName= (text)=>{
     

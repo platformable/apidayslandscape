@@ -180,6 +180,14 @@ place-items: center;
   cursor:pointer;
 }
 
+
+.company-social-urls img{
+  max-width:50px;
+}
+
+.company-social-urls img:hover{
+  cursor:pointer;
+}
 /* LANDSCAPE */
 
 /* .landscape-card {
@@ -336,7 +344,7 @@ place-items: center;
 }
 
 .apilifecycleplatformBg {
-  background-color:#fccf91;
+  background-color:#b35bd9;
 }
 .apilifecycleplatform {
   width:40px;
@@ -348,11 +356,11 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#fccf91;
+  background-color:#b35bd9;
 }
 
 .ApiStandardsandProtocolsBg {
-  background-color:#f4a986;
+  background-color:#25cb1b;
 }
 .ApiStandardsandProtocols {
   width:40px;
@@ -364,11 +372,11 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#f4a986;
+  background-color:#25cb1b;
 }
 
 .BackendBuildingToolsANDMBaasBg {
-  background-color:#f29262;
+  background-color:#4b2377;
 }
 .BackendBuildingToolsANDMBaas {
   width:40px;
@@ -380,11 +388,11 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#f29262;
+  background-color:#4b2377;
 }
 
 .BusinessprocessesasanAPIAPIasaProductBg {
-  background-color:#95d3e2;
+  background-color:#f2e966;
 }
 .BusinessprocessesasanAPIAPIasaProduct {
   width:40px;
@@ -396,11 +404,11 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#95d3e2;
+  background-color:#f2e966;
 }
 
 .BusinessprocessesasanAPIAPIasaProductsBg {
-  background-color:#8e9bcf;
+  background-color:#f2e966;
 }
 
 .BusinessprocessesasanAPIAPIasaProducts {
@@ -413,11 +421,11 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#8e9bcf;
+  background-color:#f2e966;
 }
 
 .IntegrationPlatformAsAServiceBg {
-  background-color:#767ebb;
+  background-color:#fdb43e;
 }
 .IntegrationPlatformAsAService {
   width:40px;
@@ -429,10 +437,10 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#767ebb;
+  background-color:#fdb43e;
 }
 .VerticalAPIAbstractionsBg {
-  background-color:#39b49d;
+  background-color:#d63b3b;
 }
 .VerticalAPIAbstractions {
   width:40px;
@@ -444,7 +452,7 @@ place-items: center;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#39b49d;
+  background-color:#d63b3b;
 }
 
 .landscape-container {
@@ -524,9 +532,6 @@ h3 {
   border-radius:10px;
 }
   
-  .card-bottom {
-
-  }
 
 .card-top span {
   font-size:12px;
@@ -585,7 +590,15 @@ h3 {
   border-top:1px solid #eee;
   margin-top:20px;
   display:grid;
-  grid-template-columns:1fr 2fr 2fr;
+  grid-template-columns:2fr 2fr 2fr;
+
+}
+
+.card-bottom-modal {
+  border-top:1px solid #eee;
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:2fr 2fr 2fr 2fr;
 
 }
 
@@ -601,10 +614,20 @@ h3 {
 
 
 /* PROFILE PAGE */
+
+.goDeeper {
+  padding:20%;
+  display:grid;
+  place-items:center;
+
+  height:100%!important;
+  }
+
 .company-profile-container {
   display:grid;
   grid-template-columns:1fr 2fr;
   gap:10px;
+ 
   }
 
   .company-profile-left-column {

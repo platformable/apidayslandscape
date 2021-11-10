@@ -8,6 +8,8 @@ import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
+import Modal from '../components/Modal'
+
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -16,7 +18,7 @@ export default function Homepage({ data }) {
 
   const router = useRouter();
 
-
+  console.log(data.values)
 
   const handleCompany = (company) => {
     setCompany(company);
@@ -597,6 +599,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
     }
   }, []); */
 
+  const [selectedEntity,setSelectedEntity]=useState([])
+
+  const handleEntity = (entity)=>{
+    setSelectedEntity(entity)
+  }
+
+
+
   return (
     <Layout>
       <div className="">
@@ -629,7 +639,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 mb-1">
                   <div class="home-main-container ">
                     <div class="apilifecycleplatform">
-                      <span className="">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
+                      <span className="text-white">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -638,7 +648,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                             {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Access and Identity Management"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
                           />
             
@@ -650,7 +660,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Oriented IT Consulting Firms"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
                           />
                           </div>
@@ -661,7 +671,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Management/APIGateway"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
@@ -673,7 +683,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Developer Portals"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
@@ -682,7 +692,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           
                           <HomepageSubcategory 
                           subcategoryName="API Security"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDApiSecurity}
                           />
                          
@@ -691,7 +701,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Management/APIGateway"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
@@ -704,7 +714,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Analytics/Monitoring"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
                           />
                           </div>
@@ -712,7 +722,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Design/Documentation Platforms"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
                           />
                           </div>
@@ -720,7 +730,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Developer Portals"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
@@ -728,7 +738,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           
                           <HomepageSubcategory 
                           subcategoryName="API Security"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDApiSecurity}
                           />
                          
@@ -737,7 +747,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Testing"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDAPITesting}
                           />
                           </div>
@@ -745,7 +755,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="IoT Platforms/Networks/Devices"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs}
                           />
                           </div>
@@ -753,7 +763,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Streaming & Event Architecture"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={APILifecyclePlatformANDStreamingAPIs}
                           />
                           </div>
@@ -767,7 +777,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="BackendBuildingToolsANDMBaas">
-                      <span className="">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
+                      <span className="text-white">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -777,7 +787,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Headless CMS"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
                           />
                           </div>
@@ -785,7 +795,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Infrastructure/Cloud/Serverless APIs"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDInfrastructureCloudServerlessAPIs}
                           />
                           </div>
@@ -793,7 +803,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Mobile Backend as a Service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
                           />
                           </div>
@@ -806,7 +816,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Deployment/Back-end Building"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
                           />
                           </div>
@@ -814,7 +824,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Banking, Finance, Insurance Backends"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
                           />
                           </div>
@@ -822,7 +832,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Blockchain"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDBlockchain}
                           />
                           </div>
@@ -848,7 +858,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Data"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDData}
                           />
                           </div>
@@ -856,7 +866,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Data governance & Data management"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
                           />
                           </div>
@@ -866,7 +876,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Payments"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDPayments}
                           />
                           </div>
@@ -881,7 +891,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Email, Messaging, Communications Platforms as a Service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
                           </div>
@@ -896,7 +906,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Accounting"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAccounting}
                           />
                           </div>
@@ -904,7 +914,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="AI & ML"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAIML}
                           />
                           </div>
@@ -912,7 +922,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="E-commerce"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
                           />
                           </div>
@@ -920,7 +930,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Identity verification & KYC"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC}
                           />
                           </div>
@@ -939,7 +949,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Audio & Video"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
                           />
                           </div>
@@ -949,7 +959,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Forms"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDOnlineForms}
                           />
                           </div>
@@ -958,7 +968,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Human-as-a-service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
                           />
                           </div>
@@ -967,7 +977,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Human Resources"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanresources}
                           />
                           </div>
@@ -976,7 +986,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Legal & Regulatory"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory}
                           />
                           </div>
@@ -985,7 +995,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Search"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
                           />
                           </div>
@@ -995,7 +1005,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Time & Calendar"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDTimeCalendar}
                           />
                           </div>
@@ -1009,7 +1019,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Human-as-a-service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanasaservice}
                           />
                           </div>
@@ -1018,7 +1028,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Search"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDSearch}
                           />
                           </div>
@@ -1026,7 +1036,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Data"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDData}
                           />
                           </div>
@@ -1034,7 +1044,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Human Resources"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHumanresources}
                           />
                           </div>
@@ -1062,7 +1072,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Accounting APIs"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs}
                           />
                           </div>
@@ -1070,7 +1080,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="AI APIs"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAIAPIs}
                           />
                           </div>
@@ -1078,7 +1088,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Aggregators"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators}
                           />
                           </div>
@@ -1091,7 +1101,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Deployment/Back-end Building"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment}
                           />
                           </div>
@@ -1099,7 +1109,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Data (B2B, B2C)"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductsANDDataB2}
                           />
                           </div>
@@ -1125,7 +1135,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Aggregators (Finance)"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
@@ -1133,7 +1143,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Aggregators (General)"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregators}
                           />
                           </div>
@@ -1141,7 +1151,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Automation/Orchestration"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestration}
                           />
                           </div>
@@ -1149,7 +1159,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Database-as-a-service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDDatabaseasaservice}
                           />
                           </div>
@@ -1167,7 +1177,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Insurance-as-a-service"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
@@ -1175,7 +1185,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="IPaaS"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
@@ -1183,7 +1193,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Horizontal API Abstractions"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
@@ -1206,7 +1216,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Cloud Storage"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDCloudStorage}
                           />
                           </div>
@@ -1214,7 +1224,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Delivery, Transport and Logistics"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
                           </div>
@@ -1222,7 +1232,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Finance"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDFinance}
                           />
                           </div>
@@ -1230,7 +1240,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Healthcare"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDHealthcare}
                           />
                           </div>
@@ -1238,7 +1248,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Login"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDLogin}
                           />
                           </div>
@@ -1246,7 +1256,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Marketing/Analytics"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
                           </div>
@@ -1254,7 +1264,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                             {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Smart Home and Smart Facilities"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDSmartHome}
                           />
                           </div>
@@ -1283,7 +1293,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API protocols"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ ApiStandardsandProtocolsANDAsyncAPI}
                           />
                           </div>
@@ -1291,7 +1301,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API standards"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDFIDO}
                           />
                           </div>
@@ -1299,7 +1309,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="GraphQL"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDGraphQL}
                           />
                           </div> */}
@@ -1307,7 +1317,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="gRPC"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDGRPC}
                           />
                           </div> */}
@@ -1319,7 +1329,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Open API Specs"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDOpenApiSpecs}
                           />
                           
@@ -1328,7 +1338,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="OpenID"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDOpenID}
                           />
                           </div>
@@ -1336,7 +1346,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
                           <HomepageSubcategory 
                           subcategoryName="PSD2 API Abstractions"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDPSD2APIAbstractions}
                           />
                           </div>
@@ -1344,7 +1354,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="STET Berlin Group"
-                          handleCompany={handleCompany}
+                          handleCompany={handleEntity}
                           filteredCategory={ApiStandardsandProtocolsANDSTETBerlinGroup}
                           />
                           
@@ -1361,6 +1371,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           </section>
         </main>
       </div>
+      <Modal  selectedEntity={selectedEntity}/>
+    
+
     </Layout>
   );
 }

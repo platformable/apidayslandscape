@@ -6,7 +6,7 @@ import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
 import Unknown from "../../components/Unknown";
 /* import { categories,subcategories } from '../../utils/categoriesAndSubcategories'; */
-export default function CompanyDetailsName({ data }) {
+export default function testSlugPage({ data }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -22,31 +22,6 @@ export default function CompanyDetailsName({ data }) {
       );
     }
   }
-
-  const reduceNumber=(total)=>{
-    let result
-    if(total.length>=7){
-   
-     result= `$${total.slice(0, 1)}M`
-     console.log("result",result)
-    }
-
-    if(total.length>=8){
-      result= `$${total.slice(0, 2)}M`
-      console.log("result",result)
-     }
-
-     if(total.length>=9){
-      result= `$${total.slice(0, 3)}M`
-      console.log("result",result)
-     }
-     if(total.length>=10){
-      result= `$${total.slice(0, 4)}M`
-      console.log("result",result)
-     }
- 
-     return result
-   }
 
   const selectedCompany = data.values.filter((company) => company.name === slug);
 
@@ -107,7 +82,7 @@ export default function CompanyDetailsName({ data }) {
   const handleDetails = () =>{
     setOverview(!overview)
     setDetails(!details)
-
+    console.log("details",details)
   }
 
   return (
@@ -126,38 +101,28 @@ export default function CompanyDetailsName({ data }) {
            {/* <div className="company-url d-flex justify-content-center align-items-center">
              <a href={url} target="_blank">{url}</a>
            </div> */} {/* company url */}
-           <div className="company-category mt-2 mb-2">
-
-          <p className="sm-text"> {`${parentCategorySlug} >> ${subcategory}`}  </p>
+           <div className="company-category">
 
       
             {parentCategorySlug?.split(",").map((category,index)=>{
 
-                  return (<span className={`text-center badge my-1 text-black d-block
-                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
+                  return (<span className={`text-center px-3 py-3 my-2 text-black d-block
+                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
                   ${category.includes("API Standards and Protocols") && "ApiStandardsandProtocolsBg"}
-                  ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg text-white"}
+                  ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg"}
                   ${category.includes("Business processes as an API/API-as a Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category.includes("Business processes as an API/API-as a Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category.includes("Integration Platform as a Service") && "IntegrationPlatformAsAServiceBg"}
                   ${category.includes("Vertical API Abstractions") && "VerticalAPIAbstractionsBg"}
                   `}>{category}</span>)
                 })}
-
-                <div className="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                </svg>
-                </div>
-
-            {subcategory?subcategory.split(",").map((subcat,index)=>{
-                          return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light`}>{subcat}</span>
-                        })
-             
-            :""}     
            </div> {/* company category */}
-        
-           <div className="description my-1">
+           {subcategory?subcategory.split(",").map((subcat,index)=>{
+              return <div className="company-subcategory border mt-1 mb-1"><h3 className="text-center px-3 py-2 my-2">{subcat}</h3>   </div> /* company subcategory */
+             })
+             
+            :""}
+           <div className="description my-3">
            <p className="fst-italic">{description}</p>
            </div> {/* company description */}
            <div className="founded">
@@ -222,13 +187,13 @@ export default function CompanyDetailsName({ data }) {
          <div className="company-profile-right-column ml-5 ">
 
           <section className="goDepperBtn bg-white d-flex justify-content-between">
-{/*           {overview && <h5 className="fw-bold py-3 px-2">Overview...</h5>}
+          {overview && <h5 className="fw-bold py-3 px-2">Overview...</h5>}
           {details && <h5 className="fw-bold py-3 px-2">Details</h5>}
-          {details &&  <button className="btn btn-light sm-text me-2" onClick={handleDetails}>Back to overview</button>}  */}
+          {details &&  <button className="btn btn-light sm-text me-2" onClick={handleDetails}>Back to overview</button>} 
             </section>    
 
-          {/* <section className={overview ? "company-profile-right bg-white" : " d-none  company-profile-right bg-white"}> */}
           <section className={overview ? "company-profile-right bg-white" : " d-none  company-profile-right bg-white"}>
+
 
              <section className="company-profile-right-side-section2 border-top bg-white pt-1 d-flex ">
 
@@ -236,7 +201,7 @@ export default function CompanyDetailsName({ data }) {
 
           <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Total Funding</p>
-                 {totalFunding?<h6><span className="badge  text-black">{reduceNumber(totalFunding)}</span></h6>:<Unknown/>}
+                 {totalFunding?<h6><span className="badge  text-black">{totalFunding}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
 
@@ -308,14 +273,14 @@ export default function CompanyDetailsName({ data }) {
                 </div>{/* profile-right-side-top-top */}
           </section> 
 
-{/* {overview && <section>
+{overview && <section>
 
 <div className="goDeeper">
   <img src="../../homepage/logo_dark.png" alt="" />
   <button className="btn bg-dark-orange  me-2 text-white" onClick={handleDetails}>Go deeper</button>
 </div>
 </section>}
- */}
+
 
           
           {/* OVERVIEW  END */}
@@ -324,7 +289,7 @@ export default function CompanyDetailsName({ data }) {
           {/* DETAILS */}  {/* DETAILS */} {/* DETAILS */}
 
 
-          <section>
+          <section className={details!==true ? "d-none": ""}>
       
            <section className="company-profile-right-one bg-white ">
 
@@ -724,7 +689,7 @@ export default function CompanyDetailsName({ data }) {
 
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Total Funding</p>
-                 {totalFunding?<h6><span className="badge  text-black">{reduceNumber(totalFunding)}</span></h6>:<Unknown/>}
+                 {totalFunding?<h6><span className="badge  text-black">{totalFunding}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                

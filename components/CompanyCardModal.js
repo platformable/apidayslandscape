@@ -1,11 +1,13 @@
 import React from 'react'
 
 import { useRouter } from "next/router";
-export default function CompanyCard({company,index}) {
+import Unknown from './Unknown';
+export default function CompanyCardModal({company,index}) {
   const handleCompany = (company) => {
 
     router.push(`/company/${company.name}`);
   };
+
   const reduceNumber=(total)=>{
     let result
     if(total.length>=7){
@@ -41,7 +43,7 @@ export default function CompanyCard({company,index}) {
             </div>
             <div className="card-description">
               <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>
-              <h6><span class="badge bg-light text-main-color">Go Deeper</span></h6>
+          
               {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">
                 <div className="founded-icon">
@@ -49,8 +51,8 @@ export default function CompanyCard({company,index}) {
    
                 </div>
                 <div className="founded-year">
-                <p className="xs-text m-0 p-0 fw-bold">Founded</p>
-                  <p className="xs-text">{company.yearFounded ? `${company.yearFounded}`: "-"}</p>
+                <p className="sm-text m-0 p-0 fw-bold">Founded</p>
+                  <p className="sm-text">{company.yearFounded ? `${company.yearFounded}`: "-"}</p>
                   
                 </div>
               </div> {/*  <!--card founded--> */}
@@ -59,8 +61,8 @@ export default function CompanyCard({company,index}) {
                 <img src="../../apilandscape__headquarter_40x40.png" alt="" className="icon" />
                 </div>
                 <div className="founded-year">
-                <p className="xs-text m-0 p-0 fw-bold">Headquarter</p>
-                  <p className="xs-text">{company.headquartersCity},{company.headquartersCountry}</p>
+                <p className="sm-text m-0 p-0 fw-bold">Headquarter</p>
+                  <p className="sm-text">{company.headquartersCity},{company.headquartersCountry}</p>
                 </div>
               </div>  {/* <!--card founded--> */}
             </div>
@@ -68,9 +70,9 @@ export default function CompanyCard({company,index}) {
         <div className="card-middle mt-1">
                 {company.parentCategorySlug?.split(",").map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
-                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
+                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
-                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg"}
+                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
@@ -80,23 +82,36 @@ export default function CompanyCard({company,index}) {
    
               </div>{/* <!--card middle--> */}
         
-        <div className="card-bottom">
-          <div className="card-bottom-left">
-            <span className="sm-text">Headcount</span>
-            <p className="fw-bold">{company.headcount?company.headcount:"-"}</p>
-            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
-            
-          </div>{/*  <!--card-bottom -left--> */}
-          <div className="card-bottom-center">
+        <div className="card-bottom-modal">
+
+        <div className="card-bottom-center">
              <span>Total Funding</span>
             <p className="fw-bold ">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
             <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
+            
+          <div className="card-bottom-left">
+            <span className="">Headcount</span>
+            <p className="fw-bold">{company.headcount?company.headcount:"-"}</p>
+            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
+            
+          </div>{/*  <!--card-bottom -left--> */}
+
+       
+          
+          
           <div className="card-bottom-right">
-             <span>Estimated Revenue</span>
-            <p className="sm-text fw-bold text-center">{company.estimatedRevenueRange?company.estimatedRevenueRange: "-"}</p>
-            <img src="../../money-line.png" alt="" />
+             <span>Number of customers</span>
+             {company.numbersOfCustomers?<h5 className="fw-bold my-2 px-2">{company.numbersOfCustomers}</h5>:<Unknown/>}
+                 <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
           </div> {/* <!--card-bottom -right--> */}
+
+          <div className="card-bottom-right border-start">
+             <span>Diversity Score</span>
+             {company.nonWhitePeopleInManagement?<h5 className="fw-bold my-2 px-2">{company.nonWhitePeopleInManagement}</h5>:<Unknown/>}
+                 <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
+          </div> {/* <!--card-bottom -right--> */}
+
         </div> {/* card-bottom */}
       
       </div> /* company card */

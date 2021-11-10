@@ -6,7 +6,7 @@ module.exports = {
         'http://www.netlify.com/',
         'http://apidays.global',
         'http://vercel.com',
-        'http://cloduflare.com',
+        'http://cloudflare.com',
         'http://strapi.io'
       ],
     },

@@ -95,7 +95,7 @@ export default function companiesCards({data}) {
 
     }
     handleFilter()
-   },[selectedCategory,selectedSubcategory,sorted,loading])
+   },[selectedCategory,selectedSubcategory,sorted])
 
    const handleLoading = ()=>{
 

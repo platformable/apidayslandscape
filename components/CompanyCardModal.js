@@ -34,7 +34,7 @@ export default function CompanyCardModal({company,index,loading}) {
    }
 
    const handleScore = (wm,dm)=>{
-    let score;
+    let score="-";
   if(wm === "Yes" && dm === "Yes"){
     score="A+"
   }

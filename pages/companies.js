@@ -44,6 +44,13 @@ export default function companiesCards({data}) {
         liveData.sort((a, b) => a.name > b.name && 1 || -1)
     }
    
+    const handleImages = (url)=>{
+        if(url.includes("https://drive.google.com")){
+          return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
+        }else {
+          return url
+        }
+        }
 
     const handleFilter = () => {
         

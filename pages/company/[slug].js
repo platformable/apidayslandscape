@@ -47,7 +47,13 @@ export default function CompanyDetailsName({ data }) {
  
      return result
    }
-
+   const handleImages = (url)=>{
+    if(url?.includes("https://drive.google.com")){
+      return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
+    }else {
+      return url
+    }
+    }
   const selectedCompany = data.values.filter((company) => company.name === slug);
 
   const {
@@ -92,6 +98,8 @@ export default function CompanyDetailsName({ data }) {
     valuationAtIpo,
     industryGroups,
   } = selectedCompany[0];
+
+  console.log(logo)
   
   const categories = [
     "API Lifecycle Platform",
@@ -121,7 +129,7 @@ export default function CompanyDetailsName({ data }) {
              </h3>
              </div> {/* company name */}
            <div className="company-logo d-flex justify-content-center align-items-center">
-           <a href={url} target="_blank"><img src={logo} alt={name} /></a>
+           <a href={url} target="_blank"><img src={handleImages(logo)} alt={name} /></a>
            </div> {/* company logo */}
            {/* <div className="company-url d-flex justify-content-center align-items-center">
              <a href={url} target="_blank">{url}</a>

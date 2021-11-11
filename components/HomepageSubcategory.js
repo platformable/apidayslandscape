@@ -10,13 +10,24 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
 
 
 
+const handleImages = (url)=>{
+if(url.includes("https://drive.google.com")){
+  return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
+}else {
+  return url
+}
+}
+
+
   return (
     <div className="fullWidth py-0">
       <h6 className="text-center sm-text py-2">{subcategoryName}({filteredCategory.length})</h6>
 
+
       <div className="homeCards  d-flex justify-content-start px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
+            console.log(row.logo)
           /*   console.log("row.logo",index +'-'+row.logo) */
               return (
                 <div
@@ -25,7 +36,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
                   key={index}
                 >
                   <div  onClick={()=> handleCompany(row)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} className={router.pathname!=="/homepage" ? "landscape-img" : "homepage-landscape-img"}>
-                   {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${row.logo} 2x`} alt="" className="img-fluid" /> }
+                   {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(row.logo)} 2x`} alt="" className="img-fluid" /> }
                   </div>
                   {router.pathname!=="/homepage"? <p className="xs-text text-center">{row.name}</p> : ""} 
                 

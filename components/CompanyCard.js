@@ -31,13 +31,21 @@ export default function CompanyCard({company,index,handleLoading}) {
      return result
    }
 
+   const handleImages = (url)=>{
+    if(url.includes("https://drive.google.com")){
+      return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
+    }else {
+      return url
+    }
+    }
+
   const router = useRouter();
     return (
         <div className="company-card  rounded bg-white" key={index} onClick={() => handleCompany(company)}>
         <div className="card-top">
   
             <div className="card-logo">
-              <img src={`${company.logo}`} alt="" onClick={() => handleCompany(company)}/>
+              <img src={handleImages(company.logo)} alt="" onClick={() => handleCompany(company)}/>
             </div>
             <div className="card-description">
               <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>

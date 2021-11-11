@@ -7,7 +7,8 @@ module.exports = {
         'http://apidays.global',
         'http://vercel.com',
         'http://cloudflare.com',
-        'http://strapi.io'
+        'http://strapi.io',
+        'https://drive.google.com/thumbnail'
       ],
     },
   }

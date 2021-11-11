@@ -82,7 +82,7 @@ export default function testSlugPage({ data }) {
   const handleDetails = () =>{
     setOverview(!overview)
     setDetails(!details)
-    console.log("details",details)
+
   }
 
   return (

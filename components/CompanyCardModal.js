@@ -13,25 +13,49 @@ export default function CompanyCardModal({company,index,loading}) {
     if(total.length>=7){
    
      result= `$${total.slice(0, 1)}M`
-     console.log("result",result)
+
     }
 
     if(total.length>=8){
       result= `$${total.slice(0, 2)}M`
-      console.log("result",result)
+
      }
 
      if(total.length>=9){
       result= `$${total.slice(0, 3)}M`
-      console.log("result",result)
+   
      }
      if(total.length>=10){
       result= `$${total.slice(0, 4)}M`
-      console.log("result",result)
+
      }
  
      return result
    }
+
+   const handleScore = (wm,dm)=>{
+    let score;
+  if(wm === "Yes" && dm === "Yes"){
+    score="A+"
+  }
+
+  if(wm === "Yes" && dm === "No"){
+    score="A"
+  }
+  if(wm === "No" && dm === "Yes"){
+    score="A"
+  }
+
+  if (wm === "No" && dm ==="No"){
+    score="-"
+  }
+
+  return score
+
+
+}
+
+   const newParentCategorySlug = [...new Set(company?.parentCategorySlug?.split(","))]
 
    const handleImages = (url)=>{
     if(url?.includes("https://drive.google.com")){
@@ -43,14 +67,14 @@ export default function CompanyCardModal({company,index,loading}) {
 
   const router = useRouter();
     return (
-        <div className="company-card  rounded bg-white" key={index} onClick={() => handleCompany(company)}>
+        <div className="company-card  rounded bg-white" key={index}>
         <div className="card-top">
   
             <div className="card-logo">
-              <img src={handleImages(company.logo)} alt="" onClick={() => handleCompany(company)}/>
+              <img src={handleImages(company.logo)} alt="" />
             </div>
             <div className="card-description">
-              <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>
+              <h6 className="fw-bold" > {company.name}</h6>
           
               {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">
@@ -76,7 +100,7 @@ export default function CompanyCardModal({company,index,loading}) {
             </div>
           </div> {/* <!--cardtop--> */}
         <div className="card-middle mt-1">
-                {company.parentCategorySlug?.split(",").map((category,index)=>{
+                {newParentCategorySlug.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
@@ -92,15 +116,15 @@ export default function CompanyCardModal({company,index,loading}) {
         
         <div className="card-bottom-modal">
 
-        <div className="card-bottom-center">
-             <span>Total Funding</span>
-            <p className="fw-bold ">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
+        <div className="card-bottom-right  d-flex flex-direction-column ">
+             <span className="sm-text">Total Funding</span>
+            <p className="fw-bold my-2">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
             <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
             
-          <div className="card-bottom-left">
-            <span className="">Headcount</span>
-            <p className="fw-bold">{company.headcount?company.headcount:"-"}</p>
+          <div className="card-bottom-right border-start d-flex flex-direction-column ">
+            <span className="sm-text">Headcount</span>
+            <p className="fw-bold my-2">{company.headcount?company.headcount:"-"}</p>
             <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
             
           </div>{/*  <!--card-bottom -left--> */}
@@ -108,15 +132,15 @@ export default function CompanyCardModal({company,index,loading}) {
        
           
           
-          <div className="card-bottom-right">
-             <span>Number of customers</span>
-             {company.numbersOfCustomers?<h5 className="fw-bold my-2 px-2">{company.numbersOfCustomers}</h5>:<Unknown/>}
-                 <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
+          <div className="card-bottom-right border-start d-flex flex-direction-column ">
+             <span className="sm-text">Customers</span>
+             {company.numbersOfCustomers?<p className="fw-bold  my-2 px-2">{company.numbersOfCustomers}</p>:<Unknown/>}
+                 <img src="../../apilandscape__number_of_customers_50x60.png" alt="" className="sd-icon my-1 px-2" />
           </div> {/* <!--card-bottom -right--> */}
 
-          <div className="card-bottom-right border-start">
-             <span>Diversity Score</span>
-             {company.nonWhitePeopleInManagement?<h5 className="fw-bold my-2 px-2">{company.nonWhitePeopleInManagement}</h5>:<Unknown/>}
+          <div className="card-bottom-right border-start d-flex flex-direction-column ">
+             <span className="sm-text">Diversity Score</span>
+             <p className="fw-bold my-2 px-2">{handleScore(company.womanInManagement,company.nonWhitePeopleInManagement)}</p>
                  <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
           </div> {/* <!--card-bottom -right--> */}
 

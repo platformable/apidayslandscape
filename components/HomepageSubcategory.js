@@ -27,8 +27,8 @@ if(url.includes("https://drive.google.com")){
       <div className="homeCards  d-flex justify-content-start px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
-            console.log(row.logo)
-          /*   console.log("row.logo",index +'-'+row.logo) */
+
+    
               return (
                 <div
                   href="https://nextjs.org/docs"

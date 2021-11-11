@@ -38,6 +38,8 @@ export default function companiesCards({data}) {
 
    useEffect(()=>{
     
+    liveData>0 ?setLoading(!loading):""
+
     if(sorted){ 
         liveData.sort((b, a) => a.name > b.name && 1 || -1) 
     } else {
@@ -93,10 +95,10 @@ export default function companiesCards({data}) {
 
     }
     handleFilter()
-   },[selectedCategory,selectedSubcategory,sorted])
+   },[selectedCategory,selectedSubcategory,sorted,loading])
 
    const handleLoading = ()=>{
-       console.log("loading de companies",loading)
+
     setLoading(!loading)
   }
 
@@ -161,7 +163,10 @@ export default function companiesCards({data}) {
                             <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
                         )
                     }):<Loader />}
-                    {liveData.length <=0 && <h3 className="fw-bold">No Data</h3>}
+                    {liveData.length <=0 && loading === true ? <h3 className="fw-bold">Loading</h3> : ""}
+                    {liveData.length <=0 && loading === false ? <h3 className="fw-bold">No Data</h3> : ""}
+                    
+                    
                 </div>
             </div>
         </section>

@@ -168,8 +168,8 @@ place-items: center;
 }
 
 .homepage-landscape-img {
-  width:64px;
-  height:64px;
+  width:44px;
+  height:44px;
   margin-bottom:2px;
 display: grid;
 place-items: center;
@@ -692,6 +692,9 @@ max-width: 60px;
   .xd-icon {
     max-width: 80px;
       }
+  .lg-icon {
+    max-width: 100px;
+  }
 .known-industries {
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -783,4 +786,67 @@ flex: 1;
 
 
 }
-/* NEW LANDSCAPE LAYOUT 5-11-21 */
+
+
+/* timeline */
+.timeline {
+/*   margin-top: 50px !important; */
+}
+ul.timeline {
+  
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 60px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ';
+  background: lightgray;
+  display: inline-block;
+  position: absolute;
+  border-radius: 10%;
+
+  left: 50px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+ul.timeline > .timeline-item:before {
+  content: "✓";
+  background: #0c4b6e;
+  display: inline-block;
+  position: absolute;
+  border-radius: 10%;
+  left: 50px;
+ color:white;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+.lg-icon{
+  max-width:150px
+  
+  }
+
+  .charts-top {
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    }
+
+    .company-profile-left-column {
+      overflow-x: hidden; 
+      }

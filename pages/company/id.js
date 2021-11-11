@@ -11,7 +11,6 @@ export default function CompanyDetails({ data }) {
 
   const [company,setCompany]=useContext(CompanyContext)
 
-  console.log("company",company)
 
   const selectedCompany = data.values.filter((company) => company.id === parseInt(id));
   const {

@@ -113,6 +113,17 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform")
   ); */
 
+  const handleForm = ()=>{
+    console.log("handle Form")
+    if(typeof window !== "undefined"){
+      window.open(
+        "https://airtable.com/shr07pWSbRnQfnZZd",
+        '_blank' 
+      );
+    }
+    
+  }
+
   const APILifecyclePlatform = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
@@ -636,7 +647,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
             <div className="text-center flex-grow-1">
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn bg-dark-orange me-1 text-white">Add your API Tool</button>
+            <button className="btn bg-dark-orange me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-download">Download the map</button>
        
 

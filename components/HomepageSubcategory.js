@@ -21,7 +21,7 @@ if(url.includes("https://drive.google.com")){
 
   return (
     <div className="fullWidth py-0">
-      <h6 className="text-center sm-text py-2">{subcategoryName}({filteredCategory.length})</h6>
+      <h6 className="text-center sm-text py-2">{subcategoryName} ({filteredCategory.length})</h6>
 
 
       <div className="homeCards  d-flex justify-content-start px-2">

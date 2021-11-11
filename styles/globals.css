@@ -842,11 +842,15 @@ ul.timeline > .timeline-item:before {
   
   }
 
-  .charts-top {
-    display:grid;
-    grid-template-columns:3fr 1fr;
-    }
+.charts-top {
+display:grid;
+grid-template-columns:3fr 1fr;
+}
 
-    .company-profile-left-column {
-      overflow-x: hidden; 
-      }
+.company-profile-left-column {
+overflow-x: hidden; 
+}
+
+.list-group-item {
+margin-right:-5px;
+}

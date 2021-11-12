@@ -5,43 +5,50 @@ import 'chartjs-plugin-datalabels';
 export default function BarChart() {
 
     const data = {
-        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        labels: ['Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021'],
         datasets: [
           {
             label: '# of posts',
-            data: [12, 19, 3, 5],
+            data: [129, 19, 30, 15],
             backgroundColor: [
               '#0c4b6e',
               '#0c4b6e',
               '#0c4b6e',
               '#0c4b6e',
             ],
+            borderRadius: 10,
           },
         ],
       };
       
       const options = {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
+        barThickness:30,
+          responsive: true,
+          plugins: {
+           /*  title: {
+              display: true,
+              text: 'Grid Line Settings'
+            } */
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+                drawOnChartArea: false,
+                drawTicks: false,
               },
-              gridLines : {
-                color: "rgba(0, 0, 0, 0)",
-                lineWidth: 0,
-                display : false
+            },
+            y: {
+              grid: {
+                display: true,
+                drawBorder: false,
+                drawOnChartArea: true,
+                drawTicks: true,
+              },
             }
-            }
-            ,
-          ],
+   
         },
-        plugins: {
-            datalabels: {
-               display: true,
-               color: 'white'
-            }
-         },
       };
 
     return (

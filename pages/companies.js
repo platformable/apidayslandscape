@@ -151,7 +151,7 @@ export default function companiesCards({data}) {
                         </div> {/* form check */}
                         </div> 
                 </div>
-                {loading && "Loading"}
+               
             </div> {/* container */}
         </section>
 

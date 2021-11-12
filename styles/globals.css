@@ -182,7 +182,7 @@ place-items: center;
 
 
 .company-social-urls img{
-  max-width:50px;
+  max-width:30px;
 }
 
 .company-social-urls img:hover{
@@ -847,10 +847,76 @@ display:grid;
 grid-template-columns:3fr 1fr;
 }
 
-.company-profile-left-column {
+.company-profile-right-column {
 overflow-x: hidden; 
 }
 
 .list-group-item {
 margin-right:-5px;
 }
+
+.known-partnership-logo img {
+  align-self:flex-start;
+  max-width: 50px;
+}
+
+.company-profile-right-side-section3-bottom {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.industries-working-1 {
+  background-color:#EFDCF7;
+}
+
+.industries-working-2 {
+  background-color:#D9ACEC;
+}
+
+.industries-working-3 {
+  background-color:#B188DD;
+}
+
+.industries-working-4 {
+  background-color:#E5D7F4;
+}
+
+.industries-working-5 {
+  background-color:#FBF8D3;
+}
+
+.industries-working-6 {
+  background-color:#F8F4B2;
+}
+
+.industries-working-7 {
+  background-color:#FEDA9F;
+}
+
+.industries-working-8 {
+  background-color:#FFF4E4;
+}
+
+.industries-working-9 {
+  background-color:#EA9E9E;
+}
+
+.industries-working-10 {
+  background-color:#F9E3E3;
+}
+
+.industries-working-11 {
+  background-color:#88EF83;
+}
+
+.industries-working-11 {
+  background-color:#DDFADC;
+}
+
+
+
+
+
+
+
+

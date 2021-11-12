@@ -105,7 +105,7 @@ export default function companiesCards({data}) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
-                    <select className="form-select" ariaLabel="Default select example" onChange={e => setSelectedCategory(e.target.value)} >
+                    <select className="form-select mb-2" ariaLabel="Default select example" onChange={e => setSelectedCategory(e.target.value)} >
                         <option selected>Select a Category</option>
                         <option value="All">All</option>
                 
@@ -117,7 +117,7 @@ export default function companiesCards({data}) {
                     </select>
                     </div>
                     <div className="col-md-3">
-                    <select className="form-select" ariaLabel="Default select example" onChange={e => setSelectedSubcategory(e.target.value)}>
+                    <select className="form-select mb-2" ariaLabel="Default select example" onChange={e => setSelectedSubcategory(e.target.value)}>
                         <option >Select a subcategory</option>
                         <option value="All">All</option>
                         {subcategories?subcategories.map((subcategory,index)=>{
@@ -128,11 +128,11 @@ export default function companiesCards({data}) {
                     </select>
                     </div> {/* subcategory */}
                     <div className="col-md-3">
-                    <div className="input-group">
-                    <input type="text" class="form-control" id="inputGroupFile04" 
+                    <div className="input-group mb-2">
+                    <input type="text" class="form-control " id="inputGroupFile04" 
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" 
                     onChange={(e)=>handleCompanyName(e.target.value)}/>
-                    <button className="btn border" type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
+                    <button className="btn border " type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
                     <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
                     </button>
                     </div>

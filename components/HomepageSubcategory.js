@@ -38,7 +38,7 @@ if(url.includes("https://drive.google.com")){
                   <div  onClick={()=> handleCompany(row)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} className={router.pathname!=="/homepage" ? "landscape-img" : "homepage-landscape-img"}>
                    {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(row.logo)} 2x`} alt="" className="img-fluid" /> }
                   </div>
-                  {router.pathname!=="/homepage"? <p className="xs-text text-center">{row.name}</p> : ""} 
+                  {router.pathname!=="/homepage"? <p className="xs-text text-center text-company-color">{row.name}</p> : ""} 
                 
 
 

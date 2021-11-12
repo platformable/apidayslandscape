@@ -502,6 +502,14 @@ grid-template-columns: repeat(4, 1fr);
   grid-column-gap:10px;
 }
 
+
+@media screen and (max-width: 1200px) {
+  .card-container {
+    display:grid;
+  grid-template-columns: 1fr 1fr;
+    grid-column-gap:5px;
+  }
+}
 @media screen and (max-width: 600px) {
   .card-container {
     display:grid;
@@ -509,6 +517,8 @@ grid-template-columns: repeat(4, 1fr);
     grid-column-gap:5px;
   }
 }
+
+
 h3 {
   margin:0;
 }

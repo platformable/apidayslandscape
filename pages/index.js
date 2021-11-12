@@ -626,6 +626,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
     setSelectedEntity(entity)
   }
 
+ 
 
   return (
     <Layout>
@@ -648,8 +649,8 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <div className="text-center flex-grow-1">
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn bg-dark-orange me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
-            <button className="btn btn-download">Download the map</button>
-       
+            <a className="btn btn-download" href="../apilandscape_map.png"  download="apilandscape">Download the map</a>
+
 
             </div>
             <div className=""><h3><span class="badge bg-light text-black shadow ">{data.values.length}</span> </h3></div>

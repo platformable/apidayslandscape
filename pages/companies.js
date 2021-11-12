@@ -25,20 +25,16 @@ export default function companiesCards({data}) {
       });
    
     const handleCompanyName= (text)=>{
-    
-   
                 const result =  data.values.filter(
                     (company, index) =>
                     company.name.toLowerCase().includes(text)
                 );
                 setLiveData(result)
-
-
     }
 
    useEffect(()=>{
     
-    liveData>0 ?setLoading(!loading):""
+
 
     if(sorted){ 
         liveData.sort((b, a) => a.name > b.name && 1 || -1) 
@@ -58,21 +54,21 @@ export default function companiesCards({data}) {
         
 
         if(selectedSubcategory === "All" && selectedCategory === "All"){
-            setLoading(true)
+    
             setLiveData(data.values)
         
-            setLoading(false)
+           
         }
 
         if (selectedCategory !=="All" && selectedSubcategory === "All"){
-            setLoading(true)
+            
             const result =  data.values.filter((company, index) =>company.parentCategorySlug===selectedCategory);
             setLiveData(result)
-            setLoading(false)
+    
         }
 
         if (selectedCategory !=="All" && selectedSubcategory !== "All"){
-            setLoading(true)
+       
             const result =  data.values.filter(
                 (company, index) =>
                 company.parentCategorySlug===
@@ -80,17 +76,17 @@ export default function companiesCards({data}) {
                 company.subcategory===selectedSubcategory
             );
             setLiveData(result)
-            setLoading(false)
+           
         }
 
         if (selectedCategory ==="All" && selectedSubcategory !== "All"){
-            setLoading(true)
+          
             const result =  data.values.filter(
                 (company, index) =>
                 company.subcategory===selectedSubcategory
             );
             setLiveData(result)
-            setLoading(false)
+          
         }
 
     }

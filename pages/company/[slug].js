@@ -94,8 +94,8 @@ export default function CompanyDetailsName({ data }) {
     'industries-working-10',
     'industries-working-11',
   ];
-    const selectedColor = Math.floor(Math.random() * arr.length);
-    console.log("selectedColor",selectedColor)
+    const color = Math.floor(Math.random() * arr.length);
+    const selectedColor = arr[color]
     return selectedColor
    }
 
@@ -160,7 +160,7 @@ export default function CompanyDetailsName({ data }) {
     privacySpecificFeaturesIncluded
   } = selectedCompany[0];
 
-  console.log("selectedCompany",selectedCompany)
+
 
   const newParentCategorySlug = [...new Set(parentCategorySlug.split(","))]
 
@@ -338,7 +338,7 @@ export default function CompanyDetailsName({ data }) {
                      {industryGroups? industryGroups.split(",").map((industry,index)=>{
                        return (
                          <>
-                         <span className={`badge text-black me-1 industries-working-${handleColors()+1}`}>{industry}</span>
+                         <span className={`badge text-black me-1 ${handleColors()}`}>{industry}</span>
                          </>
                        )
                      }):"-"}
@@ -459,10 +459,14 @@ export default function CompanyDetailsName({ data }) {
                 <img src="../../apilandscape__known_partnerships_no_API_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                 <p className="text-gray m-0 px-2 sm-text">Known partnerships <br />(Non-API industry)</p>
                 </div>
-               <div className="known-partnership-logo d-flex flex-wrap flex-grow-1 ms-2">
+               <div className="known-partnership-logo  text-center flex-grow-1 ms-2">
                {knownPartnershipsNonApi?knownPartnershipsNonApi.split(",").map((partner,index)=>{
                    return(
-                    <p className="sm-text my-1 badge bg-light text-black me-1">{partner}</p>
+                   <>
+                    <p className="sm-text my-2 fw-bold me-1">{partner}</p>
+                
+          
+                    </>
                    )
                  }):<Unknown/>}
                {/* <span class="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span> */}

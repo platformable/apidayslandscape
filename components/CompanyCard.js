@@ -40,6 +40,9 @@ export default function CompanyCard({company,index,handleLoading}) {
     }
 
   const router = useRouter();
+
+
+  const newParentCategorySlug = [...new Set(company?.parentCategorySlug?.split(","))]
     return (
         <div className="company-card  rounded bg-white" key={index} onClick={() => handleCompany(company)}>
         <div className="card-top">
@@ -74,7 +77,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
           </div> {/* <!--cardtop--> */}
         <div className="card-middle mt-1">
-                {company.parentCategorySlug?.split(",").map((category,index)=>{
+                {newParentCategorySlug?.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}

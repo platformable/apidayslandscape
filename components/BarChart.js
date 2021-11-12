@@ -18,7 +18,9 @@ export default function BarChart() {
             ],
             borderRadius: 10,
           },
+          
         ],
+
       };
       
       const options = {
@@ -38,6 +40,7 @@ export default function BarChart() {
                 drawOnChartArea: false,
                 drawTicks: false,
               },
+              color:"#0c4b6e",
             },
             y: {
               grid: {

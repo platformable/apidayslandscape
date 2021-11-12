@@ -656,14 +656,16 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <div className=""><h3><span class="badge bg-light text-black shadow ">{data.values.length}</span> </h3></div>
           </div>
           </section>
+
+    
           
           <section className="home-landscape heroBg">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12 mb-1">
-                  <div class="home-main-container ">
-                    <div class="apilifecycleplatform">
+                  <div className="home-main-container ">
+                    <div className="apilifecycleplatform">
                       <span className="text-white">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">

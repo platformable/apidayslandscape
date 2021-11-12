@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
  background-color: #f0f0f0 !important;
+ color:#0c4b6e;
 }
 a {
   color:var(--main-blue);
@@ -16,7 +17,9 @@ a {
 .text-main-color {
   color:#ccc !important;
 }
-
+.text-company-color {
+  color:#0c4b6e;
+}
 .logo {
   height: 34px;
   width: 209px;

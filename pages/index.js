@@ -649,20 +649,22 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
             <div className="text-center flex-grow-1">
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn bg-dark-orange me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
+            <button className="btn bg-dark-orange me-1  text-white" onClick={()=>handleForm()}>Add your API Tool</button>
             <a className="btn btn-download" href="../apilandscape_map.png"  download="apilandscape">Download the map</a>
 
 
             </div>
-            <div className=""><h3><span class="badge bg-light text-black shadow ">{data.values.length}</span> </h3></div>
+            <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
           </div>
           </section>
+
+          {/* MOBILE */}
 
           <section className="mobile-landscape d-xs-block d-md-none">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center apilifecycleplatformBg text-white py-2">apilifecycleplatform</h3>
+                  <h3 className="sm-text text-center apilifecycleplatformBg text-white py-2">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Access and Identity Management"
@@ -744,7 +746,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center BackendBuildingToolsANDMBaasBg text-white py-2">Backend Building Tools </h3>
+                  <h3 className="sm-text text-center BackendBuildingToolsANDMBaasBg text-white py-2">Backend Building Tools ({BackendBuildingTools.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Headless CMS"
@@ -1392,9 +1394,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                       <span className="">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                        <div class="landscape-subcategory-box ">
+                    <div className="landscape-container">
+                      <div className="landscape-category-container">
+                      <div class="landscape-subcategory-box ">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="API Aggregators (Finance)"
@@ -1402,6 +1404,13 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregatorsFinance}
                           />
                           </div>
+                      </div>
+
+                    </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        
                           <div class="landscape-subcategory-box b1">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 

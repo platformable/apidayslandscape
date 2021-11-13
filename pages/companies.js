@@ -8,14 +8,17 @@ import Loader from '../components/Loader';
 export default function companiesCards({data}) {
     
     const newData = data.values.filter((company,index)=> company.logo !==null)
+    
+
     const [loading,setLoading]=useState(false)
     const [search,setSearch]=useState("")
     
     const [liveData,setLiveData]=useState( [] || newData);
-    const [sorted,setSorted]=useState(false)
+    const [sorted,setSorted]=useState(true)
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
-    
+  
+
     TopBarProgress.config({
         barColors: {
           "0": "#fdb43e",
@@ -25,22 +28,33 @@ export default function companiesCards({data}) {
       });
    
     const handleCompanyName= (text)=>{
-                const result =  data.values.filter(
-                    (company, index) =>
-                    company.name.toLowerCase().includes(text)
-                );
-                setLiveData(result)
+        const result =  data.values.filter(
+            (company, index) =>
+            company.name.toLowerCase().includes(text)
+        );
+        setLiveData(result)
     }
+
+    const handleSorted =()=>{
+    
+    setSorted(!sorted)
+      
+
+    if(sorted){ 
+        console.log("sorted true desde useeffect")
+       setLiveData(liveData.sort((b, a) => a.name > b.name && 1 || -1)) 
+    } else {
+        console.log("sorted falso desde useeffect")
+        setLiveData(liveData.sort((a, b) => a.name > b.name && 1 || -1))
+    }
+    }
+   
 
    useEffect(()=>{
     
+    
 
-
-    if(sorted){ 
-        liveData.sort((b, a) => a.name > b.name && 1 || -1) 
-    } else {
-        liveData.sort((a, b) => a.name > b.name && 1 || -1)
-    }
+   
    
     const handleImages = (url)=>{
         if(url.includes("https://drive.google.com")){
@@ -140,7 +154,7 @@ export default function companiesCards({data}) {
                     </div>{/* search */}
                     <div className="col-md-3 d-flex justify-content-end align-items-center">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={()=>setSorted(!sorted)}/>
+                        <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
                         <label class="form-check-label fw-bold" for="flexCheckDefault">
                             A-Z
                         </label>

@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useRef} from 'react'
 import Layout from '../components/Layout'
 import CompanyCard from '../components/CompanyCard'
 import TopBarProgress from "react-topbar-progress-indicator";
@@ -29,6 +29,10 @@ export default function companiesCards({data}) {
         },
         shadowBlur: 5
       });
+
+      const isInitialMount = useRef(true);
+
+   
    
     const handleCompanyName= (text)=>{
         const result =  data.values.filter(
@@ -98,9 +102,15 @@ export default function companiesCards({data}) {
 
    useEffect(()=>{ 
     handleFilter()
+   
+    setTimeout(function(){
+        setLoader(false)
+    },1000)
+
    },[selectedCategory,selectedSubcategory])
 
-  console.log(loader)
+   console.log("loader",loader)
+
     return (
         <Layout>
         {loading && <TopBarProgress />}
@@ -154,6 +164,8 @@ export default function companiesCards({data}) {
             </div> {/* container */}
         </section>
 
+        {loader &&   <div className="text-center d-flex justify-content-center my-5"><img src="../Spinner-1s-44px.gif"/> </div> }
+
         <section className="cards my-5">
             <div className="container">
                 <div className="card-container">
@@ -162,8 +174,8 @@ export default function companiesCards({data}) {
                             <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
                         )
                     }):<Loader />}
-                    {/* {loader && <img src="../waiting.gif"/> } */}
-                    {liveData.length <=0 ? "No Data..." :""}
+                   
+                    {liveData.length <=0  && !loader ? "No Data..." :""}
            
                    
                 {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}

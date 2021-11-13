@@ -7,16 +7,19 @@ import Loader from '../components/Loader';
 
 export default function companiesCards({data}) {
     
-    const newData = data.values.filter((company,index)=> company.logo !==null)
+    const newData = data.values.filter((company,index)=> company.logo !==null || company.logo==="" || company.logo==="unknown")
     
 
     const [loading,setLoading]=useState(false)
+    const [loader,setLoader]=useState(true)
     const [search,setSearch]=useState("")
+    const [noData,setNoData]=useState(true)
     
     const [liveData,setLiveData]=useState( [] || newData);
     const [sorted,setSorted]=useState(true)
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
+  
   
 
     TopBarProgress.config({
@@ -32,57 +35,41 @@ export default function companiesCards({data}) {
             (company, index) =>
             company.name.toLowerCase().includes(text)
         );
+
         setLiveData(result)
+        if(result.length<=0){
+            setNoData(true)
+        }else{
+            setNoData(false)
+        }
+     
     }
 
     const handleSorted =()=>{
     
     setSorted(!sorted)
-      
 
     if(sorted){ 
-        console.log("sorted true desde useeffect")
+       
        setLiveData(liveData.sort((b, a) => a.name > b.name && 1 || -1)) 
     } else {
-        console.log("sorted falso desde useeffect")
+      
         setLiveData(liveData.sort((a, b) => a.name > b.name && 1 || -1))
     }
     }
-   
-
-   useEffect(()=>{
-    
-    
-
-   
-   
-    const handleImages = (url)=>{
-        if(url.includes("https://drive.google.com")){
-          return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
-        }else {
-          return url
-        }
-        }
 
     const handleFilter = () => {
-        
-
+  
         if(selectedSubcategory === "All" && selectedCategory === "All"){
-    
             setLiveData(data.values)
-        
-           
         }
 
         if (selectedCategory !=="All" && selectedSubcategory === "All"){
-            
             const result =  data.values.filter((company, index) =>company.parentCategorySlug===selectedCategory);
             setLiveData(result)
-    
         }
 
         if (selectedCategory !=="All" && selectedSubcategory !== "All"){
-       
             const result =  data.values.filter(
                 (company, index) =>
                 company.parentCategorySlug===
@@ -90,28 +77,30 @@ export default function companiesCards({data}) {
                 company.subcategory===selectedSubcategory
             );
             setLiveData(result)
-           
         }
 
         if (selectedCategory ==="All" && selectedSubcategory !== "All"){
-          
             const result =  data.values.filter(
                 (company, index) =>
                 company.subcategory===selectedSubcategory
             );
             setLiveData(result)
-          
         }
 
     }
+
+
+    const handleLoading = ()=>{
+        setLoading(!loading)
+      }
+    
+   
+
+   useEffect(()=>{ 
     handleFilter()
-   },[selectedCategory,selectedSubcategory,sorted])
+   },[selectedCategory,selectedSubcategory])
 
-   const handleLoading = ()=>{
-
-    setLoading(!loading)
-  }
-
+  console.log(loader)
     return (
         <Layout>
         {loading && <TopBarProgress />}
@@ -173,8 +162,11 @@ export default function companiesCards({data}) {
                             <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
                         )
                     }):<Loader />}
-                    {liveData.length <=0 && loading === true ? <h3 className="fw-bold">Loading</h3> : ""}
-                    {liveData.length <=0 && loading === false ? <h3 className="fw-bold">No Data</h3> : ""}
+                    {/* {loader && <img src="../waiting.gif"/> } */}
+                    {liveData.length <=0 ? "No Data..." :""}
+           
+                   
+                {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
                     
                     
                 </div>

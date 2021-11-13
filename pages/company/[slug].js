@@ -215,10 +215,14 @@ export default function CompanyDetailsName({ data }) {
           <div className="company-name">
              <h3 className="py-2 m-0 mb-5 fw-bold">
              {name}
+            
              </h3>
              </div> {/* company name */}
            <div className="company-logo d-flex justify-content-center align-items-center my-5">
-           <a href={url} target="_blank"><img src={handleImages(logo)} alt={name} /></a>
+           <a href={url} target="_blank">
+             
+           {logo === "" || null ? <img src={`../../../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(logo)} 2x`} alt="" className="img-fluid" /> }
+             </a>
            </div> {/* company logo */}
            {/* <div className="company-url d-flex justify-content-center align-items-center">
              <a href={url} target="_blank">{url}</a>
@@ -820,7 +824,9 @@ export default function CompanyDetailsName({ data }) {
              </h3>
              </div> {/* company name */}
            <div className="company-logo d-flex justify-content-center align-items-center my-5">
-           <a href={url} target="_blank"><img src={handleImages(logo)} alt={name} /></a>
+           <a href={url} target="_blank">
+           {logo === "" || null ? <img src={`../../../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(logo)} 2x`} alt="" className="img-fluid" /> }
+           </a>
            </div> {/* company logo */}
            {/* <div className="company-url d-flex justify-content-center align-items-center">
              <a href={url} target="_blank">{url}</a>

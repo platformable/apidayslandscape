@@ -1029,6 +1029,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             </div>
           </section> 
           {/* mobile section */}
+
+
+          {/* END MOBILE */}
           
           <section className="home-landscape heroBg d-none d-md-block">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />

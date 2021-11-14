@@ -157,7 +157,11 @@ export default function CompanyDetailsName({ data }) {
     apidays2020,
     apidays2021,
     logoApiIndustry,
-    privacySpecificFeaturesIncluded
+    privacySpecificFeaturesIncluded,
+    blogQ12021,
+    blogQ22021,
+    blogQ32021,
+    blogQ42021
   } = selectedCompany[0];
 
 
@@ -165,7 +169,7 @@ export default function CompanyDetailsName({ data }) {
   const newParentCategorySlug = [...new Set(parentCategorySlug.split(","))]
 
 
-
+console.log(selectedCompany)
   const handleScore = (wm,dm)=>{
         let score="-"
       if(wm === "Yes" && dm === "Yes"){
@@ -589,12 +593,12 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-              <BarChart/>
+              <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/>
          
             </div>
             <div className="col-md-3 text-center border-top mt-5">
-
-            <p className="text-company-color  p-2  sm-text text-center">Participation in</p>
+            
+            <p className="text-company-color  p-2  sm-text text-center">Participation in </p>
               <div className="text-center "> <img src="../apidayslogo_icon.png" alt="" className=" mb-5  lg-icon"  /></div>
                <div className="text-center ">
                     <ul className="timeline">
@@ -1258,7 +1262,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-              <BarChart/>
+                  <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/>
 
 
 

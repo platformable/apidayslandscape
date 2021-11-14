@@ -4,7 +4,7 @@ export const categories = [
     "Backend Building Tools",
     "Business processes as an API/API-as a Product",
     "Integration Platform as a Service",
-    "Vertical API Abstraction",
+    "Vertical API Abstractions",
   ];
 
 export const subcategories = [

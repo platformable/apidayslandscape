@@ -2,14 +2,16 @@ import React from 'react'
 import { Bar } from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
 
-export default function BarChart() {
+export default function BarChart({q1,q2,q3,q4}) {
+
+
 
     const data = {
         labels: ['Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021'],
         datasets: [
           {
             label: '# of posts',
-            data: [129, 19, 30, 15],
+            data: [parseInt(q1) || 0, parseInt(q2) || 0, parseInt(q3) || 0, parseInt(q4) || 0],
             backgroundColor: [
               '#0c4b6e',
               '#0c4b6e',

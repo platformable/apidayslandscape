@@ -166,7 +166,7 @@ export default function companiesCards({data}) {
 
         {loader &&   <div className="text-center d-flex justify-content-center my-5"><img src="../Spinner-1s-44px.gif"/> </div> }
 
-        <section className="cards my-5">
+        <section className="cards my-2">
             <div className="container">
                 <div className="card-container">
                     {liveData?liveData.map((company,index)=>{

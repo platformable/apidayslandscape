@@ -628,7 +628,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <div className="text-center flex-grow-1">
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn bg-dark-orange me-1  text-white" onClick={()=>handleForm()}>Add your API Tool</button>
-            <a className="btn btn-download" href="../apilandscape_map.png"  download="apilandscape">Download the map</a>
+            <a className="btn btn-download" href="../apilandscape.png"  download="apilandscape">Download the map</a>
 
 
             </div>

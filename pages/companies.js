@@ -1,5 +1,6 @@
 import React, {useState,useEffect,useRef} from 'react'
 import Layout from '../components/Layout'
+import Head from "next/head";
 import CompanyCard from '../components/CompanyCard'
 import TopBarProgress from "react-topbar-progress-indicator";
 import { categories,subcategories } from '../utils/categoriesAndSubcategories';
@@ -109,10 +110,13 @@ export default function companiesCards({data}) {
 
    },[selectedCategory,selectedSubcategory])
 
-   console.log("loader",loader)
 
     return (
         <Layout>
+            <Head>
+          <title>apidays Landscape - Companies</title>
+          <meta name="description" content="apidays landscape companies" />
+        </Head>
         {loading && <TopBarProgress />}
         <section className="filter bg-white py-5">
             <div className="container">

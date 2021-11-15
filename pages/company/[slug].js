@@ -1,4 +1,5 @@
 import React,{useContext,useState} from "react";
+import Head from 'next/head'
 import Layout from "../../components/Layout";
 import BarChart from "../../components/BarChart"
 import { useRouter } from "next/router";
@@ -169,7 +170,6 @@ export default function CompanyDetailsName({ data }) {
   const newParentCategorySlug = [...new Set(parentCategorySlug.split(","))]
 
 
-console.log(selectedCompany)
   const handleScore = (wm,dm)=>{
         let score="-"
       if(wm === "Yes" && dm === "Yes"){
@@ -211,6 +211,10 @@ console.log(selectedCompany)
 
   return (
     <Layout>
+      <Head>
+          <title>apidays landscape</title>
+          <meta name="description" content="apidays landscape" />
+        </Head>
 {/* <section className="mobile-profile"> */}
     <section className="mobile-profile d-xs-block d-md-none">
       <div className="container">

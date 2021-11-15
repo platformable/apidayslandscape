@@ -51,7 +51,7 @@ export default function Header() {
           <Link className="nav-link flex-grow-1" aria-current="page" href="/companies">Companies</Link>
           </li>
           <li>
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/">ABOUT</Link>
+          <Link className="nav-link flex-grow-1" aria-current="page" href="/about">ABOUT</Link>
           </li>
   
       </ul>

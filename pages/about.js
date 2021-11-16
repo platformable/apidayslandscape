@@ -150,43 +150,96 @@ export default function about() {
             </section>
 
             <section className="team bg-white">
-                <div className="container">
+    
+                <div className="container py-5">
                 <h3 className="ms-3 fw-bold text-company-color text-center py-5">Our team</h3>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <img src="../team_apidays.jpg" alt="" />
+                    <div className="team-container">
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Mehdi-Medjaoui-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Mehdi Medjaoui</h6>
+                        <p className="sm-text text-company-color">Founder & Chairman of apidays <br />Founder of OAuth.io (acquired) <br /> mehdi@apidays.io </p>
                         </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/baptiste-parravicini-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Baptiste Paravicini</h6>
+                        <p className="sm-text text-company-color">Director at apidays <br />Ex Marketing at VentureBeat <br /> baptiste@apidays.io</p>                    
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/oury-thomas-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Oury Thomas</h6>
+                        <p className="sm-text text-company-color">COO at apidays <br />    Ex GM at ChoYou  <br /> oury@apidays.io</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/denis-durand-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Denis Durand</h6>
+                        <p className="sm-text text-company-color">Chief Quality Officer at apidays <br /> Ex Events Logistics <br /> denis@apidays.io</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Claire-Barrett-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Claire Barrett</h6>
+                        <p className="sm-text text-company-color">Strategy Translator and Women In APIs Lead</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/isabelle-reusa-1-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Isabelle Reusa</h6>
+                        <p className="sm-text text-company-color">Women in APIs Initiative <br />
+Consultant in Media & Culture APIs</p>                    
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Jon-Scheele-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Jon Scheele</h6>
+                        <p className="sm-text text-company-color ">Connecting the digital economy with APIs</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Vincenzo-Chianese-300x300.png" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Vincenzo Chianese</h6>
+                        <p className="sm-text text-company-color">Software Engineer At Stoplight</p>
+                        </div>
+
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Claire-Barrett-300x300.jpg.webp" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Helen Child</h6>
+                        <p className="sm-text text-company-color">Co-Founder Open Banking Excellence</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Saul-Caganoff.jpg" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Saul Caganoff</h6>
+                        <p className="sm-text text-company-color">Principal at Deloitte <br />
+AUSTRALIA <br />
+Former CTO of Sixtree</p>                    
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Marjukka-Niinioja-2.jpg" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Marjukka Niinioja</h6>
+                        <p className="sm-text text-company-color">Founding Partner at Osaango </p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Vincenzo-Chianese-300x300.png" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Patrick Fan</h6>
+                        <p className="sm-text text-company-color">CEO / Chief API Strategist at beNovelty – ex-IBM Redbooks Thought Leader</p>
+                        </div>
+
+                        <div className="team-box px-2 text-center mb-3">
+                        <img src="https://www.apidays.global/wp-content/uploads/2020/06/Vincenzo-Chianese-300x300.png" alt="" className="img-fluid mb-3" />
+                        <h6 className="fw-bold text-center text-company-color">Simon Redfern</h6>
+                        <p className="sm-text text-company-color">Product and Technical Architecture <br />
+At Open Bank Project
+</p>
+                        </div>
+
                     </div>
                 </div>
-
-                {/* <div className="container py-5">
-                    <div className="team-container">
-                        <div className="team-box px-2 text-center">
-                        <img src="https://dummyimage.com/400x400/000/fff " alt="" className="img-fluid mb-3" />
-                        <h6 className="fw-bold text-center">Name of member</h6>
-                        <p className="sm-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis vel earum officiis temporibus aspernatur at! Laborum ea id explicabo eaque molestiae quasi officiis totam doloremque blanditiis veritatis fuga quia, possimus ex officia tempora amet, alias mollitia, dignissimos reiciendis aliquam! Labore.</p>
-
-                        </div>
-                        <div className="team-box px-2 text-center">
-                        <img src="https://dummyimage.com/400x400/000/fff" alt="" className="img-fluid mb-3" />
-                        <h6 className="fw-bold text-center">Name of member</h6>
-                        <p className="sm-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis vel earum officiis temporibus aspernatur at! Laborum ea id explicabo eaque molestiae quasi officiis totam doloremque blanditiis veritatis fuga quia, possimus ex officia tempora amet, alias mollitia, dignissimos reiciendis aliquam! Labore.</p>
-
-                        </div>
-                        <div className="team-box px-2 text-center">
-                        <img src="https://dummyimage.com/400x400/000/fff" alt="" className="img-fluid mb-3" />
-                        <h6 className="fw-bold text-center">Name of member</h6>
-                        <p className="sm-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis vel earum officiis temporibus aspernatur at! Laborum ea id explicabo eaque molestiae quasi officiis totam doloremque blanditiis veritatis fuga quia, possimus ex officia tempora amet, alias mollitia, dignissimos reiciendis aliquam! Labore.</p>
-
-                        </div>
-                        <div className="team-box px-2 text-center">
-                        <img src="https://dummyimage.com/400x400/000/fff" alt="" className="img-fluid mb-3" />
-                        <h6 className="fw-bold text-center">Name of member</h6>
-                        <p className="sm-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis vel earum officiis temporibus aspernatur at! Laborum ea id explicabo eaque molestiae quasi officiis totam doloremque blanditiis veritatis fuga quia, possimus ex officia tempora amet, alias mollitia, dignissimos reiciendis aliquam! Labore.</p>
-
-                        </div>
-                    </div>
-                </div> */}
 
 
             </section>

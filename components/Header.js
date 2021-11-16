@@ -41,7 +41,7 @@ export default function Header() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav ">
-        <li className="nav-item ">
+       {/*  <li className="nav-item ">
           <Link className="nav-link active flex-grow-1" aria-current="page" href="/">Home</Link>
           </li>
           <li>
@@ -52,7 +52,7 @@ export default function Header() {
           </li>
           <li>
           <Link className="nav-link flex-grow-1" aria-current="page" href="/about">ABOUT</Link>
-          </li>
+          </li> */}
   
       </ul>
     </div>

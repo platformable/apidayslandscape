@@ -21,7 +21,7 @@ if(url.includes("https://drive.google.com")){
 
   return (
     <div className="">
-      <h6 className="text-center sm-text py-2">{subcategoryName} ({filteredCategory.length})</h6>
+      <h6 className="text-center sm-text py-2" data-tip={subcategoryName} data-for="subcategory-tooltip">{subcategoryName} ({filteredCategory.length})</h6>
 
 
       <div className="homeCards  d-flex justify-content-start px-2">
@@ -35,7 +35,7 @@ if(url.includes("https://drive.google.com")){
                   className="landscape-card  landscape-box-card mb-0 me-1"
                   key={index}
                 >
-                  <div  onClick={()=> handleCompany(row)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} className={router.pathname!=="/homepage" ? "landscape-img border " : "homepage-landscape-img border "}>
+                  <div  onClick={()=> handleCompany(row)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} data-for="companyName-tooltip" className={router.pathname!=="/homepage" ? "landscape-img border " : "homepage-landscape-img border "}>
                    {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(row.logo)} 2x`} alt="" className="img-fluid" /> }
                   </div>
                   {router.pathname!=="/homepage"? <p className="index-company-text text-center mt-1">{row.name.substr(0,10)}</p> : ""} 

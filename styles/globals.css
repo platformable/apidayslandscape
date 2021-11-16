@@ -211,6 +211,10 @@ place-items: center;
 .company-social-urls img:hover{
   cursor:pointer;
 }
+
+.categoryToolTip {
+  max-width:550px;
+  }
 /* LANDSCAPE */
 
 /* .landscape-card {

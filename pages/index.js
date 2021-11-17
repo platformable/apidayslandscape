@@ -666,17 +666,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           <meta name="description" content="The API Landscape" />
           <meta property="og:url" content="https://apilandscape.platformable.com/" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
         <meta property="og:image" content="../landscape_social_map.png" />
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@site_username"/>
         <meta name="twitter:title" content="The API Landscape"/>
         <meta name="twitter:description" content="The API Landscape"/>
         <meta name="twitter:creator" content="@creator_username"/>
         <meta name="twitter:image" content="../landscape_social_map.png"/>
         <meta name="twitter:image:alt" content="The API landscape map img"/>
-        <meta name="twitter:domain" content="apidays.global"/>
+        <meta name="twitter:domain" content="https://apilandscape.platformable.com/"/>
        
         </Head>
 
@@ -693,10 +693,10 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
             <p className="text-center sm-text text-white">Last Update: {lastUpdate.toLocaleDateString()}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn bg-dark-orange me-1  text-white" onClick={()=>handleForm()}>Add your API Tool</button>
-            <button className="btn btn-download  m-0 text-white" onClick={()=>handleLinks("companies")}>Explore the companies</button>
-            <a className="btn bg-dark-orange me-1 text-white" href="../landscape.png"  download="apilandscape">Download the map</a>
-            <button className="btn btn-download me-1  text-white" onClick={()=>handleLinks("homepage")}>Zoom</button>
+            <button className="btn bg-dark-orange me-1  text-company-color" onClick={()=>handleForm()}>Add your API Tool</button>
+            <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
+            <a className="btn bg-dark-orange me-1 text-company-color" href="../landscape.png"  download="apilandscape">Download the map</a>
+            <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
              <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
              </LinkedinShareButton>

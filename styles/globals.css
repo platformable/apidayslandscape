@@ -42,7 +42,12 @@ a {
   --turquoise:#28c8dd;
   --darkturquoise:darkturquoise;
   --dark-orange:#f29262;
+  --bg-light-blue:#EFF6F8;
 
+}
+
+.bg-light-blue {
+  background-color:var(--bg-light-blue);
 }
 
 .navigation a {
@@ -83,7 +88,7 @@ a {
 
 .btn-download {
   background-color:#fccf91 !important;
-  color:white !important;
+
 }
 .btn-download:hover {
   background-color:#e0895e !important;
@@ -1063,6 +1068,9 @@ border-radius:10px;
 
 
   .footer-logo {
+    position:relative;
+    top:-1px;
+    left:-10px;
     max-width:125px;
     }
     

@@ -257,7 +257,7 @@ export default function CompanyDetailsName({ data }) {
                 </div>
 
             {subcategory?subcategory.split(",").map((subcat,index)=>{
-                          return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light`}>{subcat}</span>
+                          return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light-blue`}>{subcat}</span>
                         })
              
             :""}     
@@ -861,7 +861,7 @@ export default function CompanyDetailsName({ data }) {
                 </div>
 
             {subcategory?subcategory.split(",").map((subcat,index)=>{
-                          return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light`}>{subcat}</span>
+                          return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light-blue`}>{subcat}</span>
                         })
              
             :""}     

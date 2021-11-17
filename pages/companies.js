@@ -3,13 +3,13 @@ import Layout from '../components/Layout'
 import Head from "next/head";
 import CompanyCard from '../components/CompanyCard'
 import TopBarProgress from "react-topbar-progress-indicator";
-import { categories,subcategories } from '../utils/categoriesAndSubcategories';
+import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
 import Loader from '../components/Loader';
 
 export default function companiesCards({data}) {
     
     const newData = data.values.filter((company,index)=> company.logo !==null || company.logo==="" || company.logo==="unknown")
-    
+
 
     const [loading,setLoading]=useState(false)
     const [loader,setLoader]=useState(true)
@@ -17,7 +17,9 @@ export default function companiesCards({data}) {
     const [noData,setNoData]=useState(true)
     
     const [liveData,setLiveData]=useState( [] || newData);
+    const [categoriesList,setCategoriesList]=useState([])
     const [sorted,setSorted]=useState(true)
+    const [subcategoryList,setSubcategoryList]=useState(subcategories  || [])
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
   
@@ -67,11 +69,16 @@ export default function companiesCards({data}) {
   
         if(selectedSubcategory === "All" && selectedCategory === "All"){
             setLiveData(data.values)
+            setSubcategoryList(subcategories)
         }
 
         if (selectedCategory !=="All" && selectedSubcategory === "All"){
             const result =  data.values.filter((company, index) =>company.parentCategorySlug===selectedCategory);
+            const subcatgeoriesOfSelectedCategory = categoriesWithSubcategories.filter((category,index)=>category.name===selectedCategory)
+            
             setLiveData(result)
+            setCategoriesList(subcatgeoriesOfSelectedCategory)
+            setSubcategoryList(subcatgeoriesOfSelectedCategory[0].subcategories)
         }
 
         if (selectedCategory !=="All" && selectedSubcategory !== "All"){
@@ -110,6 +117,7 @@ export default function companiesCards({data}) {
 
    },[selectedCategory,selectedSubcategory])
 
+console.log(subcategoryList)
 
     return (
         <Layout>
@@ -137,7 +145,7 @@ export default function companiesCards({data}) {
                     <select className="form-select mb-2" ariaLabel="Default select example" onChange={e => setSelectedSubcategory(e.target.value)}>
                         <option >Select a subcategory</option>
                         <option value="All">All</option>
-                        {subcategories?subcategories.map((subcategory,index)=>{
+                        {subcategoryList?subcategoryList.map((subcategory,index)=>{
                             return (
                                 <option value={subcategory}>{subcategory}</option>
                             )   
@@ -155,7 +163,10 @@ export default function companiesCards({data}) {
                     </div>
 
                     </div>{/* search */}
-                    <div className="col-md-3 d-flex justify-content-end align-items-center">
+                    <div className="col-md-2 d-flex justify-content-start">
+                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {liveData.length} </p>
+                    </div>
+                    <div className="col-md-1 d-flex justify-content-end align-items-center">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
                         <label class="form-check-label fw-bold" for="flexCheckDefault">

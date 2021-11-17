@@ -330,7 +330,7 @@ export default function CompanyDetailsName({ data }) {
             <div className="me-3 p-2 ">
                    <p className="text-company-color sm-text">Known industries <br />
                  working in</p>
-                     <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/>
+                     {/* <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/> */}
 
                    </div> {/* div */}
 
@@ -812,7 +812,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-{/* FIN AQUI */}
+{/* MOBILE FIN AQUI */}
 
 
 
@@ -963,7 +963,7 @@ export default function CompanyDetailsName({ data }) {
                    <div className="me-3 pb-2 ">
                    <p className="text-company-color sm-text">Known industries <br />
                  working in</p>
-                     <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/>
+                     {/* <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/> */}
 
                    </div> {/* div */}
 
@@ -990,7 +990,7 @@ export default function CompanyDetailsName({ data }) {
 
                  <h3 className="fw-bold fs-4 text-center mt-5">{estimatedRevenueRange?estimatedRevenueRange:<h6 className="text-center fw-bold ">-</h6>}</h3>
 
-                 <img src="../money-line.png" alt="" />
+               {/*   <img src="../money-line.png" alt="" /> */}
 
                </div> {/* company-profile-right-one-top-left */}
 
@@ -1161,6 +1161,139 @@ export default function CompanyDetailsName({ data }) {
              </div> {/* company-profile-right-side-section2 right*/}
 
            </section> {/* company-profile-right-side-section2 */}
+
+
+           <section className="company-profile-right-side-section5  bg-white ">
+
+           <div className="company-profile-right-side-section5-left border-end p-2 flex-grow-1">
+
+           <div className="new-product-features-top d-flex">
+           <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
+                  <p className="text-company-color m-0 px-2 sm-text">Top 5 Investors</p>
+                  </div> {/* features-top */}
+
+           <div className="px-2">
+             
+           <p className="sm-text mt-2">{top5Investors?top5Investors:<h6 className="text-center my-5 fw-bold">-</h6>}</p>
+           
+           </div>
+
+           </div> {/* company-profile-right-side-section5-left */}
+
+
+
+
+           <div className="company-profile-right-side-section5-right ">
+
+             <div className="section5-right-top d-flex">
+               <div className="section5-box flex-grow-1 border-end p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text mb-3">Stage (Seed, A, B, C)</p>
+               <h6><span className="badge bg-lightgreen text-black">{stage? stage:"-"}</span></h6>
+              
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end p-2">
+
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text mb-3">Total Funding</p>
+                 {totalFunding?<h6><span className="fw-bold text-black">{reduceNumber(totalFunding)}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text mb-3 ">Last funding date</p>
+                 
+                 {lastFundingDate?<h6><span className="text-black fw-bold">{lastFundingDate}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_last_funding_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text mb-3">Lead Investor </p>
+      
+                 {numberLeadOfLeadInvestors? <h6><span className="text-black fw-bold">{numberLeadOfLeadInvestors}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_lead_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+
+               <div className="section5-box flex-grow-1 p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text">Investors </p>
+                 <p></p>
+                 {numberOfInvestors?<h6><span className="text-black fw-bold">{numberOfInvestors}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+
+             </div> {/* section5-right-top */}
+
+
+             <div className="section5-right-bottom d-flex">
+               <div className="section5-box flex-grow-1 border-end border-top p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Price</p>
+                 {acquisitionPrice? <h6><span className="badge  fw-bold">{acquisitionPrice}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_acquisition_price__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end border-top p-2">
+
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Type</p>
+                 {acquisitionType?  <h6><span className="badge fw-bold">{acquisitionType}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end border-top p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text">IPO <br /> Date</p>
+                 {ipoDate?<h6><span className="badge  fw-bold">{ipoDate}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_IPO_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end border-top p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text text-center">Money Raised at IPO</p>
+                 {moneyRaisedAtIpo?<h6><span className="badge  text-black">{moneyRaisedAtIpo}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_money_raised_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+
+               <div className="section5-box flex-grow-1 border-top p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text">Valuation at IPO</p>
+                 {valuationAtIpo? <h6><span className="badge fw-bold">{valuationAtIpo}</span></h6>:<Unknown/>}
+               <img src="../../apilandscape_valuation_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+
+             </div> {/* section5-right-bottom */}
+
+           </div> {/* company-profile-right-side-section5-right */}
+           
+           </section>
 
 
 
@@ -1358,137 +1491,7 @@ export default function CompanyDetailsName({ data }) {
            </section> {/* company-profile-right-side-section4 */}
 
 
-           <section className="company-profile-right-side-section5  bg-white ">
-
-           <div className="company-profile-right-side-section5-left border-end p-2 flex-grow-1">
-
-           <div className="new-product-features-top d-flex">
-           <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
-                  <p className="text-company-color m-0 px-2 sm-text">Top 5 Investors</p>
-                  </div> {/* features-top */}
-
-           <div className="px-2">
-             
-           <p className="sm-text mt-2">{top5Investors?top5Investors:<h6 className="text-center my-5 fw-bold">-</h6>}</p>
            
-           </div>
-
-           </div> {/* company-profile-right-side-section5-left */}
-
-
-
-
-           <div className="company-profile-right-side-section5-right ">
-
-             <div className="section5-right-top d-flex">
-               <div className="section5-box flex-grow-1 border-end p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text mb-3">Stage (Seed, A, B, C)</p>
-               <h6><span className="badge bg-lightgreen text-black">{stage? stage:"-"}</span></h6>
-              
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end p-2">
-
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text mb-3">Total Funding</p>
-                 {totalFunding?<h6><span className="fw-bold text-black">{reduceNumber(totalFunding)}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text mb-3 ">Last funding date</p>
-                 
-                 {lastFundingDate?<h6><span className="text-black fw-bold">{lastFundingDate}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_last_funding_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text mb-3">Lead Investor </p>
-      
-                 {numberLeadOfLeadInvestors? <h6><span className="text-black fw-bold">{numberLeadOfLeadInvestors}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_lead_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-
-               <div className="section5-box flex-grow-1 p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text">Investors </p>
-                 <p></p>
-                 {numberOfInvestors?<h6><span className="text-black fw-bold">{numberOfInvestors}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-
-             </div> {/* section5-right-top */}
-
-
-             <div className="section5-right-bottom d-flex">
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Price</p>
-                 {acquisitionPrice? <h6><span className="badge  fw-bold">{acquisitionPrice}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_acquisition_price__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
-
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Type</p>
-                 {acquisitionType?  <h6><span className="badge fw-bold">{acquisitionType}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text">IPO <br /> Date</p>
-                 {ipoDate?<h6><span className="badge  fw-bold">{ipoDate}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_IPO_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text text-center">Money Raised at IPO</p>
-                 {moneyRaisedAtIpo?<h6><span className="badge  text-black">{moneyRaisedAtIpo}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_money_raised_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-
-               <div className="section5-box flex-grow-1 border-top p-2">
-                 <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-company-color m-0 px-2 sm-text">Valuation at IPO</p>
-                 {valuationAtIpo? <h6><span className="badge fw-bold">{valuationAtIpo}</span></h6>:<Unknown/>}
-               <img src="../../apilandscape_valuation_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
-                 </div>
-               
-               </div> {/* section5 box */}
-
-
-             </div> {/* section5-right-bottom */}
-
-           </div> {/* company-profile-right-side-section5-right */}
-           
-           </section>
 
 
        

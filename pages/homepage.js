@@ -10,7 +10,14 @@ import ReactTooltip from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from '../components/Modal'
 import TopBarProgress from "react-topbar-progress-indicator";
-
+import {
+  EmailShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  EmailIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "react-share";
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -621,7 +628,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
       <div className="">
         <Head>
           <title>apidays landscape</title>
-          <meta name="description" content="apidays landscape" />
+          <meta name="description" content="The API Landscape" />
+          <meta property="og:url" content="https://apilandscape.platformable.com/" />
+        <meta property="og:type" content="website" />
+     
+        <meta property="og:title" content="The API Landscape" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:description"
+          content="The API Landscape"
+        />
+        <meta property="og:image" content="../landscape.png" />
         </Head>
 
         <main>
@@ -640,6 +657,15 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <button className="btn btn-download  m-0 text-white" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn bg-dark-orange me-1 text-white" href="../landscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-white" onClick={()=>handleLinks("homepage")}>Zoom</button>
+            <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
+             <LinkedinIcon size={32} round={true}/> 
+             </LinkedinShareButton>
+             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com/" via="http://apidays.global" hashtags={["api","landscape"]}>
+            <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <EmailShareButton url=""  title="The API Landscape" subject="The API Landscape from apidays" separator=" " body="Get to know more about the API Landscape, visit http://apilandscape.com">
+              <EmailIcon size={32} round={true}/>
+            </EmailShareButton>
             </div>
             <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
           </div>

@@ -12,50 +12,13 @@ import Modal from '../components/Modal'
 import TopBarProgress from "react-topbar-progress-indicator";
 import {
   EmailShareButton,
-  FacebookShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
-  LineShareButton,
   LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
   TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
-  WhatsappShareButton,
-  WorkplaceShareButton
-} from "react-share";
-
-
-import {
   EmailIcon,
-  FacebookIcon,
-  FacebookMessengerIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
   LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
   TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
-  WhatsappIcon,
-  WorkplaceIcon
 } from "react-share";
+
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -181,6 +144,9 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("Access and Identity Management") 
   );
+
+
+
   
 
   const APILifecyclePlatformANDAPIAnalyticsMonitoring = data.values.filter(
@@ -190,6 +156,10 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Analytics/Monitoring")
   );
 
+  APILifecyclePlatformANDAPIAnalyticsMonitoring.sort((a, b) => a.name > b.name && 1 || -1) 
+
+
+
   const APILifecyclePlatformANDAPIDesignDocumentationPlatforms = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
@@ -197,12 +167,16 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Design/Documentation Platforms") 
   );
 
+  APILifecyclePlatformANDAPIDesignDocumentationPlatforms.sort((a, b) => a.name > b.name && 1 || -1) 
+
   const APILifecyclePlatformANDAPIDeveloperPortals = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Developer Portals")
   );
+
+  APILifecyclePlatformANDAPIDeveloperPortals.sort((a, b) => a.name > b.name && 1 || -1) 
 
   const APILifecyclePlatformANDAPIDocumentation = data.values.filter(
     (company, index) =>
@@ -217,12 +191,19 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Security")
   );
+
+  APILifecyclePlatformANDApiSecurity.sort((a, b) => a.name > b.name && 1 || -1) 
+
   const APILifecyclePlatformANDAPIManagementAPIGateway = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Management/API Gateway")
   );
+
+  APILifecyclePlatformANDAPIManagementAPIGateway.sort((a, b) => a.name > b.name && 1 || -1)
+
+
 
   const APILifecyclePlatformANDAPIOrientedITConsultingFirms = data.values.filter(
     (company, index) =>
@@ -231,6 +212,8 @@ export default function Homepage({ data }) {
       company?.subcategory.includes("API Oriented IT Consulting Firms") 
   );
 
+  APILifecyclePlatformANDAPIOrientedITConsultingFirms.sort((a, b) => a.name > b.name && 1 || -1)
+
   const APILifecyclePlatformANDAPITesting = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
@@ -238,12 +221,16 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Testing")
   );
 
+  APILifecyclePlatformANDAPITesting.sort((a, b) => a.name > b.name && 1 || -1)
+
   const APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("IoT Platforms/Networks/Devices")
   );
+
+  APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs.sort((a, b) => a.name > b.name && 1 || -1)
 
   const APILifecyclePlatformANDStreamingAPIs = data.values.filter(
     (company, index) =>
@@ -259,63 +246,63 @@ export default function Homepage({ data }) {
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("API protocols")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDFIDO = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("API standards")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDGraphQL = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("GraphQL")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDGRPC = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("gRPC")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDOpenApiSpecs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("Open API Specs") 
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDOpenID = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("OpenID")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDPSD2APIAbstractions = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("PSD2 API Abstractions")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDSTETBerlinGroup = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("STET Berlin Group")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
 
   /* Backend Building Tools/MBaaS */
@@ -331,41 +318,42 @@ const BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding = data.values.fil
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("API Deployment/Back-end Building")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
+
   const BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Banking/Finance/Insurance Backends")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
   
   const BackendBuildingToolsANDBlockchain = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Blockchain")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDHeadlessCMS = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Headless CMS")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Infrastructure/Cloud/Serverless APIs")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDMobileBackendasaService = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Mobile Backend as a Service")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 /*   Business processes as an API/API-as a Product */
@@ -374,14 +362,14 @@ const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Accounting")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
@@ -389,41 +377,41 @@ const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("AI & ML")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Audio & Video")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Legal & Regulatory")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDTimeCalendar = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Time & Calendar")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 const BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Data governance & Data management")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("E-commerce")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
@@ -431,21 +419,21 @@ const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Data")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDEmailMessaging = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Email/Messaging/Communications Platforms as a Service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Identity verification & KYC")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
@@ -453,41 +441,42 @@ const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Forms") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDHumanresources = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Human Resources")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const BusinessprocessesasanAPIAPIasaProductANDHumanasaservice = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Human-as-a-service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDPayments = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Payments")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Video")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Search")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 /*   Business processes as an API/API-as a Products */
@@ -496,7 +485,7 @@ const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
@@ -504,7 +493,7 @@ const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filt
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("Accounting APIs")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
@@ -512,28 +501,28 @@ const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("AI APIs") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("API Aggregators") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("API Deployment/Back-end Building") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("Data (B2B, B2C)")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 
@@ -550,28 +539,28 @@ const IntegrationPlatformAsAServiceANDAPIAggregators= data.values.filter(
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("API Aggregators (General)") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDAutomationOrchestration = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("Automation/Orchestration") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDDatabaseasaservice = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("Database-as-a-service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDAPIAggregatorsFinance = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("API Aggregators (Finance)") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 /* Vertical API Abstractions */
 
@@ -579,61 +568,63 @@ const VerticalAPIAbstractions = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDCloudStorage = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Cloud Storage")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDDeliveryAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Delivery/Transport/Logistics") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDLogin = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("login") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const VerticalAPIAbstractionsANDHealthcare = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Healthcare") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const VerticalAPIAbstractionsANDFinance = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Finance") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDLoginAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Login APIs") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDMarketingAnalytics = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Marketing/Analytics")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Smart Home and Smart Facilities") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
   const isInitialMount = useRef(true);
@@ -677,6 +668,12 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
      
         <meta property="og:title" content="The API Landscape" />
         <meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@site_username"/>
+<meta name="twitter:title" content="The API Landscape"/>
+<meta name="twitter:description" content="The API Landscape"/>
+<meta name="twitter:creator" content="@creator_username"/>
+<meta name="twitter:image" content="../landscape.png"/>
+<meta name="twitter:domain" content="apidays.global"/>
         <meta
           property="og:description"
           content="The API Landscape"
@@ -704,8 +701,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
              <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
              </LinkedinShareButton>
+             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com/" via="http://apidays.global" hashtags={["api","landscape"]}>
+            <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <EmailShareButton url=""  title="The API Landscape" subject="The API Landscape from apidays" separator=" " body="Get to know more about the API Landscape, visit http://apilandscape.com">
+              <EmailIcon size={32} round={true}/>
+            </EmailShareButton>
       
-          <TwitterIcon size={32} round={true} />
+          
             </div>
             <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
           </div>

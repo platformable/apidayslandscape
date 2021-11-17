@@ -10,7 +10,52 @@ import ReactTooltip from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from '../components/Modal'
 import TopBarProgress from "react-topbar-progress-indicator";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton
+} from "react-share";
 
+
+import {
+  EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon
+} from "react-share";
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -626,7 +671,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
       <div className="">
         <Head>
           <title>The API Landscape</title>
-          <meta name="description" content="apidays landscape" />
+          <meta name="description" content="The API Landscape" />
+          <meta property="og:url" content="https://apilandscape.platformable.com/" />
+        <meta property="og:type" content="website" />
+     
+        <meta property="og:title" content="The API Landscape" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:description"
+          content="The API Landscape"
+        />
+        <meta property="og:image" content="../landscape.png" />
         </Head>
 
         <main>
@@ -646,7 +701,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <button className="btn btn-download  m-0 text-white" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn bg-dark-orange me-1 text-white" href="../landscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-white" onClick={()=>handleLinks("homepage")}>Zoom</button>
-
+             <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
+             <LinkedinIcon size={32} round={true}/> 
+             </LinkedinShareButton>
+      
+          <TwitterIcon size={32} round={true} />
             </div>
             <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
           </div>
@@ -1027,10 +1086,13 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
           {/* END MOBILE */}
           
-          <section className="home-landscape heroBg d-none d-md-block">
+          <section className="home-landscape heroBg d-none d-md-block py-5">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" id="companyName-tooltip"/>
           <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="subcategory-tooltip"/>
           <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="category-tooltip" place="right" className="categoryToolTip"/>
+  
+
+
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12 mb-1">
@@ -1551,6 +1613,96 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
               </div>
             </div>
           </section>
+
+
+
+          <section className="methodology py-5 bg-white">
+                <div className="container">
+                    <div className="methodology-title d-flex justify-content-center align-items-center my-5">
+                        <img src="../methodology_icon.png" alt="" className=" mx-2 xd-icon" />
+                   
+                        <h3 className="fw-bold text-center mx-2 text-company-color">Methodology</h3>
+                    </div>
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 ">
+                            <img src="../homepage/logo_dark.png" alt="" />
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">Our dataset has been built on 3 years of apidays industry analysis and data collection</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon1.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3 fw-bold text-company-color">Industry <br />categorisations</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We have categorised API tool providers into their predominant function, however, at times, tools have been allocated to more than one category when their feature range is sufficiently diverse</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon2.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3 fw-bold text-company-color">Why isn’t my tool listed?</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We aim to be comprehensive in our list of all tools. Please complete our form to add your tool to our catalogue</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon3.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3  fw-bold text-company-color">Where does the data come from?</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We manually check each API tool provider at least once annually and we collect data on blog posts, positions vacant and new feature development on a quarterly basis. We also confirm data against industry leading datasets including Crunchbase, LinkedIn, Clearbit and API Evangelist.</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+                </div>
+            </section>
+
+            <section className="something-to-change py-5 bg-white border-top">
+            <div className="container">
+                <h3 className="text-center fw-bold my-5 text-company-color">See something you want to change?</h3>
+                <div className="something-to-change-container">
+                    <div className="change-box text-center px-5">
+                    <div className="d-flex justify-content-center mb-2">
+                    <img src="../about-btn1.png" alt="" className="d-block align-self-start mb-2 xd-icon" />
+                   
+                    </div>
+                    <button className="btn-about bg-dark-orange text-white mt-3" onClick={()=>handleForm()}>Add your API tool</button>
+                    </div>
+
+                    <div className="change-box  px-5">
+                    <div className="d-flex">
+                    <img src="../about-btn2.png" alt="" className="align-self-start mb-3 me-3 xd-icon" />
+                    <p className="pt-1 text-company-color">Report a bug including problems with the website or with the data for a specific tool provider</p>
+                    </div>
+                    <div className="text-center d-flex flex-grow-1">
+                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm()}>Report a bug</button>
+                    </div>
+                    </div>
+
+
+                    <div className="change-box  px-5">
+                    <div className="d-flex">
+                    <img src="../about-btn3.png" alt="" className="align-self-start mb-3 me-3 xd-icon" /> 
+                    <p className="pt-1 text-company-color">Share a new feature idea, including any additional data points you would like to see </p>
+                    </div>
+                    <div className="text-center d-flex flex-grow-1">
+                    <button className="btn-about bg-dark-orange text-white mt-2" onClick={()=>handleForm()}>New feature idea</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
         </main>
       </div>
       <Modal  selectedEntity={selectedEntity} handleLoading={handleLoading}/>

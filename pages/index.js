@@ -668,13 +668,13 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
         <meta property="og:type" content="website" />
         <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
-        <meta property="og:image" content="../landscape.png" />
+        <meta property="og:image" content="../landscape_social_map.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@site_username"/>
         <meta name="twitter:title" content="The API Landscape"/>
         <meta name="twitter:description" content="The API Landscape"/>
         <meta name="twitter:creator" content="@creator_username"/>
-        <meta name="twitter:image" content="../landscape_map_twitter.png"/>
+        <meta name="twitter:image" content="../landscape_social_map.png"/>
         <meta name="twitter:image:alt" content="The API landscape map img"/>
         <meta name="twitter:domain" content="apidays.global"/>
        

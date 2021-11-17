@@ -662,6 +662,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
       <div className="">
         <Head>
           <title>The API Landscape</title>
+          <meta content="text/html; charset=UTF-8" name="Content-Type" />
           <meta name="description" content="The API Landscape" />
           <meta property="og:url" content="https://apilandscape.platformable.com/" />
         <meta property="og:type" content="website" />
@@ -673,7 +674,8 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
         <meta name="twitter:title" content="The API Landscape"/>
         <meta name="twitter:description" content="The API Landscape"/>
         <meta name="twitter:creator" content="@creator_username"/>
-        <meta name="twitter:image" content="https://apilandscape.platformable.com/landscape.png"/>
+        <meta name="twitter:image" content="../landscape_map_twitter.png"/>
+        <meta name="twitter:image:alt" content="The API landscape map img"/>
         <meta name="twitter:domain" content="apidays.global"/>
        
         </Head>
@@ -698,7 +700,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
              <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
              </LinkedinShareButton>
-             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com/" via="http://apidays.global" hashtags={["api","landscape"]}>
+             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com" via="http://apidays.global" hashtags={["api","landscape"]}>
             <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
             <EmailShareButton url=""  title="The API Landscape" subject="The API Landscape from apidays" separator=" " body="Get to know more about the API Landscape, visit http://apilandscape.com">

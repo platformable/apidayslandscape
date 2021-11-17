@@ -665,20 +665,17 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           <meta name="description" content="The API Landscape" />
           <meta property="og:url" content="https://apilandscape.platformable.com/" />
         <meta property="og:type" content="website" />
-     
+        <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
-        <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@site_username"/>
-<meta name="twitter:title" content="The API Landscape"/>
-<meta name="twitter:description" content="The API Landscape"/>
-<meta name="twitter:creator" content="@creator_username"/>
-<meta name="twitter:image" content="../landscape.png"/>
-<meta name="twitter:domain" content="apidays.global"/>
-        <meta
-          property="og:description"
-          content="The API Landscape"
-        />
         <meta property="og:image" content="../landscape.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@site_username"/>
+        <meta name="twitter:title" content="The API Landscape"/>
+        <meta name="twitter:description" content="The API Landscape"/>
+        <meta name="twitter:creator" content="@creator_username"/>
+        <meta name="twitter:image" content="https://apilandscape.platformable.com/landscape.png"/>
+        <meta name="twitter:domain" content="apidays.global"/>
+       
         </Head>
 
         <main>

@@ -7,7 +7,7 @@ import Image from "next/image";
 import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
 import Unknown from "../../components/Unknown";
-/* import { categories,subcategories } from '../../utils/categoriesAndSubcategories'; */
+import { categoriesWithSubcategories, subcategories } from '../../utils/categoriesAndSubcategories';
 export default function CompanyDetailsName({ data }) {
   const router = useRouter();
   const { slug } = router.query;
@@ -15,6 +15,7 @@ export default function CompanyDetailsName({ data }) {
   const [company,setCompany]=useContext(CompanyContext)
   const [details,setDetails]=useState(false)
   const [overview,setOverview]=useState(true)
+  const [categoriesColor,setCategoriesColor]=useState([])
 
   const handleSocial=(url)=>{
     if(typeof window !== "undefined"){
@@ -166,9 +167,13 @@ export default function CompanyDetailsName({ data }) {
     blogQ42021
   } = selectedCompany[0];
 
+  console.log("selectedCompany",selectedCompany)
+
 
 
   const newParentCategorySlug = [...new Set(parentCategorySlug.split(","))]
+
+  const newSubCategorySlug = [...new Set(subcategory.split(","))]
 
 
   const handleScore = (wm,dm)=>{
@@ -193,15 +198,7 @@ export default function CompanyDetailsName({ data }) {
 
   }
 
-  const categories = [
-    "API Lifecycle Platform",
-    "API standards and Protocols",
-    "Backend Building Tools/MBaaS",
-    "Business processes as an API/API-as a Product",
-    "Business processes as an API/API-as a Products",
-    "Integration Platform as a Service",
-    "Vertical API Abstraction",
-  ];
+
 
 
   const handleDetails = () =>{
@@ -256,6 +253,9 @@ export default function CompanyDetailsName({ data }) {
                   <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                 </svg>
                 </div>
+
+                
+       
 
             {subcategory?subcategory.split(",").map((subcat,index)=>{
                           return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light-blue`}>{subcat}</span>
@@ -868,6 +868,8 @@ export default function CompanyDetailsName({ data }) {
                   <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                 </svg>
                 </div>
+
+           
 
             {subcategory?subcategory.split(",").map((subcat,index)=>{
                           return <span className={`text-center badge mb-1 mt-1 text-black d-block bg-light-blue`}>{subcat}</span>

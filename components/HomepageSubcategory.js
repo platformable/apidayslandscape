@@ -19,7 +19,6 @@ if(url.includes("https://drive.google.com")){
 }
 }
 
-const test= "Access and Identity Management"
 
 function getSubcategoryDescription (obj,subcategoryName){
   const search = obj[subcategoryName][0].description

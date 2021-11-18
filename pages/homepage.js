@@ -19,20 +19,13 @@ import {
   TwitterIcon,
 } from "react-share";
 
+
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
   const [businessANDMessaginAPis, setBusinessANDMessaginApis] = useState([]);
   const [businessANDKYC, setBusinessANDKYC] = useState([]);
-  const [selectedEntity,setSelectedEntity]=useState([])
-  const router = useRouter();
 
-  TopBarProgress.config({
-    barColors: {
-      "0": "#fdb43e",
-      "1.0": "#fdb43e"
-    },
-    shadowBlur: 5
-  });
+  const router = useRouter();
 
   const [loading,setLoading]=useState(false)
 
@@ -40,13 +33,13 @@ export default function Homepage({ data }) {
     setLoading(!loading)
   }
 
-  const handleEntity = (entity)=>{
-    setSelectedEntity(entity)
-  }
   const handleCompany = (company) => {
     setCompany(company);
     router.push(`/company/${company.name}`);
   };
+
+  const lastUpdate = new Date
+
 
   const categories = [
     "API Lifecycle Platform",
@@ -113,12 +106,48 @@ export default function Homepage({ data }) {
     "Healthcare",
     "LastPass",
     "Login APIs",
-    "Marketing/Analytics",
+    "Marketing and Analytics",
     "Smart Home",
     "API protocols",
     "API standards"
   ];
 
+  TopBarProgress.config({
+    barColors: {
+      "0": "#fdb43e",
+      "1.0": "#fdb43e"
+    },
+    shadowBlur: 5
+  });
+
+
+  const handleForm = ()=>{
+
+    if(typeof window !== "undefined"){
+      window.open(
+        "https://airtable.com/shr07pWSbRnQfnZZd",
+        '_blank' 
+      );
+    }
+    
+  }
+
+  const getMonth = date => {
+    return lastUpdate.toLocaleString("default", {
+      month: "long",
+    })
+  }
+  const getDay = date => {
+    return lastUpdate.toLocaleString("default", {
+      day: "2-digit",
+    })
+  }
+
+  const getYear = date => {
+    return lastUpdate.toLocaleString("default", {
+      year: "numeric",
+    })
+  }
 
   const APILifecyclePlatform = data.values.filter(
     (company, index) =>
@@ -132,6 +161,9 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("Access and Identity Management") 
   );
+
+
+
   
 
   const APILifecyclePlatformANDAPIAnalyticsMonitoring = data.values.filter(
@@ -141,6 +173,10 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Analytics/Monitoring")
   );
 
+  APILifecyclePlatformANDAPIAnalyticsMonitoring.sort((a, b) => a.name > b.name && 1 || -1) 
+
+
+
   const APILifecyclePlatformANDAPIDesignDocumentationPlatforms = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
@@ -148,12 +184,16 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Design/Documentation Platforms") 
   );
 
+  APILifecyclePlatformANDAPIDesignDocumentationPlatforms.sort((a, b) => a.name > b.name && 1 || -1) 
+
   const APILifecyclePlatformANDAPIDeveloperPortals = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Developer Portals")
   );
+
+  APILifecyclePlatformANDAPIDeveloperPortals.sort((a, b) => a.name > b.name && 1 || -1) 
 
   const APILifecyclePlatformANDAPIDocumentation = data.values.filter(
     (company, index) =>
@@ -168,12 +208,19 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Security")
   );
+
+  APILifecyclePlatformANDApiSecurity.sort((a, b) => a.name > b.name && 1 || -1) 
+
   const APILifecyclePlatformANDAPIManagementAPIGateway = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Management/API Gateway")
   );
+
+  APILifecyclePlatformANDAPIManagementAPIGateway.sort((a, b) => a.name > b.name && 1 || -1)
+
+
 
   const APILifecyclePlatformANDAPIOrientedITConsultingFirms = data.values.filter(
     (company, index) =>
@@ -182,6 +229,8 @@ export default function Homepage({ data }) {
       company?.subcategory.includes("API Oriented IT Consulting Firms") 
   );
 
+  APILifecyclePlatformANDAPIOrientedITConsultingFirms.sort((a, b) => a.name > b.name && 1 || -1)
+
   const APILifecyclePlatformANDAPITesting = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
@@ -189,12 +238,16 @@ export default function Homepage({ data }) {
       company?.subcategory?.includes("API Testing")
   );
 
+  APILifecyclePlatformANDAPITesting.sort((a, b) => a.name > b.name && 1 || -1)
+
   const APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("IoT Platforms/Networks/Devices")
   );
+
+  APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs.sort((a, b) => a.name > b.name && 1 || -1)
 
   const APILifecyclePlatformANDStreamingAPIs = data.values.filter(
     (company, index) =>
@@ -210,63 +263,63 @@ export default function Homepage({ data }) {
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("API protocols")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDFIDO = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("API standards")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDGraphQL = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("GraphQL")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDGRPC = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("gRPC")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDOpenApiSpecs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("Open API Specs") 
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDOpenID = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("OpenID")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDPSD2APIAbstractions = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("PSD2 API Abstractions")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDSTETBerlinGroup = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "API Standards and Protocols") &&
       company?.subcategory?.includes("STET Berlin Group")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
 
   /* Backend Building Tools/MBaaS */
@@ -282,41 +335,42 @@ const BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding = data.values.fil
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("API Deployment/Back-end Building")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
+
   const BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Banking/Finance/Insurance Backends")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
   
   const BackendBuildingToolsANDBlockchain = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Blockchain")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDHeadlessCMS = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Headless CMS")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Infrastructure/Cloud/Serverless APIs")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const BackendBuildingToolsANDMobileBackendasaService = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
         "Backend Building Tools") &&
       company?.subcategory?.includes("Mobile Backend as a Service")
-  );
+  ).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 /*   Business processes as an API/API-as a Product */
@@ -325,14 +379,14 @@ const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Accounting")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
@@ -340,41 +394,41 @@ const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("AI & ML")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Audio & Video")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Legal & Regulatory")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDTimeCalendar = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Time & Calendar")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 const BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Data governance & Data management")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("E-commerce")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
@@ -382,21 +436,21 @@ const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Data")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDEmailMessaging = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Email/Messaging/Communications Platforms as a Service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Identity verification & KYC")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
@@ -404,46 +458,42 @@ const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Forms") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDHumanresources = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Human Resources")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const BusinessprocessesasanAPIAPIasaProductANDHumanasaservice = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Human-as-a-service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDPayments = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Payments")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Video")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Product") &&
     company?.subcategory?.includes("Search")
-);
-
-
-/* const test = data.values.filter((company,index)=>{
-  return company?.parentCategorySlug?==="Business processes as an API/API-as a Product" && company?.subcategory?.includes("Headless E-commerce APIs")
-}) */
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 /*   Business processes as an API/API-as a Products */
@@ -452,7 +502,7 @@ const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
@@ -460,7 +510,7 @@ const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filt
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("Accounting APIs")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
@@ -468,28 +518,28 @@ const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("AI APIs") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("API Aggregators") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("API Deployment/Back-end Building") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Business processes as an API/API-as a Products") &&
     company?.subcategory?.includes("Data (B2B, B2C)")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 
 
@@ -506,103 +556,93 @@ const IntegrationPlatformAsAServiceANDAPIAggregators= data.values.filter(
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("API Aggregators (General)") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDAutomationOrchestration = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("Automation/Orchestration") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDDatabaseasaservice = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("Database-as-a-service")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const IntegrationPlatformAsAServiceANDAPIAggregatorsFinance = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Integration Platform as a Service") &&
     company?.subcategory?.includes("API Aggregators (Finance)") 
-);
-/* const IntegrationPlatformAsAServiceANDIpass = data.values.filter(
-  (company, index) =>
-    company?.parentCategorySlug?===
-      "Integration Platform as a Service" &&
-    company?.subcategory?.includes("IPaaS" 
-); */
+).sort((a, b) => a.name > b.name && 1 || -1)
 
-/* const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.filter(
-  (company, index) =>
-    company?.parentCategorySlug?===
-      "Integration Platform as a Service" &&
-    company?.subcategory?.includes("Horizontal API Abstractions"
-);
- */
 /* Vertical API Abstractions */
 
 const VerticalAPIAbstractions = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDCloudStorage = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Cloud Storage")
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDDeliveryAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Delivery/Transport/Logistics") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDLogin = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("login") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const VerticalAPIAbstractionsANDHealthcare = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Healthcare") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 const VerticalAPIAbstractionsANDFinance = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Finance") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDLoginAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Login APIs") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDMarketingAnalytics = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
-    company?.subcategory?.includes("Marketing/Analytics")
-);
+    company?.subcategory?.includes("Marketing and Analytics")
+).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
     company?.subcategory?.includes("Smart Home and Smart Facilities") 
-);
+).sort((a, b) => a.name > b.name && 1 || -1)
+
 
   const isInitialMount = useRef(true);
 
@@ -615,30 +655,44 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
     }
   }, []); */
 
+  const [selectedEntity,setSelectedEntity]=useState([])
+
+  const handleEntity = (entity)=>{
+    setSelectedEntity(entity)
+  }
+
   const handleLinks = (url) => {
     handleLoading()
     router.push(`/${url}`);
   };
 
-  const lastUpdate = new Date
+
+
+
+  const testCat = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequuntur, velit, alias numquam necessitatibus earum accusamus voluptate sequi exercitationem mollitia minus? Saepe tenetur neque dolorum deleniti, error soluta dolorem molestias, laborum eaque distinctio hic voluptatibus deserunt corporis quaerat iste veritatis assumenda voluptatum magni alias nesciunt sed eum odio quam! Odit beatae aliquam itaque! Rem facilis repudiandae, laboriosam delectus officiis voluptatum nostrum necessitatibus accusantium corrupti expedita placeat sunt consequatur laudantium quae porro voluptatibus? Sequi aperiam ut quas incidunt quo dolore, eius illum praesentium nesciunt doloribus ex est, quasi aut fugit ducimus consequatur consequuntur nobis magni ratione eum iure. Atque optio vel, magnam sit ipsa exercitationem maiores quisquam, deleniti est nobis error veritatis non explicabo fuga culpa dolor aliquam praesentium architecto qui. Totam maiores illum doloremque optio itaque laboriosam nihil ipsum officia."
+
+ 
 
   return (
     <Layout>
       {loading && <TopBarProgress />}
       <div className="">
         <Head>
-          <title>apidays landscape</title>
+          <title>The API Landscape</title>
+          <meta content="text/html; charset=UTF-8" name="Content-Type" />
           <meta name="description" content="The API Landscape" />
           <meta property="og:url" content="https://apilandscape.platformable.com/" />
         <meta property="og:type" content="website" />
-     
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
-        <meta name="twitter:card" content="summary" />
-        <meta
-          property="og:description"
-          content="The API Landscape"
-        />
-        <meta property="og:image" content="../landscape.png" />
+        <meta property="og:image" content="../landscape_social_map.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alexeigarban" />
+        <meta name="twitter:title" content="Embed a Twitch Video into a React Website" />
+        <meta name="twitter:description" content="How to embed a Twitch video into a React application or website using the ReactPlayer npm package." />
+        <meta name="twitter:image" content="../landscape_social_map.png" />
+       
         </Head>
 
         <main>
@@ -651,13 +705,15 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
             <div className="text-center flex-grow-1">
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
-            <p className="text-center sm-text text-white">Last Update: {lastUpdate.toLocaleDateString()}</p>
+            <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn bg-dark-orange me-1  text-company-color" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn bg-dark-orange me-1 text-company-color" href="../landscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
-       
+             
+      
+          
             </div>
             <div className="">
               <h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3>
@@ -675,9 +731,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           </div>
           </section>
 
-           {/* MOBILE */}
+          {/* MOBILE */}
 
-           <section className="mobile-landscape d-xs-block d-md-none">
+          <section className="mobile-landscape d-xs-block d-md-none">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
@@ -691,17 +747,18 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           />
                   </div>
                   <div className="subcat border-top">
-                  <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
+                  
+                           <HomepageSubcategory 
+                          subcategoryName="API Management/API Gateway"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="API Management/APIGateway"
+                          subcategoryName="API Oriented IT Consulting Firms"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
+                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
                           />
                   </div>
                   <div className="subcat border-top">
@@ -794,7 +851,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Banking, Finance, Insurance Backends"
+                          subcategoryName="Banking/Finance/Insurance Backends"
                           handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
                           />
@@ -840,7 +897,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          subcategoryName="Email/Messaging/Communications Platforms as a Service"
                           handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
@@ -975,7 +1032,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Delivery, Transport and Logistics"
+                          subcategoryName="Delivery/Transport/Logistics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
@@ -1004,7 +1061,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   <div className="subcat border-top">
                 
                              <HomepageSubcategory 
-                          subcategoryName="Marketing/Analytics"
+                          subcategoryName="Marketing and Analytics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
@@ -1050,14 +1107,19 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
           {/* END MOBILE */}
           
-          <section className="home-landscape heroBg d-none d-md-block">
-          <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
+          <section className="home-landscape heroBg d-none d-md-block py-5">
+          <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" id="companyName-tooltip"/>
+          <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="subcategory-tooltip"/>
+          <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="category-tooltip" place="right" className="categoryToolTip"/>
+  
+
+
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12 mb-1">
                   <div className="home-main-container ">
                     <div className="apilifecycleplatform">
-                      <span className="text-white">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
+                      <span className="text-white" data-tip={testCat} data-for="category-tooltip">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1077,10 +1139,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"> 
                           {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
+                          
+                            <HomepageSubcategory 
+                          subcategoryName="API Management/API Gateway"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
 
@@ -1089,10 +1152,32 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="API Management/APIGateway"
+                          subcategoryName="API Oriented IT Consulting Firms"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
+                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
                           />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Design/Documentation Platforms"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          
+                          <HomepageSubcategory 
+                          subcategoryName="API Security"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDApiSecurity}
+                          />
+                         
                           </div>
                         </div>
                       </div>
@@ -1108,14 +1193,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Design/Documentation Platforms"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
-                          />
-                          </div>
+                      
                         <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1124,15 +1202,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
-                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="API Security"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDApiSecurity}
-                          />
-                         
-                          </div>
+               
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1172,6 +1242,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                     <div class="category-container ">
                       <div class="landscape-container">
                         <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Banking/Finance/Insurance Backends"
+                          handleCompany={handleEntity}
+                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
+                          />
+                          </div>
                          
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
@@ -1189,14 +1267,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BackendBuildingToolsANDInfrastructureCloudServerlessAPIs}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Mobile Backend as a Service"
-                          handleCompany={handleEntity}
-                          filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
-                          />
-                          </div>
+                          
                         </div>
                       </div>
 
@@ -1210,20 +1281,21 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Banking, Finance, Insurance Backends"
-                          handleCompany={handleEntity}
-                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
-                          />
-                          </div>
+                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Blockchain"
                           handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDBlockchain}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Mobile Backend as a Service"
+                          handleCompany={handleEntity}
+                          filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
                           />
                           </div>
                         </div>
@@ -1280,7 +1352,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                         <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          subcategoryName="Email/Messaging/Communications Platforms as a Service"
                           handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
@@ -1479,7 +1551,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Delivery, Transport and Logistics"
+                          subcategoryName="Delivery/Transport/Logistics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
@@ -1511,7 +1583,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Marketing/Analytics"
+                          subcategoryName="Marketing and Analytics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
@@ -1572,9 +1644,101 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
               </div>
             </div>
           </section>
+
+
+
+          <section className="methodology py-5 bg-white">
+                <div className="container">
+                    <div className="methodology-title d-flex justify-content-center align-items-center my-5">
+                        <img src="../methodology_icon.png" alt="" className=" mx-2 xd-icon" />
+                   
+                        <h3 className="fw-bold text-center mx-2 text-company-color">Methodology</h3>
+                    </div>
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 ">
+                            <img src="../homepage/logo_dark.png" alt="" />
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">Our dataset has been built on 3 years of apidays industry analysis and data collection</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon1.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3 fw-bold text-company-color">Industry <br />categorisations</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We have categorised API tool providers into their predominant function, however, at times, tools have been allocated to more than one category when their feature range is sufficiently diverse</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon2.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3 fw-bold text-company-color">Why isn’t my tool listed?</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We aim to be comprehensive in our list of all tools. Please complete our form to <a href="https://airtable.com/shr07pWSbRnQfnZZd" className="m-0 badge bg-dark-orange text-white rounded" target="_blank">add your tool</a> to our catalogue</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+
+                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                        <div className="col-md-3 d-flex align-items-center">
+                            <img src="../about-icon3.png" alt="" className="xd-icon"/>
+                            <h5 className="ms-3  fw-bold text-company-color">Where does the data come from?</h5>
+                        </div>
+                        <div className="col-md-9 ">
+                            <p className="mt-3 text-company-color">We manually check each API tool provider at least once annually and we collect data on blog posts, positions vacant and new feature development on a quarterly basis. We also confirm data against industry leading datasets including Crunchbase, LinkedIn, Clearbit and API Evangelist.</p>
+                        </div> 
+                    </div> 
+                    {/* row */}
+                </div>
+            </section>
+
+            <section className="something-to-change py-5 bg-white border-top">
+            <div className="container">
+                <h3 className="text-center fw-bold my-5 text-company-color">See something you want to change?</h3>
+                <div className="something-to-change-container">
+                    <div className="change-box text-center px-5">
+                    <div className="d-flex justify-content-center mb-2">
+                    <img src="../about-btn1.png" alt="" className="d-block align-self-start mb-2 xd-icon" />
+                   
+                    </div>
+                    <button className="btn-about bg-dark-orange text-white mt-3" onClick={()=>handleForm()}>Add your API tool</button>
+                    </div>
+
+                    <div className="change-box  px-5">
+                    <div className="d-flex">
+                    <img src="../about-btn2.png" alt="" className="align-self-start mb-3 me-3 xd-icon" />
+                    <p className="pt-1 text-company-color">Report a bug including problems with the website or with the data for a specific tool provider</p>
+                    </div>
+                    <div className="text-center d-flex flex-grow-1">
+                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm()}>Report a bug</button>
+                    </div>
+                    </div>
+
+
+                    <div className="change-box  px-5">
+                    <div className="d-flex">
+                    <img src="../about-btn3.png" alt="" className="align-self-start mb-3 me-3 xd-icon" /> 
+                    <p className="pt-1 text-company-color">Share a new feature idea, including any additional data points you would like to see </p>
+                    </div>
+                    <div className="text-center d-flex flex-grow-1">
+                    <button className="btn-about bg-dark-orange text-white mt-2" onClick={()=>handleForm()}>New feature idea</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
         </main>
       </div>
       <Modal  selectedEntity={selectedEntity} handleLoading={handleLoading}/>
+    
+
     </Layout>
   );
 }

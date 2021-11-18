@@ -52,7 +52,7 @@ export default function CompanyCard({company,index,handleLoading}) {
 {/*               <img src={handleImages(company.logo)} alt="" onClick={() => handleCompany(company)}/> */}
             </div>
             <div className="card-description">
-              <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>
+              <h6 className="fw-bold text-company-color" onClick={() => handleCompany(company)}> {company.name}</h6>
               {/* <h6><span class="badge bg-dark-orange text-white">Go Deeper</span></h6> */}
               {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">

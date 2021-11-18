@@ -106,7 +106,7 @@ export default function Homepage({ data }) {
     "Healthcare",
     "LastPass",
     "Login APIs",
-    "Marketing/Analytics",
+    "Marketing and Analytics",
     "Smart Home",
     "API protocols",
     "API standards"
@@ -130,6 +130,23 @@ export default function Homepage({ data }) {
       );
     }
     
+  }
+
+  const getMonth = date => {
+    return lastUpdate.toLocaleString("default", {
+      month: "long",
+    })
+  }
+  const getDay = date => {
+    return lastUpdate.toLocaleString("default", {
+      day: "2-digit",
+    })
+  }
+
+  const getYear = date => {
+    return lastUpdate.toLocaleString("default", {
+      year: "numeric",
+    })
   }
 
   const APILifecyclePlatform = data.values.filter(
@@ -616,7 +633,7 @@ const VerticalAPIAbstractionsANDMarketingAnalytics = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
-    company?.subcategory?.includes("Marketing/Analytics")
+    company?.subcategory?.includes("Marketing and Analytics")
 ).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
@@ -670,13 +687,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
         <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
         <meta property="og:image" content="../landscape_social_map.png" />
-        <meta name="twitter:site" content="@site_username"/>
-        <meta name="twitter:title" content="The API Landscape"/>
-        <meta name="twitter:description" content="The API Landscape"/>
-        <meta name="twitter:creator" content="@creator_username"/>
-        <meta name="twitter:image" content="../landscape_social_map.png"/>
-        <meta name="twitter:image:alt" content="The API landscape map img"/>
-        <meta name="twitter:domain" content="https://apilandscape.platformable.com/"/>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alexeigarban" />
+        <meta name="twitter:title" content="Embed a Twitch Video into a React Website" />
+        <meta name="twitter:description" content="How to embed a Twitch video into a React application or website using the ReactPlayer npm package." />
+        <meta name="twitter:image" content="../landscape_social_map.png" />
        
         </Head>
 
@@ -684,20 +699,26 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
          {/*  <section className="hero heroBg">
             <HomeHero />
           </section> */}
-          
 
           <section className="intro-text py-3">
           <div className="container hero  d-flex justify-content-center  align-items-center">
           {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
             <div className="text-center flex-grow-1">
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
-            <p className="text-center sm-text text-white">Last Update: {lastUpdate.toLocaleDateString()}</p>
+            <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn bg-dark-orange me-1  text-company-color" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn bg-dark-orange me-1 text-company-color" href="../landscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
-             <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
+             
+      
+          
+            </div>
+            <div className="">
+              <h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3>
+              <h3 className="sm-text text-center text-white">Share</h3>
+              <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
              </LinkedinShareButton>
              <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com" via="http://apidays.global" hashtags={["api","landscape"]}>
@@ -706,10 +727,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <EmailShareButton url=""  title="The API Landscape" subject="The API Landscape from apidays" separator=" " body="Get to know more about the API Landscape, visit http://apilandscape.com">
               <EmailIcon size={32} round={true}/>
             </EmailShareButton>
-      
-          
-            </div>
-            <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
+              </div>
           </div>
           </section>
 
@@ -729,17 +747,18 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           />
                   </div>
                   <div className="subcat border-top">
-                  <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
+                  
+                           <HomepageSubcategory 
+                          subcategoryName="API Management/API Gateway"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="API Management/APIGateway"
+                          subcategoryName="API Oriented IT Consulting Firms"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
+                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
                           />
                   </div>
                   <div className="subcat border-top">
@@ -832,7 +851,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Banking, Finance, Insurance Backends"
+                          subcategoryName="Banking/Finance/Insurance Backends"
                           handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
                           />
@@ -878,7 +897,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          subcategoryName="Email/Messaging/Communications Platforms as a Service"
                           handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
@@ -1013,7 +1032,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   </div>
                   <div className="subcat border-top">
                   <HomepageSubcategory 
-                          subcategoryName="Delivery, Transport and Logistics"
+                          subcategoryName="Delivery/Transport/Logistics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
@@ -1042,7 +1061,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                   <div className="subcat border-top">
                 
                              <HomepageSubcategory 
-                          subcategoryName="Marketing/Analytics"
+                          subcategoryName="Marketing and Analytics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
@@ -1120,10 +1139,11 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"> 
                           {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Oriented IT Consulting Firms"
+                          
+                            <HomepageSubcategory 
+                          subcategoryName="API Management/API Gateway"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
+                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
 
@@ -1132,10 +1152,32 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="API Management/APIGateway"
+                          subcategoryName="API Oriented IT Consulting Firms"
                           handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
+                          filteredCategory={APILifecyclePlatformANDAPIOrientedITConsultingFirms}
                           />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Design/Documentation Platforms"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          
+                          <HomepageSubcategory 
+                          subcategoryName="API Security"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDApiSecurity}
+                          />
+                         
                           </div>
                         </div>
                       </div>
@@ -1151,14 +1193,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIAnalyticsMonitoring}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Design/Documentation Platforms"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIDesignDocumentationPlatforms}
-                          />
-                          </div>
+                      
                         <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1167,15 +1202,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
-                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          
-                          <HomepageSubcategory 
-                          subcategoryName="API Security"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDApiSecurity}
-                          />
-                         
-                          </div>
+               
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1215,6 +1242,14 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                     <div class="category-container ">
                       <div class="landscape-container">
                         <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Banking/Finance/Insurance Backends"
+                          handleCompany={handleEntity}
+                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
+                          />
+                          </div>
                          
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
@@ -1232,14 +1267,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={BackendBuildingToolsANDInfrastructureCloudServerlessAPIs}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Mobile Backend as a Service"
-                          handleCompany={handleEntity}
-                          filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
-                          />
-                          </div>
+                          
                         </div>
                       </div>
 
@@ -1253,20 +1281,21 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Banking, Finance, Insurance Backends"
-                          handleCompany={handleEntity}
-                          filteredCategory={BackendBuildingToolsMBaaSANDBankingFinanceInsuranceBackends}
-                          />
-                          </div>
+                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Blockchain"
                           handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDBlockchain}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Mobile Backend as a Service"
+                          handleCompany={handleEntity}
+                          filteredCategory={BackendBuildingToolsANDMobileBackendasaService}
                           />
                           </div>
                         </div>
@@ -1323,7 +1352,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                         <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Email, Messaging, Communications Platforms as a Service"
+                          subcategoryName="Email/Messaging/Communications Platforms as a Service"
                           handleCompany={handleEntity}
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEmailMessaging}
                           />
@@ -1522,7 +1551,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Delivery, Transport and Logistics"
+                          subcategoryName="Delivery/Transport/Logistics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
                           />
@@ -1554,7 +1583,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="Marketing/Analytics"
+                          subcategoryName="Marketing and Analytics"
                           handleCompany={handleEntity}
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
@@ -1652,7 +1681,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                             <h5 className="ms-3 fw-bold text-company-color">Why isn’t my tool listed?</h5>
                         </div>
                         <div className="col-md-9 ">
-                            <p className="mt-3 text-company-color">We aim to be comprehensive in our list of all tools. Please complete our form to add your tool to our catalogue</p>
+                            <p className="mt-3 text-company-color">We aim to be comprehensive in our list of all tools. Please complete our form to <a href="https://airtable.com/shr07pWSbRnQfnZZd" className="m-0 badge bg-dark-orange text-white rounded" target="_blank">add your tool</a> to our catalogue</p>
                         </div> 
                     </div> 
                     {/* row */}

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from 'next/router'
+import {subcategoriesDescriptions } from '../utils/categoriesAndSubcategories';
 
 
 
@@ -18,10 +19,20 @@ if(url.includes("https://drive.google.com")){
 }
 }
 
+const test= "Access and Identity Management"
 
+function getSubcategoryDescription (obj,subcategoryName){
+  const search = obj[subcategoryName][0].description
+
+  return search
+}
+
+
+
+/* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
     <div className="">
-      <h6 className="text-center sm-text pt-1" data-tip={subcategoryName} data-for="subcategory-tooltip">{subcategoryName} ({filteredCategory.length})</h6>
+      <h6 className="text-center sm-text pt-1" data-tip={getSubcategoryDescription(subcategoriesDescriptions,subcategoryName)} data-for="subcategory-tooltip">{subcategoryName} ({filteredCategory.length})</h6>
 
 
       <div className="homeCards  d-flex justify-content-start px-2">

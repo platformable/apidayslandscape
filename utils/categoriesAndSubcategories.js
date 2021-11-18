@@ -62,7 +62,8 @@ export const subcategories = [
   export const categoriesWithSubcategories = [
     {
       "name": "API Lifecycle Platform",
-      "subcategories": [  "Access and Identity Management",
+      "subcategories": [  
+      "Access and Identity Management",
       "API Analytics/Monitoring",
        "API Design/Documentation Platforms",
        "API Developer Portals",
@@ -80,7 +81,8 @@ export const subcategories = [
     },
     {
       "name":"Business processes as an API/API-as a Product",
-      "subcategories":["Accounting",
+      "subcategories":[
+      "Accounting",
       "AI & ML",
       "Audio & Video",
       "Legal & Regulatory",
@@ -125,4 +127,49 @@ export const subcategories = [
 
   ]
 
-  
+  export const subcategoriesDescriptions = {
+    "Access and Identity Management":[{"description":"Ensures the correct people and job roles in an organization can access the necessary tools needed to do their jobs"}],
+    "API Analytics/Monitoring":[{"description":"Observation of systems and examining data to draw conclusions about their information"}],
+     "API Design/Documentation Platforms":[{"description":"Platforms aiding in the creation of standards enabling developers to create uniform software applications"}],
+     "API Developer Portals":[{"description":"The interface containing a developer's API documentation and digital tools"}],
+     "API Management/API Gateway":[{"description":"Management is the process of analyzing, controlling, and distributing APIs. The gateway sits between back-end services and the client, accepting all API calls "}],
+     "API Oriented IT Consulting Firms":[{"description":"Advisory services educating clients on how best to use API-focused information technology to achieve their business objectives"}],
+     "API Testing":[{"description":"Software testing to ensure APIs meet functionality, reliability, performance, and security requirements"}],
+     "API Security":[{"description":"coming soon 1"}],
+     "Streaming & Event Architecture":[{"description":"Integration of components to read data in real-time to deliver up-to-date results"}],
+     "IoT Platforms/Networks/Devices":[{"description":"Integrates with technology allowing for the management, provision, and automation of connected devices within the Internet of Things"}],
+     "API protocols":[{"description":"coming soon 2"}],
+     "API standards":[{"description":"A general agreement of requirements followed by members of a specific industry"}],
+     "Accounting":[{"description":"Integrating the measurement, processing, and communication of financial information and non-financial information on entities such as businesses and corporations"}],
+     "AI & ML":[{"description":"Artificial intelligence API. Integrates computer systems performing tasks usually performed by a human"}],
+     "Audio & Video":[{"description":"A digital recording"}],
+     "Legal & Regulatory":[{"description":"comin soon 3"}],
+     "Time & Calendar":[{"description":"coming soon 4"}],
+     "Data governance & Data management":[{"description":"Cloud-based software working with data, such as analyzing data with business intelligence or managing data in data warehouse"}],
+     "E-commerce":[{"description":"Integration allowing the buying and selling of goods via the internet"}],
+     "Data":[{"description":"coming soon 5"}],
+     "Email/Messaging/Communications Platforms as a Service":[{"description":"Integrates Communications Platforms as a Service, cloud-based model to add video, voice, and messaging to existing business software via APIs "}],
+     "Forms":[{"description":"Interactive web page allowing for user input"}],
+     "Identity verification & KYC":[{"description":"Know Your Client integration allowing for businesses to perform due diligence within a business relationship "}],
+     "Human Resources":[{"description":"Integrates platforms focused on the people who comprise a workforce, often overseeing employment and labor laws"}],
+     "Human-as-a-service":[{"description":"Integrates 'gig economy' services where people perform tasks given to them by an online platform"}],
+     "Payments":[{"description":"Integrating an API allowing e-commerce businesses to manage their payments"}],
+     "Search":[{"description":"The integration of search capabilities for websites and applications"}],
+     "API Deployment/Back-end Building":[{"description":"A set of specifications defining the API coupled with tools to prepare it for release"}],
+     "Banking/Finance/Insurance Backends":[{"description":"A model allowing the direct connection of digital banks and third-parties to banking systems via API"}],
+     "Blockchain":[{"description":"Integrates a list of records linked together with cryptography (P2P data storage)"}],
+     "Headless CMS":[{"description":"A back-end only content management system integration primarily used as a content repository"}],
+     "Infrastructure/Cloud/Serverless APIs":[{"description":"Integrates a cloud-computing model to dynamically manage the allocation of servers"}],
+     "Mobile Backend as a Service":[{"description":"Mobile backend as a service, cloud-computing architecture providing mobile apps with access to servers, storage, databases and other resources"}],
+     "API Aggregators (General)":[{"description":"An API providing a single point of implementation layered on top of multiple APIs"}],
+      "Automation/Orchestration":[{"description":"Integrates automated tasks meant to execute a larger workflow by streamlining repetitive, frequent processes "}],
+      "Database-as-a-service":[{"description":"Software allowing users to set up, scale, and operate databases"}],
+      "API Aggregators (Finance)":[{"description":"coming soon 6"}],
+      "Cloud Storage":[{"description":"Integrates data storage saved in logical pools known as 'the cloud'"}],
+      "Delivery/Transport/Logistics":[{"description":"Shipping functionality integration"}],
+      "Healthcare":[{"description":"Medical care given to an individual or community"}],
+      "Login":[{"description":"Integration of an API allowing a user to gain access to a computer system via authentication"}],
+      "Marketing and Analytics":[{"description":"Study and management of metrics data to determine ROI of marking, such as calls to action, blogs, and channel performance"}],
+      "Finance":[{"description":"coming soon 7"}],
+      "Smart Home and Smart Facilities":[{"description":"A home equipped with heating, lighting, and other electronic devices remotely controlled via mobile or computer"}],
+}

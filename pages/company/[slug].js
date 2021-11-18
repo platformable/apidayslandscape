@@ -138,6 +138,7 @@ export default function CompanyDetailsName({ data }) {
     acquisitions,
     activeTechCount,
     itSpend,
+    acquiredBy,
     privacyBreaches,
     top5Investors,
     stage,
@@ -221,7 +222,7 @@ export default function CompanyDetailsName({ data }) {
         <div className="row ">
           <div className="col-md-3 p-y2 bg-white mobile-profile-left border-end">
           <div className="company-name">
-             <h3 className="py-2 m-0 mb-5 fw-bold">
+             <h3 className="py-2 m-0 mb-5 fw-bold text-company-color">
              {name}
             
              </h3>
@@ -263,7 +264,7 @@ export default function CompanyDetailsName({ data }) {
             :""}     
            </div> {/* company category */}
         
-           <div className="description my-1">
+           <div className="description my-3">
            <p className="fst-italic">{description}</p>
            </div> {/* company description */}
            <div className="founded">
@@ -566,7 +567,7 @@ export default function CompanyDetailsName({ data }) {
             <div className="col-md-6 text-center border-top">
             <div className="new-product-features-top align-items-center">
                   <img src="../../apilandscape_known_standards_used_integrated_60x50.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
-                  <p className="text-company-color m-0 px-2 sm-text">Known standard used/integrated</p>
+                  <p className="text-company-color m-0 px-2 sm-text">Known standards used/integrated</p>
                   </div> {/* features-top */}
                     <p className="text-center">Coming Soon</p>
        
@@ -635,7 +636,7 @@ export default function CompanyDetailsName({ data }) {
 
 
           <div className="row">
-                 <div className="col-md-4  p-2">
+                 <div className="col-md-6 p-2">
                  <div className="new-product-features-top text-center">
                   <img src="../../apilandscape_active_tech_count_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Active tech count</p>
@@ -647,7 +648,7 @@ export default function CompanyDetailsName({ data }) {
 
 
                  </div>
-                 <div className="col-md-4 border-top p-2">
+                 <div className="col-md-6 border-top p-2">
                  <div className="new-product-features-top text-center">
                   <img src="../../apilandscape_IT_spend_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">IT Spend</p>
@@ -658,18 +659,20 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                  </div>
-                 <div className="col-md-4 p-2 border-top">
+                {/*  
+                  DONT DELETE, for future use, IMPORTANT
+                <div className="col-md-4 p-2 border-top">
 
                  <div className="new-product-features-top text-center">
                   <img src="../../apilandscape_privacy_breaches_vulnerabilities_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Privacy breaches/vulnerabilities</p>
-                  </div> {/* features-top */}
+                  </div> 
 
                   <div className="new-product-features-bottom">
                   {privacyBreaches?<h6 className="text-center fw-bold">{privacyBreaches}</h6>:<Unknown/>}
-                  </div> {/* features-top */}
+                  </div> 
 
-                 </div>
+                 </div> */}
           </div>
           {/* row  */}
 
@@ -761,6 +764,12 @@ export default function CompanyDetailsName({ data }) {
                  <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Type</p>
                  {acquisitionType?  <h6><span className="badge fw-bold">{acquisitionType}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text text-center">Acquired by</p>
+                 {acquiredBy?  <h6><span className="badge fw-bold">{acquiredBy}</span></h6>:<Unknown/>}
+               {/* <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" /> */}
                  </div>
         
                  </div>
@@ -867,7 +876,7 @@ export default function CompanyDetailsName({ data }) {
             :""}     
            </div> {/* company category */}
         
-           <div className="description my-1">
+           <div className="description my-5">
            <p className="fst-italic">{description}</p>
            </div> {/* company description */}
            <div className="founded">
@@ -1163,27 +1172,13 @@ export default function CompanyDetailsName({ data }) {
            </section> {/* company-profile-right-side-section2 */}
 
 
-           <section className="company-profile-right-side-section5  bg-white ">
-
-           <div className="company-profile-right-side-section5-left border-end p-2 flex-grow-1">
-
-           <div className="new-product-features-top d-flex">
-           <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
-                  <p className="text-company-color m-0 px-2 sm-text">Top 5 Investors</p>
-                  </div> {/* features-top */}
-
-           <div className="px-2">
-             
-           <p className="sm-text mt-2">{top5Investors?top5Investors:<h6 className="text-center my-5 fw-bold">-</h6>}</p>
-           
-           </div>
-
-           </div> {/* company-profile-right-side-section5-left */}
+           <section className="company-profile-right-side-section5  d-flex bg-white ">
 
 
 
 
-           <div className="company-profile-right-side-section5-right ">
+
+           <div className="company-profile-right-side-section5-right d-flex">
 
              <div className="section5-right-top d-flex">
                <div className="section5-box flex-grow-1 border-end p-2">
@@ -1209,7 +1204,7 @@ export default function CompanyDetailsName({ data }) {
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text mb-3 ">Last funding date</p>
                  
-                 {lastFundingDate?<h6><span className="text-black fw-bold">{lastFundingDate}</span></h6>:<Unknown/>}
+                 {lastFundingDate?<h6><span className="text-black fw-bold sm-text">{lastFundingDate}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_last_funding_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -1226,7 +1221,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-               <div className="section5-box flex-grow-1 p-2">
+               <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">Investors </p>
                  <p></p>
@@ -1237,10 +1232,37 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-             </div> {/* section5-right-top */}
+                <div className="company-profile-right-side-section5-left flex-grow-1  p-2 ">
+
+                <div className="new-product-features-top d-flex">
+                <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
+                      <p className="text-company-color m-0 px-2 sm-text">Top 5 Investors</p>
+                      </div> {/* features-top */}
+
+                <div className="px-2">
+                  
+                <p className="sm-text mt-2"><Unknown/></p>
+
+                </div>
+
+                </div> {/* company-profile-right-side-section5-left */}
 
 
-             <div className="section5-right-bottom d-flex">
+                            </div> {/* section5-right-top */}
+
+
+           
+
+           </div> {/* company-profile-right-side-section5-right */}
+
+           
+
+
+           
+           
+           </section>
+           <section className="bg-white"> 
+           <div className="section5-right-bottom d-flex">
                <div className="section5-box flex-grow-1 border-end border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Price</p>
@@ -1256,6 +1278,15 @@ export default function CompanyDetailsName({ data }) {
                  <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Type</p>
                  {acquisitionType?  <h6><span className="badge fw-bold">{acquisitionType}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+                 </div>
+               
+               </div> {/* section5 box */}
+
+               <div className="section5-box flex-grow-1 border-end border-top p-2">
+                 <div className="box-container d-flex flex-column align-items-center">
+                 <p className="text-company-color m-0 px-2 sm-text">Acquired by</p>
+                 {acquiredBy?<h6><span className="badge  fw-bold">{acquiredBy}</span></h6>:<Unknown/>}
+               {/* <img src="../../apilandscape_IPO_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" /> */}
                  </div>
                
                </div> {/* section5 box */}
@@ -1279,7 +1310,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-               <div className="section5-box flex-grow-1 border-top p-2">
+               <div className="section5-box border-top border-start border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">Valuation at IPO</p>
                  {valuationAtIpo? <h6><span className="badge fw-bold">{valuationAtIpo}</span></h6>:<Unknown/>}
@@ -1290,10 +1321,7 @@ export default function CompanyDetailsName({ data }) {
 
 
              </div> {/* section5-right-bottom */}
-
-           </div> {/* company-profile-right-side-section5-right */}
-           
-           </section>
+           </section> {/* bottom */}
 
 
 
@@ -1364,9 +1392,9 @@ export default function CompanyDetailsName({ data }) {
                <div className="section3-bottom-left flex-grow-1 p-2 border-end border-top">
                <div className="new-product-features-top d-flex align-items-center">
                   <img src="../../apilandscape_known_standards_used_integrated_60x50.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
-                  <p className="text-company-color m-0 px-2 sm-text">Known standard used/integrated</p>
+                  <p className="text-company-color m-0 px-2 sm-text">Known standards used/integrated</p>
                   </div> {/* features-top */}
-                    <p className="text-center">Coming Soon</p>
+                    <p className="text-center md-text">Coming Soon</p>
        
                </div> {/* section3 bottom left */}
 
@@ -1473,18 +1501,20 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-               <div className="new-product-features flex-grow-1 p-2 ">
+               {/* <div className="new-product-features flex-grow-1 p-2 ">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_privacy_breaches_vulnerabilities_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Privacy breaches/vulnerabilities</p>
-                  </div> {/* features-top */}
+                  </div> 
 
                   <div className="new-product-features-bottom">
                   {privacyBreaches?<h6 className="text-center fw-bold">{privacyBreaches}</h6>:<Unknown/>}
-                  </div> {/* features-top */}
+                  </div> 
 
 
-               </div> {/* new product-features */}
+               </div>  */}
+               {/* new product-features */}
+
 
              </div> {/* company-profile-right-side-section3-top */}
 

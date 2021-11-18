@@ -75,7 +75,7 @@ export default function CompanyCardModal({company,index,loading}) {
            
             </div>
             <div className="card-description">
-              <h6 className="fw-bold" > {company.name}</h6>
+              <h6 className="fw-bold text-company-color" > {company.name}</h6>
           
               {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">
@@ -84,7 +84,7 @@ export default function CompanyCardModal({company,index,loading}) {
    
                 </div>
                 <div className="founded-year">
-                <p className="sm-text m-0 p-0 fw-bold">Founded</p>
+                <p className="sm-text m-0 p-0 fw-bold text-company-color">Founded</p>
                   <p className="sm-text">{company.yearFounded ? `${company.yearFounded}`: "-"}</p>
                   
                 </div>
@@ -94,7 +94,7 @@ export default function CompanyCardModal({company,index,loading}) {
                 <img src="../../apilandscape__headquarter_40x40.png" alt="" className="icon" />
                 </div>
                 <div className="founded-year">
-                <p className="sm-text m-0 p-0 fw-bold">Headquarter</p>
+                <p className="sm-text m-0 p-0 fw-bold text-company-color">Headquarter</p>
                   <p className="sm-text">{company.headquartersCity},{company.headquartersCountry}</p>
                 </div>
               </div>  {/* <!--card founded--> */}
@@ -118,13 +118,13 @@ export default function CompanyCardModal({company,index,loading}) {
         <div className="card-bottom-modal">
 
         <div className="card-bottom-right  d-flex flex-direction-column ">
-             <span className="sm-text">Total Funding</span>
+             <span className="sm-text text-company-color">Total Funding</span>
             <p className="fw-bold my-2">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
             <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
             
           <div className="card-bottom-right border-start d-flex flex-direction-column ">
-            <span className="sm-text">Headcount</span>
+            <span className="sm-text text-company-color">Headcount</span>
             <p className="fw-bold my-2">{company.headcount?company.headcount:"-"}</p>
             <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
             
@@ -134,13 +134,13 @@ export default function CompanyCardModal({company,index,loading}) {
           
           
           <div className="card-bottom-right border-start d-flex flex-direction-column ">
-             <span className="sm-text">Customers</span>
+             <span className="sm-text text-company-color">Customers</span>
              {company.numbersOfCustomers?<p className="fw-bold  my-2 px-2">{company.numbersOfCustomers}</p>:<Unknown/>}
                  <img src="../../apilandscape__number_of_customers_50x60.png" alt="" className="sd-icon my-1 px-2" />
           </div> {/* <!--card-bottom -right--> */}
 
           <div className="card-bottom-right border-start d-flex flex-direction-column ">
-             <span className="sm-text">Diversity Score</span>
+             <span className="sm-text text-company-color">Diversity Score</span>
              <p className="fw-bold my-2 px-2">{handleScore(company.womanInManagement,company.nonWhitePeopleInManagement)}</p>
                  <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
           </div> {/* <!--card-bottom -right--> */}

@@ -657,17 +657,21 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn bg-dark-orange me-1 text-company-color" href="../landscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
-            <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
+       
+            </div>
+            <div className="">
+              <h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3>
+              <h3 className="sm-text text-center text-white">Share</h3>
+              <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
              </LinkedinShareButton>
-             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com/" via="http://apidays.global" hashtags={["api","landscape"]}>
+             <TwitterShareButton title="The API Landscape" url="https://apilandscape.platformable.com" via="http://apidays.global" hashtags={["api","landscape"]}>
             <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
             <EmailShareButton url=""  title="The API Landscape" subject="The API Landscape from apidays" separator=" " body="Get to know more about the API Landscape, visit http://apilandscape.com">
               <EmailIcon size={32} round={true}/>
             </EmailShareButton>
-            </div>
-            <div className=""><h3><span class="badge bg-light text-black shadow d-none d-md-block ">{data.values.length}</span> </h3></div>
+              </div>
           </div>
           </section>
 

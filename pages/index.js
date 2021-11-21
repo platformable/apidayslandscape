@@ -268,14 +268,14 @@ export default function Homepage({ data }) {
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
-        "API Standards and Protocols") &&
+        "API Standards/Protocols/Media/Associations") &&
       company?.subcategory?.includes("API protocols")
   ).sort((a, b) => a.name > b.name && 1 || -1)
 
   const ApiStandardsandProtocolsANDFIDO = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
-        "API Standards and Protocols") &&
+        "API Standards/Protocols/Media/Associations") &&
       company?.subcategory?.includes("API standards")
   ).sort((a, b) => a.name > b.name && 1 || -1)
 

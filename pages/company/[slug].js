@@ -164,7 +164,8 @@ export default function CompanyDetailsName({ data }) {
     blogQ12021,
     blogQ22021,
     blogQ32021,
-    blogQ42021
+    blogQ42021,
+    openSource
   } = selectedCompany[0];
 
   console.log("selectedCompany",selectedCompany)
@@ -239,7 +240,8 @@ export default function CompanyDetailsName({ data }) {
 
                   return (<span className={`text-center badge my-1 text-black d-block
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
-                  ${category.includes("API Standards and Protocols") && "ApiStandardsandProtocolsBg"}
+                  ${category.includes("API Standards/Protocols") && "ApiStandardsandProtocolsBg"}
+                  ${category.includes("Media/Associations") && "ApiStandardsandProtocolsBg"}
                   ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category.includes("Business processes as an API/API-as a Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category.includes("Business processes as an API/API-as a Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
@@ -267,23 +269,25 @@ export default function CompanyDetailsName({ data }) {
   ${subcat.includes("API Oriented IT Consulting Firms")&& "apilifecycleplatformBg-light"}
   ${subcat.includes("API Testing")&& "apilifecycleplatformBg-light"}
   ${subcat.includes("API Security")&& "apilifecycleplatformBg-light"}
-  ${subcat.includes("Streaming & Event Architecture")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("Streaming/Event Architecture")&& "apilifecycleplatformBg-light"}
   ${subcat.includes("IoT Platforms/Networks/Devices")&& "apilifecycleplatformBg-light"}
 
-  ${subcat.includes("API protocols")&& "ApiStandardsandProtocolsBg-light"}
-  ${subcat.includes("API standards")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("API Protocols")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("API Standards")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("Media")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("Associations")&& "ApiStandardsandProtocolsBg-light"}
 
   ${subcat.includes( "Accounting")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-  ${subcat.includes("AI & ML")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-  ${subcat.includes("Audio & Video")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-  ${subcat.includes("Legal & Regulatory")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-  ${subcat.includes("Time & Calendar")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-  ${subcat.includes("Data governance & Data management")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("AI/ML")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Audio/Visual")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Legal/Regulatory")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Time/Calendar")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Data governance/Data management")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("E-commerce")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Data")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Email/Messaging/Communications Platforms as a Service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Forms")&& "apilifecycleplatformBg-light"}
-  ${subcat.includes("Identity verification & KYC")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Identity verification/KYC")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Human Resources")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Human-as-a-service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
   ${subcat.includes("Payments")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
@@ -306,9 +310,9 @@ export default function CompanyDetailsName({ data }) {
 
   ${subcat.includes("Healthcare")&& "VerticalAPIAbstractionsBg-light"}
   ${subcat.includes("Login")&& "VerticalAPIAbstractionsBg-light"}
-  ${subcat.includes("Marketing and Analytics")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Marketing/Analytics")&& "VerticalAPIAbstractionsBg-light"}
   ${subcat.includes("Finance")&& "VerticalAPIAbstractionsBg-light"}
-  ${subcat.includes("Smart Home and Smart Facilities")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Smart Home/Smart Facilities")&& "VerticalAPIAbstractionsBg-light"}
 
 
  
@@ -908,6 +912,7 @@ export default function CompanyDetailsName({ data }) {
                   return (<span className={`text-center badge my-1 text-black d-block
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category.includes("API Standards and Protocols") && "ApiStandardsandProtocolsBg"}
+                  ${category.includes("Media/Associations") && "ApiStandardsandProtocolsBg"}
                   ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category.includes("Business processes as an API/API-as a Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category.includes("Business processes as an API/API-as a Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
@@ -928,54 +933,56 @@ export default function CompanyDetailsName({ data }) {
   
                           return <span className={`text-center badge mb-1 mt-1 text-black d-block
                           ${subcat.includes("API Management/API Gateway")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Analytics/Monitoring")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Design/Documentation Platforms")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Developer Portals")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Oriented IT Consulting Firms")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Testing")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("API Security")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("Streaming & Event Architecture")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("IoT Platforms/Networks/Devices")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Analytics/Monitoring")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Design/Documentation Platforms")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Developer Portals")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Oriented IT Consulting Firms")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Testing")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("API Security")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("Streaming/Event Architecture")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("IoT Platforms/Networks/Devices")&& "apilifecycleplatformBg-light"}
 
-                          ${subcat.includes("API protocols")&& "ApiStandardsandProtocolsBg-light"}
-                          ${subcat.includes("API standards")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("API Protocols")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("API Standards")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("Media")&& "ApiStandardsandProtocolsBg-light"}
+  ${subcat.includes("Associations")&& "ApiStandardsandProtocolsBg-light"}
 
-                          ${subcat.includes( "Accounting")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("AI & ML")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Audio & Video")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Legal & Regulatory")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Time & Calendar")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Data governance & Data management")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("E-commerce")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Data")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Email/Messaging/Communications Platforms as a Service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Forms")&& "apilifecycleplatformBg-light"}
-                          ${subcat.includes("Identity verification & KYC")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Human Resources")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Human-as-a-service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Payments")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
-                          ${subcat.includes("Search")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes( "Accounting")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("AI/ML")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Audio/Visual")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Legal/Regulatory")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Time/Calendar")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Data governance/Data management")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("E-commerce")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Data")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Email/Messaging/Communications Platforms as a Service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Forms")&& "apilifecycleplatformBg-light"}
+  ${subcat.includes("Identity verification/KYC")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Human Resources")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Human-as-a-service")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Payments")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
+  ${subcat.includes("Search")&& "BusinessprocessesasanAPIAPIasaProductBg-light"}
 
-                          ${subcat.includes("API Deployment/Back-end Building")&& "BackendBuildingToolsANDMBaasBg-light"}
-                          ${subcat.includes("Banking/Finance/Insurance Backends")&& "BackendBuildingToolsANDMBaasBg-light"}
-                          ${subcat.includes("Blockchain")&& "BackendBuildingToolsANDMBaasBg-light"}
-                          ${subcat.includes("Headless CMS")&& "BackendBuildingToolsANDMBaasBg-light"}
-                          ${subcat.includes("Infrastructure/Cloud/Serverless APIs")&& "BackendBuildingToolsANDMBaasBg-light"}
-                          ${subcat.includes("Mobile Backend as a Service")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("API Deployment/Back-end Building")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("Banking/Finance/Insurance Backends")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("Blockchain")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("Headless CMS")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("Infrastructure/Cloud/Serverless APIs")&& "BackendBuildingToolsANDMBaasBg-light"}
+  ${subcat.includes("Mobile Backend as a Service")&& "BackendBuildingToolsANDMBaasBg-light"}
 
-                          ${subcat.includes("API Aggregators (General)")&& "IntegrationPlatformAsAServiceBg-light"}
-                          ${subcat.includes("Automation/Orchestration")&& "IntegrationPlatformAsAServiceBg-light"}
-                          ${subcat.includes("Database-as-a-service")&& "IntegrationPlatformAsAServiceBg-light"}
-                          ${subcat.includes("API Aggregators (Finance)")&& "IntegrationPlatformAsAServiceBg-light"}
+  ${subcat.includes("API Aggregators (General)")&& "IntegrationPlatformAsAServiceBg-light"}
+  ${subcat.includes("Automation/Orchestration")&& "IntegrationPlatformAsAServiceBg-light"}
+  ${subcat.includes("Database-as-a-service")&& "IntegrationPlatformAsAServiceBg-light"}
+  ${subcat.includes("API Aggregators (Finance)")&& "IntegrationPlatformAsAServiceBg-light"}
 
-                          ${subcat.includes("Cloud Storage")&& "IntegrationPlatformAsAServiceBg-light"}
-                          ${subcat.includes("Delivery/Transport/Logistics")&& "IntegrationPlatformAsAServiceBg-light"}
-                 
-                          ${subcat.includes("Healthcare")&& "VerticalAPIAbstractionsBg-light"}
-                          ${subcat.includes("Login")&& "VerticalAPIAbstractionsBg-light"}
-                          ${subcat.includes("Marketing and Analytics")&& "VerticalAPIAbstractionsBg-light"}
-                          ${subcat.includes("Finance")&& "VerticalAPIAbstractionsBg-light"}
-                          ${subcat.includes("Smart Home and Smart Facilities")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Cloud Storage")&& "IntegrationPlatformAsAServiceBg-light"}
+  ${subcat.includes("Delivery/Transport/Logistics")&& "IntegrationPlatformAsAServiceBg-light"}
+
+  ${subcat.includes("Healthcare")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Login")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Marketing/Analytics")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Finance")&& "VerticalAPIAbstractionsBg-light"}
+  ${subcat.includes("Smart Home/Smart Facilities")&& "VerticalAPIAbstractionsBg-light"}
                      
 
                          
@@ -990,6 +997,10 @@ export default function CompanyDetailsName({ data }) {
            </div> {/* company description */}
            <div className="founded">
              <div className="founded-top">
+               <div className="open-source d-flex ">
+               <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold">Open source: </p> 
+               <p className="sm-text mt-1 ml-2"> {openSource?openSource.toLowerCase().charAt(0).toUpperCase() + openSource.slice(1):<Unknown/>}</p>
+               </div>
                <div className="founded-top-left">
                  <div className="icon">
                     <img src="../../apilandscape__founded_in_40x40.png" alt="" className="icon" />

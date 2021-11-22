@@ -81,7 +81,7 @@ export default function CompanyCard({company,index,handleLoading}) {
                 {newParentCategorySlug?.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
-                  ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
+                  ${category==="API Standards/Protocols" && "ApiStandardsandProtocolsBg"}
                   ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}

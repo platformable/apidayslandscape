@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 
 export default function companiesCards({data}) {
     
-    const newData = data.values.filter((company,index)=> company.logo !==null || company.logo==="" || company.logo==="unknown")
+    const newData = data.values
 
 
     const [loading,setLoading]=useState(false)
@@ -73,7 +73,7 @@ export default function companiesCards({data}) {
         }
 
         if (selectedCategory !=="All" && selectedSubcategory === "All"){
-            const result =  data.values.filter((company, index) =>company.parentCategorySlug===selectedCategory);
+            const result =  data.values.filter((company, index) =>company.parentCategorySlug?.includes(selectedCategory));
             const subcatgeoriesOfSelectedCategory = categoriesWithSubcategories.filter((category,index)=>category.name===selectedCategory)
             
             setLiveData(result)
@@ -84,17 +84,14 @@ export default function companiesCards({data}) {
         if (selectedCategory !=="All" && selectedSubcategory !== "All"){
             const result =  data.values.filter(
                 (company, index) =>
-                company.parentCategorySlug===
-                    selectedCategory &&
-                company.subcategory===selectedSubcategory
-            );
-            setLiveData(result)
+                company.parentCategorySlug?.includes(selectedCategory) && company.subcategory?.includes(selectedSubcategory));
+                setLiveData(result)
         }
 
         if (selectedCategory ==="All" && selectedSubcategory !== "All"){
             const result =  data.values.filter(
                 (company, index) =>
-                company.subcategory===selectedSubcategory
+                company.subcategory?.includes(selectedSubcategory)
             );
             setLiveData(result)
         }

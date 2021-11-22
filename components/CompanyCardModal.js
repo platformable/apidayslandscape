@@ -104,12 +104,13 @@ export default function CompanyCardModal({company,index,loading}) {
                 {newParentCategorySlug.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
-                  ${category==="API Standards and Protocols" && "ApiStandardsandProtocolsBg"}
+                  ${category==="API Standards/Protocols" && "ApiStandardsandProtocolsBg"}
+                  ${category==="Media/Associations" && "ApiStandardsandProtocolsBg"}
                   ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg text-white"}
                   ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
-                  ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg"}
+                  ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg text-white"}
                   `}>{category}</span>)
                 })}
    

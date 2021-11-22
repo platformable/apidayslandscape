@@ -1,10 +1,11 @@
 export const categories = [
   "API Lifecycle Platform",
-  "API Standards and Protocols",
+  "API Standards/Protocols",
   "Backend Building Tools",
   "Business processes as an API/API-as a Product",
   "Integration Platform as a Service",
   "Vertical API Abstractions",
+  "Media/Associations"
 ];
 
 export const subcategories = [
@@ -13,30 +14,30 @@ export const subcategories = [
 "API Design/Documentation Platforms",
 "API Developer Portals",
 "API Management/API Gateway",
-"API Oriented IT Consulting Firms",
+"API Consulting",
 "API Testing",
 "API Security",
-"Streaming & Event Architecture",
+"Streaming/Event Architecture",
 "IoT Platforms/Networks/Devices",
 
 "Accounting",
-"AI & ML",
-"Audio & Video",
-"Legal & Regulatory",
-"Time & Calendar",
-"Data governance & Data management",
+"AI/ML",
+"Audio/Visual",
+"Legal/Regulatory",
+"Time/Calendar",
+"Data governance/Data management",
 "E-commerce",
 "Data",
 "Email/Messaging/Communications Platforms as a Service",
 "Forms",
-"Identity verification & KYC",
+"Identity verification/KYC",
 "Human Resources",
 "Human-as-a-service",
 "Payments",
 "Search",
 
-"API protocols",
-"API standards",
+"API Protocols",
+"API Standards",
 
 "API Deployment/Back-end Building",
 "Banking/Finance/Insurance Backends",
@@ -54,9 +55,12 @@ export const subcategories = [
 "Delivery/Transport/Logistics",
 "Healthcare",
 "Login",
-"Marketing and Analytics",
+"Marketing/Analytics",
 "Finance",
-"  Smart Home and Smart Facilities"
+"Smart Home/Facilities",
+
+"Media",
+"Associations"
 ];
 
 export const categoriesWithSubcategories = [
@@ -68,31 +72,32 @@ export const categoriesWithSubcategories = [
      "API Design/Documentation Platforms",
      "API Developer Portals",
      "API Management/API Gateway",
-     "API Oriented IT Consulting Firms",
+     "API Consulting",
      "API Testing",
      "API Security",
-     "Streaming & Event Architecture",
+     "Streaming/Event Architecture",
      "IoT Platforms/Networks/Devices",],
   },
   {
-    "name":"API Standards and Protocols",
-    "subcategories":[  "API protocols",
-    "API standards",]
+    "name":"API Standards/Protocols",
+    "subcategories":[  
+    "API Protocols",
+    "API Standards",]
   },
   {
     "name":"Business processes as an API/API-as a Product",
     "subcategories":[
     "Accounting",
-    "AI & ML",
-    "Audio & Video",
-    "Legal & Regulatory",
-    "Time & Calendar",
-    "Data governance & Data management",
+    "AI/ML",
+    "Audio/Visual",
+    "Legal/Regulatory",
+    "Time/Calendar",
+    "Data governance/Data management",
     "E-commerce",
     "Data",
     "Email/Messaging/Communications Platforms as a Service",
     "Forms",
-    "Identity verification & KYC",
+    "Identity verification/KYC",
     "Human Resources",
     "Human-as-a-service",
     "Payments",
@@ -120,10 +125,17 @@ export const categoriesWithSubcategories = [
     "Delivery/Transport/Logistics",
     "Healthcare",
     "Login",
-    "Marketing and Analytics",
+    "Marketing/Analytics",
     "Finance",
-    "Smart Home and Smart Facilities"]
+    "Smart Home/Facilities"]
+  },
+  {
+    "name":"Media/Associations",
+    "subcategories":[
+    "Media",
+    "Associations"]
   }
+
 
 ]
 
@@ -133,24 +145,24 @@ export const subcategoriesDescriptions = {
    "API Design/Documentation Platforms":[{"description":"Platforms aiding in the creation of standards enabling developers to create uniform software applications"}],
    "API Developer Portals":[{"description":"The interface containing a developer's API documentation and digital tools"}],
    "API Management/API Gateway":[{"description":"Management is the process of analyzing, controlling, and distributing APIs. The gateway sits between back-end services and the client, accepting all API calls "}],
-   "API Oriented IT Consulting Firms":[{"description":"Advisory services educating clients on how best to use API-focused information technology to achieve their business objectives"}],
+   "API Consulting":[{"description":"Advisory services educating clients on how best to use API-focused information technology to achieve their business objectives"}],
    "API Testing":[{"description":"Software testing to ensure APIs meet functionality, reliability, performance, and security requirements"}],
-   "API Security":[{"description":"coming soon 1"}],
-   "Streaming & Event Architecture":[{"description":"Integration of components to read data in real-time to deliver up-to-date results"}],
+   "API Security":[{"description":"Products and services designed to address API security risks and vulnerabilities"}],
+   "Streaming/Event Architecture":[{"description":"Integration of components to read data in real-time to deliver up-to-date results"}],
    "IoT Platforms/Networks/Devices":[{"description":"Integrates with technology allowing for the management, provision, and automation of connected devices within the Internet of Things"}],
-   "API protocols":[{"description":"coming soon 2"}],
-   "API standards":[{"description":"A general agreement of requirements followed by members of a specific industry"}],
+   "API Protocols":[{"description":"API protocols define the standard request response layer and the common transport to be used."}],
+   "API Standards":[{"description":"A general agreement of requirements followed by members of a specific industry"}],
    "Accounting":[{"description":"Integrating the measurement, processing, and communication of financial information and non-financial information on entities such as businesses and corporations"}],
-   "AI & ML":[{"description":"Artificial intelligence API. Integrates computer systems performing tasks usually performed by a human"}],
-   "Audio & Video":[{"description":"A digital recording"}],
-   "Legal & Regulatory":[{"description":"comin soon 3"}],
-   "Time & Calendar":[{"description":"coming soon 4"}],
-   "Data governance & Data management":[{"description":"Cloud-based software working with data, such as analyzing data with business intelligence or managing data in data warehouse"}],
+   "AI/ML":[{"description":"Artificial intelligence API. Integrates computer systems performing tasks usually performed by a human"}],
+   "Audio/Visual":[{"description":"A digital recording"}],
+   "Legal/Regulatory":[{"description":"API products, services, and tolling that integrate legal and business decisions into API architectures and workflows "}],
+   "Time/Calendar":[{"description":"Products and tools that enable time and date integration via API, and that enable APIs for calendar integrations   "}],
+   "Data governance/Data management":[{"description":"Cloud-based software working with data, such as analyzing data with business intelligence or managing data in data warehouse"}],
    "E-commerce":[{"description":"Integration allowing the buying and selling of goods via the internet"}],
-   "Data":[{"description":"coming soon 5"}],
+   "Data":[{"description":"API providers that enable data to be sold as a product "}],
    "Email/Messaging/Communications Platforms as a Service":[{"description":"Integrates Communications Platforms as a Service, cloud-based model to add video, voice, and messaging to existing business software via APIs "}],
    "Forms":[{"description":"Interactive web page allowing for user input"}],
-   "Identity verification & KYC":[{"description":"Know Your Client integration allowing for businesses to perform due diligence within a business relationship "}],
+   "Identity verification/KYC":[{"description":"Know Your Client integration allowing for businesses to perform due diligence within a business relationship "}],
    "Human Resources":[{"description":"Integrates platforms focused on the people who comprise a workforce, often overseeing employment and labor laws"}],
    "Human-as-a-service":[{"description":"Integrates 'gig economy' services where people perform tasks given to them by an online platform"}],
    "Payments":[{"description":"Integrating an API allowing e-commerce businesses to manage their payments"}],
@@ -164,12 +176,15 @@ export const subcategoriesDescriptions = {
    "API Aggregators (General)":[{"description":"An API providing a single point of implementation layered on top of multiple APIs"}],
     "Automation/Orchestration":[{"description":"Integrates automated tasks meant to execute a larger workflow by streamlining repetitive, frequent processes "}],
     "Database-as-a-service":[{"description":"Software allowing users to set up, scale, and operate databases"}],
-    "API Aggregators (Finance)":[{"description":"coming soon 6"}],
+    "API Aggregators (Finance)":[{"description":"Tooling and platforms that create an API, or a suite of APIs, as the single point of implementation for multiple source APIs in banking, finance and insurance"}],
     "Cloud Storage":[{"description":"Integrates data storage saved in logical pools known as 'the cloud'"}],
     "Delivery/Transport/Logistics":[{"description":"Shipping functionality integration"}],
     "Healthcare":[{"description":"Medical care given to an individual or community"}],
     "Login":[{"description":"Integration of an API allowing a user to gain access to a computer system via authentication"}],
-    "Marketing and Analytics":[{"description":"Study and management of metrics data to determine ROI of marking, such as calls to action, blogs, and channel performance"}],
-    "Finance":[{"description":"coming soon 7"}],
-    "Smart Home and Smart Facilities":[{"description":"A home equipped with heating, lighting, and other electronic devices remotely controlled via mobile or computer"}],
-}
+    "Marketing/Analytics":[{"description":"Study and management of metrics data to determine ROI of marking, such as calls to action, blogs, and channel performance"}],
+    "Finance":[{"description":"Products and tooling that enables finance services to be integrated via API"}],
+    "Smart Home/Facilities":[{"description":"A home equipped with heating, lighting, and other electronic devices remotely controlled via mobile or computer"}],
+    "Media":[{"description":"API-specific news sites, blogs, newsletters, conferences, and related media"}],
+    "Associations":[{"description":"Associations and networks that play a specific role in encouraging API adoption or usage"}],
+
+  }

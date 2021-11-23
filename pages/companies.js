@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 
 export default function companiesCards({data}) {
     
-    const newData = data.values
+    const newData = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations")
 
 
     const [loading,setLoading]=useState(false)
@@ -161,7 +161,7 @@ console.log(subcategoryList)
 
                     </div>{/* search */}
                     <div className="col-md-2 d-flex justify-content-start">
-                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {liveData.length} </p>
+                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {newData.length} </p>
                     </div>
                     <div className="col-md-1 d-flex justify-content-end align-items-center">
                     <div class="form-check">

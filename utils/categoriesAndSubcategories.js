@@ -4,8 +4,8 @@ export const categories = [
   "Backend Building Tools",
   "Business processes as an API/API-as a Product",
   "Integration Platform as a Service",
-  "Vertical API Abstractions",
-  "Media/Associations"
+/*   "Vertical API Abstractions",
+  "Media/Associations" */
 ];
 
 export const subcategories = [
@@ -36,8 +36,8 @@ export const subcategories = [
 "Payments",
 "Search",
 
-"API Protocols",
-"API Standards",
+/* "API Protocols",
+"API Standards", */
 
 "API Deployment/Back-end Building",
 "Banking/Finance/Insurance Backends",
@@ -59,8 +59,8 @@ export const subcategories = [
 "Finance",
 "Smart Home/Facilities",
 
-"Media",
-"Associations"
+/* "Media",
+"Associations" */
 ];
 
 export const categoriesWithSubcategories = [

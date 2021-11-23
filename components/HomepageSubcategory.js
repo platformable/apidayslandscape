@@ -13,7 +13,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
 
 const handleImages = (url)=>{
 if(url.includes("https://drive.google.com")){
-  return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
+  return (`https://drive.google.com/thumbnail?id=${url.split('/d/').pop().split('/view?usp=sharing')[0]}`)
 }else {
   return url
 }

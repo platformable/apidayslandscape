@@ -102,15 +102,7 @@ img {
 transform: translateZ(0);
 -webkit-transform: translateZ(0);
 }
-img {
-  
-  max-width:100%;
- /*  image-rendering:-moz-crisp-edges; 
-  image-rendering:-o-crisp-edges;           
-  image-rendering:-webkit-optimize-contrast; 
-  image-rendering:optimize-contrast;         
-  -ms-interpolation-mode:nearest-neighbor;  */ 
-}
+
 
 .navbar-nav {
  
@@ -161,9 +153,7 @@ a {
 .bg-home-keyindicator {
   background-color:#f28f22;
 }
-.navbar img{
 
-}
 
 .navbar a {
   text-transform: uppercase;
@@ -190,8 +180,8 @@ font-size:14px;
 }
 
 .landscape-img {
-  width:34px;
-  height:34px;
+  width:36px;
+  height:36px;
 display: grid;
 place-items: center;
 
@@ -211,7 +201,7 @@ place-items: center;
 }
 
 .landscape-card {
-  max-height:50px
+  max-height:48px
   }
 
 .company-social-urls img{

@@ -99,7 +99,11 @@ export default function CompanyCardModal({company,index,loading}) {
                 </div>
               </div>  {/* <!--card founded--> */}
             </div>
+           
           </div> {/* <!--cardtop--> */}
+          <div className="company-decription my-3">
+            <p className="sm-text text-company-color">{company.description}</p>
+            </div>
         <div className="card-middle mt-1">
                 {newParentCategorySlug.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black

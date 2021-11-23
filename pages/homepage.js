@@ -25,6 +25,8 @@ export default function Homepage({ data }) {
   const [businessANDMessaginAPis, setBusinessANDMessaginApis] = useState([]);
   const [businessANDKYC, setBusinessANDKYC] = useState([]);
 
+  console.log("data.values",data.values)
+
   const router = useRouter();
 
   const [loading,setLoading]=useState(false)
@@ -217,8 +219,9 @@ export default function Homepage({ data }) {
         "API Lifecycle Platform") &&
       company?.subcategory?.includes("API Management/API Gateway")
   );
+  APILifecyclePlatformANDAPIManagementAPIGateway.sort((a, b) => parseInt(a.totalFunding) > parseInt(b.totalFunding && 1 || -1)).sort((a, b) => a.name > b.name && 1 || -1)
 
-  APILifecyclePlatformANDAPIManagementAPIGateway.sort((a, b) => a.name > b.name && 1 || -1)
+  
 
 
 
@@ -605,7 +608,7 @@ const VerticalAPIAbstractionsANDLogin = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
       "Vertical API Abstractions") &&
-    company?.subcategory?.includes("login") 
+    company?.subcategory?.includes("Login") 
 ).sort((a, b) => a.name > b.name && 1 || -1)
 
 const VerticalAPIAbstractionsANDHealthcare = data.values.filter(
@@ -697,7 +700,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
 
   const testCat = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequuntur, velit, alias numquam necessitatibus earum accusamus voluptate sequi exercitationem mollitia minus? Saepe tenetur neque dolorum deleniti, error soluta dolorem molestias, laborum eaque distinctio hic voluptatibus deserunt corporis quaerat iste veritatis assumenda voluptatum magni alias nesciunt sed eum odio quam! Odit beatae aliquam itaque! Rem facilis repudiandae, laboriosam delectus officiis voluptatum nostrum necessitatibus accusantium corrupti expedita placeat sunt consequatur laudantium quae porro voluptatibus? Sequi aperiam ut quas incidunt quo dolore, eius illum praesentium nesciunt doloribus ex est, quasi aut fugit ducimus consequatur consequuntur nobis magni ratione eum iure. Atque optio vel, magnam sit ipsa exercitationem maiores quisquam, deleniti est nobis error veritatis non explicabo fuga culpa dolor aliquam praesentium architecto qui. Totam maiores illum doloremque optio itaque laboriosam nihil ipsum officia."
-
+  const totalValues = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations")
  
 
   return (
@@ -742,7 +745,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
            
             <div className="mt-5">
-              <h3><span class="badge bg-light text-black shadow d-none d-md-block  mt-5">{data.values.length}</span> </h3>
+              <h3><span class="badge bg-light text-black shadow d-none d-md-block  mt-5">{totalValues.length}</span> </h3>
               <h3 className="sm-text text-center text-white md-social-share-buttons">Share</h3>
               <LinkedinShareButton url="https://apilandscape.platformable.com/"  title="The API Landscape" source="https://apilandscape.platformable.com/" summary="The API Landscape">
              <LinkedinIcon size={32} round={true}/> 
@@ -1105,7 +1108,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
           </section> 
           {/* mobile section */}
 
-          <section className="mobile-landscape mt-3  d-xs-block d-md-none">
+           {/*  DO NOT DELETE API STANDARDS */}
+         {/*  <section className="mobile-landscape mt-3  d-xs-block d-md-none">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
@@ -1127,9 +1131,10 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 </div>
               </div>
             </div>
-          </section> 
+          </section>  */}
 
-          <section className="mobile-landscape mt-3  d-xs-block d-md-none">
+{/*  DO NOT DELETE MEDIA ASSOCIATIONS */}
+         {/*  <section className="mobile-landscape mt-3  d-xs-block d-md-none">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
@@ -1151,7 +1156,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 </div>
               </div>
             </div>
-          </section> 
+          </section>  */}
           {/* mobile section */}
 
 
@@ -1229,6 +1234,15 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           />
                          
                           </div>
+                                         
+                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Testing"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDAPITesting}
+                          />
+                          </div>
                         </div>
                       </div>
                     
@@ -1252,15 +1266,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
                           />
                           </div>
-               
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Testing"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPITesting}
-                          />
-                          </div>
+
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1301,14 +1307,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           />
                           </div>
                          
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Headless CMS"
-                          handleCompany={handleEntity}
-                          filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
-                          />
-                          </div>
+ 
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1338,6 +1337,14 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           subcategoryName="Blockchain"
                           handleCompany={handleEntity}
                           filteredCategory={BackendBuildingToolsANDBlockchain}
+                          />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Headless CMS"
+                          handleCompany={handleEntity}
+                          filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
                           />
                           </div>
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
@@ -1374,14 +1381,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDData}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Data governance/Data management"
-                          handleCompany={handleEntity}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
-                          />
-                          </div>
+                 
 
                           
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
@@ -1414,7 +1414,33 @@ const MediaAssociationsANDAssociations = data.values.filter(
                       <div class="landscape-container">
                         <div class="landscape-category-container">
                         
+                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="AI/ML"
+                          handleCompany={handleEntity}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAIML}
+                          />
+                          </div>
+                        
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="E-commerce"
+                          handleCompany={handleEntity}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
+                          />
+                          </div>
+                         
+                         
+                         
+                        </div>
+                      </div>
+
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Accounting"
@@ -1425,20 +1451,21 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="AI/ML"
+                          subcategoryName="Audio/Visual"
                           handleCompany={handleEntity}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAIML}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
                           />
                           </div>
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
-                          subcategoryName="E-commerce"
+                          subcategoryName="Data governance/Data management"
                           handleCompany={handleEntity}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDEcommerce}
+                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Identity verification/KYC"
@@ -1446,22 +1473,13 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC}
                           />
                           </div>
-                         
-                         
                         </div>
                       </div>
 
 
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Audio/Visual"
-                          handleCompany={handleEntity}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo}
-                          />
-                          </div>
+                 
                       
                      
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
@@ -1659,7 +1677,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 </div> 
                 {/* col-md-12 */}
 
-                <div className="col-md-12 my-1">
+{/*  DO NOT DELETE API STANDARDS */}
+                {/* <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="ApiStandardsandProtocols" >
                       <span className="">API Standards/<br/>Protocols ({ApiStandardsandProtocols.length})</span>
@@ -1689,10 +1708,11 @@ const MediaAssociationsANDAssociations = data.values.filter(
                       
                     </div>
                   </div>
-                </div> {/* col-md-12 */}
+                </div>  */}
+                {/* col-md-12 */}
 
-
-                <div className="col-md-12 my-1">
+{/*  DO NOT DELETE API STANDARDS */}
+                {/* <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="ApiStandardsandProtocols" >
                       <span className="">Media/<br/>Associations ({MediaAssociations.length})</span>
@@ -1722,7 +1742,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
                       
                     </div>
                   </div>
-                </div> {/* col-md-12 */}
+                </div>  */}
+                {/* col-md-12 */}
 
               </div>
             </div>

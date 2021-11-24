@@ -24,7 +24,7 @@ export default function companiesCards({data}) {
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
   
   
-
+  
     TopBarProgress.config({
         barColors: {
           "0": "#fdb43e",
@@ -58,10 +58,10 @@ export default function companiesCards({data}) {
 
     if(sorted){ 
        
-       setLiveData(liveData.sort((b, a) => a.name > b.name && 1 || -1)) 
+       setLiveData(liveData.sort((b, a) => a.name.localeCompare(b.name))) 
     } else {
       
-        setLiveData(liveData.sort((a, b) => a.name > b.name && 1 || -1))
+        setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)))
     }
     }
 
@@ -106,6 +106,7 @@ export default function companiesCards({data}) {
    
 
    useEffect(()=>{ 
+    liveData.sort((a, b) => a.name.localeCompare(b.name))
     handleFilter()
    
     setTimeout(function(){
@@ -114,7 +115,7 @@ export default function companiesCards({data}) {
 
    },[selectedCategory,selectedSubcategory])
 
-console.log(subcategoryList)
+
 
     return (
         <Layout>

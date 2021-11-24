@@ -10,7 +10,12 @@ import Unknown from "../../components/Unknown";
 import { categoriesWithSubcategories, subcategories } from '../../utils/categoriesAndSubcategories';
 export default function CompanyDetailsName({ data }) {
   const router = useRouter();
+
+
+  
   const { slug } = router.query;
+
+  console.log("slug",slug)
 
   const [company,setCompany]=useContext(CompanyContext)
   const [details,setDetails]=useState(false)
@@ -109,7 +114,7 @@ export default function CompanyDetailsName({ data }) {
       return url
     }
     }
-  const selectedCompany = data.values.filter((company) => company.name === slug);
+  const selectedCompany = data.values.filter((company) => company.name === slug) || "";
 
   const {
     name,
@@ -326,6 +331,10 @@ export default function CompanyDetailsName({ data }) {
            </div> {/* company description */}
            <div className="founded">
              <div className="founded-top">
+             <div className="open-source d-flex ">
+               <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold">Open source: </p> 
+               <p className="sm-text mt-1 ml-2"> {openSource?openSource.toLowerCase().charAt(0).toUpperCase() + openSource.slice(1):<Unknown/>}</p>
+               </div>
                <div className="founded-top-left">
                  <div className="icon">
                     <img src="../../apilandscape__founded_in_40x40.png" alt="" className="icon" />
@@ -416,7 +425,7 @@ export default function CompanyDetailsName({ data }) {
 
                  <h3 className="fw-bold fs-4 text-center mt-5">{estimatedRevenueRange?estimatedRevenueRange:<h6 className="text-center fw-bold ">-</h6>}</h3>
 
-                 <img src="../money-line.png" alt="" />
+                 {/* <img src="../money-line.png" alt="" /> */}
             </div>
             {/* revnue*/}
             <div className="col-md-9 p-2 border-bottom">

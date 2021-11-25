@@ -738,7 +738,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn bg-dark-orange me-1  text-company-color" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
-            <a className="btn bg-dark-orange me-1 text-company-color" href="../landscape.png"  download="apilandscape">Download the map</a>
+            <a className="btn bg-dark-orange me-1 text-company-color" href="../apilandscape.jpg"  download="apilandscape">Download the map</a>
             <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
             </div>
 
@@ -1319,8 +1319,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
                         <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1329,6 +1329,22 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={ BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding}
                           />
                           </div>
+
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Headless CMS"
+                          handleCompany={handleEntity}
+                          filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
+                          />
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        
                          
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
@@ -1338,14 +1354,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={BackendBuildingToolsANDBlockchain}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Headless CMS"
-                          handleCompany={handleEntity}
-                          filteredCategory={ BackendBuildingToolsANDHeadlessCMS}
-                          />
-                          </div>
+                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1566,6 +1575,19 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
                       <div class="landscape-container">
                         <div class="landscape-category-container">
+                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Automation/Orchestration"
+                          handleCompany={handleEntity}
+                          filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestration}
+                          />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
                           {data<=0 &&  <Loader/>}
@@ -1573,14 +1595,6 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           subcategoryName="API Aggregators (General)"
                           handleCompany={handleEntity}
                           filteredCategory={IntegrationPlatformAsAServiceANDAPIAggregators}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Automation/Orchestration"
-                          handleCompany={handleEntity}
-                          filteredCategory={IntegrationPlatformAsAServiceANDAutomationOrchestration}
                           />
                           </div>
                           <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
@@ -1607,22 +1621,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
                     <div class="category-container ">
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Cloud Storage"
-                          handleCompany={handleEntity}
-                          filteredCategory={VerticalAPIAbstractionsANDCloudStorage}
-                          />
-                          </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Delivery/Transport/Logistics"
-                          handleCompany={handleEntity}
-                          filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
-                          />
-                          </div>
+                          
+                         
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1655,6 +1655,30 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={VerticalAPIAbstractionsANDMarketingAnalytics}
                           />
                           </div>
+                  
+                        </div>
+                      </div>
+ 
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Cloud Storage"
+                          handleCompany={handleEntity}
+                          filteredCategory={VerticalAPIAbstractionsANDCloudStorage}
+                          />
+                          </div>
+
+                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Delivery/Transport/Logistics"
+                          handleCompany={handleEntity}
+                          filteredCategory={VerticalAPIAbstractionsANDDeliveryAPIs}
+                          />
+                          </div>
+
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1663,14 +1687,9 @@ const MediaAssociationsANDAssociations = data.values.filter(
                           filteredCategory={VerticalAPIAbstractionsANDSmartHome}
                           />
                           </div>
-                        </div>
-                      </div>
- 
-                     {/*  <div class="landscape-container">
-                        <div class="landscape-category-container">
                          
                         </div>
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                 </div> 

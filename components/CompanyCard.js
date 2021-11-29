@@ -80,13 +80,13 @@ export default function CompanyCard({company,index,handleLoading}) {
         <div className="card-middle mt-1">
                 {newParentCategorySlug?.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
-                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
-                  ${category==="API Standards/Protocols" && "ApiStandardsandProtocolsBg"}
-                  ${category==="Backend Building Tools" && "BackendBuildingToolsANDMBaasBg text-white"}
-                  ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
-                  ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
-                  ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
-                  ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg text-white"}
+                  ${category.includes("API Lifecycle Platform") && "bg-dark-main-color text-white"}
+                  ${category==="API Standards/Protocols" && "bg-dark-main-color text-white"}
+                  ${category==="Backend Building Tools" && "bg-dark-main-color text-white"}
+                  ${category==="Business processes as an API/API-as a Product" && "bg-dark-main-color text-white"}
+                  ${category==="Business processes as an API/API-as a Products" && "bg-dark-main-color text-white"}
+                  ${category==="Integration Platform as a Service" && "bg-dark-main-color text-white"}
+                  ${category==="Vertical API Abstractions" && "bg-dark-main-color text-white"}
                   `}>{category}</span>)
                 })}
    

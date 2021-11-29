@@ -736,10 +736,10 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
             <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn bg-dark-orange me-1  text-company-color" onClick={()=>handleForm()}>Add your API Tool</button>
-            <button className="btn btn-download  m-0 text-company-color" onClick={()=>handleLinks("companies")}>Explore the companies</button>
-            <a className="btn bg-dark-orange me-1 text-company-color" href="../apilandscape.jpg"  download="apilandscape">Download the map</a>
-            <button className="btn btn-download me-1  text-company-color" onClick={()=>handleLinks("homepage")}>Zoom</button>
+            <button className="btn btn-dark-gray me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
+            <button className="btn btn-light-gray  m-0 text-company-color " onClick={()=>handleLinks("companies")}>Explore the companies</button>
+            <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape.jpg"  download="apilandscape">Download the map</a>
+            <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("homepage")}>Zoom</button>
             </div>
 
            
@@ -765,7 +765,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center apilifecycleplatformBg text-white py-2">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Access and Identity Management"
@@ -848,7 +848,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center BackendBuildingToolsANDMBaasBg text-white py-2">Backend Building Tools ({BackendBuildingTools.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">Backend Building Tools ({BackendBuildingTools.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Headless CMS"
@@ -901,7 +901,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center BusinessprocessesasanAPIAPIasaProductBg text-company-color py-2">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-company-color py-2">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Data"
@@ -1011,7 +1011,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center IntegrationPlatformAsAServiceBg text-white py-2">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length}) </h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length}) </h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="API Aggregators (Finance)"
@@ -1050,7 +1050,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center IntegrationPlatformAsAServiceBg text-white py-2">Vertical API Abstractions ({VerticalAPIAbstractions.length}) </h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">Vertical API Abstractions ({VerticalAPIAbstractions.length}) </h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Cloud Storage"
@@ -1172,7 +1172,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
               <div className="row">
                 <div className="col-md-12 mb-1">
                   <div className="home-main-container ">
-                    <div className="apilifecycleplatform">
+                    <div className="bg-dark-company-color">
                       <span className="text-white" data-tip={testCat} data-for="category-tooltip">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
@@ -1291,7 +1291,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
-                    <div class="BackendBuildingToolsANDMBaas">
+                    <div class="bg-dark-company-color">
                       <span className="text-white">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
                     </div>
                     <div class="category-container ">
@@ -1373,8 +1373,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
-                    <div class="BusinessprocessesasanAPIAPIasaProduct"> 
-                      <span className="cat-name">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
+                    <div class="bg-dark-company-color"> 
+                      <span className="cat-name text-white">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
                       
@@ -1555,8 +1555,8 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
-                    <div class="IntegrationPlatformAsAService">
-                      <span className="">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
+                    <div class="bg-dark-company-color">
+                      <span className="text-white">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
                     <div className="landscape-container">
@@ -1615,7 +1615,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
 
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
-                    <div class="VerticalAPIAbstractions">
+                    <div class="bg-dark-company-color">
                       <span className="text-white">Vertical API <br /> Abstractions ({VerticalAPIAbstractions.length})</span>
                     </div>
                     <div class="category-container ">

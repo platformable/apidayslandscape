@@ -34,7 +34,7 @@ export default function Header() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container">
     <div className="logox">
-   <Link href="/"><img src="../homepage/logo_dark.png" alt="" className="img-fluid logo" /></Link>
+   <Link href="/"><img src="../logo_dark.png" alt="" className="img-fluid logo" /></Link>
    </div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>

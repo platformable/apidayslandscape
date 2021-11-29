@@ -105,7 +105,7 @@ export default function CompanyCardModal({company,index,loading}) {
             <p className="sm-text text-company-color">{company.description}</p>
             </div>
         <div className="card-middle mt-1">
-                {newParentCategorySlug.map((category,index)=>{
+             {/*    {newParentCategorySlug.map((category,index)=>{
                   return (<span className={`card-middle-tag mb-1 me-1 text-black
                   ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg text-white"}
                   ${category==="API Standards/Protocols" && "ApiStandardsandProtocolsBg"}
@@ -115,6 +115,18 @@ export default function CompanyCardModal({company,index,loading}) {
                   ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
                   ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg text-white"}
+                  `}>{category}</span>)
+                })} */}
+                   {newParentCategorySlug.map((category,index)=>{
+                  return (<span className={`card-middle-tag mb-1 me-1 text-black
+                  ${category.includes("API Lifecycle Platform") && "mobile-bg-dark-company-color text-white"}
+                  ${category==="API Standards/Protocols" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Media/Associations" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Backend Building Tools" && "mobile-bg-dark-company-color text-white text-white"}
+                  ${category==="Business processes as an API/API-as a Product" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Business processes as an API/API-as a Products" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Integration Platform as a Service" && "mobile-bg-dark-company-color"}
+                  ${category==="Vertical API Abstractions" && "mobile-bg-dark-company-color text-white"}
                   `}>{category}</span>)
                 })}
    

@@ -47,8 +47,39 @@ a {
 
 }
 
+.bg-dark-main-color {
+  background-color: #1b4965;
+}
+.mobile-bg-dark-company-color {
+  background-color: #1b4965;
+  
+}
+.btn-dark-gray {
+  background-color:#4c5b5c !important;
+}
+
+.btn-light-gray {
+  background-color:#cbd4c2 !important;
+}
+
+.bg-dark-company-color {
+  background-color:#1b4965;
+  width:40px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+}
+
+.bg-light-company-color {
+  background-color:#1b4965;
+}
 .bg-light-blue {
-  background-color:var(--bg-light-blue);
+  background-color:#00a6b6;
 }
 
 .navigation a {
@@ -162,11 +193,14 @@ a {
   top:2px;
 }
 .sm-text {
-  font-size:12px;
+  font-size:12px !important;
 }
 
 .md-text {
 font-size:14px;
+}
+.xxs-text{
+  font-size:10px;
 }
 
 .xs-text {

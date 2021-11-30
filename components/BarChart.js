@@ -51,6 +51,9 @@ export default function BarChart({q1,q2,q3,q4}) {
                 drawOnChartArea: true,
                 drawTicks: true,
               },
+              suggestedMin: 0,
+              suggestedMax: 50
+
             }
    
         },

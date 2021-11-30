@@ -743,7 +743,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn btn-dark-gray me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-light-gray  m-0 text-company-color " onClick={()=>handleLinks("companies")}>Explore the companies</button>
-            <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape.jpg"  download="apilandscape">Download the map</a>
+            <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape_november_30.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
             </div>
 

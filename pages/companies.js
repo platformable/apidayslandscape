@@ -206,7 +206,8 @@ export default function companiesCards({data}) {
 
 export async function getServerSideProps(context) {
 
-    const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app` || `http://localhost:5000`);
+    const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/companies` || `http://localhost:5000/companies`);
+
     const data = await res.json();
   
     if (!data) {

@@ -1183,18 +1183,6 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <div class="category-container ">
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                            {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Access and Identity Management"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
-                          handleLoading={handleLoading}
-                          />
-            
-                          </div>
-                        
-                     
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"> 
                           {data<=0 &&  <Loader/>}
@@ -1205,8 +1193,6 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                           filteredCategory={APILifecyclePlatformANDAPIManagementAPIGateway}
                           />
                           </div>
-
-                         
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
@@ -1221,6 +1207,15 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                            {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Access and Identity Management"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDAccessLevelandIdentityManagement}
+                          handleLoading={handleLoading}
+                          />
+                          </div>
                         <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
@@ -1249,6 +1244,30 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                           </div>
                         </div>
                       </div>
+
+                      
+                   <div className="landscape-container">
+                    <div className="landscape-category-container">
+                    <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="API Developer Portals"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
+                          />
+                          </div>
+
+                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {data<=0 &&  <Loader/>}
+                          <HomepageSubcategory 
+                          subcategoryName="Streaming/Event Architecture"
+                          handleCompany={handleEntity}
+                          filteredCategory={APILifecyclePlatformANDStreamingAPIs}
+                          />
+                          </div>
+
+                      </div>
+                    </div> 
                     
 
                       <div class="landscape-container">
@@ -1262,14 +1281,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                           />
                           </div>
                       
-                        <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="API Developer Portals"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDAPIDeveloperPortals}
-                          />
-                          </div>
+                      
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                           {data<=0 &&  <Loader/>}
@@ -1279,14 +1291,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                           filteredCategory={APILifecyclePlatformANDIoTPlatformsNetworksDevicesAPIs}
                           />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
-                          {data<=0 &&  <Loader/>}
-                          <HomepageSubcategory 
-                          subcategoryName="Streaming/Event Architecture"
-                          handleCompany={handleEntity}
-                          filteredCategory={APILifecyclePlatformANDStreamingAPIs}
-                          />
-                          </div>
+                    
                         </div>
                       </div>
                     </div>
@@ -1874,6 +1879,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
 export async function getServerSideProps(context) {
 
   const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/` || `http://localhost:5000`);
+
   const data = await res.json();
 
   if (!data) {

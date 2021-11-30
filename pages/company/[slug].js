@@ -323,8 +323,15 @@ export default function CompanyDetailsName({ data }) {
 
  
   `}>{subcat}</span>
+
+  
   
 })}  
+
+<div className="open-source d-flex justify-content-center">
+
+               {openSource === "TRUE" ? <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold text-center">Open source</p>: ""}
+               </div>
            </div> {/* company category */}
         
            <div className="description my-3">
@@ -332,10 +339,7 @@ export default function CompanyDetailsName({ data }) {
            </div> {/* company description */}
            <div className="founded">
              <div className="founded-top">
-             <div className="open-source d-flex ">
-               <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold">Open source: </p> 
-               <p className="sm-text mt-1 ml-2"> {openSource?openSource.toLowerCase().charAt(0).toUpperCase() + openSource.slice(1):<Unknown/>}</p>
-               </div>
+       
                <div className="founded-top-left">
                  <div className="icon">
                     <img src="../../apilandscape__founded_in_40x40.png" alt="" className="icon" />
@@ -1009,6 +1013,11 @@ export default function CompanyDetailsName({ data }) {
                           
                         })} 
 
+<div className="open-source d-flex justify-content-center">
+
+               {openSource === "TRUE" ? <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold text-center">Open source</p>: ""}
+               </div>
+
            </div> {/* company category */}
         
            <div className="description my-5">
@@ -1016,10 +1025,7 @@ export default function CompanyDetailsName({ data }) {
            </div> {/* company description */}
            <div className="founded">
              <div className="founded-top">
-               <div className="open-source d-flex ">
-               <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold">Open source: </p> 
-               <p className="sm-text mt-1 ml-2"> {openSource?openSource.toLowerCase().charAt(0).toUpperCase() + openSource.slice(1):<Unknown/>}</p>
-               </div>
+           
                <div className="founded-top-left">
                  <div className="icon">
                     <img src="../../apilandscape__founded_in_40x40.png" alt="" className="icon" />

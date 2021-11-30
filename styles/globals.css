@@ -76,7 +76,7 @@ a {
 }
 
 .bg-light-company-color {
-  background-color:#1b4965;
+  background-color:#00a6b6;
 }
 .bg-light-blue {
   background-color:#00a6b6;
@@ -145,7 +145,7 @@ transform: translateZ(0);
 .homeCards {
   display: flex;
    flex-wrap: wrap;
-   justify-content: center;
+   justify-content: space-around;
 }
 
 
@@ -589,7 +589,7 @@ color:white !important;
 .landscape-category-container {
 display:flex;
 flex: 1;
-min-height:125px;
+/* min-height:125px; */
 }
 .landscape-subcategory-box {
 border:2px solid #eee;
@@ -1155,7 +1155,7 @@ border-radius:10px;
 }
 
 .open-source-text {
-  color:#f34d08;
+  color:#f34d08 !important;
 }
 /* .md-social-share-buttons {
   margin-top:100px;

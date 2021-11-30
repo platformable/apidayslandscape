@@ -696,9 +696,14 @@ const MediaAssociationsANDAssociations = data.values.filter(
   };
 
 
+  const APILifecyclePlatformsDescription = "Essential tools to manage the API lifecycle: from design to testing, and including access and identity, security, analytics, and developer portals. Also includes consulting companies that assist API providers define API strategies and build APIs, and the infrastructure needed to enable event-driven architectures including IoT platforms."
+const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and blockchain backend infrastructure and cloud-based API infrastructures. Also includes headless CMS and backend infrastructure built specifically for the banking/finance/insurance industry."
+ const BusinessprocessesasanAPIAPIasaProductDescription="API products specifically available to be used as service components that enable business processes and functionalities to be composed into IT architectures. Includes the use of data as a service, payments, communication platforms, identity verification, and so on."
+ const integrationPlatformDescription="API aggregators and automation/orchestration services that help create workflows and standardised integrations to facilitate use of APIs in internal IT architectures. Platforms that provide a single point of integration for APIs that have different value propositions."
+ const verticalApiDescription ="Platforms that take a value proposition from one use case, such as cloud storage, and abstracts all available APIs into one API."
+  
 
-
-  const testCat = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequuntur, velit, alias numquam necessitatibus earum accusamus voluptate sequi exercitationem mollitia minus? Saepe tenetur neque dolorum deleniti, error soluta dolorem molestias, laborum eaque distinctio hic voluptatibus deserunt corporis quaerat iste veritatis assumenda voluptatum magni alias nesciunt sed eum odio quam! Odit beatae aliquam itaque! Rem facilis repudiandae, laboriosam delectus officiis voluptatum nostrum necessitatibus accusantium corrupti expedita placeat sunt consequatur laudantium quae porro voluptatibus? Sequi aperiam ut quas incidunt quo dolore, eius illum praesentium nesciunt doloribus ex est, quasi aut fugit ducimus consequatur consequuntur nobis magni ratione eum iure. Atque optio vel, magnam sit ipsa exercitationem maiores quisquam, deleniti est nobis error veritatis non explicabo fuga culpa dolor aliquam praesentium architecto qui. Totam maiores illum doloremque optio itaque laboriosam nihil ipsum officia."
+  
   const totalValues = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations")
  
 
@@ -739,7 +744,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
             <button className="btn btn-dark-gray me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
             <button className="btn btn-light-gray  m-0 text-company-color " onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape.jpg"  download="apilandscape">Download the map</a>
-            <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("homepage")}>Zoom</button>
+            <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
             </div>
 
            
@@ -1173,7 +1178,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 <div className="col-md-12 mb-1">
                   <div className="home-main-container ">
                     <div className="bg-dark-company-color">
-                      <span className="text-white" data-tip={testCat} data-for="category-tooltip">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
+                      <span className="text-white" data-tip={APILifecyclePlatformsDescription} data-for="category-tooltip">API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1292,7 +1297,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="bg-dark-company-color">
-                      <span className="text-white">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
+                      <span className="text-white" data-tip={BackendBuildingToolsDescription} data-for="category-tooltip">Backend Building <br /> Tools ({BackendBuildingTools.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1374,7 +1379,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="bg-dark-company-color"> 
-                      <span className="cat-name text-white">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
+                      <span className="cat-name text-white" data-tip={BusinessprocessesasanAPIAPIasaProductDescription} data-for="category-tooltip">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
                       
@@ -1556,7 +1561,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="bg-dark-company-color">
-                      <span className="text-white">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
+                      <span className="text-white" data-tip={integrationPlatformDescription} data-for="category-tooltip">Integration Platform <br /> as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
                     <div className="landscape-container">
@@ -1616,7 +1621,7 @@ const MediaAssociationsANDAssociations = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="bg-dark-company-color">
-                      <span className="text-white">Vertical API <br /> Abstractions ({VerticalAPIAbstractions.length})</span>
+                      <span className="text-white" data-tip={verticalApiDescription} data-for="category-tooltip">Vertical API <br /> Abstractions ({VerticalAPIAbstractions.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1776,12 +1781,13 @@ const MediaAssociationsANDAssociations = data.values.filter(
                    
                         <h3 className="fw-bold text-center mx-2 text-company-color">Methodology</h3>
                     </div>
-                    <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
+                    <div className="row d-flex align-items-center bg-light rounded shadow py-5 my-2 px-3">
                         <div className="col-md-3 ">
-                            <img src="../homepage/logo_dark.png" alt="" />
+                            <img src="../logo_dark.png" alt="" />
                         </div>
                         <div className="col-md-9 ">
-                            <p className="mt-3 text-company-color">Our dataset has been built on 3 years of apidays industry analysis and data collection</p>
+                            
+                            <p className="mt-3 text-company-color">Our dataset has been built on 3 years of apidays industry analysis and data collection. APIs are at the core of all digital ecosystems and infrastructures. APIs make it possible for businesses, governments, non-profits, researchers and media to build digital solutions at scale and in partnership with a wide variety of stakeholders. It is essential to be able to review the dynamism and breadth of the API industry, but it is challenging to find data that captures all of the work being done by various players. This API Landscape aims to capture all of the tools available that enable digital ecosystem expansion and to give insights into the dynamism and growth of APIs around the world and across all industries.</p>
                         </div> 
                     </div> 
                     {/* row */}

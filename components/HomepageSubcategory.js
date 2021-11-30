@@ -33,8 +33,8 @@ function getSubcategoryDescription (obj,subcategoryName){
     <div className="">
       <h6 className="text-center sm-text pt-1" data-tip={getSubcategoryDescription(subcategoriesDescriptions,subcategoryName)} data-for="subcategory-tooltip">{subcategoryName} ({filteredCategory.length})</h6>
 
-
-      <div className="homeCards  d-flex justify-content-start px-2">
+      <div className="">
+      <div className="homeCards px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
       
@@ -46,16 +46,16 @@ function getSubcategoryDescription (obj,subcategoryName){
                   key={index}
                   onClick={()=> handleCompany(row)}
                 >
-                  <div   data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} data-for="companyName-tooltip" className={router.pathname!=="/homepage" ? "landscape-img border " : "homepage-landscape-img border "}>
+                  <div   data-bs-toggle="modal" data-bs-target="#exampleModal" data-tip={row.name} data-for="companyName-tooltip" className={router.pathname!=="/zoom" ? "landscape-img border " : "homepage-landscape-img border "}>
                    {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(row.logo)} 2x`} alt="" className="" /> }
                   </div>
-                  {router.pathname!=="/homepage"? <p className="index-company-text text-center mt-1">{row.name.substr(0,10)}</p> : ""} 
+                  {router.pathname!=="/zoom"? <p className="index-company-text text-center mt-1">{row.name.substr(0,10)}</p> : ""} 
                 </div>
               );
             })
           : "no data"}
       </div>
-
+      </div>
       {/* MODAL */}
 
  

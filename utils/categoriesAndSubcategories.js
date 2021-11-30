@@ -188,3 +188,6 @@ export const subcategoriesDescriptions = {
     "Associations":[{"description":"Associations and networks that play a specific role in encouraging API adoption or usage"}],
 
   }
+
+
+  

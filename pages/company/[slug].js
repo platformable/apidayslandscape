@@ -173,7 +173,7 @@ export default function CompanyDetailsName({ data }) {
     openSource
   } = selectedCompany[0];
 
-  console.log("selectedCompany",selectedCompany)
+  
 
 
 

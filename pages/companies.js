@@ -1,14 +1,16 @@
-import React, {useState,useEffect,useRef} from 'react'
+import React, {useState,useEffect,useRef,useContext} from 'react'
 import Layout from '../components/Layout'
 import Head from "next/head";
 import CompanyCard from '../components/CompanyCard'
 import TopBarProgress from "react-topbar-progress-indicator";
 import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
 import Loader from '../components/Loader';
-
+import { CompanyContext } from "../context/CompanyContext";
 export default function companiesCards({data}) {
     
-    const newData = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations")
+    const [company, setCompany] = useContext(CompanyContext);
+    
+    const newData = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations" || company.searchInput)
 
 
     const [loading,setLoading]=useState(false)
@@ -23,6 +25,7 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
   
+
   
   
     TopBarProgress.config({
@@ -32,13 +35,11 @@ export default function companiesCards({data}) {
         },
         shadowBlur: 5
       });
-
-      const isInitialMount = useRef(true);
-
    
    
     const handleCompanyName= (text)=>{
-        const result =  data.values.filter(
+       
+        const result = data.values.filter(
             (company, index) =>
             company.name.toLowerCase().includes(text)
         );
@@ -66,6 +67,10 @@ export default function companiesCards({data}) {
     }
 
     const handleFilter = () => {
+
+        if(company.searchInput !==""){
+            handleCompanyName(company.searchInput)
+         }
   
         if(selectedSubcategory === "All" && selectedCategory === "All"){
             setLiveData(data.values)
@@ -106,6 +111,8 @@ export default function companiesCards({data}) {
    
 
    useEffect(()=>{ 
+   
+
     liveData.sort((a, b) => a.name.localeCompare(b.name))
     handleFilter()
    
@@ -153,12 +160,14 @@ export default function companiesCards({data}) {
                     <div className="col-md-3">
                     <div className="input-group mb-2">
                     <input type="text" class="form-control " id="inputGroupFile04" 
-                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" 
-                    onChange={(e)=>handleCompanyName(e.target.value)}/>
+                    aria-describedby="inputGroupFileAddon04" aria-label="" 
+                    onChange={(e)=>handleCompanyName(e.target.value)} />
                     <button className="btn border " type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
                     <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
                     </button>
                     </div>
+
+                    
 
                     </div>{/* search */}
                     <div className="col-md-2 d-flex justify-content-start">
@@ -178,7 +187,7 @@ export default function companiesCards({data}) {
         </section>
 
         {loader &&   <div className="text-center d-flex justify-content-center my-5"><img src="../Spinner-1s-44px.gif"/> </div> }
-
+                            <p>the search was for {company.searchInput}</p>
         <section className="cards my-2">
             <div className="container">
                 <div className="card-container">

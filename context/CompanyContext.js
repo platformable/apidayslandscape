@@ -4,7 +4,9 @@ export const CompanyContext =createContext()
 
 
 export const CompanyProvider = ({children}) =>{
-    const [company,setCompany]=useState([])
+    const [company,setCompany]=useState({
+        searchInput:""
+    })
 
     return (
         <CompanyContext.Provider value={[company,setCompany]}>

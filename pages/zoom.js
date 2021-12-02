@@ -21,10 +21,11 @@ import {
 
 
 export default function Homepage({ data }) {
+
+
   const [company, setCompany] = useContext(CompanyContext);
 
 
- 
 
   const router = useRouter();
 
@@ -706,6 +707,22 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
   
   const totalValues = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations")
  
+  const [searchResult,setSearchResult]=useState(false)
+
+  const handleSearchMessage=()=>{
+    setSearchResult(true)
+    setTimeout(()=>setSearchResult(false),3000)
+  }
+
+  const handleSearch = ()=>{
+
+    if(company.searchInput!==""){
+    
+   const result =  data.values.filter((item, index) => item.name.toLowerCase()===company.searchInput);
+   result.length===0 ? handleSearchMessage() :router.push(`/company/${result[0].name}`);
+  } 
+  }
+  
 
   return (
     <Layout>
@@ -741,13 +758,24 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
             <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn btn-dark-gray me-1 text-white" onClick={()=>handleForm()}>Add your API Tool</button>
-            <button className="btn btn-light-gray  m-0 text-company-color " onClick={()=>handleLinks("companies")}>Explore the companies</button>
+            <button className="btn btn-dark-gray me-1 text-white mb-1" onClick={()=>handleForm()}>Add your API Tool</button>
+            <button className="btn btn-light-gray  m-0 text-company-color mb-1" onClick={()=>handleLinks("companies")}>Explore the companies</button>
             <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape_dec_01.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
+            <div className="row">
+            <div className="col-md-4"> </div>
+              <div className="col-md-4">
+              <div class="input-group my-3">
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
+                <button class="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
+              </div>
+               {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not registered</span></div>}
+              </div>
+              <div className="col-md-4"></div>              
             </div>
-
-           
+            </div>
+            
+            
             <div className="mt-5">
               <h3><span class="badge bg-light text-black shadow d-none d-md-block  mt-5">{totalValues.length}</span> </h3>
               <h3 className="sm-text text-center text-white md-social-share-buttons">Share</h3>
@@ -762,6 +790,9 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             </EmailShareButton>
               </div>
           </div>
+
+          
+
           </section>
 
           {/* MOBILE */}
@@ -1166,7 +1197,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
 
           {/* END MOBILE */}
           
-          <section className="home-landscape heroBg d-none d-md-block py-5">
+          <section className="home-landscape heroBg d-none d-md-block py-1">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" id="companyName-tooltip"/>
           <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="subcategory-tooltip"/>
           <ReactTooltip backgroundColor="#0c4b6e" textColor="#fff" id="category-tooltip" place="right" className="categoryToolTip"/>

@@ -774,7 +774,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
                 <button class="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
               </div>
-               {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not registered</span></div>}
+               {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not found</span></div>}
               </div>
               <div className="col-md-4"></div>              
             </div>

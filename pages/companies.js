@@ -187,7 +187,7 @@ export default function companiesCards({data}) {
         </section>
 
         {loader &&   <div className="text-center d-flex justify-content-center my-5"><img src="../Spinner-1s-44px.gif"/> </div> }
-                            <p>the search was for {company.searchInput}</p>
+                        
         <section className="cards my-2">
             <div className="container">
                 <div className="card-container">

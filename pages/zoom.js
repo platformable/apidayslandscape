@@ -714,12 +714,17 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
     setTimeout(()=>setSearchResult(false),3000)
   }
 
+  const handleFoundCompany = (company)=>{
+    setLoading(!loading)
+    router.push(`/company/${company}`)
+  }
+
   const handleSearch = ()=>{
 
     if(company.searchInput!==""){
     
    const result =  data.values.filter((item, index) => item.name.toLowerCase()===company.searchInput);
-   result.length===0 ? handleSearchMessage() :router.push(`/company/${result[0].name}`);
+   result.length===0 ? handleSearchMessage() :handleFoundCompany(result[0].name);
   } 
   }
   

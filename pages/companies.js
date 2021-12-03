@@ -25,7 +25,7 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
   
-
+const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations" || company.searchInput).length
   
   
     TopBarProgress.config({
@@ -171,7 +171,7 @@ export default function companiesCards({data}) {
 
                     </div>{/* search */}
                     <div className="col-md-2 d-flex justify-content-start">
-                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {newData.length} </p>
+                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {total} </p>
                     </div>
                     <div className="col-md-1 d-flex justify-content-end align-items-center">
                     <div class="form-check">

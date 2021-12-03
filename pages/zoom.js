@@ -764,10 +764,10 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
             <button className="btn btn-dark-gray me-1 text-white mb-1" onClick={()=>handleForm()}>Add your API Tool</button>
-            <button className="btn btn-light-gray  m-0 text-company-color mb-1" onClick={()=>handleLinks("companies")}>Explore the companies</button>
+            <button className="btn btn-light-gray  m-0 text-company-color mb-1" onClick={()=>handleLinks("companies")}>Search</button>
             <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape_dec_01_savingspace.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
-            <div className="row">
+       {/*      <div className="row">
             <div className="col-md-4"> </div>
               <div className="col-md-4">
               <div class="input-group my-3">
@@ -777,7 +777,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not found</span></div>}
               </div>
               <div className="col-md-4"></div>              
-            </div>
+            </div> */}
             </div>
             
             

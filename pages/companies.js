@@ -39,9 +39,10 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
    
     const handleCompanyName= (text)=>{
        
+        
         const result = data.values.filter(
             (company, index) =>
-            company.name.toLowerCase().includes(text)
+            company.name.toLowerCase().includes(text.toLowerCase())
         );
 
         setLiveData(result)

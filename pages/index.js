@@ -123,11 +123,11 @@ export default function Homepage({ data }) {
   });
 
 
-  const handleForm = ()=>{
+  const handleForm = (url)=>{
 
     if(typeof window !== "undefined"){
       window.open(
-        "https://airtable.com/shr07pWSbRnQfnZZd",
+        url,
         '_blank' 
       );
     }
@@ -763,7 +763,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <h1 className="text-white text-center py-2 text-white fw-bold">The API Landscape</h1>
             <p className="text-center sm-text text-white">Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}</p>
             <h4 className="text-white text-center py-2 text-white">A comprehensive view of all stakeholders creating the programmable economy</h4>
-            <button className="btn btn-dark-gray me-1 text-white mb-1" onClick={()=>handleForm()}>Add your API Tool</button>
+            <button className="btn btn-dark-gray me-1 text-white mb-1" onClick={()=>handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}>Add your API Tool</button>
             <button className="btn btn-light-gray  m-0 text-company-color mb-1" onClick={()=>handleLinks("companies")}>Search</button>
             <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape.png"  download="apilandscape">Download the map</a>
             <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
@@ -1877,7 +1877,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <img src="../about-btn1.png" alt="" className="d-block align-self-start mb-2 xd-icon" />
                    
                     </div>
-                    <button className="btn-about bg-dark-orange text-white mt-3" onClick={()=>handleForm()}>Add your API tool</button>
+                    <button className="btn-about bg-dark-orange text-white mt-3" onClick={()=>handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}>Add your API tool</button>
                     </div>
 
                     <div className="change-box  px-5">
@@ -1886,7 +1886,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <p className="pt-1 text-company-color">Report a bug including problems with the website or with the data for a specific tool provider</p>
                     </div>
                     <div className="text-center d-flex flex-grow-1">
-                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm()}>Report a bug</button>
+                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm("https://platformable.typeform.com/to/iqJrv9LJ")}>Report a bug</button>
                     </div>
                     </div>
 
@@ -1897,7 +1897,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <p className="pt-1 text-company-color">Share a new feature idea, including any additional data points you would like to see </p>
                     </div>
                     <div className="text-center d-flex flex-grow-1">
-                    <button className="btn-about bg-dark-orange text-white mt-2" onClick={()=>handleForm()}>New feature idea</button>
+                    <button className="btn-about bg-dark-orange text-white mt-2" onClick={()=>handleForm("https://platformable.typeform.com/to/hSprzih3")}>New feature idea</button>
                     </div>
                     </div>
                 </div>

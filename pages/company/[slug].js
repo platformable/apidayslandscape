@@ -394,7 +394,7 @@ export default function CompanyDetailsName({ data }) {
            </div> {/* company-socials-url */}
 
            <div className="update-company px-0 mx-0">
-             <a href="#" className="btn btn-light-gray xs-text mx-0">Update company info</a>
+             <a href="https://platformable.typeform.com/to/KDwe0Tbk" target="_blank" className="btn btn-light-gray xs-text mx-0">Update company info</a>
              {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
            </div>
           </div> {/* profile left */}
@@ -880,7 +880,7 @@ export default function CompanyDetailsName({ data }) {
           </div>
          {/* row */}
          <div className="update-company d-flex justify-content-center bg-gray my-5">
-             <a href="#" target="_blank" className="btn btn-light-gray sm-text">Update company info</a>
+         <a href="https://platformable.typeform.com/to/KDwe0Tbk" target="_blank" className="btn btn-light-gray xs-text mx-0">Update company info</a>
              {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
            </div>
 
@@ -1081,7 +1081,7 @@ export default function CompanyDetailsName({ data }) {
 
 
            <div className="update-company d-flex justify-content-center bg-gray my-5">
-             <a href="#" target="_blank" className="btn btn-light-gray sm-text">Update company info</a>
+           <a href="https://platformable.typeform.com/to/KDwe0Tbk" target="_blank" className="btn btn-light-gray xs-text mx-0">Update company info</a>
              {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
            </div>
 
@@ -1678,7 +1678,7 @@ export default function CompanyDetailsName({ data }) {
        
          </section> {/* end details */}
          <div className="update-company d-flex justify-content-center bg-gray my-5">
-             <a href="#" target="_blank" className="btn btn-light-gray sm-text">Update company info</a>
+         <a href="https://platformable.typeform.com/to/KDwe0Tbk" target="_blank" className="btn btn-light-gray xs-text mx-0">Update company info</a>
              {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
            </div>
          </div> {/* company profile right column */}

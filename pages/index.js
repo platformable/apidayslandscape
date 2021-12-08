@@ -766,7 +766,8 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <button className="btn btn-dark-gray me-1 text-white mb-1" onClick={()=>handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}>Add your API Tool</button>
             <button className="btn btn-light-gray  m-0 text-company-color mb-1" onClick={()=>handleLinks("companies")}>Search</button>
             <a className="btn btn-dark-gray me-1 text-white" href="../apilandscape.png"  download="apilandscape">Download the map</a>
-            <button className="btn btn-light-gray me-1  text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
+            <button className="btn btn-light-gray   text-company-color " onClick={()=>handleLinks("zoom")}>Zoom</button>
+            <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1YPBvTT5ZGwYQssY1_UV1KsfOsFxJyBGT&export=download"  download="stateofthemarket2022">Report</a>
        {/*      <div className="row">
             <div className="col-md-4"> </div>
               <div className="col-md-4">

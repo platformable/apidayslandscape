@@ -44,7 +44,12 @@ a {
   --dark-orange:#f29262;
   --bg-light-blue:#BDDAE2;
   --company-color:#0c4b6e;
+  --company-orange-color:#f34d08;
 
+}
+
+.bg-company-orange-color {
+  background-color:var(--company-orange-color) !important;
 }
 
 .bg-dark-main-color {

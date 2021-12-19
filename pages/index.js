@@ -807,7 +807,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2" data-tip={APILifecyclePlatformsDescription} data-for="category-tooltip">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Access and Identity Management"
@@ -943,7 +943,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-company-color py-2">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Data"

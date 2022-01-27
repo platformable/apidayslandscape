@@ -216,7 +216,7 @@ export default function CompanyDetailsName({ data }) {
   return (
     <Layout>
       <Head>
-          <title>apidays landscape</title>
+          <title>apidays landscape - {slug} </title>
           <meta name="description" content="apidays landscape" />
         </Head>
 {/* <section className="mobile-profile"> */}

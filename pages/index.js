@@ -737,24 +737,22 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
           <title>The API Landscape</title>
           <meta content="text/html; charset=UTF-8" name="Content-Type" />
           <meta name="description" content="The API Landscape" />
-          <meta property="og:url" content="https://apilandscape.platformable.com/" />
+          <meta property="og:url" content="https://apilandscape.apiscene.io/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
         <meta property="og:image" content="../landscape_social_map.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@alexeigarban" />
-        <meta name="twitter:title" content="Embed a Twitch Video into a React Website" />
-        <meta name="twitter:description" content="How to embed a Twitch video into a React application or website using the ReactPlayer npm package." />
+        <meta name="twitter:site" content="@APIdaysGlobal" />
+        <meta name="twitter:title" content="apidays" />
+        <meta name="twitter:description" content="apidays" />
         <meta name="twitter:image" content="../landscape_social_map.png" />
        
         </Head>
 
         <main>
-         {/*  <section className="hero heroBg">
-            <HomeHero />
-          </section> */}
+
 
           <section className="intro-text py-3">
           <div className="container hero  d-flex justify-content-center  align-items-center">

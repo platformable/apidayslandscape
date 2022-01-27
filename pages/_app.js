@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 }, []);
 
   return <>
-  <Script src={`https://www.googletagmanager.com/gtag/js?id=UA-59979813-39`} strategy='lazyOnload'/>
+  <Script src={`https://www.googletagmanager.com/gtag/js?id=G-KEPJR2KRS1`} strategy='lazyOnload'/>
   <Script
   dangerouslySetInnerHTML={{
     __html: `
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-59979813-39');
+  gtag('config', 'G-KEPJR2KRS1');
   `
   }}>
   </Script>

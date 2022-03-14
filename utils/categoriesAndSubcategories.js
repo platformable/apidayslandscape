@@ -2,7 +2,7 @@ export const categories = [
   "API Lifecycle Platform",
   "API Standards/Protocols",
   "Backend Building Tools",
-  "Business processes as an API/API-as a Product",
+  "Business processes as an API/API-as-a-Product",
   "Integration Platform as a Service",
 /*   "Vertical API Abstractions",
   "Media/Associations" */
@@ -85,7 +85,7 @@ export const categoriesWithSubcategories = [
     "API Standards",]
   },
   {
-    "name":"Business processes as an API/API-as a Product",
+    "name":"Business processes as an API/API-as-a-Product",
     "subcategories":[
     "Accounting",
     "AI/ML",

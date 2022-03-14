@@ -47,7 +47,7 @@ export default function Homepage({ data }) {
     "API Lifecycle Platform",
     "API Standards/Protocols",
     "Backend Building Tools",
-    "Business processes as an API/API-as a Product",
+    "Business processes as an API/API-as-a-Product",
     "Integration Platform as a Service",
     "Vertical API Abstraction",
   ];
@@ -376,18 +376,18 @@ const BackendBuildingToolsMBaaSANDAPIDeploymentBackendBuilding = data.values.fil
   ).sort((a, b) => a.name.localeCompare(b.name))
 
 
-/*   Business processes as an API/API-as a Product */
+/*   Business processes as an API/API-as-a-Product */
   
 const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product")
+      "Business processes as an API/API-as-a-Product")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Accounting")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -395,41 +395,41 @@ const BusinessprocessesasanAPIAPIasaProductANDAccounting = data.values.filter(
 const BusinessprocessesasanAPIAPIasaProductANDAIML = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("AI/ML")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDAudioAndVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Audio/Visual")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Legal/Regulatory")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDTimeCalendar = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Time/Calendar")
 ).sort((a, b) => a.name.localeCompare(b.name))
 const BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Data governance/Data management")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("E-commerce")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -437,21 +437,21 @@ const BusinessprocessesasanAPIAPIasaProductANDEcommerce = data.values.filter(
 const BusinessprocessesasanAPIAPIasaProductANDData = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Data")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDEmailMessaging = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Email/Messaging/Communications Platforms as a Service")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Identity verification/KYC")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -459,59 +459,59 @@ const BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC = data.val
 const BusinessprocessesasanAPIAPIasaProductANDOnlineForms = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Forms") 
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDHumanresources = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Human Resources")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDHumanasaservice = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Human-as-a-service")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDPayments = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Payments")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Video")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductANDSearch = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Product") &&
+      "Business processes as an API/API-as-a-Product") &&
     company?.subcategory?.includes("Search")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 
-/*   Business processes as an API/API-as a Products */
+/*   Business processes as an API/API-as-a-Products */
   
 const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products")
+      "Business processes as an API/API-as-a-Products")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products") &&
+      "Business processes as an API/API-as-a-Products") &&
     company?.subcategory?.includes("Accounting APIs")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -519,28 +519,28 @@ const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filt
 const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products") &&
+      "Business processes as an API/API-as-a-Products") &&
     company?.subcategory?.includes("AI APIs") 
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products") &&
+      "Business processes as an API/API-as-a-Products") &&
     company?.subcategory?.includes("API Aggregators") 
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIDeployment = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products") &&
+      "Business processes as an API/API-as-a-Products") &&
     company?.subcategory?.includes("API Deployment/Back-end Building") 
 ).sort((a, b) => a.name.localeCompare(b.name))
 
 const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
   (company, index) =>
     company?.parentCategorySlug?.includes(
-      "Business processes as an API/API-as a Products") &&
+      "Business processes as an API/API-as-a-Products") &&
     company?.subcategory?.includes("Data (B2B, B2C)")
 ).sort((a, b) => a.name.localeCompare(b.name))
 
@@ -737,24 +737,22 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
           <title>The API Landscape</title>
           <meta content="text/html; charset=UTF-8" name="Content-Type" />
           <meta name="description" content="The API Landscape" />
-          <meta property="og:url" content="https://apilandscape.platformable.com/" />
+          <meta property="og:url" content="https://apilandscape.apiscene.io/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:description" content="The API Landscape"/>
         <meta property="og:title" content="The API Landscape" />
         <meta property="og:image" content="../landscape_social_map.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@alexeigarban" />
-        <meta name="twitter:title" content="Embed a Twitch Video into a React Website" />
-        <meta name="twitter:description" content="How to embed a Twitch video into a React application or website using the ReactPlayer npm package." />
+        <meta name="twitter:site" content="@APIdaysGlobal" />
+        <meta name="twitter:title" content="apidays" />
+        <meta name="twitter:description" content="apidays" />
         <meta name="twitter:image" content="../landscape_social_map.png" />
        
         </Head>
 
         <main>
-         {/*  <section className="hero heroBg">
-            <HomeHero />
-          </section> */}
+
 
           <section className="intro-text py-3">
           <div className="container hero  d-flex justify-content-center  align-items-center">
@@ -808,7 +806,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2" data-tip={APILifecyclePlatformsDescription} data-for="category-tooltip">API Lifecycle Platform ({APILifecyclePlatform.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Access and Identity Management"
@@ -944,7 +942,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
             <div className="container">
               <div className="row">
                 <div className="col-md-12 bg-white px-0">
-                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-company-color py-2">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
+                  <h3 className="sm-text text-center mobile-bg-dark-company-color text-white py-2">Business processes as an <br /> API/API-as-a-Product ({BusinessprocessesasanAPIAPIasaProduct.length})</h3>
                   <div className="subcat">
                   <HomepageSubcategory 
                           subcategoryName="Data"
@@ -1422,7 +1420,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="bg-dark-company-color"> 
-                      <span className="cat-name text-white" data-tip={BusinessprocessesasanAPIAPIasaProductDescription} data-for="category-tooltip">Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
+                      <span className="cat-name text-white" data-tip={BusinessprocessesasanAPIAPIasaProductDescription} data-for="category-tooltip">Business processes as an <br /> API/API-as-a-Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
                       
@@ -1908,6 +1906,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
         </main>
       </div>
       <Modal  selectedEntity={selectedEntity} handleLoading={handleLoading}/>
+    
 
     </Layout>
   );

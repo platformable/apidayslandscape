@@ -248,8 +248,8 @@ export default function CompanyDetailsName({ data }) {
                   ${category.includes("API Standards/Protocols") && "ApiStandardsandProtocolsBg"}
                   ${category.includes("Media/Associations") && "ApiStandardsandProtocolsBg"}
                   ${category.includes("Backend Building Tools") && "BackendBuildingToolsANDMBaasBg text-white"}
-                  ${category.includes("Business processes as an API/API-as a Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
-                  ${category.includes("Business processes as an API/API-as a Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
+                  ${category.includes("Business processes as an API/API-as-a-Product") && "BusinessprocessesasanAPIAPIasaProductBg"}
+                  ${category.includes("Business processes as an API/API-as-a-Products") && "BusinessprocessesasanAPIAPIasaProductsBg"}
                   ${category.includes("Integration Platform as a Service") && "IntegrationPlatformAsAServiceBg"}
                   ${category.includes("Vertical API Abstractions") && "VerticalAPIAbstractionsBg text-white"}
                   `}>{category}</span>)
@@ -936,8 +936,8 @@ export default function CompanyDetailsName({ data }) {
                   ${category.includes("API Standards and Protocols") && "bg-dark-main-color text-white"}
                   ${category.includes("Media/Associations") && "bg-dark-main-color text-white"}
                   ${category.includes("Backend Building Tools") && "bg-dark-main-color text-white"}
-                  ${category.includes("Business processes as an API/API-as a Product") && "bg-dark-main-color text-white"}
-                  ${category.includes("Business processes as an API/API-as a Products") && "bg-dark-main-color text-white"}
+                  ${category.includes("Business processes as an API/API-as-a-Product") && "bg-dark-main-color text-white"}
+                  ${category.includes("Business processes as an API/API-as-a-Products") && "bg-dark-main-color text-white"}
                   ${category.includes("Integration Platform as a Service") && "bg-dark-main-color text-white"}
                   ${category.includes("Vertical API Abstractions") && "bg-dark-main-color text-white"}
                   `}>{category}</span>)

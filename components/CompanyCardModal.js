@@ -123,8 +123,8 @@ export default function CompanyCardModal({company,index,loading}) {
                   ${category==="API Standards/Protocols" && "mobile-bg-dark-company-color text-white"}
                   ${category==="Media/Associations" && "mobile-bg-dark-company-color text-white"}
                   ${category==="Backend Building Tools" && "mobile-bg-dark-company-color text-white text-white"}
-                  ${category==="Business processes as an API/API-as a Product" && "mobile-bg-dark-company-color text-white"}
-                  ${category==="Business processes as an API/API-as a Products" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Business processes as an API/API-as-a-Product" && "mobile-bg-dark-company-color text-white"}
+                  ${category==="Business processes as an API/API-as-a-Products" && "mobile-bg-dark-company-color text-white"}
                   ${category==="Integration Platform as a Service" && "mobile-bg-dark-company-color text-white"}
                   ${category==="Vertical API Abstractions" && "mobile-bg-dark-company-color text-white"}
                   `}>{category}</span>)

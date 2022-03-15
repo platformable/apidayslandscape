@@ -41,8 +41,8 @@ a {
   --pink:#f8c700;
   --turquoise:#28c8dd;
   --darkturquoise:darkturquoise;
-  --dark-orange:#f29262;
   --bg-light-blue:#BDDAE2;
+  --dark-orange:#f29262;
   --company-color:#0c4b6e;
   --company-orange-color:#f34d08;
 
@@ -1165,3 +1165,8 @@ border-radius:10px;
 /* .md-social-share-buttons {
   margin-top:100px;
 } */
+
+.change-img-box {
+  min-height:120px;
+  
+  }

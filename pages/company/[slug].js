@@ -1116,9 +1116,9 @@ export default function CompanyDetailsName({ data }) {
 
           <section>
       
-           <section className="company-profile-right-one bg-white ">
+           <section className="company-profile-right-one ">
 
-           <div className="profile-right-side-top-top  border-bottom  d-flex pt-2 px-2 ">
+           <div className="profile-right-side-top-top    d-flex  px-2 mb-2 bg-white">
              
                    <div className="me-3 pb-2 ">
                    <p className="text-company-color sm-text">Known industries <br />
@@ -1141,9 +1141,9 @@ export default function CompanyDetailsName({ data }) {
                 </div>{/* profile-right-side-top-top */}
 
 
-             <div className="company-profile-right-one-top">
+             <div className="company-profile-right-one-top bg-white mb-2">
 
-               <div className="company-profile-right-one-top-left    p-2 border-end">
+               <div className="company-profile-right-one-top-left    px-2 border-end">
 
                  <p className="text-company-color sm-text">Estimated <br />
                  Revenue Range</p>
@@ -1159,7 +1159,7 @@ export default function CompanyDetailsName({ data }) {
               
                  <div className="profile-right-side-top-bottom content-addressing  d-flex">
 
-                   <div className="content-addressing-left-side px-2 pt-1 ">
+                   <div className="content-addressing-left-side px-2  ">
                    <p className="text-company-color sm-text">Content addressing</p>
                       <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
@@ -1172,7 +1172,7 @@ export default function CompanyDetailsName({ data }) {
                         </div>
                       </div> {/* content addressing box */}
 
-                      <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
+                      <div className="content-addressing-box d-flex gap-3 align-content-start ">
                         <div className="content-addresing-box-icon">
                           <img src="../../apilandscape__health sector_45x45.png" alt="" className="sd-icon" />
                         </div>
@@ -1184,7 +1184,7 @@ export default function CompanyDetailsName({ data }) {
 
                    </div> {/* content-addressing-left-side */}
 
-                   <div className="content-addressing-left-side px-2 pt-1">
+                   <div className="content-addressing-left-side px-2 ">
                    <p className="text-company-color"><br /></p>
                       <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
@@ -1217,9 +1217,9 @@ export default function CompanyDetailsName({ data }) {
              </div> {/* company-profile-right-one-top */}
 
 
-             <div className="company-profile-right-one-bottom d-flex">
+             <div className="company-profile-right-one-bottom d-flex bg-white">
 
-               <div className="number-of-customers d-flex flex-column align-items-center border-top border-end">
+               <div className="number-of-customers d-flex flex-column align-items-center border-end">
                  <p className="text-company-color m-0 px-2 sm-text">Number of Customers</p>
 
                  {numbersOfCustomers ?<h6 className="fw-bold px-2 pt-2"> {reduceThounsand(numbersOfCustomers)} </h6>:<h6 className="fw-bold my-2 px-2"> - </h6>}
@@ -1228,7 +1228,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* number-of-customer */}
 
 
-               <div className="known-partnership border-end border-top flex-grow-1">
+               <div className="known-partnership border-end  flex-grow-1">
                 <div className="known-partnership-container d-flex ">
                 <img src="../../apilandscape__known_partnerships_API_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                 <p className="text-company-color m-0 px-2 sm-text">Known partnerships <br />(API industry)</p>
@@ -1244,7 +1244,7 @@ export default function CompanyDetailsName({ data }) {
                      </div> {/* known-partnership-logo */}
                    </div> {/* div known-partnership*/}
 
-               <div className="know-partnerships-non-api  flex-grow-1 border-top">
+               <div className="know-partnerships-non-api  flex-grow-1 ">
                
                <div className="known-partnership-container d-flex ">
                 <img src="../../apilandscape__known_partnerships_no_API_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
@@ -1274,7 +1274,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-           <section className="company-profile-right-side-section2 bg-white my-3 d-flex flex-wrap">
+           <section className="company-profile-right-side-section2 bg-white my-2 d-flex flex-wrap">
 
              <div className="company-profile-right-side-section2-left headcount d-flex flex-column align-items-center border-end flex-grow-1">
 
@@ -1323,16 +1323,16 @@ export default function CompanyDetailsName({ data }) {
            </section> {/* company-profile-right-side-section2 */}
 
 
-           <section className="company-profile-right-side-section5  d-flex bg-white ">
+           <section className="company-profile-right-side-section5  d-flex  ">
 
 
 
 
 
-           <div className="company-profile-right-side-section5-right d-flex">
+           <div className="company-profile-right-side-section5-right d-flex mb-2 bg-white">
 
              <div className="section5-right-top d-flex">
-               <div className="section5-box flex-grow-1 border-end p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text mb-3">Stage (Seed, A, B, C)</p>
                <h6><span className="badge bg-lightgreen text-black">{stage? stage:"-"}</span></h6>
@@ -1341,7 +1341,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
 
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text mb-3">Total Funding</p>
@@ -1351,7 +1351,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text mb-3 ">Last funding date</p>
                  
@@ -1361,7 +1361,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text mb-3">Lead Investor </p>
       
@@ -1372,7 +1372,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-               <div className="section5-box flex-grow-1 border-end p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">Investors </p>
                  <p></p>
@@ -1383,7 +1383,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-                <div className="company-profile-right-side-section5-left flex-grow-1  p-2 ">
+                <div className="company-profile-right-side-section5-left flex-grow-1  px-2 ">
 
                 <div className="new-product-features-top d-flex">
                 <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
@@ -1414,7 +1414,7 @@ export default function CompanyDetailsName({ data }) {
            </section>
            <section className="bg-white"> 
            <div className="section5-right-bottom d-flex">
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
+               <div className="section5-box flex-grow-1 border-end  px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Price</p>
                  {acquisitionPrice? <h6><span className="badge  fw-bold">{acquisitionPrice}</span></h6>:<Unknown/>}
@@ -1423,7 +1423,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
+               <div className="section5-box flex-grow-1 border-end px-2">
 
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text text-center">Acquisition Type</p>
@@ -1433,7 +1433,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
+               <div className="section5-box flex-grow-1 border-end  px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">Acquired by</p>
                  {acquiredBy?<h6><span className="badge  fw-bold">{acquiredBy}</span></h6>:<Unknown/>}
@@ -1442,7 +1442,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
+               <div className="section5-box flex-grow-1 border-end  px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">IPO <br /> Date</p>
                  {ipoDate?<h6><span className="badge  fw-bold">{ipoDate}</span></h6>:<Unknown/>}
@@ -1451,7 +1451,7 @@ export default function CompanyDetailsName({ data }) {
                
                </div> {/* section5 box */}
 
-               <div className="section5-box flex-grow-1 border-end border-top p-2">
+               <div className="section5-box flex-grow-1 border-end  px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text text-center">Money Raised at IPO</p>
                  {moneyRaisedAtIpo?<h6><span className="badge  text-black">{moneyRaisedAtIpo}</span></h6>:<Unknown/>}
@@ -1461,7 +1461,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* section5 box */}
 
 
-               <div className="section5-box border-top border-start border-end p-2">
+               <div className="section5-box  border-end px-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-company-color m-0 px-2 sm-text">Valuation at IPO</p>
                  {valuationAtIpo? <h6><span className="badge fw-bold">{valuationAtIpo}</span></h6>:<Unknown/>}
@@ -1476,10 +1476,10 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-           <section className="company-profile-right-side-section3 bg-white my-3">
+           <section className="company-profile-right-side-section3  my-2">
 
-             <div className="company-profile-right-side-section3-top d-flex flex-wrap">
-               <div className="new-product-features flex-grow-1 p-2 border-end">
+             <div className="company-profile-right-side-section3-top d-flex flex-wrap bg-white">
+               <div className="new-product-features flex-grow-1 px-2 border-end">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_new_product_feature_60x50.png" alt="" className="sd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">New Product Features</p>
@@ -1493,7 +1493,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* new product-features */}
 
 
-               <div className="new-product-features flex-grow-1 p-2 border-end">
+               <div className="new-product-features flex-grow-1 px-2 border-end">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_active_products_60x50.png" alt="" className="sd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Active products</p>
@@ -1508,7 +1508,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-               <div className="new-product-features flex-grow-1 p-2 border-end">
+               <div className="new-product-features flex-grow-1 px-2 border-end">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_patents_granted_60x50.png" alt="" className="sd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Patents Granted</p>
@@ -1523,7 +1523,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-               <div className="new-product-features flex-grow-1 p-2 ">
+               <div className="new-product-features flex-grow-1 px-2 ">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_acquisitions_60x50.png" alt="" className="sd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Acquisition (of other entities)</p>
@@ -1538,9 +1538,9 @@ export default function CompanyDetailsName({ data }) {
 
              </div> {/* company-profile-right-side-section3-top */}
 
-             <div className="company-profile-right-side-section3-bottom ">
+             <div className="company-profile-right-side-section3-bottom bg-white mt-2">
 
-               <div className="section3-bottom-left flex-grow-1 p-2 border-end border-top">
+               <div className="section3-bottom-left flex-grow-1 px-2 border-end ">
                <div className="new-product-features-top d-flex align-items-center">
                   <img src="../../apilandscape_known_standards_used_integrated_60x50.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Known standards used/integrated</p>
@@ -1549,7 +1549,7 @@ export default function CompanyDetailsName({ data }) {
        
                </div> {/* section3 bottom left */}
 
-               <div className="section3-bottom-right flex-grow-1 p-2 border-top">
+               <div className="section3-bottom-right flex-grow-1 px-2 ">
 
                   <div className="new-product-features-top d-flex align-items-center">
                   <img src="../../apilandscape_privacy_specific_features_60x50.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
@@ -1570,7 +1570,7 @@ export default function CompanyDetailsName({ data }) {
 
            <section className="charts">
              <div className="charts-top  bg-white ">
-               <div className="chart p-2">
+               <div className="chart px-2">
                <div className="new-product-features-top d-flex align-items-center">
                   <img src="../../apilandscape_blog_per_quarter_45x45.png" alt="" className="sd-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 p2 sm-text">Blogs per quarter</p>
@@ -1586,8 +1586,8 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* chart */}
 
 
-               <div className="calendar border-start p-2 text-center">
-               <p className="text-company-color  p-2  sm-text text-center">Participation in</p>
+               <div className="calendar border-start px-2 text-center">
+               <p className="text-company-color  px-2  sm-text text-center">Participation in</p>
               <div className="text-center "> <img src="../apidayslogo_icon.png" alt="" className=" mb-5  lg-icon"  /></div>
                <div className="text-center ">
                     <ul className="timeline">
@@ -1620,10 +1620,10 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-           <section className="company-profile-right-side-section4 bg-white my-3">
+           <section className="company-profile-right-side-section4 bg-white my-2">
 
            <div className="company-profile-right-side-section3-top d-flex">
-               <div className="new-product-features flex-grow-1 p-2 border-end">
+               <div className="new-product-features flex-grow-1 px-2 border-end">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_active_tech_count_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">Active tech count</p>
@@ -1637,7 +1637,7 @@ export default function CompanyDetailsName({ data }) {
                </div> {/* new product-features */}
 
 
-               <div className="new-product-features flex-grow-1 p-2 border-end">
+               <div className="new-product-features flex-grow-1 px-2 border-end">
                   <div className="new-product-features-top d-flex">
                   <img src="../../apilandscape_IT_spend_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                   <p className="text-company-color m-0 px-2 sm-text">IT Spend</p>

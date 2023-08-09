@@ -1895,7 +1895,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <p className="pt-1 text-company-color">Report a bug including problems with the website or with the data for a specific tool provider</p>
                     </div>
                     <div className="text-center d-flex flex-grow-1 mt-3">
-                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm("https://platformable.typeform.com/to/iqJrv9LJ")}>Report a bug</button>
+                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm("https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i")}>Report a bug</button>
                     </div>
                     </div>
 
@@ -1912,7 +1912,7 @@ const BackendBuildingToolsDescription="Serverless, cloud, mobile-based and block
                     <p className="pt-1 text-company-color">Share a new feature idea, including any additional data points you would like to see </p>
                     </div>
                     <div className="text-center d-flex flex-grow-1 mt-3">
-                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm("https://platformable.typeform.com/to/hSprzih3")}>New feature idea</button>
+                    <button className="btn-about bg-dark-orange text-white" onClick={()=>handleForm("https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i")}>New feature idea</button>
                     </div>
                     </div>
                 </div>

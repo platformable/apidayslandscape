@@ -186,7 +186,14 @@ export const subcategoriesDescriptions = {
     "Smart Home/Facilities":[{"description":"A home equipped with heating, lighting, and other electronic devices remotely controlled via mobile or computer"}],
     "Media":[{"description":"API-specific news sites, blogs, newsletters, conferences, and related media"}],
     "Associations":[{"description":"Associations and networks that play a specific role in encouraging API adoption or usage"}],
-
+    "API Threat Management":[{"description":"API Threat Management"}],
+    "API Discovery & Risk Management":[{"description":"API Discovery & Risk Management"}],
+    "Vulnerability Management":[{"description":"Vulnerability Management"}],
+    "Vulnerability Identification/scanners":[{"description":"Vulnerability Identification/scanners"}],
+    "Web Application Firewalls":[{"description":"Web Application Firewalls"}],
+    "Identity Verification/KYC":[{"description":"Identity Verification/KYC"}],
+    "Access and Identity Management":[{"description":"Access and Identity Management"}],
+    "API Analytics/Monitoring":[{"description":"API Analytics/Monitoring"}]
   }
 
 

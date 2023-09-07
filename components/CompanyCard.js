@@ -48,7 +48,7 @@ export default function CompanyCard({company,index,handleLoading}) {
         <div className="card-top">
   
             <div className="card-logo">
-            {company.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(company.logo)} 2x`} alt="" className="img-fluid" /> }
+            {company.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcSet={`${handleImages(company.logo)} 2x`} alt="" className="img-fluid" /> }
 {/*               <img src={handleImages(company.logo)} alt="" onClick={() => handleCompany(company)}/> */}
             </div>
             <div className="card-description">

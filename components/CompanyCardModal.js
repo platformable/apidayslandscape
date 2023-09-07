@@ -71,7 +71,7 @@ export default function CompanyCardModal({company,index,loading}) {
         <div className="card-top">
   
             <div className="card-logo">
-            {company.logo === "" || null ? <img src={`../../../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcset={`${handleImages(company.logo)} 2x`} alt="" className="img-fluid" /> }
+            {company.logo === "" || null ? <img src={`../../../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcSet={`${handleImages(company.logo)} 2x`} alt="" className="img-fluid" /> }
            
             </div>
             <div className="card-description">

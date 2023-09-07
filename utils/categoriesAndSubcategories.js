@@ -4,6 +4,10 @@ export const categories = [
   "Backend Building Tools",
   "Business processes as an API/API-as-a-Product",
   "Integration Platform as a Service",
+  "API Security Pureplay",
+  "Embedded API Security",
+  "Adjacent Security Solutions"
+
 /*   "Vertical API Abstractions",
   "Media/Associations" */
 ];
@@ -36,9 +40,6 @@ export const subcategories = [
 "Payments",
 "Search",
 
-/* "API Protocols",
-"API Standards", */
-
 "API Deployment/Back-end Building",
 "Banking/Finance/Insurance Backends",
 "Blockchain",
@@ -58,6 +59,21 @@ export const subcategories = [
 "Marketing/Analytics",
 "Finance",
 "Smart Home/Facilities",
+
+"API Threat Management",
+"API Discovery & Risk Management",
+"Vulnerability Management",
+"Vulnerability identification/scanners",
+"Web Application Firewalls",
+"Identity Verification/KYC",
+"Access and Identity Management",
+"API Analytics/Monitoring"
+
+
+
+
+/* "API Protocols",
+"API Standards", */
 
 /* "Media",
 "Associations" */

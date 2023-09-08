@@ -1170,13 +1170,13 @@ export default function Homepage({ data }) {
                       }
                     />
                   </div>
-                  <div className="subcat border-top">
+                  {/* <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Security"
                       handleCompany={handleEntity}
                       filteredCategory={APILifecyclePlatformANDApiSecurity}
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Testing"
@@ -1817,7 +1817,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {/* <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             <HomepageSubcategory
                               subcategoryName="API Security"
                               handleCompany={handleEntity}
@@ -1825,7 +1825,7 @@ export default function Homepage({ data }) {
                                 APILifecyclePlatformANDApiSecurity
                               }
                             />
-                          </div>
+                          </div> */}
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}

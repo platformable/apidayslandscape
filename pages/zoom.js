@@ -771,7 +771,7 @@ export default function Homepage({ data }) {
       (company, index) =>
         company?.parentCategorySlug?.includes(
           "API Lifecycle (Security Pureplay)"
-        ) && company?.subcategory?.includes("API Discovery & Risk Management")
+        ) && company?.subcategory?.includes("API Discovery and Risk Management")
     );
 
   APILifecyclePlatformSecurityPureplayAndApiDiscoveryAndRisk.sort((a, b) =>
@@ -865,7 +865,7 @@ export default function Homepage({ data }) {
       (company, index) =>
         company?.parentCategorySlug?.includes(
           "API Lifecycle (Adjacent Security Solutions)"
-        ) && company?.subcategory?.includes("Identity Verification/KYC")
+        ) && company?.subcategory?.includes("Identity verification/KYC")
     );
 
   APILifecyclePlatformAdjacentSecuritySolutionsAndIdentityVerification.sort(

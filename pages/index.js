@@ -1796,7 +1796,7 @@ export default function Homepage({ data }) {
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                      {/*     <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Access and Identity Management"
@@ -1806,7 +1806,7 @@ export default function Homepage({ data }) {
                               }
                               handleLoading={handleLoading}
                             />
-                          </div>
+                          </div> */}
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
@@ -1827,7 +1827,7 @@ export default function Homepage({ data }) {
                             />
                           </div> */}
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                      {/*     <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Testing"
@@ -1836,7 +1836,7 @@ export default function Homepage({ data }) {
                                 APILifecyclePlatformANDAPITesting
                               }
                             />
-                          </div>
+                          </div> */}
                         </div>
                       </div>
 
@@ -1868,7 +1868,7 @@ export default function Homepage({ data }) {
 
                       <div class="landscape-container">
                         <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                     {/*      <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Analytics/Monitoring"
@@ -1877,7 +1877,7 @@ export default function Homepage({ data }) {
                                 APILifecyclePlatformANDAPIAnalyticsMonitoring
                               }
                             />
-                          </div>
+                          </div> */}
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
@@ -2288,7 +2288,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                 {/*          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Identity verification/KYC"
@@ -2297,7 +2297,7 @@ export default function Homepage({ data }) {
                                 BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC
                               }
                             />
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                       <div class="landscape-container">

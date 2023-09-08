@@ -1115,7 +1115,7 @@ export default function Homepage({ data }) {
                   >
                     Lifecycle Platform ({APILifecyclePlatform.length})
                   </h3>
-                  <div className="subcat">
+              {/*     <div className="subcat">
                     <HomepageSubcategory
                       subcategoryName="Access and Identity Management"
                       handleCompany={handleEntity}
@@ -1124,7 +1124,7 @@ export default function Homepage({ data }) {
                       }
                       handleLoading={handleLoading}
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Management/API Gateway"
@@ -1143,7 +1143,7 @@ export default function Homepage({ data }) {
                       }
                     />
                   </div>
-                  <div className="subcat border-top">
+              {/*     <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Analytics/Monitoring"
                       handleCompany={handleEntity}
@@ -1151,7 +1151,7 @@ export default function Homepage({ data }) {
                         APILifecyclePlatformANDAPIAnalyticsMonitoring
                       }
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Design/Documentation Platforms"
@@ -1177,13 +1177,13 @@ export default function Homepage({ data }) {
                       filteredCategory={APILifecyclePlatformANDApiSecurity}
                     />
                   </div> */}
-                  <div className="subcat border-top">
+                  {/* <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="API Testing"
                       handleCompany={handleEntity}
                       filteredCategory={APILifecyclePlatformANDAPITesting}
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat">
                     <HomepageSubcategory
                       subcategoryName="IoT Platforms/Networks/Devices"
@@ -1497,7 +1497,7 @@ export default function Homepage({ data }) {
                       }
                     />
                   </div>
-                  <div className="subcat border-top">
+                  {/* <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="Identity verification/KYC"
                       handleCompany={handleEntity}
@@ -1505,7 +1505,7 @@ export default function Homepage({ data }) {
                         BusinessprocessesasanAPIAPIasaProductANDIdentityverificationKYC
                       }
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat">
                     <HomepageSubcategory
                       subcategoryName="Audio/Visual"
@@ -1651,13 +1651,13 @@ export default function Homepage({ data }) {
                       filteredCategory={VerticalAPIAbstractionsANDHealthcare}
                     />
                   </div>
-                  <div className="subcat border-top">
+                {/*   <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="Login"
                       handleCompany={handleEntity}
                       filteredCategory={VerticalAPIAbstractionsANDLogin}
                     />
-                  </div>
+                  </div> */}
                   <div className="subcat border-top">
                     <HomepageSubcategory
                       subcategoryName="Marketing/Analytics"
@@ -2480,14 +2480,14 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                   {/*        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Login"
                               handleCompany={handleEntity}
                               filteredCategory={VerticalAPIAbstractionsANDLogin}
                             />
-                          </div>
+                          </div> */}
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory

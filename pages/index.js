@@ -730,7 +730,7 @@ export default function Homepage({ data }) {
 
   const APILifecyclePlatformSecurityPureplay = data.values.filter(
     (company, index) =>
-      company?.parentCategorySlug?.includes("API Security Pureplay")
+      company?.parentCategorySlug?.includes("API Lifecycle (Security Pureplay)")
   );
 
 
@@ -738,7 +738,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "API Security Pureplay"
+          "API Lifecycle (Security Pureplay)"
         ) && company?.subcategory?.includes("API Security")
     );
 
@@ -752,7 +752,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "API Security Pureplay"
+          "API Lifecycle (Security Pureplay)"
         ) && company?.subcategory?.includes("API Threat Management")
     );
 
@@ -770,7 +770,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "API Security Pureplay"
+          "API Lifecycle (Security Pureplay)"
         ) && company?.subcategory?.includes("API Discovery & Risk Management")
     );
 
@@ -786,7 +786,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "API Security Pureplay"
+          "API Lifecycle (Security Pureplay)"
         ) && company?.subcategory?.includes("Vulnerability Management")
     );
 
@@ -798,14 +798,14 @@ export default function Homepage({ data }) {
 
   const APILifecyclePlatformEmbeddedSecurity = data.values.filter(
     (company, index) =>
-      company?.parentCategorySlug?.includes("Embedded API Security")
+      company?.parentCategorySlug?.includes("API Lifecycle (Embedded Security)")
   );
 
   const APILifecyclePlatformEmbeddedSecurityVulnerabilityIdentificationScanners =
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Embedded API Security"
+          "API Lifecycle (Embedded Security)"
         ) &&
         company?.subcategory?.includes("Vulnerability Identification/scanners")
     );
@@ -822,7 +822,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Embedded API Security"
+          "API Lifecycle (Embedded Security)"
         ) && company?.subcategory?.includes("Web Application Firewalls")
     );
 
@@ -842,7 +842,7 @@ export default function Homepage({ data }) {
   const APILifecyclePlatformAdjacentSecuritySolutions = data.values.filter(
     (company, index) =>
       company?.parentCategorySlug?.includes(
-        "Adjacent Security Solutions"
+        "API Lifecycle (Adjacent Security Solutions)"
       )
   );
 
@@ -850,7 +850,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Adjacent Security Solutions"
+          "API Lifecycle (Adjacent Security Solutions)"
         ) && company?.subcategory?.includes("API Analytics/Monitoring")
     );
 
@@ -864,7 +864,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Adjacent Security Solutions"
+          "API Lifecycle (Adjacent Security Solutions)"
         ) && company?.subcategory?.includes("Identity Verification/KYC")
     );
 
@@ -878,7 +878,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Adjacent Security Solutions"
+          "API Lifecycle (Adjacent Security Solutions)"
         ) && company?.subcategory?.includes("Login")
     );
 
@@ -892,7 +892,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Adjacent Security Solutions"
+          "API Lifecycle (Adjacent Security Solutions)"
         ) && company?.subcategory?.includes("Access and Identity Management")
     );
 
@@ -906,7 +906,7 @@ export default function Homepage({ data }) {
     data.values.filter(
       (company, index) =>
         company?.parentCategorySlug?.includes(
-          "Adjacent Security Solutions"
+          "API Lifecycle (Adjacent Security Solutions)"
         ) && company?.subcategory?.includes("API Analytics/Monitoring")
     );
 

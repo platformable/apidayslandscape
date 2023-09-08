@@ -4,9 +4,9 @@ export const categories = [
   "Backend Building Tools",
   "Business processes as an API/API-as-a-Product",
   "Integration Platform as a Service",
-  "API Security Pureplay",
-  "Embedded API Security",
-  "Adjacent Security Solutions"
+  "API Lifecycle (Security Pureplay)",
+  "API Lifecycle (Embedded Security)",
+  "API Lifecycle (Adjacent Security Solutions)"
 
 /*   "Vertical API Abstractions",
   "Media/Associations" */

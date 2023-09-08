@@ -1,6 +1,12 @@
 import React from 'react'
 
 export default function Methodology() {
+
+  const handleForm = (url) => {
+    if (typeof window !== "undefined") {
+      window.open(url, "_blank");
+    }
+  };
   return (
     <>
     <section className="methodology py-5 bg-white">

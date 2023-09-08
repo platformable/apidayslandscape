@@ -61,11 +61,11 @@ export const subcategories = [
 "Smart Home/Facilities",
 
 "API Threat Management",
-"API Discovery & Risk Management",
+"API Discovery and Risk Management",
 "Vulnerability Management",
 "Vulnerability identification/scanners",
 "Web Application Firewalls",
-"Identity Verification/KYC",
+"Identity verification/KYC",
 "Access and Identity Management",
 "API Analytics/Monitoring"
 

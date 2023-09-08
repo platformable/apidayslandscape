@@ -4,6 +4,10 @@ export const categories = [
   "Backend Building Tools",
   "Business processes as an API/API-as-a-Product",
   "Integration Platform as a Service",
+  "API Lifecycle (Security Pureplay)",
+  "API Lifecycle (Embedded Security)",
+  "API Lifecycle (Adjacent Security Solutions)"
+
 /*   "Vertical API Abstractions",
   "Media/Associations" */
 ];
@@ -36,9 +40,6 @@ export const subcategories = [
 "Payments",
 "Search",
 
-/* "API Protocols",
-"API Standards", */
-
 "API Deployment/Back-end Building",
 "Banking/Finance/Insurance Backends",
 "Blockchain",
@@ -58,6 +59,21 @@ export const subcategories = [
 "Marketing/Analytics",
 "Finance",
 "Smart Home/Facilities",
+
+"API Threat Management",
+"API Discovery & Risk Management",
+"Vulnerability Management",
+"Vulnerability identification/scanners",
+"Web Application Firewalls",
+"Identity Verification/KYC",
+"Access and Identity Management",
+"API Analytics/Monitoring"
+
+
+
+
+/* "API Protocols",
+"API Standards", */
 
 /* "Media",
 "Associations" */
@@ -186,7 +202,14 @@ export const subcategoriesDescriptions = {
     "Smart Home/Facilities":[{"description":"A home equipped with heating, lighting, and other electronic devices remotely controlled via mobile or computer"}],
     "Media":[{"description":"API-specific news sites, blogs, newsletters, conferences, and related media"}],
     "Associations":[{"description":"Associations and networks that play a specific role in encouraging API adoption or usage"}],
-
+    "API Threat Management":[{"description":"API Threat Management"}],
+    "API Discovery & Risk Management":[{"description":"API Discovery & Risk Management"}],
+    "Vulnerability Management":[{"description":"Vulnerability Management"}],
+    "Vulnerability Identification/scanners":[{"description":"Vulnerability Identification/scanners"}],
+    "Web Application Firewalls":[{"description":"Web Application Firewalls"}],
+    "Identity Verification/KYC":[{"description":"Identity Verification/KYC"}],
+    "Access and Identity Management":[{"description":"Access and Identity Management"}],
+    "API Analytics/Monitoring":[{"description":"API Analytics/Monitoring"}]
   }
 
 

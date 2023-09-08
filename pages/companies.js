@@ -84,7 +84,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
             
             setLiveData(result)
             setCategoriesList(subcatgeoriesOfSelectedCategory)
-            setSubcategoryList(subcatgeoriesOfSelectedCategory[0].subcategories)
+            setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategories)
         }
 
         if (selectedCategory !=="All" && selectedSubcategory !== "All"){

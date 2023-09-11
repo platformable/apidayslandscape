@@ -247,7 +247,7 @@ export default function Homepage({ data }) {
     (company, index) =>
       company?.parentCategorySlug?.includes("API Lifecycle Platform") &&
       company?.subcategory?.includes("Streaming/Event Architecture")
-  );
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   /* API Standards/Protocols */
 

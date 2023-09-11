@@ -2123,6 +2123,13 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
+                  
+                        </div>
+                      </div>
+
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
@@ -2149,7 +2156,13 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                         
+                        </div>
+                      </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Headless CMS"
@@ -2159,11 +2172,6 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                        </div>
-                      </div>
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
@@ -2219,16 +2227,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
-                            {data <= 0 && <Loader />}
-                            <HomepageSubcategory
-                              subcategoryName="Payments"
-                              handleCompany={handleEntity}
-                              filteredCategory={
-                                BusinessprocessesasanAPIAPIasaProductANDPayments
-                              }
-                            />
-                          </div>
+                   
                         </div>
                       </div>
                       <div className="landscape-container">
@@ -2240,6 +2239,16 @@ export default function Homepage({ data }) {
                               handleCompany={handleEntity}
                               filteredCategory={
                                 BusinessprocessesasanAPIAPIasaProductANDEmailMessaging
+                              }
+                            />
+                          </div>
+                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                            {data <= 0 && <Loader />}
+                            <HomepageSubcategory
+                              subcategoryName="Payments"
+                              handleCompany={handleEntity}
+                              filteredCategory={
+                                BusinessprocessesasanAPIAPIasaProductANDPayments
                               }
                             />
                           </div>
@@ -2292,16 +2301,19 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
+
+
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
-                              subcategoryName="Data governance/Data management"
+                              subcategoryName="Legal/Regulatory"
                               handleCompany={handleEntity}
                               filteredCategory={
-                                BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement
+                                BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory
                               }
                             />
                           </div>
+                         
 
                  {/*          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
@@ -2313,6 +2325,20 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div> */}
+                        </div>
+                      </div>
+                      <div className="lanscape-container">
+                        <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                            {data <= 0 && <Loader />}
+                            <HomepageSubcategory
+                              subcategoryName="Data governance/Data management"
+                              handleCompany={handleEntity}
+                              filteredCategory={
+                                BusinessprocessesasanAPIAPIasaProductANDDatagovernanceDatamanagement
+                              }
+                            />
+                          </div>
                         </div>
                       </div>
                       <div class="landscape-container">
@@ -2350,16 +2376,6 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
-                            {data <= 0 && <Loader />}
-                            <HomepageSubcategory
-                              subcategoryName="Legal/Regulatory"
-                              handleCompany={handleEntity}
-                              filteredCategory={
-                                BusinessprocessesasanAPIAPIasaProductANDLegalRegulatory
-                              }
-                            />
-                          </div>
 
                           <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
@@ -2503,7 +2519,13 @@ export default function Homepage({ data }) {
                               filteredCategory={VerticalAPIAbstractionsANDLogin}
                             />
                           </div> */}
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+
+                        </div>
+                      </div>
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Marketing/Analytics"
@@ -2513,11 +2535,6 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                        </div>
-                      </div>
-
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory

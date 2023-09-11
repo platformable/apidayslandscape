@@ -1921,6 +1921,14 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                        
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
@@ -2030,7 +2038,13 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                      
+                        </div>
+                      </div>
+
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Identity Verification/KYC"
@@ -2040,11 +2054,6 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                        </div>
-                      </div>
-                      
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
@@ -2055,6 +2064,12 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
+                        </div>
+                      </div>
+                      
+                      <div class="landscape-container">
+                        <div class="landscape-category-container">
+                      
                           <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory

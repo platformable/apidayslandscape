@@ -19,6 +19,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from "react-share";
+import Script from 'next/script';
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -1000,7 +1001,7 @@ export default function Homepage({ data }) {
           <meta name="twitter:description" content="apidays" />
           <meta name="twitter:image" content="../landscape_social_map.png" />
         </Head>
-
+        <Script defer data-domain="apilandscape.apiscene.io" src="https://plausible.io/js/script.js" />
         <main>
           <section className="intro-text py-3">
             <div className="container hero  d-flex justify-content-center  align-items-center">

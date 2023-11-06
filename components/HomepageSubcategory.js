@@ -21,9 +21,10 @@ if(url.includes("https://drive.google.com")){
 
 
 function getSubcategoryDescription (obj,subcategoryName){
-  const search = obj[subcategoryName][0].description
+  // console.log("homepagesubcategory",obj, subcategoryName)
+  // const search = obj[subcategoryName][0].description
 
-  return search
+  // return search
 }
 
 

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
+import { cluster } from "../context/data";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -39,78 +40,7 @@ export default function Homepage({ data }) {
 
   const lastUpdate = new Date();
 
-  const cluster = {
-    "API Lifecycle Platform": {
-      // ["Access Level and Identity Management",
-      // "API Analytics/Monitoring",],
-      // "API Documentation",
-      // "API Security",
-      0: ["API Management/API Gateway", "API Consulting"],
-      1: ["API Design/Documentation Platforms"],
-      2: ["API Developer Portals", "Streaming/Event Architecture"],
-      // "API Testing",
-      3: ["IoT Platforms/Networks/Devices"],
-    },
-    "API Lifecycle (Security Pureplay)": {
-      0: ["API Security"],
-      1: ["API Threat Management"],
-      2: ["API Discovery and Risk Management", "Vulnerability Management"],
-    },
-    "API Lifecycle (Embedded Security)": {
-      0: ["Vulnerability Identification/scanners", "Web Application Firewalls"],
-    },
-    "API Lifecycle (Adjacent Security Solutions)": {
-      0: ["API Analytics/Monitoring"],
-      1: ["Identity verification/KYC"],
-      2: ["Login", "Access and Identity Management"],
-    },
-    // "API Standards/Protocols": [
-    //   ["AsyncAPI"],
-    //   ["FIDO"],
-    //   ["GraphQL"],
-    //   ["gRPC"],
-    //   ["Open API Specs"],
-    //   ["OpenID"],
-    //   ["PSD2 API Abstractions"],
-    //   ["STET Berlin Group"],
-    // ],
-    "Backend Building Tools": {
-      0: ["API Deployment/Back-end Building"],
-      1: ["Banking/Finance/Insurance Backends"],
-      2: ["Blockchain"],
-      3: ["Headless CMS"],
-      4: ["Infrastructure/Cloud/Serverless APIs"],
-      5: ["Mobile Backend as a Service"],
-    },
-    "Business processes as an API/API-as-a-Product": {
-      0: ["Data"],
-      1: ["Email/Messaging/Communications Platforms as a Service", "Payments"],
-      2: ["AI/ML", "E-commerce"],
-      3: ["Accounting", "Audio/Visual", "Legal/Regulatory"],
-      4: ["Data governance/Data management"],
-      5: [
-        "Forms",
-        "Human-as-a-service",
-        "Human Resources",
-        "Search",
-        "Time/Calendar",
-      ],
-    },
-    "Integration Platform as a Service": {
-      0: ["API Aggregators (General)"],
-      1: ["Automation/Orchestration"],
-      2: ["Database-as-a-service", "API Aggregators (Finance)"],
-    },
-    "Vertical API Abstraction": {
-      0: ["Finance", "Healthcare"],
-      1: [
-        "Marketing/Analytics",
-        "Cloud Storage",
-        "Delivery/Transport/Logistics",
-        "Smart Home/Facilities",
-      ],
-    },
-  };
+  
 
   TopBarProgress.config({
     barColors: {
@@ -164,6 +94,7 @@ export default function Homepage({ data }) {
     handleLoading();
     router.push(`/${url}`);
   };
+
 
   const APILifecyclePlatformsDescription =
     "Essential tools to manage the API lifecycle: from design to testing, and including access and identity, security, analytics, and developer portals. Also includes consulting companies that assist API providers define API strategies and build APIs, and the infrastructure needed to enable event-driven architectures including IoT platforms.";
@@ -231,106 +162,7 @@ export default function Homepage({ data }) {
           src="https://plausible.io/js/script.js"
         />
         <main>
-        <section className="home-landscape heroBg d-none d-md-block py-1">
-            <ReactTooltip
-              backgroundColor="#04a5b6"
-              textColor="#fff"
-              id="companyName-tooltip"
-            />
-            <ReactTooltip
-              backgroundColor="#0c4b6e"
-              textColor="#fff"
-              id="subcategory-tooltip"
-            />
-            <ReactTooltip
-              backgroundColor="#0c4b6e"
-              textColor="#fff"
-              id="category-tooltip"
-              place="right"
-              className="categoryToolTip"
-            />
-
-            <div className="container-fluid">
-              <div className="row" id="cluster-container">
-                {Object.entries(cluster)?.map(
-                  ([clusterName, categories], index) => {
-                    return (
-                      <div id="cluster" className="col-md-12 mb-1" key={index}>
-                        <div className="home-main-container ">
-                          <div className="bg-dark-company-color">
-                            <span
-                              className="text-white"
-                              // data-tip={APILifecyclePlatformsDescription}
-                              data-for="category-tooltip"
-                            >
-                              {clusterName}
-                              {/* ({value.length}) */}
-                            </span>
-                          </div>
-                          <div id="category-container" class="category-container ">
-
-                          {Object.entries(categories).map(
-                            ([key, subcategoriesGroup], index) => {
-                              return (
-                                <div className="px-2 py-3 ">
-                                  <center className="mb-3">{key}</center>
-
-                                  <div id="category" className="landscape-container" key={index}>
-                                  {subcategoriesGroup?.map((subcat, index) => {
-                                    // console.log("subcat,", subcat);
-                                    const filteredCtegory = data.values.filter(
-                                      (company, index) =>
-                                        company?.subcategory?.includes(subcat)
-                                    );
-                                    filteredCtegory.sort((a, b) =>
-                                      a.name.localeCompare(b.name)
-                                    );
-                                    return (
-                                      <div
-                                        id="subcategory"
-                                        class=""
-                                        key={index}
-                                      >
-                                        <div class="landscape-category-container">
-                                          <div
-                                            key={index}
-                                            class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
-                                          >
-                                            {data <= 0 && <Loader />}
-
-                                            <HomepageSubcategory
-                                              subcategoryName={subcat}
-                                              handleCompany={handleEntity}
-                                              filteredCategory={filteredCtegory}
-                                            />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    )
-                                  })}
-                                  </div>
-                                </div>
-                              )
-                            }
-                          )}
-                          </div>
-
-                        </div>
-                      </div>
-                    );
-                  }
-                )}
-              </div>
-            </div>
-          </section>
-
-
-
-
-
-          {/* MOBILE ********************************************************/}
-
-          <section className="intro-text py-3">
+        <section className="intro-text py-3">
             <div className="container hero  d-flex justify-content-center  align-items-center">
               {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
               <div className="text-center flex-grow-1">
@@ -429,6 +261,106 @@ export default function Homepage({ data }) {
               </div>
             </div>
           </section>
+        <section className="home-landscape heroBg d-none d-md-block py-1">
+            <ReactTooltip
+              backgroundColor="#04a5b6"
+              textColor="#fff"
+              id="companyName-tooltip"
+            />
+            <ReactTooltip
+              backgroundColor="#0c4b6e"
+              textColor="#fff"
+              id="subcategory-tooltip"
+            />
+            <ReactTooltip
+              backgroundColor="#0c4b6e"
+              textColor="#fff"
+              id="category-tooltip"
+              place="right"
+              className="categoryToolTip"
+            />
+
+            <div className="container-fluid">
+              <div className="row" id="cluster-container">
+                {Object.entries(cluster)?.map(
+                  ([clusterName, categories], index) => {
+                    return (
+                      <div id="cluster" className="col-md-12 mb-1" key={index}>
+                        <div className="home-main-container ">
+                          <div className="bg-dark-company-color">
+                            <span
+                              className="text-white"
+                              // data-tip={APILifecyclePlatformsDescription}
+                              data-for="category-tooltip"
+                            >
+                              {clusterName}
+                              ({Object.values(categories).map((cat) => cat).flat().length})
+                            </span>
+                          </div>
+                          <div id="category-container" class="category-container ">
+
+                          {Object.entries(categories).map(
+                            ([key, subcategoriesGroup], index) => {
+                              return (
+                                <div className="px-2 py-3 ">
+                                  <center className="mb-3">{key}</center>
+
+                                  <div id="category" className="landscape-container" key={index}>
+                                  {subcategoriesGroup?.map((subcat, index) => {
+                                    // console.log("subcat,", subcat);
+                                    const filteredCtegory = data.values.filter(
+                                      (company, index) =>
+                                        company?.subcategory?.includes(subcat)
+                                    );
+                                    filteredCtegory.sort((a, b) =>
+                                      a.name.localeCompare(b.name)
+                                    );
+                                    return (
+                                      <div
+                                        id="subcategory"
+                                        class=""
+                                        key={index}
+                                      >
+                                        <div class="landscape-category-container">
+                                          <div
+                                            key={index}
+                                            class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
+                                          >
+                                            {data <= 0 && <Loader />}
+
+                                            <HomepageSubcategory
+                                              subcategoryName={subcat}
+                                              handleCompany={handleEntity}
+                                              filteredCategory={filteredCtegory}
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })}
+                                  </div>
+                                </div>
+                              )
+                            }
+                          )}
+                          </div>
+
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+          </section>
+
+
+
+
+
+          {/* MOBILE ********************************************************/}
+
+          
           {Object.entries(cluster)?.map(([clusterName, categories], index) => {
             return (
               // <div className={``}>

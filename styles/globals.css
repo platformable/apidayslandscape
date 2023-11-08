@@ -49,6 +49,10 @@ a {
 
 }
 
+.bg-category-container-purple {
+  background-color: rgba(157, 0, 255, 0.071);
+
+}
 .bg-company-orange-color {
   background-color:var(--company-orange-color) !important;
 }
@@ -595,7 +599,7 @@ color:white !important;
 } */
 
 .landscape-container {
-    display:flex;
+    /* display:flex; */
 }
 
 .landscape-category-box {}

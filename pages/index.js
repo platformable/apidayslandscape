@@ -24,6 +24,8 @@ import Script from "next/script";
 
 export default function Homepage({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
+  const [selectedEntity, setSelectedEntity] = useState([]);
+  const [withZoom, setWithZoom] = useState(false)
 
   const router = useRouter();
 
@@ -84,7 +86,6 @@ export default function Homepage({ data }) {
     }
   }, []); */
 
-  const [selectedEntity, setSelectedEntity] = useState([]);
 
   const handleEntity = (entity) => {
     setSelectedEntity(entity);
@@ -199,7 +200,7 @@ export default function Homepage({ data }) {
                 </a>
                 <button
                   className="btn btn-light-gray   text-company-color "
-                  onClick={() => handleLinks("zoom")}
+                  onClick={() => setWithZoom(prev => !prev)}
                 >
                   Zoom
                 </button>
@@ -214,9 +215,9 @@ export default function Homepage({ data }) {
                 {/*      <div className="row">
             <div className="col-md-4"> </div>
               <div className="col-md-4">
-              <div class="input-group my-3">
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
-                <button class="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
+              <div className="input-group my-3">
+                <input type="text" className="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
+                <button className="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
               </div>
                {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not found</span></div>}
               </div>
@@ -226,7 +227,7 @@ export default function Homepage({ data }) {
 
               <div className="mt-5">
                 <h3>
-                  <span class="badge bg-light text-black shadow d-none d-md-block  mt-5">
+                  <span className="badge bg-light text-black shadow d-none d-md-block  mt-5">
                     {totalValues.length}
                   </span>{" "}
                 </h3>
@@ -283,30 +284,30 @@ export default function Homepage({ data }) {
             <div className="container-fluid">
               <div className="row" id="cluster-container">
                 {Object.entries(cluster)?.map(
-                  ([clusterName, categories], index) => {
+                  ([clusterName, values], index) => {
                     return (
                       <div id="cluster" className="col-md-12 mb-1" key={index}>
                         <div className="home-main-container ">
-                          <div className="bg-dark-company-color">
+                          <div className={`${values.color}`}>
                             <span
                               className="text-white"
-                              // data-tip={APILifecyclePlatformsDescription}
+                              data-tip={values?.description}
                               data-for="category-tooltip"
                             >
                               {clusterName}
-                              ({Object.values(categories).map((cat) => cat).flat().length})
+                              ({Object.values(values?.categories).map((cat) => cat).flat().length})
                             </span>
                           </div>
-                          <div id="category-container" class="category-container ">
+                          <div id="categories-container" className="p-2 d-flex flex-row gap-3">
 
-                          {Object.entries(categories).map(
-                            ([key, subcategoriesGroup], index) => {
+                          {Object.entries(values?.categories).map(
+                            ([key, categories], index) => {
                               return (
-                                <div className="px-2 py-3 ">
-                                  <center className="mb-3">{key}</center>
+                                <div id="categorie" className="px-2 py-3 border border-1 rounded border-dark bg-category-container-purple">
+                                  <center className="mb-3">New Category{' '}{key}</center>
 
-                                  <div id="category" className="landscape-container" key={index}>
-                                  {subcategoriesGroup?.map((subcat, index) => {
+                                  <div id="subcategories-container" className={`d-flex flex-row flex-wrap gap-3 landscape-container`} key={index}>
+                                  {categories?.map((subcat, index) => {
                                     // console.log("subcat,", subcat);
                                     const filteredCtegory = data.values.filter(
                                       (company, index) =>
@@ -318,13 +319,13 @@ export default function Homepage({ data }) {
                                     return (
                                       <div
                                         id="subcategory"
-                                        class=""
+                                        className=""
                                         key={index}
                                       >
-                                        <div class="landscape-category-container">
+                                        <div className="landscape-category-container ">
                                           <div
                                             key={index}
-                                            class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
+                                            className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
                                           >
                                             {data <= 0 && <Loader />}
 
@@ -332,6 +333,7 @@ export default function Homepage({ data }) {
                                               subcategoryName={subcat}
                                               handleCompany={handleEntity}
                                               filteredCategory={filteredCtegory}
+                                              withZoom={withZoom}
                                             />
                                           </div>
                                         </div>
@@ -361,7 +363,7 @@ export default function Homepage({ data }) {
           {/* MOBILE ********************************************************/}
 
           
-          {Object.entries(cluster)?.map(([clusterName, categories], index) => {
+          {Object.entries(cluster)?.map(([clusterName, values], index) => {
             return (
               // <div className={``}>
                 <section className="mobile-landscape d-xs-block d-md-none">
@@ -370,8 +372,8 @@ export default function Homepage({ data }) {
                         <center>{clusterName}</center>
 
                           <div className="col-md-12 bg-white px-0">
-                {Object.entries(categories).map(
-                  ([key, subcategoriesGroup], index) => (
+                {Object.entries(values?.categories).map(
+                  ([key, categories], index) => (
                     <>
                             <h3
                               className="sm-text text-center mobile-bg-dark-company-color text-white py-2"
@@ -381,8 +383,8 @@ export default function Homepage({ data }) {
                               {key}
                               {/* ({APILifecyclePlatform.length}) */}
                             </h3>
-                            {subcategoriesGroup?.map((subcat, index) => {
-                          console.log("subcat,", subcat)
+                            {categories?.map((subcat, index) => {
+                          // console.log("subcat,", subcat)
                           const filteredCategory = data.values.filter(
                             (company, index) =>
                             

@@ -611,7 +611,11 @@ color:white !important;
   image-rendering:optimize-contrast;         /* CSS3 Proposed  */
   -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
 }
-
+#categorie {
+  /* min-width: 20%; */
+    /* max-width: 100%; */
+    flex-basis: 0;
+}
 .landscape-category-container {
 display:flex;
 flex: 1;

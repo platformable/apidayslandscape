@@ -32,7 +32,7 @@ export default function homepageSubcategory({
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
-    <div className="">
+    <>
       <h6
         className="text-center sm-text pt-1 bg-warning px-2"
         data-tip={getSubcategoryDescription(
@@ -44,7 +44,7 @@ export default function homepageSubcategory({
         {subcategoryName} <br/>({filteredCategory.length})
       </h6>
 
-      <div className="">
+      {/* <div className=""> */}
         <div className="homeCards px-2 ">
           {filteredCategory
             ? filteredCategory.map((row, index) => {
@@ -92,10 +92,10 @@ export default function homepageSubcategory({
               })
             : "no data"}
         </div>
-      </div>
+      {/* </div> */}
       {/* MODAL */}
 
       {/* MODAL */}
-    </div>
+    </>
   );
 }

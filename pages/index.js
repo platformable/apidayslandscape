@@ -287,15 +287,15 @@ export default function Homepage({ data }) {
                               ({Object.values(values?.categories).map((cat) => cat).flat().length})
                             </span>
                           </div>
-                          <div id="categories-container" className="p-2 d-grid gap-3">
+                          <div id="categories-container" className="p-2 d-flex flex-row gap-3">
 
                           {Object.entries(values?.categories).map(
                             ([key, categories], index) => {
                               return (
-                                <div id="categorie" className="px-2 py-3 border border-1 rounded border-dark bg-category-container-purple">
+                                <div id="categorie" className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple">
                                   <center className="mb-3">New Category{' '}{key}</center>
                                     {/* //Use flex-wrap if you plain to use categories in columns */}
-                                  <div id="subcategories-container" className={`d-flex flex-row  gap-3 landscape-container`} key={index}>
+                                  <div id="subcategories-container" className={`d-flex flex-column flex-wrap gap-3 landscape-container`} key={index}>
                                   {categories?.map((subcat, index) => {
                                     // console.log("subcat,", subcat);
                                     const filteredCtegory = data.values.filter(
@@ -308,14 +308,14 @@ export default function Homepage({ data }) {
                                     return (
                                       <div
                                         id="subcategory"
-                                        className=""
+                                        className="flex-grow-1 flex-shrink-0"
                                         key={index}
                                       >
-                                        <div className="landscape-category-container ">
-                                          <div
+                                        {/* <div className="landscape-category-container "> */}
+                                          {/* <div
                                             key={index}
-                                            className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
-                                          >
+                                             className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
+                                          > */}
                                             {data <= 0 && <Loader />}
 
                                             <HomepageSubcategory
@@ -324,8 +324,8 @@ export default function Homepage({ data }) {
                                               filteredCategory={filteredCtegory}
                                               withZoom={withZoom}
                                             />
-                                          </div>
-                                        </div>
+                                          {/* </div> */}
+                                        {/* </div> */}
                                       </div>
                                     )
                                   })}

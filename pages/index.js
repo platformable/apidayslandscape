@@ -97,17 +97,6 @@ export default function Homepage({ data }) {
   };
 
 
-  const APILifecyclePlatformsDescription =
-    "Essential tools to manage the API lifecycle: from design to testing, and including access and identity, security, analytics, and developer portals. Also includes consulting companies that assist API providers define API strategies and build APIs, and the infrastructure needed to enable event-driven architectures including IoT platforms.";
-  const BackendBuildingToolsDescription =
-    "Serverless, cloud, mobile-based and blockchain backend infrastructure and cloud-based API infrastructures. Also includes headless CMS and backend infrastructure built specifically for the banking/finance/insurance industry.";
-  const BusinessprocessesasanAPIAPIasaProductDescription =
-    "API products specifically available to be used as service components that enable business processes and functionalities to be composed into IT architectures. Includes the use of data as a service, payments, communication platforms, identity verification, and so on.";
-  const integrationPlatformDescription =
-    "API aggregators and automation/orchestration services that help create workflows and standardised integrations to facilitate use of APIs in internal IT architectures. Platforms that provide a single point of integration for APIs that have different value propositions.";
-  const verticalApiDescription =
-    "Platforms that take a value proposition from one use case, such as cloud storage, and abstracts all available APIs into one API.";
-
   const totalValues = data.values.filter(
     (items) =>
       items.parentCategorySlug !== "API Standards/Protocols" &&
@@ -298,15 +287,15 @@ export default function Homepage({ data }) {
                               ({Object.values(values?.categories).map((cat) => cat).flat().length})
                             </span>
                           </div>
-                          <div id="categories-container" className="p-2 d-flex flex-row gap-3">
+                          <div id="categories-container" className="p-2 d-grid gap-3">
 
                           {Object.entries(values?.categories).map(
                             ([key, categories], index) => {
                               return (
                                 <div id="categorie" className="px-2 py-3 border border-1 rounded border-dark bg-category-container-purple">
                                   <center className="mb-3">New Category{' '}{key}</center>
-
-                                  <div id="subcategories-container" className={`d-flex flex-row flex-wrap gap-3 landscape-container`} key={index}>
+                                    {/* //Use flex-wrap if you plain to use categories in columns */}
+                                  <div id="subcategories-container" className={`d-flex flex-row  gap-3 landscape-container`} key={index}>
                                   {categories?.map((subcat, index) => {
                                     // console.log("subcat,", subcat);
                                     const filteredCtegory = data.values.filter(

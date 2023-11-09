@@ -612,14 +612,10 @@ color:white !important;
   -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
 }
 #categorie {
-  /* min-width: 20%; */
-    /* max-width: 100%; */
-    flex-basis: 0;
 }
 .landscape-category-container {
 display:flex;
 flex: 1;
-/* min-height:125px; */
 }
 .landscape-subcategory-box {
 border:2px solid #eee;

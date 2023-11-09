@@ -287,7 +287,7 @@ export default function Homepage({ data }) {
                               ({Object.values(values?.categories).map((cat) => cat).flat().length})
                             </span>
                           </div>
-                          <div id="categories-container" className="p-2 d-flex flex-row gap-3">
+                          <div id="categories-container" className="p-2 d-flex flex-wrap flex-row gap-3">
 
                           {Object.entries(values?.categories).map(
                             ([key, categories], index) => {

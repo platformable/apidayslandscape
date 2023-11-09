@@ -104,10 +104,10 @@ export const cluster = {
 };
 
 
-const newModel = {
+export const newModel = {
   "API lifecycle": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
       "API Gateways/Management": {
       description: "",
@@ -277,7 +277,7 @@ const newModel = {
   },
   "Infrastructure": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
      "Databases": {
       description: "",
@@ -403,7 +403,7 @@ const newModel = {
   },
   "API Products": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
      "Email/Messaging/CPaaS": {
       description: "",
@@ -551,7 +551,7 @@ const newModel = {
   },
   "API Consumption": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
      "Aggregators/Integration Platforms": {
       description: "",
@@ -620,7 +620,7 @@ const newModel = {
   },
   "API Knowledge": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
       "API Consulting": {
         description: "",
@@ -731,7 +731,7 @@ const newModel = {
   },
   "Standards, Protocols & Specifications": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
      "API Standards": {
       description: "",
@@ -795,7 +795,7 @@ const newModel = {
   },
   "Regulations": {
     description: "",
-    color: '',
+    color: 'bg-company-dark-purple-color',
     categories: {
      "Regulations": {
       description: "",

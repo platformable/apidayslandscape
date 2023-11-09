@@ -3,10 +3,11 @@ import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
+import Image from "next/dist/client/image";
 
 export default function homepageSubcategory({
   handleCompany,
-  subcategoryName,
+  subcategory,
   filteredCategory,
   handleEntity,
   withZoom,
@@ -23,10 +24,9 @@ export default function homepageSubcategory({
     }
   };
 
-  function getSubcategoryDescription(obj, subcategoryName) {
-    console.log("homepagesubcategory", obj[subcategoryName]?.[0]);
-    const search = obj[subcategoryName]?.[0]?.description;
-
+  function getSubcategoryDescription(obj, subcategory) {
+    // console.log("homepagesubcategory", obj[subcategory.name]?.[0]);
+    const search = obj[subcategory.name]?.[0]?.description;
     return search;
   }
 
@@ -37,11 +37,11 @@ export default function homepageSubcategory({
         className="text-center sm-text pt-1 bg-warning px-2"
         data-tip={getSubcategoryDescription(
           subcategoriesDescriptions,
-          subcategoryName
+          subcategory.name
         )}
         data-for="subcategory-tooltip"
       >
-        {subcategoryName} <br/>({filteredCategory.length})
+        {subcategory.name} <br/>({filteredCategory.length})
       </h6>
 
       {/* <div className=""> */}
@@ -66,17 +66,22 @@ export default function homepageSubcategory({
                           : "homepage-landscape-img border "
                       }
                     >
-                      {row.logo === "" || null ? (
-                        <img
+                      {row.logo === "" || row.logo === null ? (
+                        <Image
+                        
                           src={`../apidaysReplacementLogo.png`}
                           alt=""
                           className=""
+                          width={34.4}
+                          height={34.4}
                         />
                       ) : (
                         <img
-                          srcSet={`${handleImages(row.logo)} 2x`}
+                          srcSet={`${handleImages(row.logo)} x2`}
                           alt=""
                           className=""
+                          // width={34.4}
+                          // height={34.4}
                         />
                       )}
                     </div>

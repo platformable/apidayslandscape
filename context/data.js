@@ -1,6 +1,5 @@
 export const cluster = {
   "API Lifecycle Platform": {
-    // ["Access Level and Identity Management",
     // "API Analytics/Monitoring",],
     // "API Documentation",
     // "API Security",
@@ -182,7 +181,7 @@ export const newModel = {
         color: "",
       },
       {
-        name: 'Vulnerabilty Management',
+        name: 'Vulnerability Management',
         description: "",
         color: "",
       },
@@ -261,12 +260,43 @@ export const newModel = {
       },
       ]
      },
-      "Developer Experience": {
+      "Sustainability": {
       description: "",
       color: "",
       subcategories: [
       {
         name: 'API sustainability tools',
+        description: "",
+        color: "",
+      },
+      ]
+     },
+     "Developer Experience": {
+      description: "",
+      color: "",
+      subcategories: [
+      {
+        name: 'API documentation',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'API developer portals',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'API catalogs',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'API SDK tools',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'API sandboxes',
         description: "",
         color: "",
       },
@@ -693,95 +723,95 @@ export const newModel = {
         },
         ]
        },
-     "Media": {
-      description: "",
-      color: "",
-      subcategories: [
-      {
-        name: 'Newsletters',
+      "Media": {
         description: "",
         color: "",
+        subcategories: [
+        {
+          name: 'Newsletters',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Video sites & Podcasts',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Conferences',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Books',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Websites',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Training courses',
+          description: "",
+          color: "",
+        },
+        ]
       },
-      {
-        name: 'Video sites & Podcasts',
+      "Organisations": {
         description: "",
         color: "",
+        subcategories: [
+        {
+          name: 'Industry Associations',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Industry thinktanks',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Consumer associations',
+          description: "",
+          color: "",
+        },
+        ]
       },
-      {
-        name: 'Conferences',
+      "Research": {
         description: "",
         color: "",
+        subcategories: [
+        {
+          name: 'Academics',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Market research',
+          description: "",
+          color: "",
+        },
+        ]
       },
-      {
-        name: 'Books',
+      "Assessment Tools": {
         description: "",
         color: "",
+        subcategories: [
+        {
+          name: 'Indices',
+          description: "",
+          color: "",
+        },
+        {
+          name: 'Scorecards',
+          description: "",
+          color: "",
+        },
+        ]
       },
-      {
-        name: 'Websites',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Training courses',
-        description: "",
-        color: "",
-      },
-      ]
-     },
-     "Organisations": {
-      description: "",
-      color: "",
-      subcategories: [
-      {
-        name: 'Industry Associations',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Industry thinktanks',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Consumer associations',
-        description: "",
-        color: "",
-      },
-      ]
-     },
-     "Research": {
-      description: "",
-      color: "",
-      subcategories: [
-      {
-        name: 'Academics',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Market research',
-        description: "",
-        color: "",
-      },
-      ]
-     },
-     "Assessment Tools": {
-      description: "",
-      color: "",
-      subcategories: [
-      {
-        name: 'Indices',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Scorecards',
-        description: "",
-        color: "",
-      },
-      ]
-     },
     }
   },
   "Standards, Protocols & Specifications": {

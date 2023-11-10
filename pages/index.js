@@ -24,7 +24,7 @@ import Script from "next/script";
 import HomepageSubcategoryAlt from "../components/HomepageSubcategoryAlt";
 
 export default function Homepage({ data }) {
-  console.log("data", data)
+  // console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
   const [selectedEntity, setSelectedEntity] = useState([]);
   const [withZoom, setWithZoom] = useState(false);
@@ -296,14 +296,7 @@ export default function Homepage({ data }) {
                           >
                             {Object.entries(values?.categories).map(
                               ([categorieName, values], index) => {
-                                const filteredCategories =
-                                            data.values.filter(
-                                              (company, index) =>
-                                                company?.category?.includes(
-                                                  categorieName
-                                                )
-                                            );
-                                            console.log(filteredCategories)
+                                
                                 return (
                                   <div
                                     id="categorie"
@@ -319,10 +312,11 @@ export default function Homepage({ data }) {
                                     >
                                       {values?.subcategories?.map(
                                         (subcat, index) => {
-                                          // console.log("subcat,", subcat);
+                                          // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
                                           const filteredSubcategory =
                                             data.values.filter(
                                               (company, index) =>
+                                                // company.category?.includes(categorieName) &&
                                                 company?.subcategory?.includes(
                                                   subcat.name
                                                 )
@@ -336,11 +330,7 @@ export default function Homepage({ data }) {
                                               className="flex-grow-1 flex-shrink-0"
                                               key={index}
                                             >
-                                              {/* <div className="landscape-category-container "> */}
-                                              {/* <div
-                                            key={index}
-                                             className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
-                                          > */}
+                                              
                                               {data <= 0 && <Loader />}
 
                                               <HomepageSubcategoryAlt
@@ -351,8 +341,7 @@ export default function Homepage({ data }) {
                                                 }
                                                 withZoom={withZoom}
                                               />
-                                              {/* </div> */}
-                                              {/* </div> */}
+                                              
                                             </div>
                                           );
                                         }
@@ -439,7 +428,7 @@ export default function Homepage({ data }) {
 export async function getServerSideProps(context) {
   console.log(process.env.NEXT_PUBLIC_API_KEY)
   const res = await fetch(
-    "https://7f128vjw-5500.uks1.devtunnels.ms/v2/companies", {
+    `${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
@@ -448,7 +437,6 @@ export async function getServerSideProps(context) {
   );
 
   const data = await res.json();
-  console.log(data)
   const cleanNullValues = await data.values.filter(company => company.cluster !== null|| company.category !== null)
 
   if (!data) {

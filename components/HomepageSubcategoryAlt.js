@@ -13,7 +13,6 @@ export default function HomepageSubcategoryAlt({
   withZoom,
 }) {
   const router = useRouter();
-  console.log("subcategory obj", subcategory)
   const handleImages = (url) => {
     if (url.includes("https://drive.google.com")) {
       return `https://drive.google.com/thumbnail?id=${

@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
 }, []);
 
   return <>
-  <Script src={`https://www.googletagmanager.com/gtag/js?id=G-KEPJR2KRS1`} strategy='lazyOnload'/>
+  {/* <Script src={`https://www.googletagmanager.com/gtag/js?id=G-KEPJR2KRS1`} strategy='lazyOnload'/> */}
   {/* <Script
   dangerouslySetInnerHTML={{
     __html: `

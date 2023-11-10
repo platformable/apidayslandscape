@@ -1,7 +1,7 @@
 import React,{useContext,useState} from "react";
 import Head from 'next/head'
 import Layout from "../../components/Layout";
-import BarChart from "../../components/BarChart"
+// import BarChart from "../../components/BarChart"
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Loader from "../../public/loader.gif";
@@ -674,7 +674,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-              <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/>
+              {/* <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/> */}
          
             </div>
             <div className="col-md-3 text-center border-top mt-5">
@@ -1578,7 +1578,7 @@ export default function CompanyDetailsName({ data }) {
 
 
 
-                  <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/>
+                  {/* <BarChart q1={blogQ12021} q2={blogQ22021} q3={blogQ32021} q4={blogQ42021}/> */}
 
 
 

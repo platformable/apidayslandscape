@@ -1,6 +1,6 @@
 import React,{useContext,useState} from "react";
 import Layout from "../../components/Layout";
-import BarChart from "../../components/BarChart"
+// import BarChart from "../../components/BarChart"
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Loader from "../../public/loader.gif";
@@ -640,7 +640,7 @@ export default function CompanyDetailsNameEntity({ data }) {
 
 
 
-              <BarChart/>
+              {/* <BarChart/> */}
 
 
 

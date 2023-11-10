@@ -3,17 +3,17 @@ import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-import Image from "next/dist/client/image";
+import Image from "next/image";
 
 export default function HomepageSubcategoryAlt({
   handleCompany,
   subcategory,
-  filteredCategory,
+  filteredSubcategory,
   handleEntity,
   withZoom,
 }) {
   const router = useRouter();
-
+  console.log("subcategory obj", subcategory)
   const handleImages = (url) => {
     if (url.includes("https://drive.google.com")) {
       return `https://drive.google.com/thumbnail?id=${
@@ -41,17 +41,17 @@ export default function HomepageSubcategoryAlt({
         )}
         data-for="subcategory-tooltip"
       >
-        {subcategory.name} <br/>({filteredCategory.length})
+        {subcategory.name} <br/>({filteredSubcategory.length})
       </h6>
 
       {/* <div className=""> */}
-        <div className="homeCards px-2 ">
-          {filteredCategory
-            ? filteredCategory.map((row, index) => {
+        <div className="flex flex-wrap gap-1">
+          {filteredSubcategory
+            ? filteredSubcategory.map((row, index) => {
                 return (
                   <div
                     href="https://nextjs.org/docs"
-                    className="landscape-card  landscape-box-card mb-0 me-1 mt-0 "
+                    className="max-h-[48px] cursor-pointer  mb-0  mt-0 "
                     key={index}
                     onClick={() => handleCompany(row)}
                   >

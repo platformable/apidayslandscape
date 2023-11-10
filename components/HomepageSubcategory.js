@@ -3,12 +3,12 @@ import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-import Image from "next/dist/client/image";
+import Image from "next/image";
 
 export default function homepageSubcategory({
   handleCompany,
   subcategoryName,
-  filteredCategory,
+  filteredSubcategory,
   handleEntity,
   withZoom,
 }) {
@@ -41,13 +41,13 @@ export default function homepageSubcategory({
         )}
         data-for="subcategory-tooltip"
       >
-        {subcategoryName} <br/>({filteredCategory.length})
+        {subcategoryName} <br/>({filteredSubcategory.length})
       </h6>
 
       {/* <div className=""> */}
         <div className="homeCards px-2 ">
-          {filteredCategory
-            ? filteredCategory.map((row, index) => {
+          {filteredSubcategory
+            ? filteredSubcategory.map((row, index) => {
                 return (
                   <div
                     href="https://nextjs.org/docs"

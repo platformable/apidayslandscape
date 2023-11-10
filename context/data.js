@@ -457,17 +457,72 @@ export const newModel = {
       color: "",
       subcategories: [
       {
-        name: '',
+        name: 'AI',
         description: "",
         color: "",
       },
       {
-        name: '',
+        name: 'Accounting',
         description: "",
         color: "",
       },
       {
-        name: '',
+        name: 'Ecommerce',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Legal',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Regulatory compliance',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Training and Education',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Data',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Human-as-a-service',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Metrics',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Marketing',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Time/calendar',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Forms',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'Search',
+        description: "",
+        color: "",
+      },
+      {
+        name: 'ESG',
         description: "",
         color: "",
       },

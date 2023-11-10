@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
-import { cluster } from "../context/data";
+import { newModel } from "../context/data";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,11 +21,13 @@ import {
   TwitterIcon,
 } from "react-share";
 import Script from "next/script";
+import HomepageSubcategoryAlt from "../components/HomepageSubcategoryAlt";
 
 export default function Homepage({ data }) {
+  console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
   const [selectedEntity, setSelectedEntity] = useState([]);
-  const [withZoom, setWithZoom] = useState(false)
+  const [withZoom, setWithZoom] = useState(false);
 
   const router = useRouter();
 
@@ -41,8 +43,6 @@ export default function Homepage({ data }) {
   };
 
   const lastUpdate = new Date();
-
-  
 
   TopBarProgress.config({
     barColors: {
@@ -86,7 +86,6 @@ export default function Homepage({ data }) {
     }
   }, []); */
 
-
   const handleEntity = (entity) => {
     setSelectedEntity(entity);
   };
@@ -95,7 +94,6 @@ export default function Homepage({ data }) {
     handleLoading();
     router.push(`/${url}`);
   };
-
 
   const totalValues = data.values.filter(
     (items) =>
@@ -152,8 +150,8 @@ export default function Homepage({ data }) {
           src="https://plausible.io/js/script.js"
         />
         <main>
-        <section className="intro-text py-3">
-            <div className="container hero  d-flex justify-content-center  align-items-center">
+          <section id="hero" className="intro-text py-3 ">
+            <div className="d-flex container justify-content-center  align-items-center">
               {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
               <div className="text-center flex-grow-1">
                 <h1 className="text-white text-center py-2 text-white fw-bold">
@@ -189,7 +187,7 @@ export default function Homepage({ data }) {
                 </a>
                 <button
                   className="btn btn-light-gray   text-company-color "
-                  onClick={() => setWithZoom(prev => !prev)}
+                  onClick={() => setWithZoom((prev) => !prev)}
                 >
                   Zoom
                 </button>
@@ -213,7 +211,6 @@ export default function Homepage({ data }) {
               <div className="col-md-4"></div>              
             </div> */}
               </div>
-
               <div className="mt-5">
                 <h3>
                   <span className="badge bg-light text-black shadow d-none d-md-block  mt-5">
@@ -251,7 +248,7 @@ export default function Homepage({ data }) {
               </div>
             </div>
           </section>
-        <section className="home-landscape heroBg d-none d-md-block py-1">
+          <section className="home-landscape heroBg d-none d-md-block py-1">
             <ReactTooltip
               backgroundColor="#04a5b6"
               textColor="#fff"
@@ -272,8 +269,9 @@ export default function Homepage({ data }) {
 
             <div className="container-fluid">
               <div className="row" id="cluster-container">
-                {Object.entries(cluster)?.map(
+                {Object.entries(newModel)?.map(
                   ([clusterName, values], index) => {
+                    
                     return (
                       <div id="cluster" className="col-md-12 mb-1" key={index}>
                         <div className="home-main-container ">
@@ -283,59 +281,88 @@ export default function Homepage({ data }) {
                               data-tip={values?.description}
                               data-for="category-tooltip"
                             >
-                              {clusterName}
-                              ({Object.values(values?.categories).map((cat) => cat).flat().length})
+                              {clusterName}(
+                              {
+                                Object.values(values?.categories)
+                                  .map((cat) => cat)
+                                  .flat().length
+                              }
+                              )
                             </span>
                           </div>
-                          <div id="categories-container" className="p-2 d-flex flex-wrap flex-row gap-3">
-
-                          {Object.entries(values?.categories).map(
-                            ([key, categories], index) => {
-                              return (
-                                <div id="categorie" className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple">
-                                  <center className="mb-3">New Category{' '}{key}</center>
-                                    {/* //Use flex-wrap if you plain to use categories in columns */}
-                                  <div id="subcategories-container" className={`d-flex flex-column flex-wrap gap-3 landscape-container`} key={index}>
-                                  {categories?.map((subcat, index) => {
-                                    // console.log("subcat,", subcat);
-                                    const filteredCtegory = data.values.filter(
-                                      (company, index) =>
-                                        company?.subcategory?.includes(subcat)
-                                    );
-                                    filteredCtegory.sort((a, b) =>
-                                      a.name.localeCompare(b.name)
-                                    );
-                                    return (
-                                      <div
-                                        id="subcategory"
-                                        className="flex-grow-1 flex-shrink-0"
-                                        key={index}
-                                      >
-                                        {/* <div className="landscape-category-container "> */}
-                                          {/* <div
+                          <div
+                            id="categories-container"
+                            className="p-2 d-flex flex-wrap flex-row gap-3"
+                          >
+                            {Object.entries(values?.categories).map(
+                              ([categorieName, values], index) => {
+                                const filteredCategories =
+                                            data.values.filter(
+                                              (company, index) =>
+                                                company?.category?.includes(
+                                                  categorieName
+                                                )
+                                            );
+                                            console.log(filteredCategories)
+                                return (
+                                  <div
+                                    id="categorie"
+                                    className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple"
+                                  >
+                                    <center className="mb-3">
+                                      {categorieName}
+                                    </center>
+                                    <div
+                                      id="subcategories-container"
+                                      className={`d-flex flex-column flex-wrap gap-3 landscape-container`}
+                                      key={index}
+                                    >
+                                      {values?.subcategories?.map(
+                                        (subcat, index) => {
+                                          // console.log("subcat,", subcat);
+                                          const filteredSubcategory =
+                                            data.values.filter(
+                                              (company, index) =>
+                                                company?.subcategory?.includes(
+                                                  subcat.name
+                                                )
+                                            );
+                                          filteredSubcategory.sort((a, b) =>
+                                            a.name.localeCompare(b.name)
+                                          );
+                                          return (
+                                            <div
+                                              id="subcategory"
+                                              className="flex-grow-1 flex-shrink-0"
+                                              key={index}
+                                            >
+                                              {/* <div className="landscape-category-container "> */}
+                                              {/* <div
                                             key={index}
                                              className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform"
                                           > */}
-                                            {data <= 0 && <Loader />}
+                                              {data <= 0 && <Loader />}
 
-                                            <HomepageSubcategory
-                                              subcategoryName={subcat}
-                                              handleCompany={handleEntity}
-                                              filteredCategory={filteredCtegory}
-                                              withZoom={withZoom}
-                                            />
-                                          {/* </div> */}
-                                        {/* </div> */}
-                                      </div>
-                                    )
-                                  })}
+                                              <HomepageSubcategoryAlt
+                                                subcategory={subcat}
+                                                handleCompany={handleEntity}
+                                                filteredSubcategory={
+                                                  filteredSubcategory
+                                                }
+                                                withZoom={withZoom}
+                                              />
+                                              {/* </div> */}
+                                              {/* </div> */}
+                                            </div>
+                                          );
+                                        }
+                                      )}
+                                    </div>
                                   </div>
-                                </div>
-                              )
-                            }
-                          )}
+                                );
+                              }
+                            )}
                           </div>
-
                         </div>
                       </div>
                     );
@@ -345,68 +372,62 @@ export default function Homepage({ data }) {
             </div>
           </section>
 
-
-
-
-
           {/* MOBILE ********************************************************/}
 
-          
-          {Object.entries(cluster)?.map(([clusterName, values], index) => {
+          {Object.entries(newModel)?.map(([clusterName, values], index) => {
             return (
               // <div className={``}>
-                <section className="mobile-landscape d-xs-block d-md-none">
-                      <div className="container">
-                        <div className="row">
-                        <center>{clusterName}</center>
+              <section
+                className="mobile-landscape d-xs-block d-md-none"
+                key={index}
+              >
+                <div className="container">
+                  <div className="row">
+                    <center>{clusterName}</center>
 
-                          <div className="col-md-12 bg-white px-0">
-                {Object.entries(values?.categories).map(
-                  ([key, categories], index) => (
-                    <>
+                    <div className="col-md-12 bg-white px-0">
+                      {Object.entries(values?.categories).map(
+                        ([categorieName, values], index) => (
+                          <div key={index}>
                             <h3
                               className="sm-text text-center mobile-bg-dark-company-color text-white py-2"
-                              // data-tip={APILifecyclePlatformsDescription}
+                              data-tip={values?.description}
                               data-for="category-tooltip"
                             >
-                              {key}
+                              {categorieName}
                               {/* ({APILifecyclePlatform.length}) */}
                             </h3>
-                            {categories?.map((subcat, index) => {
-                          // console.log("subcat,", subcat)
-                          const filteredCategory = data.values.filter(
-                            (company, index) =>
-                            
-                              company?.subcategory?.includes(subcat)
-                          );
-                          filteredCategory.sort((a, b) =>
-                            a.name.localeCompare(b.name)
-                          );
-                          return (
-
-                            <div className="subcat" key={index}>
-                            <HomepageSubcategory
-                              subcategoryName={subcat}
-                              handleCompany={handleEntity}
-                              filteredCategory={
-                                filteredCategory
-                              }
-                            />
+                            {values.subcategories?.map((subcat, index) => {
+                              // console.log("subcat,", subcat)
+                              const filteredSubcategory = data.values.filter(
+                                (company, index) =>
+                                  company?.subcategory?.includes(subcat.name)
+                              );
+                              filteredSubcategory.sort((a, b) =>
+                                a.name.localeCompare(b.name)
+                              );
+                              return (
+                                <div className="subcat" key={index}>
+                                  <HomepageSubcategory
+                                    subcategory={subcat}
+                                    handleCompany={handleEntity}
+                                    filteredSubcategory={filteredSubcategory}
+                                  />
+                                </div>
+                              );
+                            })}
                           </div>
-                        )})}
-                        </>
-                  )
-                )}
-                 </div>
-                        </div>
-                      </div>
-                    </section>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </section>
             );
           })}
 
           {/* END MOBILE */}
 
-          
           <Methodology />
         </main>
       </div>
@@ -416,11 +437,20 @@ export default function Homepage({ data }) {
 }
 
 export async function getServerSideProps(context) {
+  console.log(process.env.NEXT_PUBLIC_API_KEY)
   const res = await fetch(
-    `https://apidaysserver-svmwd.ondigitalocean.app/`
+    "https://7f128vjw-5500.uks1.devtunnels.ms/v2/companies", {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+    }
+    }
   );
 
   const data = await res.json();
+  console.log(data)
+  const cleanNullValues = await data.values.filter(company => company.cluster !== null|| company.category !== null)
+
   if (!data) {
     return {
       notFound: true,
@@ -428,6 +458,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { data },
+    props: { data: {values: cleanNullValues} },
   };
 }

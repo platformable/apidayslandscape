@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 html,
 body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
- background-color: #f0f0f0 !important;
- color:#0c4b6e;
+  background-color: #f0f0f0 !important;
+  /* color:#0c4b6e; */
 }
-a {
-  color:var(--main-blue);
-}
+
 * {
   box-sizing: border-box;
+}
+
+a {
+  color:var(--main-blue);
 }
 
 .logo:hover {
@@ -49,6 +57,10 @@ a {
 
 }
 
+.bg-category-container-purple {
+  background-color: rgba(157, 0, 255, 0.071);
+
+}
 .bg-company-orange-color {
   background-color:var(--company-orange-color) !important;
 }
@@ -252,9 +264,6 @@ place-items: center;
 
 }
 
-.landscape-card:hover {
-  cursor:pointer;
-}
 
 .landscape-card {
   max-height:48px
@@ -327,9 +336,9 @@ place-items: center;
   margin:0;
 }
 .landscape-box-card {
-/*   display: flex;
-  flex-direction: column;
-  align-items: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 }
 .bg-landscape-box {
   background-color:#eee;
@@ -595,7 +604,7 @@ color:white !important;
 } */
 
 .landscape-container {
-    display:flex;
+    /* display:flex; */
 }
 
 .landscape-category-box {}
@@ -607,11 +616,11 @@ color:white !important;
   image-rendering:optimize-contrast;         /* CSS3 Proposed  */
   -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
 }
-
+#categorie {
+}
 .landscape-category-container {
 display:flex;
 flex: 1;
-/* min-height:125px; */
 }
 .landscape-subcategory-box {
 border:2px solid #eee;

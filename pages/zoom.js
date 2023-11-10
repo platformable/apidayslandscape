@@ -1055,9 +1055,9 @@ export default function Homepage({ data }) {
                 {/*      <div className="row">
             <div className="col-md-4"> </div>
               <div className="col-md-4">
-              <div class="input-group my-3">
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
-                <button class="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
+              <div className="input-group my-3">
+                <input type="text" className="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
+                <button className="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
               </div>
                {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not found</span></div>}
               </div>
@@ -1067,7 +1067,7 @@ export default function Homepage({ data }) {
 
               <div className="mt-5">
                 <h3>
-                  <span class="badge bg-light text-black shadow d-none d-md-block  mt-5">
+                  <span className="badge bg-light text-black shadow d-none d-md-block  mt-5">
                     {totalValues.length}
                   </span>{" "}
                 </h3>
@@ -1767,10 +1767,10 @@ export default function Homepage({ data }) {
                         Platform ({APILifecyclePlatform.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
 
                             <HomepageSubcategory
@@ -1782,7 +1782,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Consulting"
@@ -1797,7 +1797,7 @@ export default function Homepage({ data }) {
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                      {/*     <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                      {/*     <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Access and Identity Management"
@@ -1808,7 +1808,7 @@ export default function Homepage({ data }) {
                               handleLoading={handleLoading}
                             />
                           </div> */}
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Design/Documentation Platforms"
@@ -1818,7 +1818,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          {/* <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          {/* <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             <HomepageSubcategory
                               subcategoryName="API Security"
                               handleCompany={handleEntity}
@@ -1828,7 +1828,7 @@ export default function Homepage({ data }) {
                             />
                           </div> */}
 
-                      {/*     <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                      {/*     <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Testing"
@@ -1843,7 +1843,7 @@ export default function Homepage({ data }) {
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Developer Portals"
@@ -1854,7 +1854,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Streaming/Event Architecture"
@@ -1867,9 +1867,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                     {/*      <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                     {/*      <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Analytics/Monitoring"
@@ -1880,7 +1880,7 @@ export default function Homepage({ data }) {
                             />
                           </div> */}
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-apilifecycleplatform">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="IoT Platforms/Networks/Devices"
@@ -1897,8 +1897,8 @@ export default function Homepage({ data }) {
                 </div>{" "}
                 {/* col-md-12 */}
                 <div className="col-md-12 my-1" id="main-row">
-                  <div class="home-main-container ">
-                    <div class="bg-company-dark-purple-color">
+                  <div className="home-main-container ">
+                    <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
                         data-tip={verticalApiDescription}
@@ -1908,10 +1908,10 @@ export default function Homepage({ data }) {
                         {VerticalAPIAbstractions.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Security"
@@ -1927,10 +1927,10 @@ export default function Homepage({ data }) {
 
 
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
                         
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Threat Management"
@@ -1943,9 +1943,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Discovery & Risk Management"
@@ -1955,7 +1955,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Vulnerability Management"
@@ -1973,8 +1973,8 @@ export default function Homepage({ data }) {
                 {/* row end */}
                  {/* col-md-12 */}
                  <div className="col-md-12 my-1" id="main-row">
-                  <div class="home-main-container ">
-                    <div class="bg-company-dark-purple-color">
+                  <div className="home-main-container ">
+                    <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
                         data-tip={verticalApiDescription}
@@ -1984,10 +1984,10 @@ export default function Homepage({ data }) {
                         {APILifecyclePlatformEmbeddedSecurity.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Vulnerability Identification/scanners"
@@ -1997,7 +1997,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Web Application Firewalls"
@@ -2015,8 +2015,8 @@ export default function Homepage({ data }) {
                 {/* row end */}
                  {/* col-md-12 */}
                  <div className="col-md-12 my-1" id="main-row">
-                  <div class="home-main-container ">
-                    <div class="bg-company-dark-purple-color">
+                  <div className="home-main-container ">
+                    <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
                         data-tip={verticalApiDescription}
@@ -2026,10 +2026,10 @@ export default function Homepage({ data }) {
                         {APILifecyclePlatformAdjacentSecuritySolutions.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Testing"
@@ -2045,7 +2045,7 @@ export default function Homepage({ data }) {
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                        <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Identity Verification/KYC"
@@ -2055,7 +2055,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Login"
@@ -2068,10 +2068,10 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
                       
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
                       
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Access and Identity Management"
@@ -2081,7 +2081,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Analytics/Monitoring"
@@ -2099,8 +2099,8 @@ export default function Homepage({ data }) {
                 {/* row end */}
                 {/* col-md-12 */}
                 <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="bg-dark-company-color">
+                  <div className="home-main-container ">
+                    <div className="bg-dark-company-color">
                       <span
                         className="text-white"
                         data-tip={BackendBuildingToolsDescription}
@@ -2110,10 +2110,10 @@ export default function Homepage({ data }) {
                         {BackendBuildingTools.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Banking/Finance/Insurance Backends"
@@ -2129,9 +2129,9 @@ export default function Homepage({ data }) {
                       </div>
 
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Infrastructure/Cloud/Serverless APIs"
@@ -2146,7 +2146,7 @@ export default function Homepage({ data }) {
 
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Deployment/Back-end Building"
@@ -2161,9 +2161,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Headless CMS"
@@ -2173,7 +2173,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Blockchain"
@@ -2184,7 +2184,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BackendBuildingToolsANDMBaas">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Mobile Backend as a Service"
@@ -2201,8 +2201,8 @@ export default function Homepage({ data }) {
                 </div>{" "}
                 {/* col-md-12 */}
                 <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="bg-dark-company-color">
+                  <div className="home-main-container ">
+                    <div className="bg-dark-company-color">
                       <span
                         className="cat-name text-white"
                         data-tip={
@@ -2214,10 +2214,10 @@ export default function Homepage({ data }) {
                         {BusinessprocessesasanAPIAPIasaProduct.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Data"
@@ -2233,7 +2233,7 @@ export default function Homepage({ data }) {
                       </div>
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Email/Messaging/Communications Platforms as a Service"
@@ -2243,7 +2243,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Payments"
@@ -2255,9 +2255,9 @@ export default function Homepage({ data }) {
                           </div>
                         </div>
                       </div>
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="AI/ML"
@@ -2268,7 +2268,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="E-commerce"
@@ -2282,7 +2282,7 @@ export default function Homepage({ data }) {
                       </div>
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Accounting"
@@ -2292,7 +2292,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Audio/Visual"
@@ -2304,7 +2304,7 @@ export default function Homepage({ data }) {
                           </div>
 
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Legal/Regulatory"
@@ -2316,7 +2316,7 @@ export default function Homepage({ data }) {
                           </div>
                          
 
-                 {/*          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                 {/*          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Identity verification/KYC"
@@ -2330,7 +2330,7 @@ export default function Homepage({ data }) {
                       </div>
                       <div className="lanscape-container">
                         <div className="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                        <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Data governance/Data management"
@@ -2342,9 +2342,9 @@ export default function Homepage({ data }) {
                           </div>
                         </div>
                       </div>
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Forms"
@@ -2355,7 +2355,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Human-as-a-service"
@@ -2366,7 +2366,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Human Resources"
@@ -2378,7 +2378,7 @@ export default function Homepage({ data }) {
                           </div>
 
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Search"
@@ -2389,7 +2389,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-BusinessprocessesasanAPIAPIasaProduct">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Time/Calendar"
@@ -2407,8 +2407,8 @@ export default function Homepage({ data }) {
                 </div>{" "}
                 {/* col-md-12 */}
                 <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="bg-dark-company-color">
+                  <div className="home-main-container ">
+                    <div className="bg-dark-company-color">
                       <span
                         className="text-white"
                         data-tip={integrationPlatformDescription}
@@ -2418,10 +2418,10 @@ export default function Homepage({ data }) {
                         {IntegrationPlatformAsAService.length})
                       </span>
                     </div>
-                    <div class="category-container ">
+                    <div className="category-container ">
                       <div className="landscape-container">
                         <div className="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService ">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService ">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Aggregators (Finance)"
@@ -2434,9 +2434,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Automation/Orchestration"
@@ -2449,9 +2449,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="API Aggregators (General)"
@@ -2461,7 +2461,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-IntegrationPlatformAsAService">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Database-as-a-service"
@@ -2478,8 +2478,8 @@ export default function Homepage({ data }) {
                 </div>{" "}
                 {/* col-md-12 */}
                 <div className="col-md-12 my-1">
-                  <div class="home-main-container ">
-                    <div class="bg-dark-company-color">
+                  <div className="home-main-container ">
+                    <div className="bg-dark-company-color">
                       <span
                         className="text-white"
                         data-tip={verticalApiDescription}
@@ -2489,10 +2489,10 @@ export default function Homepage({ data }) {
                         {VerticalAPIAbstractions.length})
                       </span>
                     </div>
-                    <div class="category-container ">
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                    <div className="category-container ">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Finance"
@@ -2502,7 +2502,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Healthcare"
@@ -2512,7 +2512,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                   {/*        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                   {/*        <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Login"
@@ -2524,9 +2524,9 @@ export default function Homepage({ data }) {
                         </div>
                       </div>
 
-                      <div class="landscape-container">
-                        <div class="landscape-category-container">
-                        <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                      <div className="landscape-container">
+                        <div className="landscape-category-container">
+                        <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Marketing/Analytics"
@@ -2536,7 +2536,7 @@ export default function Homepage({ data }) {
                               }
                             />
                           </div>
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Cloud Storage"
@@ -2547,7 +2547,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Delivery/Transport/Logistics"
@@ -2558,7 +2558,7 @@ export default function Homepage({ data }) {
                             />
                           </div>
 
-                          <div class="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
+                          <div className="landscape-subcategory-box landscape-subcategory-box-VerticalAPIAbstractions">
                             {data <= 0 && <Loader />}
                             <HomepageSubcategory
                               subcategoryName="Smart Home/Facilities"

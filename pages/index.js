@@ -417,11 +417,10 @@ export default function Homepage({ data }) {
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `https://apidaysserver-svmwd.ondigitalocean.app/` || `http://localhost:5000`
+    `https://apidaysserver-svmwd.ondigitalocean.app/`
   );
 
   const data = await res.json();
-
   if (!data) {
     return {
       notFound: true,

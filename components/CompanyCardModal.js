@@ -137,13 +137,13 @@ export default function CompanyCardModal({company,index,loading}) {
         <div className="card-bottom-right  d-flex flex-direction-column ">
              <span className="sm-text text-company-color">Total Funding</span>
             <p className="fw-bold my-2">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
-            <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
+            <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
             
           <div className="card-bottom-right border-start d-flex flex-direction-column ">
             <span className="sm-text text-company-color">Headcount</span>
             <p className="fw-bold my-2">{company.headcount?company.headcount:"-"}</p>
-            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
+            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" className="sd-icon mt-3" />
             
           </div>{/*  <!--card-bottom -left--> */}
 

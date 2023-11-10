@@ -21,6 +21,7 @@ import {
   TwitterIcon,
 } from "react-share";
 import Script from "next/script";
+import HomepageSubcategoryAlt from "../components/HomepageSubcategoryAlt";
 
 export default function HomepageTest({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
@@ -320,7 +321,7 @@ export default function HomepageTest({ data }) {
                                           > */}
                                             {data <= 0 && <Loader />}
 
-                                            <HomepageSubcategory
+                                            <HomepageSubcategoryAlt
                                               subcategory={subcat}
                                               handleCompany={handleEntity}
                                               filteredCategory={filteredCtegory}
@@ -419,7 +420,7 @@ export default function HomepageTest({ data }) {
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `https://apidaysserver-svmwd.ondigitalocean.app/` || `http://localhost:5000`
+    'https://7f128vjw-5500.uks1.devtunnels.ms/v2/allCompanies'
   );
 
   const data = await res.json();
@@ -431,6 +432,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { data },
+    props: { data: data },
   };
 }

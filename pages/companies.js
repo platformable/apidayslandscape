@@ -160,7 +160,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                     </div> {/* subcategory */}
                     <div className="col-md-3">
                     <div className="input-group mb-2">
-                    <input type="text" class="form-control " id="inputGroupFile04" 
+                    <input type="text" className="form-control " id="inputGroupFile04" 
                     aria-describedby="inputGroupFileAddon04" aria-label="" 
                     onChange={(e)=>handleCompanyName(e.target.value)} />
                     <button className="btn border " type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
@@ -175,9 +175,9 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                        <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {total} </p>
                     </div>
                     <div className="col-md-1 d-flex justify-content-end align-items-center">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
-                        <label class="form-check-label fw-bold" for="flexCheckDefault">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
+                        <label className="form-check-label fw-bold" for="flexCheckDefault">
                             A-Z
                         </label>
                         </div> {/* form check */}

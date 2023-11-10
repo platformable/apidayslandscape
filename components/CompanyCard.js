@@ -53,7 +53,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
             <div className="card-description">
               <h6 className="fw-bold text-company-color" onClick={() => handleCompany(company)}> {company.name}</h6>
-              {/* <h6><span class="badge bg-dark-orange text-white">Go Deeper</span></h6> */}
+              {/* <h6><span className="badge bg-dark-orange text-white">Go Deeper</span></h6> */}
               {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
               <div className="card-founded-container">
                 <div className="founded-icon">
@@ -96,13 +96,13 @@ export default function CompanyCard({company,index,handleLoading}) {
           <div className="card-bottom-left">
             <span className="sm-text">Headcount</span>
             <p className="fw-bold">{company.headcount?company.headcount:"-"}</p>
-            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
+            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" className="sd-icon mt-3" />
             
           </div>{/*  <!--card-bottom -left--> */}
           <div className="card-bottom-center">
              <span>Total Funding</span>
             <p className="fw-bold ">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
-            <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
+            <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
           <div className="card-bottom-right">
              <span>Estimated Revenue</span>

@@ -1,18 +1,19 @@
 export default function CategoryContainer({
   categorieName,
+  values,
   index,
   children,
 }) {
   return (
     <div
       id="categorie"
-      className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple"
+      className={`${index === 0 && 'border-l-2 border-l-[var(--orange)] rounded-tr-md' }  px-2 2xl:px-3 py-4 flex-grow-1 ${values.color || 'bg-[#E6EFFF]'}`}
       key={index}
     >
-      <center className="mb-3">{categorieName}</center>
+      <center className="mb-4 font-bold text-[#083ECB]">{categorieName}</center>
       <div
         id="subcategories-container"
-        className={`d-flex flex-column flex-wrap gap-3 landscape-container`}
+        className={`d-flex flex-column flex-wrap gap-3`}
         key={index}
       >
         {children}

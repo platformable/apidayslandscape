@@ -45,7 +45,7 @@ a {
   --lightblue:lavender;
   --lightgreen:#ddfeee;
   --lightyellow:#fefddd;
-  --yellow:#f8c700;
+  --orange:#F69902;
   --pink:#f8c700;
   --turquoise:#28c8dd;
   --darkturquoise:darkturquoise;
@@ -65,8 +65,7 @@ a {
   background-color:var(--company-orange-color) !important;
 }
 
-.bg-company-dark-purple-color {
-  background-color: var(--dark-purple);
+.cluster-label {
   width:40px;
   padding:10px 0;
   writing-mode:vertical-rl;
@@ -176,11 +175,7 @@ transform: translateZ(0);
   justify-content:space-between;
   }
 
-.homeCards {
-  display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
-}
+
 
 
 iframe {
@@ -210,9 +205,6 @@ a {
   color:var(--text-gray);
 }
 
-.heroBg {
-  background-color:#04a5b6;
-}
 
 
 .bg-home-keyindicator {
@@ -331,21 +323,13 @@ place-items: center;
   } */
 
 
-.home-landscape,.intro-text {
-  background-color: #0ab;
-  margin:0;
-}
+
 .landscape-box-card {
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
 }
-.bg-landscape-box {
-  background-color:#eee;
-}
-.home-main-container{
-  background-color:white;
-  }
+
 
 .category-name span {
     text-align:center;

@@ -40,7 +40,7 @@ export default function about() {
 
             <section className="about-page-description  py-5">
                 <div className="container">
-                <div className="about-container">
+                <div className="grid grid-cols-3">
                     <div className="about-description rounded shadow p-3">
                     <img src="../about_section_01.png" alt="" className="img-fluid" />
                     <p className="sm-text my-3 text-center text-company-color"> See the entire API landscape at a glance</p>

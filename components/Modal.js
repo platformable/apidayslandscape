@@ -5,10 +5,10 @@ import CompanyCardModal from './CompanyCardModal'
 
 
 
-export default function Modal({selectedEntity,handleLoading}) {
+export default function Modal({selectedEntity,setLoading}) {
 
   const handleRoute = () =>{
-    handleLoading()
+    setLoading(pev => !prev)
     router.push(`/company/${selectedEntity.name}`)
   }
 

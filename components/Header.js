@@ -1,65 +1,88 @@
-import React from "react";
-import Link from 'next/link'
+import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
+  const [displayNav, setDisplayNav] = useState(false);
+
   return (
-      <>
-{/*     <div className="navigation pt-3 bg-light">
-      <div className="container nav-container d-flex">
-      <div className="logo-container">
-      <Link href="/"><img src="../homepage/logo_dark.png" alt="" className="img-fluid logo" /></Link>
+    <nav className="bg-white ">
+      <div className="container flex flex-wrap items-center justify-between mx-auto ">
+        <a
+          href="https://flowbite.com/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="/apidays_logo.png" className="h-8" alt="APIDays" />
+        </a>
+        <button
+          onClick={() => {
+            setDisplayNav(!displayNav);
+          }}
+          data-collapse-toggle="navbar-default"
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div
+          className={`${displayNav ? "" : "hidden"} w-full md:block md:w-auto`}
+          id="navbar-default"
+        >
+          <ul className="font-medium flex flex-col  md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white  ">
+            <li>
+              <a
+                href="#"
+                className="block rojo py-2 px-3 rounded md:bg-transparent  md:p-0 "
+              >
+                ABOUT
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block text-[#083ECB] py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                ADD YOUR API TOOL
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block text-[#083ECB] py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                REPORT A BUG
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block text-[#083ECB] py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                NEW FEATURE IDEA
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <div className="link-container flex-grow-1">
-        <ul className="d-flex justify-content-between text-uppercase">
-          <li className="nav-link active">
-          <Link className="nav-link active flex-grow-1" aria-current="page" href="/">Home</Link>
-          </li>
-  
-          <li className="nav-link ">
-          <Link className="nav-link flex-grow-1 disabled" aria-current="page" href="/homepage" disabled>Enhanced</Link>
-          </li>
-          <li className="nav-link active">
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/companies">Companies</Link>
-          </li>
-          <li className="nav-link active">
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/">About</Link>
-          </li>
-        </ul>
+      <div>
+        <img src="/strip.png" alt="" />
       </div>
-      </div>
-    </div> */} {/* nav */}
-
-<header>
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container">
-    <div className="logox">
-   <Link href="/"><img src="../logo_dark.png" alt="" className="img-fluid logo" /></Link>
-   </div>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul className="navbar-nav ">
-       {/*  <li className="nav-item ">
-          <Link className="nav-link active flex-grow-1" aria-current="page" href="/">Home</Link>
-          </li>
-          <li>
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/homepage">Enhanced</Link>
-          </li>
-          <li>
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/companies">Companies</Link>
-          </li>
-          <li>
-          <Link className="nav-link flex-grow-1" aria-current="page" href="/about">ABOUT</Link>
-          </li> */}
-  
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
-    
-    </>
+    </nav>
   );
 }

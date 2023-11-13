@@ -68,7 +68,6 @@ a {
 
 .cluster-label {
   width:40px;
-  padding:10px 0;
   writing-mode:vertical-rl;
   transform:rotate(180deg);
   text-align:center;

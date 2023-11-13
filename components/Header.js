@@ -5,13 +5,13 @@ export default function Header() {
   const [displayNav, setDisplayNav] = useState(false);
 
   return (
-    <nav className="bg-white ">
-      <div className="container flex flex-wrap items-center justify-between mx-auto ">
+    <nav className="bg-white">
+      <div className="container flex flex-wrap items-center justify-between mx-auto py-3">
         <a
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/apidays_logo.png" className="h-8" alt="APIDays" />
+          <img src="/apidays_logo.png" className="h-14" alt="APIDays" />
         </a>
         <button
           onClick={() => {

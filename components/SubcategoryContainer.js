@@ -9,7 +9,6 @@ export default function SubcategoryContainer({
   handleCompany,
   subcategory,
   filteredSubcategory,
-  handleEntity,
   withZoom,
   index
 }) {
@@ -32,21 +31,24 @@ export default function SubcategoryContainer({
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
-    <div id="subcategory" className="flex-grow-1 flex-shrink-0" key={index}>
+    <div id="subcategory" className="bg-white flex-grow-1  flex-shrink-0 py-2" key={index}>
       {/* {data <= 0 && <Loader />} */}
       <h6
-        className="text-center sm-text pt-1 bg-warning px-2"
+        className="text-center sm-text px-2 font-bold text-[#083ECB] tracking-wide leading-normal mt-1 mb-2"
         data-tip={getSubcategoryDescription(
           subcategoriesDescriptions,
           subcategory.name
         )}
         data-for="subcategory-tooltip"
       >
-        {subcategory.name} <br />({filteredSubcategory.length})
+        {subcategory.name} 
+        <span className="opacity-80">{' '}
+        ({filteredSubcategory.length})
+          </span>
       </h6>
 
       {/* <div className=""> */}
-      <div className="flex flex-wrap gap-1">
+      <div className="flex flex-wrap gap-1 px-2">
         {filteredSubcategory
           ? filteredSubcategory.map((row, index) => {
               return (

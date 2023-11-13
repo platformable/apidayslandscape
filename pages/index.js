@@ -1,4 +1,4 @@
-import React, { useContext,  useState, useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { newModel } from "../context/data";
 import Layout from "../components/Layout";
 import { CompanyContext } from "../context/CompanyContext";
@@ -22,15 +22,7 @@ export default function Homepage({ data }) {
   const [loading, setLoading] = useState(false);
   const [withZoom, setWithZoom] = useState(false);
 
-
   const router = useRouter();
-  
-
-  // const handleCompany = (company) => {
-  //   setCompany(company);
-  //   router.push(`/company/${company.name}`);
-  // };
-
 
   TopBarProgress.config({
     barColors: {
@@ -39,10 +31,6 @@ export default function Homepage({ data }) {
     },
     shadowBlur: 5,
   });
-
- 
-
-
 
   const isInitialMount = useRef(true);
 
@@ -55,10 +43,9 @@ export default function Homepage({ data }) {
     }
   }, []); */
 
-  const handleEntity = (entity) => {
+  const handleCompany = (entity) => {
     setSelectedEntity(entity);
   };
-
 
   const [searchResult, setSearchResult] = useState(false);
 
@@ -87,97 +74,105 @@ export default function Homepage({ data }) {
     <Layout>
       {loading && <TopBarProgress />}
       <div className="">
-       <Meta />
+        <Meta />
         <main>
           <Hero />
-          <section className="home-landscape heroBg d-none d-md-block py-1">
-          <Toolbar setLoading={setLoading} setWithZoom={setWithZoom} data={data}/>
-            <ReactTooltip
-              backgroundColor="#04a5b6"
-              textColor="#fff"
-              id="companyName-tooltip"
-            />
-            <ReactTooltip
-              backgroundColor="#0c4b6e"
-              textColor="#fff"
-              id="subcategory-tooltip"
-            />
-            <ReactTooltip
-              backgroundColor="#0c4b6e"
-              textColor="#fff"
-              id="category-tooltip"
-              place="right"
-              className="categoryToolTip"
-            />
+          <section className="bg-[#083ECB]">
+            <div className="px-2 md:px-6 lg:px-10">
+              <Toolbar
+                setLoading={setLoading}
+                setWithZoom={setWithZoom}
+                data={data}
+              />
+              <ReactTooltip
+                backgroundColor="#04a5b6"
+                textColor="#fff"
+                id="companyName-tooltip"
+              />
+              <ReactTooltip
+                backgroundColor="#0c4b6e"
+                textColor="#fff"
+                id="subcategory-tooltip"
+              />
+              <ReactTooltip
+                backgroundColor="#0c4b6e"
+                textColor="#fff"
+                id="category-tooltip"
+                place="right"
+                className="categoryToolTip"
+              />
 
-            <div className="container-fluid">
-              <div className="row" id="cluster-container">
-                {Object.entries(newModel)?.map(
-                  ([clusterName, values], index) => {
-                    
-                    return (
-                      <ClusterContainer clusterName={clusterName} values={values} index={index}>
-                            {Object.entries(values?.categories).map(
-                              ([categorieName, values], index) => {
-                                
-                                return (
-                                  <CategoryContainer categorieName={categorieName} key={index}>
-                                      {values?.subcategories?.map(
-                                        (subcat, index) => {
-                                          // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
-                                          const filteredSubcategory =
-                                            data.values.filter(
-                                              (company, index) =>
-                                                // company.category?.includes(categorieName) &&
-                                                company?.subcategory?.includes(
-                                                  subcat.name
-                                                )
-                                            );
-                                          filteredSubcategory.sort((a, b) =>
-                                            a.name.localeCompare(b.name)
-                                          );
-                                          return (
-                                            
-
-                                              <SubcategoryContainer
-                                                subcategory={subcat}
-                                                handleCompany={handleEntity}
-                                                filteredSubcategory={
-                                                  filteredSubcategory
-                                                }
-                                                withZoom={withZoom}
-                                                index={index}
-                                              />
-                                              
-                                          );
-                                        }
-                                      )}
-                                    </CategoryContainer>
-                                );
-                              }
-                            )}
-                          </ClusterContainer>
-                    );
-                  }
-                )}
+              <div className="">
+                <div className="row" id="cluster-container">
+                  {Object.entries(newModel)?.map(
+                    ([clusterName, values], index) => {
+                      return (
+                        <ClusterContainer
+                          clusterName={clusterName}
+                          values={values}
+                          index={index}
+                        >
+                          {Object.entries(values?.categories).map(
+                            ([categorieName, values], index) => {
+                              return (
+                                <CategoryContainer
+                                  categorieName={categorieName}
+                                  index={index}
+                                  values={values}
+                                >
+                                  {values?.subcategories?.map(
+                                    (subcat, index) => {
+                                      // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
+                                      const filteredSubcategory =
+                                        data.values.filter((company, index) =>
+                                          // company.category?.includes(categorieName) &&
+                                          company?.subcategory?.includes(
+                                            subcat.name
+                                          )
+                                        );
+                                      filteredSubcategory.sort((a, b) =>
+                                        a.name.localeCompare(b.name)
+                                      );
+                                      return (
+                                        <SubcategoryContainer
+                                          subcategory={subcat}
+                                          handleCompany={handleCompany}
+                                          filteredSubcategory={
+                                            filteredSubcategory
+                                          }
+                                          withZoom={withZoom}
+                                          index={index}
+                                        />
+                                      );
+                                    }
+                                  )}
+                                </CategoryContainer>
+                              );
+                            }
+                          )}
+                        </ClusterContainer>
+                      );
+                    }
+                  )}
+                </div>
               </div>
             </div>
           </section>
 
           {/* MOBILE ********************************************************/}
 
-          {Object.entries(newModel)?.map(([clusterName, values], index) => {
+          {/* {Object.entries(newModel)?.map(([clusterName, values], index) => {
             return (
               // <div className={``}>
               <section
-                className="mobile-landscape d-xs-block d-md-none"
+                className="mobile-landscape hidden"
                 key={index}
               >
                 <div className="container">
-                  <div className="row">
+                  <div className="">
                     <center>{clusterName}</center>
 
-                    <div className="col-md-12 bg-white px-0">
+                    <div className="bg-white px-0">
                       {Object.entries(values?.categories).map(
                         ([categorieName, values], index) => (
                           <div key={index}>
@@ -187,7 +182,7 @@ export default function Homepage({ data }) {
                               data-for="category-tooltip"
                             >
                               {categorieName}
-                              {/* ({APILifecyclePlatform.length}) */}
+
                             </h3>
                             {values.subcategories?.map((subcat, index) => {
                               // console.log("subcat,", subcat)
@@ -216,7 +211,7 @@ export default function Homepage({ data }) {
                 </div>
               </section>
             );
-          })}
+          })} */}
 
           {/* END MOBILE */}
 
@@ -229,18 +224,17 @@ export default function Homepage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  console.log(process.env.NEXT_PUBLIC_API_KEY)
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
-    method: 'GET',
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
+    method: "GET",
     headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
-    }
-    }
-  );
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+    },
+  });
 
   const data = await res.json();
-  const cleanNullValues = await data.values.filter(company => company.cluster !== null|| company.category !== null)
+  const cleanNullValues = await data.values.filter(
+    (company) => company.cluster !== null || company.category !== null
+  );
 
   if (!data) {
     return {
@@ -249,6 +243,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { data: {values: cleanNullValues} },
+    props: { data: { values: cleanNullValues } },
   };
 }

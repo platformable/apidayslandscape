@@ -99,7 +99,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
           </EmailShareButton>
         </div>
 
-        <p className="text-white text-[13px] mt-2 font-bold">Last Update: {getDay().toLocaleString()}</p>
+        <p className="text-white text-[12px] mt-2 font-bold">Last Update: {new Date().toLocaleDateString('en-US',{day:'numeric',month:'long',year:'numeric'})}</p>
    
 </div>
         

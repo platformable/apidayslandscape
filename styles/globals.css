@@ -39,7 +39,8 @@ a {
   max-width: 209px;
 }
 :root {
-  --main-blue:#319ef9;
+  --dark-blue:#083ECB;
+  --main-blue:#1060FF;
   --text-gray:#aaa;
   --lightpink:#fef1de;
   --lightblue:lavender;

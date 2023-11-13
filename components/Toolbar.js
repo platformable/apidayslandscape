@@ -85,7 +85,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
             source="https://apilandscape.platformable.com/"
             summary="The API Landscape"
           >
-            <LinkedinIcon size={44} round={true} />
+            <LinkedinIcon size={42} round={true} />
           </LinkedinShareButton>
 
           <EmailShareButton
@@ -95,7 +95,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
             separator=" "
             body="Get to know more about the API Landscape, visit http://apilandscape.com"
           >
-            <EmailIcon size={44} round={true} />
+            <EmailIcon size={42} round={true} />
           </EmailShareButton>
         </div>
 

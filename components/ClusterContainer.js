@@ -2,9 +2,9 @@ export default function ClusterContainer({clusterName, values, index, children})
   return (
     <div id="cluster" className="mb-5 " key={index}>
       <div className="flex border-2 border-[var(--orange)] bg-white rounded-md">
-        <div className={`cluster-label rounded-r ${values.color || 'bg-[#98BDFF]'}`}>
+        <div className={`cluster-label rounded-r ${values.color || 'bg-[#98BDFF]'} px-3`}>
           <h6
-            className="text-white font-[13px]"
+            className="text-[23px] text-[var(--dark-blue)] "
             data-tip={values?.description}
             data-for="category-tooltip"
           >

@@ -68,7 +68,6 @@ a {
 
 .cluster-label {
   width:40px;
-  padding:10px 0;
   writing-mode:vertical-rl;
   transform:rotate(180deg);
   text-align:center;
@@ -1111,21 +1110,6 @@ margin-right:-5px;
 
 
 /* ABOUT PAGE */
-.about-container,.something-to-change-container {
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:10px;
-  }
-
-
-
-  @media screen and (max-width: 600px) {
-    .about-container,.something-to-change-container {
-      display:grid;
-      grid-template-columns:1fr ;
-      gap:10px;
-      }
-  }
 
 .btn-about {
 padding:10px;
@@ -1137,13 +1121,18 @@ border-radius:10px;
 .btn-about:hover {
   color:#0c4b6e;
   }
-
+.change-box {
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  padding: 1.5rem 2.25rem;
+  color: white;
+}
 
 
   .footer-logo {
     position:relative;
     top:-1px;
-    left:-10px;
+    left:-7px;
     max-width:125px;
     }
     
@@ -1178,6 +1167,6 @@ border-radius:10px;
 } */
 
 .change-img-box {
-  min-height:120px;
+  /* min-height:120px; */
   
   }

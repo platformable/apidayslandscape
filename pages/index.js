@@ -13,11 +13,15 @@ import Hero from "../components/Hero";
 import SubcategoryContainer from "../components/SubcategoryContainer";
 import CategoryContainer from "../components/CategoryContainer";
 import ClusterContainer from "../components/ClusterContainer";
+import Toolbar from "../components/Toolbar";
 
 export default function Homepage({ data }) {
   // console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
   const [selectedEntity, setSelectedEntity] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [withZoom, setWithZoom] = useState(false);
+
 
   const router = useRouter();
   
@@ -87,7 +91,7 @@ export default function Homepage({ data }) {
         <main>
           <Hero />
           <section className="home-landscape heroBg d-none d-md-block py-1">
-          
+          <Toolbar setLoading={setLoading} setWithZoom={setWithZoom} data={data}/>
             <ReactTooltip
               backgroundColor="#04a5b6"
               textColor="#fff"
@@ -219,7 +223,7 @@ export default function Homepage({ data }) {
           <Methodology />
         </main>
       </div>
-      <Modal selectedEntity={selectedEntity} handleLoading={handleLoading} />
+      <Modal selectedEntity={selectedEntity} setLoading={setLoading} />
     </Layout>
   );
 }

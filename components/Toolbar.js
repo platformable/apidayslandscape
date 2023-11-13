@@ -8,9 +8,7 @@ import {
     LinkedinIcon,
     TwitterIcon,
   } from "react-share";
-export default function Toolbar() {
-    const [loading, setLoading] = useState(false);
-    const [withZoom, setWithZoom] = useState(false);
+export default function Toolbar({setLoading, setWithZoom, data}) {
     const totalValues = data.values.filter(
         (items) =>
           items.parentCategorySlug !== "API Standards/Protocols" &&
@@ -21,11 +19,9 @@ export default function Toolbar() {
           window.open(url, "_blank");
         }
       };
-      const handleLoading = () => {
-        setLoading(!loading);
-      };
+      
     const handleLinks = (url) => {
-        handleLoading();
+        setLoading(prev => !prev)
         router.push(`/${url}`);
     };
     

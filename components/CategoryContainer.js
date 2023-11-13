@@ -7,6 +7,7 @@ export default function CategoryContainer({
     <div
       id="categorie"
       className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple"
+      key={index}
     >
       <center className="mb-3">{categorieName}</center>
       <div

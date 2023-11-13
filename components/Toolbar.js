@@ -116,7 +116,7 @@ export default function Toolbar({setLoading, setWithZoom, data}) {
                   <EmailIcon size={32} round={true} />
                 </EmailShareButton>
                 <p className="text-center sm-text text-white">
-                  Last Update: {`${getDay()}}`}
+                  Last Update: {`${getDay()}`}
                 </p>
               </div>
             </div>

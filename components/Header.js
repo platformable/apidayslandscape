@@ -30,8 +30,8 @@ export default function Header() {
       </div>
     </div> */} {/* nav */}
 
-
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+<header>
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container">
     <div className="logox">
    <Link href="/"><img src="../logo_dark.png" alt="" className="img-fluid logo" /></Link>
@@ -58,6 +58,8 @@ export default function Header() {
     </div>
   </div>
 </nav>
+</header>
+    
     </>
   );
 }

@@ -1,8 +1,6 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext,  useState, useRef } from "react";
 import { newModel } from "../context/data";
-import Image from "next/image";
 import Layout from "../components/Layout";
-import HomeHero from "../components/HomeHero";
 import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
@@ -10,37 +8,25 @@ import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from "../components/Modal";
 import Methodology from "../components/Methodology";
 import TopBarProgress from "react-topbar-progress-indicator";
-import {
-  EmailShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  EmailIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "react-share";
-import HomepageSubcategoryAlt from "../components/HomepageSubcategoryAlt";
 import Meta from "../components/Meta";
+import Hero from "../components/Hero";
+import SubcategoryContainer from "../components/SubcategoryContainer";
+import CategoryContainer from "../components/CategoryContainer";
+import ClusterContainer from "../components/ClusterContainer";
 
 export default function Homepage({ data }) {
   // console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
   const [selectedEntity, setSelectedEntity] = useState([]);
-  const [withZoom, setWithZoom] = useState(false);
 
   const router = useRouter();
+  
 
-  const [loading, setLoading] = useState(false);
+  // const handleCompany = (company) => {
+  //   setCompany(company);
+  //   router.push(`/company/${company.name}`);
+  // };
 
-  const handleLoading = () => {
-    setLoading(!loading);
-  };
-
-  const handleCompany = (company) => {
-    setCompany(company);
-    router.push(`/company/${company.name}`);
-  };
-
-  const lastUpdate = new Date();
 
   TopBarProgress.config({
     barColors: {
@@ -50,28 +36,9 @@ export default function Homepage({ data }) {
     shadowBlur: 5,
   });
 
-  const handleForm = (url) => {
-    if (typeof window !== "undefined") {
-      window.open(url, "_blank");
-    }
-  };
+ 
 
-  const getMonth = (date) => {
-    return lastUpdate.toLocaleString("default", {
-      month: "long",
-    });
-  };
-  const getDay = (date) => {
-    return lastUpdate.toLocaleString("default", {
-      day: "2-digit",
-    });
-  };
 
-  const getYear = (date) => {
-    return lastUpdate.toLocaleString("default", {
-      year: "numeric",
-    });
-  };
 
   const isInitialMount = useRef(true);
 
@@ -88,16 +55,6 @@ export default function Homepage({ data }) {
     setSelectedEntity(entity);
   };
 
-  const handleLinks = (url) => {
-    handleLoading();
-    router.push(`/${url}`);
-  };
-
-  const totalValues = data.values.filter(
-    (items) =>
-      items.parentCategorySlug !== "API Standards/Protocols" &&
-      items.parentCategorySlug !== "Media/Associations"
-  );
 
   const [searchResult, setSearchResult] = useState(false);
 
@@ -128,105 +85,9 @@ export default function Homepage({ data }) {
       <div className="">
        <Meta />
         <main>
-          <section id="hero" className="intro-text py-3 ">
-            <div className="d-flex container justify-content-center  align-items-center">
-              {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
-              <div className="text-center flex-grow-1">
-                <h1 className="text-white text-center py-2 text-white fw-bold">
-                  The API Landscape
-                </h1>
-                <p className="text-center sm-text text-white">
-                  Last Update: {`${getDay()} ${getMonth()} ${getYear()}`}
-                </p>
-                <h4 className="text-white text-center py-2 text-white">
-                  A comprehensive view of all stakeholders creating the
-                  programmable economy
-                </h4>
-                <button
-                  className="btn btn-dark-gray me-1 text-white mb-1"
-                  onClick={() =>
-                    handleForm("https://airtable.com/shr07pWSbRnQfnZZd")
-                  }
-                >
-                  Add your API Tool
-                </button>
-                <button
-                  className="btn btn-light-gray  m-0 text-company-color mb-1"
-                  onClick={() => handleLinks("companies")}
-                >
-                  Search
-                </button>
-                <a
-                  className="btn btn-dark-gray me-1 text-white"
-                  href="../apilandscape.png"
-                  download="apilandscape"
-                >
-                  Download the map
-                </a>
-                <button
-                  className="btn btn-light-gray   text-company-color "
-                  onClick={() => setWithZoom((prev) => !prev)}
-                >
-                  Zoom
-                </button>
-                {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
-                <a
-                  className="btn btn-dark-gray  text-white"
-                  href="https://apidays.typeform.com/to/YMTfJ3"
-                  target="_blank"
-                >
-                  Report
-                </a>
-                {/*      <div className="row">
-            <div className="col-md-4"> </div>
-              <div className="col-md-4">
-              <div className="input-group my-3">
-                <input type="text" className="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value={company.inputSearch} onChange={(e)=>setCompany({...company,searchInput:e.target.value})}/>
-                <button className="btn btn-dark-gray text-white" type="button" id="button-addon2" onClick={()=>handleSearch(company.searchInput)}>search</button>
-              </div>
-               {searchResult && <div className="text-center"><span className="text-center sm-text text-white">Company not found</span></div>}
-              </div>
-              <div className="col-md-4"></div>              
-            </div> */}
-              </div>
-              <div className="mt-5">
-                <h3>
-                  <span className="badge bg-light text-black shadow d-none d-md-block  mt-5">
-                    {totalValues.length}
-                  </span>{" "}
-                </h3>
-                <h3 className="sm-text text-center text-white md-social-share-buttons">
-                  Share
-                </h3>
-                <LinkedinShareButton
-                  url="https://apilandscape.platformable.com/"
-                  title="The API Landscape"
-                  source="https://apilandscape.platformable.com/"
-                  summary="The API Landscape"
-                >
-                  <LinkedinIcon size={32} round={true} />
-                </LinkedinShareButton>
-                <TwitterShareButton
-                  title="The API Landscape"
-                  url="https://apilandscape.platformable.com"
-                  via="http://apidays.global"
-                  hashtags={["api", "landscape"]}
-                >
-                  <TwitterIcon size={32} round={true} />
-                </TwitterShareButton>
-                <EmailShareButton
-                  url=""
-                  title="The API Landscape"
-                  subject="The API Landscape from apidays"
-                  separator=" "
-                  body="Get to know more about the API Landscape, visit http://apilandscape.com"
-                >
-                  <EmailIcon size={32} round={true} />
-                </EmailShareButton>
-              </div>
-            </div>
-          </section>
+          <Hero />
           <section className="home-landscape heroBg d-none d-md-block py-1">
+          
             <ReactTooltip
               backgroundColor="#04a5b6"
               textColor="#fff"
@@ -251,43 +112,12 @@ export default function Homepage({ data }) {
                   ([clusterName, values], index) => {
                     
                     return (
-                      <div id="cluster" className="col-md-12 mb-1" key={index}>
-                        <div className="home-main-container ">
-                          <div className={`${values.color}`}>
-                            <span
-                              className="text-white"
-                              data-tip={values?.description}
-                              data-for="category-tooltip"
-                            >
-                              {clusterName}(
-                              {
-                                Object.values(values?.categories)
-                                  .map((cat) => cat)
-                                  .flat().length
-                              }
-                              )
-                            </span>
-                          </div>
-                          <div
-                            id="categories-container"
-                            className="p-2 d-flex flex-wrap flex-row gap-3"
-                          >
+                      <ClusterContainer clusterName={clusterName} values={values} index={index}>
                             {Object.entries(values?.categories).map(
                               ([categorieName, values], index) => {
                                 
                                 return (
-                                  <div
-                                    id="categorie"
-                                    className="px-2 py-3 flex-grow-1  border border-1 rounded border-dark bg-category-container-purple"
-                                  >
-                                    <center className="mb-3">
-                                      {categorieName}
-                                    </center>
-                                    <div
-                                      id="subcategories-container"
-                                      className={`d-flex flex-column flex-wrap gap-3 landscape-container`}
-                                      key={index}
-                                    >
+                                  <CategoryContainer categorieName={categorieName} key={index}>
                                       {values?.subcategories?.map(
                                         (subcat, index) => {
                                           // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
@@ -303,35 +133,26 @@ export default function Homepage({ data }) {
                                             a.name.localeCompare(b.name)
                                           );
                                           return (
-                                            <div
-                                              id="subcategory"
-                                              className="flex-grow-1 flex-shrink-0"
-                                              key={index}
-                                            >
-                                              
-                                              {data <= 0 && <Loader />}
+                                            
 
-                                              <HomepageSubcategoryAlt
+                                              <SubcategoryContainer
                                                 subcategory={subcat}
                                                 handleCompany={handleEntity}
                                                 filteredSubcategory={
                                                   filteredSubcategory
                                                 }
                                                 withZoom={withZoom}
+                                                index={index}
                                               />
                                               
-                                            </div>
                                           );
                                         }
                                       )}
-                                    </div>
-                                  </div>
+                                    </CategoryContainer>
                                 );
                               }
                             )}
-                          </div>
-                        </div>
-                      </div>
+                          </ClusterContainer>
                     );
                   }
                 )}

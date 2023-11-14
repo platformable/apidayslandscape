@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,19 +8,33 @@ export default function Footer() {
         <img src="/strip.png" alt="" />
       </div>
       <div className="container py-14">
-        <p className="flex gap-x-1 justify-center mb-0">
+        <p className="flex gap-x-1 items-center justify-center mb-0">
           &copy; This website was built for apidays by{" "}
-          <a href="http://www.platformable.com" target="_blank">
+          <Link href="https://www.platformable.com" target="_blank">
             <img
-              src="../footer_platformable.png"
+              src="/footer_platformable.png"
               alt=""
-              className="footer-logo"
+              className="max-w-[125px]"
             />
-          </a>
+          </Link>
           proudly{" "}
-          <img src="../footer_heart.png" alt="" className="footer-icon" /> based
+          <img src="/heart_icon.png" alt="" className="footer-icon" /> based
           in Barcelona{" "}
         </p>
+      </div>
+      <div
+        className={`text-white flex flex-col justify-center items-center  pt-5 pb-8 border-t border-white border-solid`}
+      >
+        <Link href="#header">
+          <div className="text-white flex flex-col items-center gap-2">
+            <img
+              src="/arrow_collapse_top.svg"
+              alt="arrow icon"
+              className="cursor-pointer"
+            />
+            GO TO TOP
+          </div>
+        </Link>
       </div>
     </footer>
   );

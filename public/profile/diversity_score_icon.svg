@@ -1,0 +1,13 @@
+<svg id="diversity_score_icon" data-name="diversity score_icon" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <rect id="Rectangle_143" data-name="Rectangle 143" width="60" height="60" fill="#fff"/>
+  <g id="Group_3881" data-name="Group 3881" transform="translate(-8.281 3.755)">
+    <g id="Group_3876" data-name="Group 3876" transform="translate(13.282 1.626)">
+      <g id="Group_5480" data-name="Group 5480" transform="translate(4.098 -0.438)">
+        <path id="Path_40" data-name="Path 40" d="M66.332,35.645v7.122c0,.9-.366,1.263-1.272,1.263H50.817c-.874,0-1.25-.369-1.25-1.232V28.5c0-.866.373-1.236,1.246-1.237H65.057c.91,0,1.276.36,1.276,1.258q0,3.562,0,7.125" transform="translate(-25.947 -0.975)" fill="#b273fc"/>
+        <path id="Path_41" data-name="Path 41" d="M28.779,46.211a5.01,5.01,0,0,1-.755-.389q-4.064-3.087-8.114-6.194a1.068,1.068,0,0,1-.456-1.408Q20.99,33.2,22.535,28.187a1.107,1.107,0,0,1,1.266-.918h10a1.079,1.079,0,0,1,1.232.892q1.557,5.038,3.1,10.082a1.062,1.062,0,0,1-.442,1.371q-4.072,3.12-8.156,6.225a4.487,4.487,0,0,1-.757.371" transform="translate(-18.444 -0.973)" fill="#083ecb"/>
+        <path id="Path_42" data-name="Path 42" d="M49.532,8.406A8.384,8.384,0,0,1,57.893,0h.051a8.4,8.4,0,0,1,.007,16.8h-.04a8.388,8.388,0,0,1-8.379-8.389" transform="translate(-25.939 5.058)" fill="#083ecb"/>
+        <path id="Path_43" data-name="Path 43" d="M29.21,17.594H22.443c-.956,0-1.324-.646-.857-1.48q3.391-5.943,6.788-11.884c.474-.829,1.251-.842,1.72-.022q3.413,5.959,6.812,11.922c.461.808.078,1.463-.845,1.465l-6.852,0" transform="translate(-18.896 4.261)" fill="#b273fc"/>
+      </g>
+    </g>
+  </g>
+</svg>

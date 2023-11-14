@@ -10,7 +10,7 @@ html {
 body {
 
 font-family: 'Roboto', sans-serif;
-background-color: #f0f0f0 !important;
+background-color: #E6EFFF !important;
 }
 
 * {
@@ -21,6 +21,11 @@ background-color: #f0f0f0 !important;
 
 a {
 margin: 0 !important;
+color:#083ECB;
+}
+
+.text-nav {
+  color:#083ECB !important;
 }
 
 .logo:hover {

@@ -86,7 +86,7 @@ export default function ProfileRightSide({
   };
 
   return (
-    <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)]">
+    <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)] my-5">
       <section
         id="first-row"
         className="save-section profile-row profile-row-4"

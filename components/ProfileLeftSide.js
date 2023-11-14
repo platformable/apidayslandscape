@@ -23,7 +23,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
   const subcategories = [...new Set(subcategory.split(","))];
 
   return (
-    <div className="company-profile-left-column bg-white   p-5">
+    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  p-5`}>
       <div className="company-name">
         <h3 className="p-0 m-0 mb-5 fw-bold text-center text-[#243672]">
           {name}

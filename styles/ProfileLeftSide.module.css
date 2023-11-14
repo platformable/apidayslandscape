@@ -1,3 +1,7 @@
 .orangeBorder {
     border:1.5px solid var(--orange);
 }
+
+.rightShadow {
+    box-shadow: 13px 0px 20px 0px rgba(0,0,0,0.1);
+}

@@ -1078,17 +1078,6 @@ color: white;
 }
 
 
-/* .footer-logo {
-position:relative;
-top:-1px;
-left:-7px;
-max-width:125px;
-}
-
-.footer-icon {
-max-width:34px;
-} */
-
 .team-container {
 display:grid;
 grid-template-columns: repeat(4, 1fr);

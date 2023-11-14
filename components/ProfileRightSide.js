@@ -51,6 +51,7 @@ export default function ProfileRightSide({
     industryGroups,
     knownPartnershipsNonApi,
     knownPartnershipsApi,
+    knownStandardsUsed,
     apidays2018,
     apidays2019,
     apidays2020,
@@ -63,7 +64,7 @@ export default function ProfileRightSide({
     blogQ42021,
     openSource,
   } = selectedCompany;
-  console.log(selectedCompany)
+  console.log(selectedCompany);
 
   const handleColors = () => {
     const arr = [
@@ -85,7 +86,7 @@ export default function ProfileRightSide({
   };
 
   return (
-    <div className="profile-right-side grid gap-y-5">
+    <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)]">
       <section
         id="first-row"
         className="save-section profile-row profile-row-4"
@@ -98,299 +99,227 @@ export default function ProfileRightSide({
           )}
           <span className="font-semibold text-sm ">Headcount</span>
 
-          <img
-            src="../../apilandscape_headcount_80x50_companies card.png"
-            alt=""
-            className="xd-icon"
-          />
+          <img src="/profile/headcount_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
-          
           <span className="font-semibold my-2 ">
             {handleScore(womanInManagement, nonWhitePeopleInManagement)}
           </span>
-          <span className="font-semibold text-sm">
-            Diversity Scoress
-          </span>
-          <img
-            src="../../apilandscape_diversity_spot_80x50.png"
-            alt=""
-            className="xd-icon"
-          />
+          <span className="font-semibold text-sm">Diversity Scoress</span>
+          <img src="/profile/diversity_score_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
-          
           {womanInManagement ? (
             <span className="font-semibold my-2 ">{womanInManagement}</span>
           ) : (
             <Unknown />
           )}
-          <span className="font-semibold text-sm">
-            Women in management?
-          </span>
-          <img
-            src="../../apilandscape__women_in_management_50x55.png"
-            alt=""
-            className="sd-icon"
-          />
+          <span className="font-semibold text-sm">Women in management?</span>
+          <img src="/profile/women_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
-          
           {nonWhitePeopleInManagement ? (
-            <span className="font-semibold my-2 ">{nonWhitePeopleInManagement}</span>
+            <span className="font-semibold my-2 ">
+              {nonWhitePeopleInManagement}
+            </span>
           ) : (
             <Unknown />
           )}
-          <span className="font-semibold text-sm">
-            Diverse management?
-          </span>
-          <img
-            src="../../apilandscape__diverse_management_50x55.png"
-            alt=""
-            className="sd-icon"
-          />
+          <span className="font-semibold text-sm">Diverse management?</span>
+          <img src="/profile/diverse_icon.svg" alt="" className="" />
         </div>
       </section>
-
 
       <section
         id="second-row"
         className="save-section profile-row profile-row-3"
       >
         <div className="profile-stats-card">
-              <span className="font-semibold my-2">{stage ? stage : "-"}</span>
-            <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
-
-        </div>{" "}
+          <span className="font-semibold my-2">{stage ? stage : "-"}</span>
+          <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
+          <img src="/profile/stage_icon.svg" alt="" className="" />
+        </div>
         <div className="profile-stats-card">
           {totalFunding ? (
-              <span className="font-semibold">{reduceNumber(totalFunding)}</span>
+            <span className="font-semibold">{reduceNumber(totalFunding)}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Total Funding</span>
 
-          <img
-            src="../../apilandscape_total_funding__60x45.png"
-            alt=""
-            className="md-icon "
-          />
+          <img src="/profile/total_funding_icon.svg" alt="" className=" " />
         </div>
         <div className="profile-stats-card">
-
           {lastFundingDate ? (
-              <span className="font-semibold text-sm">{lastFundingDate}</span>
+            <span className="font-semibold text-sm">{lastFundingDate}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm ">Last funding date</span>
 
-          <img
-            src="../../apilandscape_last_funding_date__60x45.png"
-            alt=""
-            className="md-icon"
-          />
+          <img src="/profile/last_funding_icon.svg" alt="" className="" />
         </div>
       </section>
-
 
       <section
         id="third-row"
         className="save-section profile-row profile-row-4"
       >
         <div className="profile-stats-card">
-          
           {ipoDate ? (
-              <span className="font-semibold">{ipoDate}</span>
+            <span className="font-semibold">{ipoDate}</span>
           ) : (
             <Unknown />
           )}
-          <span className="font-semibold text-sm">
-            IPO Date
-          </span>
-          <img
-            src="../../apilandscape_IPO_date__60x45.png"
-            alt=""
-            className="md-icon"
-          />
+          <span className="font-semibold text-sm">IPO Date</span>
+          <img src="/profile/IPODate_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
-          
           {moneyRaisedAtIpo ? (
-              <span className="font-semibold">{moneyRaisedAtIpo}</span>
+            <span className="font-semibold">{moneyRaisedAtIpo}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm text-center">
             Money Raised at IPO
           </span>
-          <img
-            src="../../apilandscape_money_raised_at_IPO_60x45.png"
-            alt=""
-            className="md-icon"
-          />
+          <img src="/profile/money_raised_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
-          
           {valuationAtIpo ? (
-              <span className="font-semibold ">{valuationAtIpo}</span>
+            <span className="font-semibold ">{valuationAtIpo}</span>
           ) : (
             <Unknown />
           )}
-          <span className="font-semibold text-sm">
-            Valuation at IPO
-          </span>
-          <img
-            src="../../apilandscape_valuation_at_IPO_60x45.png"
-            alt=""
-            className="md-icon"
-          />
+          <span className="font-semibold text-sm">Valuation at IPO</span>
+          <img src="/profile/valuation_IPO_icon.svg" alt="" className="" />
         </div>
 
         <div className="profile-stats-card">
           {acquisitions ? (
-            <span className="font-semiboldtext-center ">{acquisitions}</span>
+            <span className="font-semibold text-center ">{acquisitions}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">
             Acquisition (of other entities)
           </span>
-          <img
-            src="../../apilandscape_acquisitions_60x50.png"
-            alt=""
-            className="sd-icon"
-          />
-          
+          <img src="/profile/acquisition_icon.svg" alt="" className="" />
         </div>
       </section>
-
 
       <section
         id="fourth-row"
         className="save-section profile-row profile-row-4"
       >
         <div className="profile-stats-card">
-          
-            {totalProductsActive ? (
-                <span className="font-semibold text-center ">{totalProductsActive}</span>
-            ) : (
-                <Unknown />
-            )}
-            <span className="font-semibold text-sm">
-                Active products
+          {totalProductsActive ? (
+            <span className="font-semibold text-center ">
+              {totalProductsActive}
             </span>
-            <img
-                src="../../apilandscape_active_products_60x50.png"
-                alt=""
-                className="sd-icon"
-            />
+          ) : (
+            <Unknown />
+          )}
+          <span className="font-semibold text-sm">Active products</span>
+          <img src="/profile/active_products_icon.svg" alt="" className="" />
         </div>{" "}
-        
         <div className="profile-stats-card">
-           
-            {patentsGranted ? (
-                <span className="font-semibold text-center ">{patentsGranted}</span>
-                ) : (
-                <Unknown />
-                )}
-            <span className="font-semibold text-sm">
-              Patents Granted
-            </span>
-            <img
-              src="../../apilandscape_patents_granted_60x50.png"
-              alt=""
-              className="sd-icon"
-            />
-        
+          {patentsGranted ? (
+            <span className="font-semibold text-center ">{patentsGranted}</span>
+          ) : (
+            <Unknown />
+          )}
+          <span className="font-semibold text-sm">Patents Granted</span>
+          <img src="/profile/patents_icon.svg" alt="" className="" />
         </div>
         <div className="profile-stats-card">
-        {patentsGranted ? (
-                <span className="font-semibold text-center ">{patentsGranted}</span>
-                ) : (
-                <Unknown />
-                )}
-            <span className="font-semibold text-sm">
-              Pricing Model
-            </span>
-            <img
-              src="../../apilandscape_patents_granted_60x50.png"
-              alt=""
-              className="sd-icon"
-            />
+          {patentsGranted ? (
+            <span className="font-semibold text-center ">{patentsGranted}</span>
+          ) : (
+            <Unknown />
+          )}
+          <span className="font-semibold text-sm">Pricing Model</span>
+          <img src="/profile/pricing_icon.svg" alt="" className="" />
         </div>
-        
         <div className="profile-stats-card">
-            <Link href="#">
-                <button className="font-semibold text-sm mt-3 p-2 shadow bg-[#F5F9FF] shadow-md rounded-md ">
-                Pricing page
-                </button>
-            </Link>
-            <img
-              src="../../apilandscape_patents_granted_60x50.png"
-              alt=""
-              className="sd-icon"
-            />
+          <Link href="#">
+            <button className="font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] shadow-md rounded-md ">
+              Pricing page
+            </button>
+          </Link>
+          <img src="/profile/pricing_page_icon.svg" alt="" className="" />
         </div>
-
-      </section>
-      
-
-      <section id="fifth-row" className="save-section profile-stats-card text-left">
-        <div className="flex justify-start">
-            <span className="font-semibold ">Check the content addressing:</span>
-        </div>
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <li className="rounded p-2 shadhow"></li>
-          <li className="rounded p-2 shadhow"></li>
-          <li className="rounded p-2 shadhow"></li>
-          <li className="rounded p-2 shadhow"></li>
-        </ul>
       </section>
 
+      <section
+        id="fifth-row"
+        className="save-section profile-stats-card text-left px-4"
+      >
+        <div className="text-left text-sm w-full font-semibold">
+          Check the content addressing:
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
+          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+            <img src="/profile/banking_icon.svg" alt="icon" />
+            <span className="text-sm">Banking/Finance</span>
+          </button>
+          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+            <img src="/profile/health_sector_icon.svg" alt="icon" />
+            <span className="text-sm">Health Sector</span>
+          </button>
+          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+            <img src="/profile/government_icon.svg" alt="icon" />
+            <span className="text-sm">Government</span>
+          </button>
+          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+            <img src="/profile/sustainability_icon.svg" alt="icon" />
+            <span className="text-sm">Sustainability</span>
+          </button>
+        </div>
+      </section>
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img
-              src="../../apilandscape_known_standards_used_integrated_60x50.png"
-              alt=""
-              className="xd-icon"
-            />
+            <img src="/profile/known_standards_icon.svg" alt="" className="" />
             <span className="font-semibold text-sm">
               Known standards used/integrated
             </span>
           </div>{" "}
           {/* features-top */}
-          <span className="font-semiboldtext-center md-text">Coming Soon</span>
+          <span className="font-semibold text-center md-text">
+            {knownStandardsUsed ? (
+              <span className="font-semibold text-sm p-3">
+                {knownStandardsUsed}
+              </span>
+            ) : (
+              <Unknown />
+            )}
+          </span>
         </div>
 
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img
-              src="../../apilandscape_privacy_specific_features_60x50.png"
-              alt=""
-              className="xd-icon"
-            />
+            <img src="/profile/privacy_specific_icon.svg" alt="" className="" />
             <span className="font-semibold text-sm">
               Privacy specific features included
             </span>
           </div>{" "}
           {/* features-top */}
           {privacySpecificFeaturesIncluded ? (
-            <span className="font-semiboldtext-sm p-3">{privacySpecificFeaturesIncluded}</span>
+            <span className="font-semibold text-sm p-3">
+              {privacySpecificFeaturesIncluded}
+            </span>
           ) : (
             <Unknown />
           )}
         </div>
-
       </section>
-
 
       <section
         id="seventh-row"
@@ -399,13 +328,12 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
             <img
-              src="../../apilandscape__known_partnerships_API_45x45.png"
+              src="/profile/known_partnership_icon.svg"
               alt=""
-              className="md-icon"
+              className=""
             />
             <span className="font-semibold text-sm">
-              Known partnerships 
-              (API industry)
+              Known partnerships (API industry)
             </span>
           </div>
           <div className="known-partnership-logo d-flex flex-wrap align-items-center ">
@@ -425,14 +353,9 @@ export default function ProfileRightSide({
         </div>
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img
-              src="../../apilandscape__known_partnerships_no_API_45x45.png"
-              alt=""
-              className="md-icon"
-            />
+            <img src="/profile/known_non_API_icon.svg" alt="" className="" />
             <span className="font-semibold text-sm">
-              Known partnerships 
-              (Non-API industry)
+              Known partnerships (Non-API industry)
             </span>
           </div>
           <div className="">
@@ -440,7 +363,9 @@ export default function ProfileRightSide({
               knownPartnershipsNonApi.split(",").map((partner, index) => {
                 return (
                   <>
-                    <span className="font-semiboldtext-sm my-2  me-1">{partner}</span>
+                    <span className="font-semibold text-sm my-2  me-1">
+                      {partner}
+                    </span>
                   </>
                 );
               })
@@ -452,8 +377,6 @@ export default function ProfileRightSide({
           {/* known-partnership-logo */}
         </div>
       </section>
-
-      
     </div>
   );
 }

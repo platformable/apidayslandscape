@@ -5,14 +5,14 @@ export default function Header() {
   const [displayNav, setDisplayNav] = useState(false);
 
   return (
-    <nav className="bg-white">
-      <div className="container flex flex-wrap items-center justify-between mx-auto py-3">
-        <a
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+    <header id="header" className="bg-white">
+      <nav className="container flex flex-wrap items-center justify-between mx-auto py-3">
+        <Link
+          href="/"
+          className="flex items-center space-x-3 "
         >
           <img src="/apidays_logo.png" className="h-14" alt="APIDays" />
-        </a>
+        </Link>
         <button
           onClick={() => {
             setDisplayNav(!displayNav);
@@ -46,12 +46,12 @@ export default function Header() {
         >
           <ul className="font-medium flex flex-col  md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white  ">
             <li>
-              <a
+              <Link
                 href="#"
                 className="block rojo py-2 px-3 rounded md:bg-transparent  md:p-0 "
               >
                 ABOUT
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -62,27 +62,27 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="block text-[#083ECB] py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 REPORT A BUG
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="block text-[#083ECB] py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 NEW FEATURE IDEA
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
       <div>
         <img src="/strip.png" alt="" />
       </div>
-    </nav>
+    </header>
   );
 }

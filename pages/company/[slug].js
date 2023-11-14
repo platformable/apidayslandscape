@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
-import ProfileRightSide from "../../components/ProfileRightSide";
 import Unknown from "../../components/Unknown";
 import { categoriesWithSubcategories, subcategories } from '../../utils/categoriesAndSubcategories';
 import ProfileRightSide from "../../components/ProfileRightSide";

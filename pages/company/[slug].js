@@ -171,7 +171,7 @@ export default function CompanyDetailsName({ data }) {
         </Head>
 
 
-      <div className="container my-5 ">
+      <div className="container shadow-r-md">
        <div className="grid grid-cols-[1fr_2fr] gap-2">
         <ProfileLeftSide selectedCompany={data} handleImages={handleImages}/>
 

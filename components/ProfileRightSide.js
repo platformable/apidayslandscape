@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Unknown from "./Unknown";
 export default function ProfileRightSide({
   selectedCompany,
@@ -62,6 +63,7 @@ export default function ProfileRightSide({
     blogQ42021,
     openSource,
   } = selectedCompany;
+  console.log(selectedCompany)
 
   const handleColors = () => {
     const arr = [
@@ -90,65 +92,65 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {headcount ? (
-            <span className="fw-bold my-2 px-2">{headcount}</span>
+            <span className="font-semibold my-2 ">{headcount}</span>
           ) : (
-            <span className="fw-bold my-2 px-2"> - </span>
+            <span className="font-semibold my-2 "> - </span>
           )}
-          <span className=" m-0 px-2 sm-text ">Headscount</span>
+          <span className="font-semibold text-sm ">Headcount</span>
 
           <img
             src="../../apilandscape_headcount_80x50_companies card.png"
             alt=""
-            className="xd-icon my-1 px-2"
+            className="xd-icon"
           />
         </div>
 
         <div className="profile-stats-card">
           
-          <h6 className="fw-bold my-2 px-2">
+          <span className="font-semibold my-2 ">
             {handleScore(womanInManagement, nonWhitePeopleInManagement)}
-          </h6>
-          <span className=" m-0 px-2 sm-text">
+          </span>
+          <span className="font-semibold text-sm">
             Diversity Scoress
           </span>
           <img
             src="../../apilandscape_diversity_spot_80x50.png"
             alt=""
-            className="xd-icon my-1 px-2"
+            className="xd-icon"
           />
         </div>
 
         <div className="profile-stats-card">
           
           {womanInManagement ? (
-            <h6 className="fw-bold my-2 px-2">{womanInManagement}</h6>
+            <span className="font-semibold my-2 ">{womanInManagement}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text">
+          <span className="font-semibold text-sm">
             Women in management?
           </span>
           <img
             src="../../apilandscape__women_in_management_50x55.png"
             alt=""
-            className="sd-icon my-1 px-2"
+            className="sd-icon"
           />
         </div>
 
         <div className="profile-stats-card">
           
           {nonWhitePeopleInManagement ? (
-            <h6 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h6>
+            <span className="font-semibold my-2 ">{nonWhitePeopleInManagement}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text">
+          <span className="font-semibold text-sm">
             Diverse management?
           </span>
           <img
             src="../../apilandscape__diverse_management_50x55.png"
             alt=""
-            className="sd-icon my-1 px-2"
+            className="sd-icon"
           />
         </div>
       </section>
@@ -159,21 +161,17 @@ export default function ProfileRightSide({
         className="save-section profile-row profile-row-3"
       >
         <div className="profile-stats-card">
-            <h6>
-              <span className="">{stage ? stage : "-"}</span>
-            </h6>
-            <span className=" m-0 px-2 sm-text mb-3">Stage (Seed, A, B, C)</span>
+              <span className="font-semibold my-2">{stage ? stage : "-"}</span>
+            <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
 
         </div>{" "}
         <div className="profile-stats-card">
           {totalFunding ? (
-            <h6>
-              <span className="">{reduceNumber(totalFunding)}</span>
-            </h6>
+              <span className="font-semibold">{reduceNumber(totalFunding)}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text mb-3">Total Funding</span>
+          <span className="font-semibold text-sm">Total Funding</span>
 
           <img
             src="../../apilandscape_total_funding__60x45.png"
@@ -184,13 +182,11 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
 
           {lastFundingDate ? (
-            <h6>
-              <span className=" sm-text">{lastFundingDate}</span>
-            </h6>
+              <span className="font-semibold text-sm">{lastFundingDate}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text mb-3 ">Last funding date</span>
+          <span className="font-semibold text-sm ">Last funding date</span>
 
           <img
             src="../../apilandscape_last_funding_date__60x45.png"
@@ -208,14 +204,12 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
           
           {ipoDate ? (
-            <h6>
-              <span className="badge  fw-bold">{ipoDate}</span>
-            </h6>
+              <span className="font-semibold">{ipoDate}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text">
-            IPO <br /> Date
+          <span className="font-semibold text-sm">
+            IPO Date
           </span>
           <img
             src="../../apilandscape_IPO_date__60x45.png"
@@ -227,13 +221,11 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
           
           {moneyRaisedAtIpo ? (
-            <h6>
-              <span className="badge  text-black">{moneyRaisedAtIpo}</span>
-            </h6>
+              <span className="font-semibold">{moneyRaisedAtIpo}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text text-center">
+          <span className="font-semibold text-sm text-center">
             Money Raised at IPO
           </span>
           <img
@@ -246,13 +238,11 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
           
           {valuationAtIpo ? (
-            <h6>
-              <span className="badge fw-bold">{valuationAtIpo}</span>
-            </h6>
+              <span className="font-semibold ">{valuationAtIpo}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text">
+          <span className="font-semibold text-sm">
             Valuation at IPO
           </span>
           <img
@@ -264,11 +254,11 @@ export default function ProfileRightSide({
 
         <div className="profile-stats-card">
           {acquisitions ? (
-            <h6 className="text-center fw-bold">{acquisitions}</h6>
+            <span className="font-semiboldtext-center ">{acquisitions}</span>
           ) : (
             <Unknown />
           )}
-          <span className=" m-0 px-2 sm-text">
+          <span className="font-semibold text-sm">
             Acquisition (of other entities)
           </span>
           <img
@@ -288,11 +278,11 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
           
             {totalProductsActive ? (
-                <h6 className="text-center fw-bold">{totalProductsActive}</h6>
+                <span className="font-semibold text-center ">{totalProductsActive}</span>
             ) : (
                 <Unknown />
             )}
-            <span className=" m-0 px-2 sm-text">
+            <span className="font-semibold text-sm">
                 Active products
             </span>
             <img
@@ -305,11 +295,11 @@ export default function ProfileRightSide({
         <div className="profile-stats-card">
            
             {patentsGranted ? (
-                <h6 className="text-center fw-bold">{patentsGranted}</h6>
+                <span className="font-semibold text-center ">{patentsGranted}</span>
                 ) : (
                 <Unknown />
                 )}
-            <span className=" m-0 px-2 sm-text">
+            <span className="font-semibold text-sm">
               Patents Granted
             </span>
             <img
@@ -319,18 +309,42 @@ export default function ProfileRightSide({
             />
         
         </div>
-        <div className="profile-stats-card">Princing model</div>
+        <div className="profile-stats-card">
+        {patentsGranted ? (
+                <span className="font-semibold text-center ">{patentsGranted}</span>
+                ) : (
+                <Unknown />
+                )}
+            <span className="font-semibold text-sm">
+              Pricing Model
+            </span>
+            <img
+              src="../../apilandscape_patents_granted_60x50.png"
+              alt=""
+              className="sd-icon"
+            />
+        </div>
         
         <div className="profile-stats-card">
-          {/* /link */}
-          Pricing page
+            <Link href="#">
+                <button className="font-semibold text-sm mt-3 p-2 shadow bg-[#F5F9FF] shadow-md rounded-md ">
+                Pricing page
+                </button>
+            </Link>
+            <img
+              src="../../apilandscape_patents_granted_60x50.png"
+              alt=""
+              className="sd-icon"
+            />
         </div>
 
       </section>
       
 
-      <section id="fifth-row" className="save-section profile-stats-card">
-        <span>Check the content addressing:</span>
+      <section id="fifth-row" className="save-section profile-stats-card text-left">
+        <div className="flex justify-start">
+            <span className="font-semibold ">Check the content addressing:</span>
+        </div>
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <li className="rounded p-2 shadhow"></li>
           <li className="rounded p-2 shadhow"></li>
@@ -342,34 +356,34 @@ export default function ProfileRightSide({
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
         <div className="profile-stats-card">
-          <div className="flex items-center">
+          <div className="flex gap-3 items-center w-full">
             <img
               src="../../apilandscape_known_standards_used_integrated_60x50.png"
               alt=""
               className="xd-icon"
             />
-            <span className=" m-0 px-2 sm-text">
+            <span className="font-semibold text-sm">
               Known standards used/integrated
             </span>
           </div>{" "}
           {/* features-top */}
-          <span className="text-center md-text">Coming Soon</span>
+          <span className="font-semiboldtext-center md-text">Coming Soon</span>
         </div>
 
         <div className="profile-stats-card">
-          <div className="flex items-center">
+          <div className="flex gap-3 items-center w-full">
             <img
               src="../../apilandscape_privacy_specific_features_60x50.png"
               alt=""
               className="xd-icon"
             />
-            <span className=" m-0 px-2 sm-text">
+            <span className="font-semibold text-sm">
               Privacy specific features included
             </span>
           </div>{" "}
           {/* features-top */}
           {privacySpecificFeaturesIncluded ? (
-            <span className="sm-text p-3">{privacySpecificFeaturesIncluded}</span>
+            <span className="font-semiboldtext-sm p-3">{privacySpecificFeaturesIncluded}</span>
           ) : (
             <Unknown />
           )}
@@ -383,18 +397,18 @@ export default function ProfileRightSide({
         className="save-section profile-row profile-row-2"
       >
         <div className="profile-stats-card">
-          <div className="known-partnership-container d-flex ">
+          <div className="flex gap-3 items-center w-full">
             <img
               src="../../apilandscape__known_partnerships_API_45x45.png"
               alt=""
               className="md-icon"
             />
-            <span className=" m-0 px-2 sm-text">
-              Known partnerships <br />
+            <span className="font-semibold text-sm">
+              Known partnerships 
               (API industry)
             </span>
           </div>
-          <div className="known-partnership-logo d-flex flex-wrap align-items-center  ms-2">
+          <div className="known-partnership-logo d-flex flex-wrap align-items-center ">
             {logoApiIndustry ? (
               logoApiIndustry.split(",").map((logo, index) => {
                 return (
@@ -410,46 +424,36 @@ export default function ProfileRightSide({
           {/* known-partnership-logo */}
         </div>
         <div className="profile-stats-card">
-          <div className="known-partnership-container d-flex ">
+          <div className="flex gap-3 items-center w-full">
             <img
               src="../../apilandscape__known_partnerships_no_API_45x45.png"
               alt=""
               className="md-icon"
             />
-            <span className=" m-0 px-2 sm-text">
-              Known partnerships <br />
+            <span className="font-semibold text-sm">
+              Known partnerships 
               (Non-API industry)
             </span>
           </div>
-          <div className="known-partnership-logo  text-center flex-grow-1 ms-2">
+          <div className="">
             {knownPartnershipsNonApi ? (
               knownPartnershipsNonApi.split(",").map((partner, index) => {
                 return (
                   <>
-                    <span className="sm-text my-2 fw-bold me-1">{partner}</span>
+                    <span className="font-semiboldtext-sm my-2  me-1">{partner}</span>
                   </>
                 );
               })
             ) : (
               <Unknown />
             )}
-            {/* <span className="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span> */}
+            {/* <span className="font-semibold bg-secondary m-1">Royale Oceaninc Super Yatchs</span> */}
           </div>{" "}
           {/* known-partnership-logo */}
         </div>
       </section>
 
-
-      <div className="update-company d-flex justify-content-center bg-gray my-5">
-        <a
-          href="https://platformable.typeform.com/to/KDwe0Tbk"
-          target="_blank"
-          className="btn bg-company-orange-color text-white mx-0"
-        >
-          Update company data
-        </a>
-        {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
-      </div>
+      
     </div>
   );
 }

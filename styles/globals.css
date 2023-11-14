@@ -786,6 +786,7 @@ border-right:1px solid #eee;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
   justify-content: space-between;
   align-items: center;
   text-align: center;

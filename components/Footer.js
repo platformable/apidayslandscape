@@ -7,10 +7,10 @@ export default function Footer() {
       <div>
         <img src="/strip.png" alt="" />
       </div>
-      <div className="container py-14">
-        <p className="flex gap-x-1 items-center justify-center mb-0">
+      <div className="container px-1 md:px-0 py-14">
+        <p className="flex gap-x-1 items-center justify-center mb-0 text-[12px] md:text-base flex-wrap">
           &copy; This website was built for apidays by{" "}
-          <Link href="https://www.platformable.com" target="_blank" className="flex items-center gap-x-1">
+          <Link href="https://www.platformable.com" target="_blank" className="flex  items-center gap-x-1">
             <img
               src="/footer_platformable.png"
               alt=""

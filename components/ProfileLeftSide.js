@@ -60,6 +60,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
         {newParentCategorySlug?.map((cluster, index) => {
           return (
             <span
+              key={index}
               className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] block border-[#F69902] ${styles.orangeBorder}`}
             >
               {cluster}

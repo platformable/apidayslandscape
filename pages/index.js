@@ -109,6 +109,7 @@ export default function Homepage({ data }) {
                           clusterName={clusterName}
                           values={values}
                           index={index}
+                          key={index}
                         >
                           {Object.entries(values?.categories).map(
                             ([categorieName, values], index) => {
@@ -117,6 +118,7 @@ export default function Homepage({ data }) {
                                   categorieName={categorieName}
                                   index={index}
                                   values={values}
+                                  key={index}
                                 >
                                   {values?.subcategories?.map(
                                     (subcat, index) => {
@@ -140,11 +142,12 @@ export default function Homepage({ data }) {
                                           }
                                           withZoom={withZoom}
                                           index={index}
+                                          key={index}
                                         />
                                       );
                                     }
                                   )}
-                                </CategoryContainer>
+                                </CategoryContainer >
                               );
                             }
                           )}

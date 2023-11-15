@@ -17,18 +17,18 @@ export default function Modal({selectedEntity,setLoading}) {
     return (
         <div >
          
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade shadow-lg" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog ">
                 <div className="modal-content ">
-                  <div className="modal-header">
+                  <div className="modal-top flex justify-end p-2">
                   {/*   <h5 className="modal-title" id="exampleModalLabel">{selectedEntity.name}</h5> */}
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" className=" text-black font-bold px-2" data-bs-dismiss="modal" aria-label="Close">X</button>
                   </div>
                   <div className="modal-body" onClick={()=>handleRoute(selectedEntity)} data-bs-dismiss="modal">
    
-                    <CompanyCardModal company={selectedEntity} data-bs-dismiss="modal"/>
+                    <CompanyCardModal company={selectedEntity} data-bs-dismiss="modal" handleRoute={handleRoute} selectedEntity={selectedEntity}/>
                   </div>
-                  <div className="modal-footer">
+                  <div className="modal-footerxs">
                  {/*    <button type="button" className="btn bg-dark-orange text-white" data-bs-dismiss="modal" onClick={()=>handleRoute(selectedEntity)}>Go deeper</button> */}
                   </div>
                 </div>

@@ -49,23 +49,23 @@ export default function CompanyCard({company,index,handleLoading}) {
       <div className="company-card bg-white" key={index}>
       <div className="card-top">
         <div className="">
-          <h3 className="fw-bold text-company-color text-center text-[#243672]">
+          <h6 className="fw-bold text-company-color text-center text-[#243672]">
             {" "}
             {company.name}
-          </h3>
+          </h6>
 
-          <div className="card-logo flex justify-center">
+          <div className="card-logo flex justify-center relative aspect-w-1 aspect-h-1 h-20 items-center">
             {company.logo === "" || null ? (
               <img
                 src={`../../../apidaysReplacementLogo.png`}
                 alt=""
-                
+                className='object-cover object-center w-full h-full'
               />
             ) : (
               <img
                 srcSet={`${handleImages(company.logo)} 2x`}
                 alt=""
-                
+                className='object-contain object-center w-full h-full'
                 
               />
             )}
@@ -77,7 +77,7 @@ export default function CompanyCard({company,index,handleLoading}) {
 
           {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
 
-          <div className="flex gap-x-5 items-center mb-3">
+          <div className="flex gap-x-5 items-center mt-3">
             <div>
               <img src="/founded_icon.svg" alt="" className="" />
             </div>
@@ -93,7 +93,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
           </div>
 
-          <div className="flex gap-x-5 items-center">
+          <div className="flex gap-x-5 items-center mt-2">
             <div>
               <img src="/headquarter_icon.svg" alt="" className="" />
             </div>
@@ -111,7 +111,7 @@ export default function CompanyCard({company,index,handleLoading}) {
         </div>
       </div>{" "}
       {/* <!--cardtop--> */}
-      <div className="card-middle mt-2">
+      <div className="my-2">
  {/*        {newParentCategorySlug?.map((cluster, index) => {
           return (
             <span
@@ -145,7 +145,7 @@ export default function CompanyCard({company,index,handleLoading}) {
         })} */}
       </div>
       {/* <!--card middle--> */}
-      <div className="grid grid-cols-3 gap-x-2 my-3">
+      <div className="grid grid-cols-3 gap-x-2 mb-3">
         <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
@@ -164,7 +164,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           <p className="font-bold my-2 text-[#243672]">
             {company.totalFunding ? reduceNumber(company.totalFunding) : "-"}
           </p>
-          <span className="text-[#083ECB]">Total Funding</span>
+          <span className="text-[#083ECB] text-center">Total Funding</span>
           <img
             src="/total funding_icon.svg"
             alt=""
@@ -180,7 +180,7 @@ export default function CompanyCard({company,index,handleLoading}) {
               company.nonWhitePeopleInManagement
             )} */}---
           </p>
-          <span className="text-[#083ECB]">Active products</span>
+          <span className="text-[#083ECB] text-center">Active products</span>
           <img
             src="/active products_icon.svg"
             alt=""
@@ -192,7 +192,7 @@ export default function CompanyCard({company,index,handleLoading}) {
       <div className="my-1 grid">
     
         <button
-         onClick={()=>handleRoute(selectedEntity)}
+         onClick={()=>handleCompany(company)}
           className="bg-[#083ECB] shadow-md px-10 py-3  text-white uppercase rounded text-center"
         >
          View complete profile

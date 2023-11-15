@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Unknown from "./Unknown";
+import styles from "../styles/Profilepage.module.css";
+
+
 export default function ProfileRightSide({
   selectedCompany,
   handleImages,
@@ -84,6 +87,7 @@ export default function ProfileRightSide({
     const selectedColor = arr[color];
     return selectedColor;
   };
+  const textFormat = 'text-[#243672] text-lg'
 
   return (
     <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)] my-5">
@@ -93,43 +97,43 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {headcount ? (
-            <span className="font-semibold my-2 ">{headcount}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{headcount}</span>
           ) : (
-            <span className="font-semibold my-2 "> - </span>
+            <span className={`${textFormat} font-semibold my-2`}> - </span>
           )}
           <span className="font-semibold text-sm ">Headcount</span>
 
-          <img src="/profile/headcount_icon.svg" alt="" className="" />
+          <img src="/profile/headcount_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
-          <span className="font-semibold my-2 ">
+          <span className={`${textFormat} font-semibold my-2`}>
             {handleScore(womanInManagement, nonWhitePeopleInManagement)}
           </span>
           <span className="font-semibold text-sm">Diversity Scoress</span>
-          <img src="/profile/diversity_score_icon.svg" alt="" className="" />
+          <img src="/profile/diversity_score_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
           {womanInManagement ? (
-            <span className="font-semibold my-2 ">{womanInManagement}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{womanInManagement}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Women in management?</span>
-          <img src="/profile/women_icon.svg" alt="" className="" />
+          <img src="/profile/women_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
           {nonWhitePeopleInManagement ? (
-            <span className="font-semibold my-2 ">
+            <span className={`${textFormat} font-semibold my-2`}>
               {nonWhitePeopleInManagement}
             </span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Diverse management?</span>
-          <img src="/profile/diverse_icon.svg" alt="" className="" />
+          <img src="/profile/diverse_icon.svg" alt="icon" className="" />
         </div>
       </section>
 
@@ -138,29 +142,31 @@ export default function ProfileRightSide({
         className="save-section profile-row profile-row-3"
       >
         <div className="profile-stats-card">
-          <span className="font-semibold my-2">{stage ? stage : "-"}</span>
-          <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
-          <img src="/profile/stage_icon.svg" alt="" className="" />
-        </div>
-        <div className="profile-stats-card">
           {totalFunding ? (
-            <span className="font-semibold">{reduceNumber(totalFunding)}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{reduceNumber(totalFunding)}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Total Funding</span>
 
-          <img src="/profile/total_funding_icon.svg" alt="" className=" " />
+          <img src="/profile/total_funding_icon.svg" alt="icon" className=" " />
         </div>
+
+        <div className="profile-stats-card">
+          <span className={`${textFormat} font-semibold my-2`}>{stage ? stage : "-"}</span>
+          <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
+          <img src="/profile/stage_icon.svg" alt="icon" className="" />
+        </div>
+        
         <div className="profile-stats-card">
           {lastFundingDate ? (
-            <span className="font-semibold text-sm">{lastFundingDate}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{lastFundingDate}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm ">Last funding date</span>
 
-          <img src="/profile/last_funding_icon.svg" alt="" className="" />
+          <img src="/profile/last_funding_icon.svg" alt="icon" className="" />
         </div>
       </section>
 
@@ -170,46 +176,46 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {ipoDate ? (
-            <span className="font-semibold">{ipoDate}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{ipoDate}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">IPO Date</span>
-          <img src="/profile/IPODate_icon.svg" alt="" className="" />
+          <img src="/profile/IPODate_icon.svg" alt="icon" className="ml-3" />
         </div>
 
         <div className="profile-stats-card">
           {moneyRaisedAtIpo ? (
-            <span className="font-semibold">{moneyRaisedAtIpo}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{moneyRaisedAtIpo}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm text-center">
             Money Raised at IPO
           </span>
-          <img src="/profile/money_raised_icon.svg" alt="" className="" />
+          <img src="/profile/money_raised_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
           {valuationAtIpo ? (
-            <span className="font-semibold ">{valuationAtIpo}</span>
+            <span className="font-semiboldmy-2 ">{valuationAtIpo}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Valuation at IPO</span>
-          <img src="/profile/valuation_IPO_icon.svg" alt="" className="" />
+          <img src="/profile/valuation_IPO_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
           {acquisitions ? (
-            <span className="font-semibold text-center ">{acquisitions}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{acquisitions}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">
             Acquisition (of other entities)
           </span>
-          <img src="/profile/acquisition_icon.svg" alt="" className="" />
+          <img src="/profile/acquisition_icon.svg" alt="icon" className="" />
         </div>
       </section>
 
@@ -219,32 +225,32 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {totalProductsActive ? (
-            <span className="font-semibold text-center ">
+            <span className={`${textFormat} font-semibold my-2`}>
               {totalProductsActive}
             </span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Active products</span>
-          <img src="/profile/active_products_icon.svg" alt="" className="" />
+          <img src="/profile/active_products_icon.svg" alt="icon" className="" />
         </div>{" "}
         <div className="profile-stats-card">
           {patentsGranted ? (
-            <span className="font-semibold text-center ">{patentsGranted}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{patentsGranted}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Patents Granted</span>
-          <img src="/profile/patents_icon.svg" alt="" className="" />
+          <img src="/profile/patents_icon.svg" alt="icon" className="" />
         </div>
         <div className="profile-stats-card">
           {patentsGranted ? (
-            <span className="font-semibold text-center ">{patentsGranted}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{patentsGranted}</span>
           ) : (
             <Unknown />
           )}
           <span className="font-semibold text-sm">Pricing Model</span>
-          <img src="/profile/pricing_icon.svg" alt="" className="" />
+          <img src="/profile/pricing_icon.svg" alt="icon" className="" />
         </div>
         <div className="profile-stats-card">
           <Link href="#">
@@ -252,7 +258,7 @@ export default function ProfileRightSide({
               Pricing page
             </button>
           </Link>
-          <img src="/profile/pricing_page_icon.svg" alt="" className="" />
+          <img src="/profile/pricing_page_icon.svg" alt="icon" className="" />
         </div>
       </section>
 
@@ -286,7 +292,7 @@ export default function ProfileRightSide({
       <section id="sixt-row" className="save-section profile-row profile-row-2">
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/known_standards_icon.svg" alt="" className="" />
+            <img src="/profile/known_standards_icon.svg" alt="icon" className="" />
             <span className="font-semibold text-sm">
               Known standards used/integrated
             </span>
@@ -294,7 +300,7 @@ export default function ProfileRightSide({
           {/* features-top */}
           <span className="font-semibold text-center md-text">
             {knownStandardsUsed ? (
-              <span className="font-semibold text-sm p-3">
+              <span className={`${textFormat} font-semibold text-sm p-3`}>
                 {knownStandardsUsed}
               </span>
             ) : (
@@ -305,14 +311,14 @@ export default function ProfileRightSide({
 
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/privacy_specific_icon.svg" alt="" className="" />
+            <img src="/profile/privacy_specific_icon.svg" alt="icon" className="" />
             <span className="font-semibold text-sm">
               Privacy specific features included
             </span>
           </div>{" "}
           {/* features-top */}
           {privacySpecificFeaturesIncluded ? (
-            <span className="font-semibold text-sm p-3">
+            <span className={`${textFormat} font-semibold text-sm p-3`}>
               {privacySpecificFeaturesIncluded}
             </span>
           ) : (
@@ -329,7 +335,7 @@ export default function ProfileRightSide({
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_partnership_icon.svg"
-              alt=""
+              alt="icon"
               className=""
             />
             <span className="font-semibold text-sm">
@@ -353,12 +359,12 @@ export default function ProfileRightSide({
         </div>
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/known_non_API_icon.svg" alt="" className="" />
+            <img src="/profile/known_non_API_icon.svg" alt="icon" className="" />
             <span className="font-semibold text-sm">
               Known partnerships (Non-API industry)
             </span>
           </div>
-          <div className="">
+          <div className={`${textFormat}`}>
             {knownPartnershipsNonApi ? (
               knownPartnershipsNonApi.split(",").map((partner, index) => {
                 return (

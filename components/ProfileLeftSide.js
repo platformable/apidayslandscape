@@ -1,4 +1,6 @@
-import styles from "../styles/ProfileLeftSide.module.css";
+import styles from "../styles/Profilepage.module.css";
+
+const textNewBlue = 'text-[#243672]'
 
 function ProfileLeftSide({ selectedCompany, handleImages }) {
   const {
@@ -21,27 +23,29 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
   const newParentCategorySlug = [...new Set(cluster.split(","))];
   const categories = [...new Set(category.split(","))];
   const subcategories = [...new Set(subcategory.split(","))];
-
+  
+  const textNewBlue = 'text-[#243672] text-lg'
+  const foundedRows = 'flex items-center gap-x-2 items-center'  
   return (
-    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  p-5`}>
+    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue}  p-5`}>
       <div className="company-name">
-        <h3 className="p-0 m-0 mb-5 fw-bold text-center text-[#243672]">
+        <h3 className="p-0 m-0 mb-5 font-bold text-center ">
           {name}
         </h3>
       </div>{" "}
       {/* company name */}
-      <div className="company-logo d-flex justify-content-center align-items-center my-5">
+      <div className="company-logo flex justify-center items-center my-5">
         <a href={url} target="_blank">
           {logo === "" || null ? (
             <img
               src={`../../../apidaysReplacementLogo.png`}
-              alt=""
+              alt="icon"
               className=""
             />
           ) : (
             <img
               srcSet={`${handleImages(logo)} 2x`}
-              alt=""
+              alt="icon"
               className="img-fluid"
             />
           )}
@@ -56,7 +60,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
         {newParentCategorySlug?.map((cluster, index) => {
           return (
             <span
-              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] d-block border-[#F69902] ${styles.orangeBorder}`}
+              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] block border-[#F69902] ${styles.orangeBorder}`}
             >
               {cluster}
             </span>
@@ -67,7 +71,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
           return (
             <span
               key={index}
-              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] d-block ${styles.orangeBorder}`}
+              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] block ${styles.orangeBorder}`}
             >
               {category}
             </span>
@@ -78,16 +82,16 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
           return (
             <span
               key={index}
-              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] d-block ${styles.orangeBorder}`}
+              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] block ${styles.orangeBorder}`}
             >
               {subcategory}
             </span>
           );
         })}
 
-        <div className="open-source d-flex justify-content-center">
+        <div className="open-source flex justify-center">
           {openSource === "TRUE" ? (
-            <p className="sm-text mt-1 ml-2 open-source-text me-2 fw-bold text-center">
+            <p className="text-sm mt-1 ml-2 open-source-text me-2 font-bold text-center">
               Open source
             </p>
           ) : (
@@ -97,84 +101,67 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
       </div>{" "}
       {/* company category */}
       <div className="description mt-4 mb-5">
-        <p className="text-[#243672]">{description}</p>
+        <p className={`${textNewBlue}`}>{description}</p>
       </div>{" "}
       {/* company description */}
       <div className="founded">
-        <div className="founded-top">
-          <div className="founded-top-left">
-            <div className="icon">
-              <img src="/founded_icon.svg" alt="" className="icon" />
+        <div className="founded-top grid gap-y-3">
+          <div className={`${foundedRows} `}>
+            <div className="">
+              <img src="/founded_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-            <div className="foundedIn-text ml-5">
-              <p className="sm-text mt-1 ml-2 text-[#083ECB]">Founded in</p>
-            </div>
-            <div className="year">
-              <p className="fw-bold mx-1 #243672">{yearFounded}</p>
-            </div>
+              <span className="text-sm text-[#083ECB]">Founded in</span>
+              <span className={`${textNewBlue} text-base font-bold`}>{yearFounded}</span>
           </div>
           {/*  founded top left */}
-          <div className="founded-top-left">
-            <div className="icon">
-              <img src="/founder_icon.svg" alt="" className="icon" />
+          <div className={`flex gap-x-2 items-start`}>
+            <div className="flex items-center gap-x-2">
+              <img src="/founder_icon.svg" alt="icon" className="icon" />
+              <span className="text-sm text-[#083ECB]">Founder(s)</span>
+
             </div>{" "}
             {/* icon */}
-            <div className="foundedIn-text ml-2">
-              <p className="sm-text mt-1 ml-2 text-[#083ECB]">Founder(s)</p>
-            </div>
-            <div className="year ">
-              <p className="fw-bold mx-1">{founderNames}</p>
-            </div>
+              <span className="font-bold text-base">{founderNames}</span>
           </div>
           {/*  founded top left */}
 
-          <div className="founded-top-left">
+          <div className={`${foundedRows} `}>
             <div className="icon">
-              <img src="/headquarter_icon.svg" alt="" className="icon" />
+              <img src="/headquarter_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-            <div className="foundedIn-text ml-2">
-              <p className="sm-text mt-2 ml-2 text-[#083ECB]">Headquarter</p>
-            </div>
-            <div className="year ">
-              <p className="fw-bold mx-1 mt-1 text-[#243672]">
+              <span className="text-sm text-[#083ECB]">Headquarter</span>
+              <span className="font-bold text-base">
                 {headquartersCity}, {headquartersCountry}
-              </p>
-            </div>
+              </span>
           </div>
           {/*  founded top left */}
           {url && (
-            <div className="founded-top-left">
+            <div className={`${foundedRows} `}>
               <div className="icon">
-                <img src="/website_icon.svg" alt="" className="icon" />
+                <img src="/website_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-              <div className="foundedIn-text ml-2">
-                <p className="sm-text mt-2 ml-2 text-[#243672]">{url}</p>
-              </div>
+                <span className="text-sm font-semibold underline">{url}</span>
             </div>
           )}
           {github && (
-            <div className="founded-top-left">
+            <div className={`${foundedRows} `}>
               <div className="icon">
-                <img src="/github_icon.svg" alt="" className="icon" />
+                <img src="/github_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-              <div className="foundedIn-text ml-2">
-                <p className="sm-text mt-2 ml-2 text-[#243672]">{github}</p>
-              </div>
+                <span className="text-sm font-semibold underline">{github}</span>
             </div>
           )}
           {linkedin && (
-            <div className="founded-top-left">
+            <div className={`${foundedRows} `}>
               <div className="icon">
-                <img src="/linkedin_icon.svg" alt="" className="icon" />
+                <img src="/linkedin_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-              <div className="foundedIn-text ml-2">
-                <p className="sm-text mt-2 ml-2 text-[#243672]">{linkedin}</p>
-              </div>
+                <span className="text-sm font-semibold underline">{linkedin}</span>
             </div>
           )}
         </div>
@@ -186,7 +173,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
           <li className="list-group-item border-0 ">
             <img
               src="/github_icon.svg"
-              alt=""
+              alt="icon"
               className="rounded"
               onClick={() => handleSocial(crunchbase)}
             />
@@ -197,7 +184,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
             {" "}
             <img
               src="/linkedin_icon.svg"
-              alt=""
+              alt="icon"
               className="rounded"
               onClick={() => handleSocial(linkedin)}
             />
@@ -207,7 +194,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
           <li className="list-group-item border-0">
             <img
               src="https://logo.clearbit.com/github.com"
-              alt=""
+              alt="icon"
               className="rounded"
               onClick={() => handleSocial(github)}
             />

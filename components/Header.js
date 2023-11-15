@@ -11,7 +11,7 @@ export default function Header() {
           href="/"
           className="flex items-center space-x-3 "
         >
-          <img src="/apidays_logo.png" className="h-14" alt="APIDays" />
+          <img src="/logo_top.svg" className="h-14" alt="APIDays" />
         </Link>
         <button
           onClick={() => {
@@ -47,19 +47,19 @@ export default function Header() {
           <ul className="font-medium flex flex-col  md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white text-nav ">
             <li>
               <Link
-                href="#"
+                href="/about"
                 className="block py-2 px-3 rounded md:bg-transparent  md:p-0 text-nav "
               >
                 ABOUT
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 ADD YOUR API TOOL
-              </a>
+              </Link>
             </li>
             <li>
               <Link
@@ -75,6 +75,15 @@ export default function Header() {
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 NEW FEATURE IDEA
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.apidays.global/"
+                target="_blank"
+                className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                APIDAYS
               </Link>
             </li>
           </ul>

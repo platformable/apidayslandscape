@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../styles/Profilepage.module.css";
 
 const textNewBlue = 'text-[#243672]'
@@ -27,7 +28,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
   const textNewBlue = 'text-[#243672] text-lg'
   const foundedRows = 'flex items-center gap-x-2 items-center'  
   return (
-    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue} px-2 py-4 md:px-4`}>
+    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue} px-2 py-5 lg:py-10 md:px-4 xl:px-7`}>
       <div className="company-name">
         <h3 className="p-0 m-0 mb-5 font-bold text-center ">
           {name}
@@ -208,13 +209,15 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
         <h4 className="font-bold text-[#083ECB] text-center mb-5">
           Is this your tool?
         </h4>
-        <a
+        <Link
           href="https://platformable.typeform.com/to/KDwe0Tbk"
           target="_blank"
-          className="bg-[#1060FF] shadow-md px-10 py-3  text-white uppercase rounded"
+          className="bg-[#1060FF] shadow-md px-10 py-3  uppercase rounded"
         >
-          Update details here
-        </a>
+          <center className="text-white">
+            Update details here
+          </center>
+        </Link>
         {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
       </div>
     </div>

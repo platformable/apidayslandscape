@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import '../styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import { CompanyProvider } from '../context/CompanyContext';
 import Script from 'next/script'
 import PlausibleProvider from "next-plausible"
@@ -8,7 +8,7 @@ import PlausibleProvider from "next-plausible"
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
+    // import("bootstrap/dist/js/bootstrap");
 }, []);
 
   return <>

@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Unknown from "./Unknown";
 import styles from "../styles/Profilepage.module.css";
+import { reduceMillion } from "../helpers/functions.js";
 
 
 export default function ProfileRightSide({
   selectedCompany,
   handleImages,
   handleScore,
-  reduceThounsand,
-  reduceNumber,
 }) {
   const {
     name,
@@ -67,26 +66,8 @@ export default function ProfileRightSide({
     blogQ42021,
     openSource,
   } = selectedCompany;
-  console.log(selectedCompany);
 
-  const handleColors = () => {
-    const arr = [
-      "industries-working-1",
-      "industries-working-2",
-      "industries-working-3",
-      "industries-working-4",
-      "industries-working-5",
-      "industries-working-6",
-      "industries-working-7",
-      "industries-working-8",
-      "industries-working-9",
-      "industries-working-10",
-      "industries-working-11",
-    ];
-    const color = Math.floor(Math.random() * arr.length);
-    const selectedColor = arr[color];
-    return selectedColor;
-  };
+
   const textFormat = 'text-[#243672] text-lg'
 
   return (
@@ -143,7 +124,7 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {totalFunding ? (
-            <span className={`${textFormat} font-semibold my-2`}>{reduceNumber(totalFunding)}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{reduceMillion(totalFunding)}</span>
           ) : (
             <Unknown />
           )}

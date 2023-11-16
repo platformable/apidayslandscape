@@ -1,5 +1,5 @@
 import React from "react";
-
+import { reduceMillion } from "../helpers/functions";
 import { useRouter } from "next/router";
 import Unknown from "./Unknown";
 export default function CompanyCardModal({ company, index, loading, handleRoute,selectedEntity }) {
@@ -7,25 +7,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
     router.push(`/company/${company.name}`);
   };
 
-  const reduceNumber = (total) => {
-    let result;
-    if (total.length >= 7) {
-      result = `$${total.slice(0, 1)}M`;
-    }
-
-    if (total.length >= 8) {
-      result = `$${total.slice(0, 2)}M`;
-    }
-
-    if (total.length >= 9) {
-      result = `$${total.slice(0, 3)}M`;
-    }
-    if (total.length >= 10) {
-      result = `$${total.slice(0, 4)}M`;
-    }
-
-    return result;
-  };
+ 
 
   const handleScore = (wm, dm) => {
     let score = "-";
@@ -63,15 +45,15 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
 
   const router = useRouter();
   return (
-    <div className="company-card bg-white" key={index}>
+    <div className="flex flex-col px-2 md:px-4  rounded-xl bg-white" key={index}>
       <div className="card-top">
         <div className="">
-          <h3 className="fw-bold text-company-color text-center text-[#243672]">
+          <h3 className="font-bold mb-8 text-center text-xl text-[#243672]">
             {" "}
             {company.name}
           </h3>
 
-          <div className="card-logo flex justify-center">
+          <div className="card-logo flex justify-center mb-3">
             {company.logo === "" || null ? (
               <img
                 src={`../../../apidaysReplacementLogo.png`}
@@ -88,7 +70,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
             )}
           </div>
 
-          <div className="company-decription my-3">
+          <div className="company-decription mb-8">
             <p className=" text-[#243672]">{company.description}</p>
           </div>
 
@@ -128,22 +110,22 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
         </div>
       </div>{" "}
       {/* <!--cardtop--> */}
-      <div className="card-middle mt-2">
+      <div className="flex flex-col gap-x-1 gap-y-2 my-4">
         {newParentCategorySlug?.map((cluster, index) => {
           return (
             <span
-              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] d-block border-[#F69902] orangeBorder`}
+              className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder px-1 text-sm`}
             >
               {cluster}
             </span>
           );
         })}
-
+{/* 
         {categories?.map((category, index) => {
           return (
             <span
               key={index}
-              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] d-block orangeBorder`}
+              className={`text-center bg-[#E6EFFF] text-[#083ECB] orangeBorder px-1 rounded text-sm`}
             >
               {category}
             </span>
@@ -154,15 +136,15 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
           return (
             <span
               key={index}
-              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] d-block orangeBorder`}
+              className={`text-center bg-[#ffffff] text-[#083ECB] d orangeBorder px-1 rounded text-sm`}
             >
               {subcategory}
             </span>
           );
-        })}
+        })} */}
       </div>
       {/* <!--card middle--> */}
-      <div className="grid grid-cols-3 gap-x-2 my-3">
+      <div className="grid grid-cols-3 gap-x-2 mb-3">
         <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
@@ -179,7 +161,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
         <div className="purpleBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
-            {company.totalFunding ? reduceNumber(company.totalFunding) : "-"}
+            {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
           </p>
           <span className="text-[#083ECB]">Total Funding</span>
           <img

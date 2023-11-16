@@ -59,8 +59,7 @@ export default function SubcategoryContainer({
                   onClick={() => handleCompany(row)}
                 >
                   <div
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    
                     data-tip={row.name}
                     data-for="companyName-tooltip"
                     className={

@@ -56,16 +56,20 @@ export default function SearchFilters({categories,subcategoryList,clusters,total
                     
 
                     </div>{/* search */}
-                    <div className="flex justify-start">
-                       <p className="rounded font-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p>
+                    <div></div>
+                    <div></div>
+                    <div className="">
+                    
                     </div>
-                    <div className="flex justify-end items-center">
+                    <div className="flex justify-end items-center gap-x-5">
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
                         <label className="form-check-label font-bold text-white" for="flexCheckDefault">
                             A-Z
                         </label>
-                        </div> {/* form check */}
+                        </div>
+                  {/*   <p className="rounded font-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p> */}
+                   
                         </div> 
                 </div>
                

@@ -6,6 +6,8 @@ import TopBarProgress from "react-topbar-progress-indicator";
 import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
 import Loader from '../components/Loader';
 import { CompanyContext } from "../context/CompanyContext";
+import { newModel } from "../context/data";
+
 export default function companiesCards({data}) {
     
     const [company, setCompany] = useContext(CompanyContext);
@@ -27,6 +29,24 @@ export default function companiesCards({data}) {
   
 const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations" || company.searchInput).length
   
+
+
+const clusters = Object.keys(newModel)
+
+const categories = Object.entries(newModel).map(([clusters,values],index)=>{
+ Object.entries(values.categories).map(([category,value],i)=>{
+return category
+ })
+})
+
+const newSubcategories = Object.entries(newModel).map(([clusters,values],index)=>{
+ Object.entries(values.categories).map(([category,value],i)=>{
+Object.entries(value.subcategories).map(([sub,v],ind)=>{
+  console.log(v.name)
+})
+ })
+})
+//console.log("cluster", clusters)
   
     TopBarProgress.config({
         barColors: {
@@ -132,7 +152,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
           <meta name="description" content="apidays landscape companies" />
         </Head>
         {loading && <TopBarProgress />}
-        <section className="filter bg-white py-5">
+        <section className="filter bg-[#083ECB] py-5">
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
@@ -142,7 +162,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                 
                         {categories?categories.map((category,index)=>{
                             return (
-                                <option value={category} >{category}</option>
+                                <option value={category} key={index}>{category}</option>
                             )   
                         }):""}
                     </select>
@@ -153,7 +173,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                         <option value="All">All</option>
                         {subcategoryList?subcategoryList.map((subcategory,index)=>{
                             return (
-                                <option value={subcategory}>{subcategory}</option>
+                                <option value={subcategory} key={index}>{subcategory}</option>
                             )   
                         }):""}
                     </select>
@@ -163,7 +183,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                     <input type="text" className="form-control " id="inputGroupFile04" 
                     aria-describedby="inputGroupFileAddon04" aria-label="" 
                     onChange={(e)=>handleCompanyName(e.target.value)} />
-                    <button className="btn border " type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
+                    <button className="btn border bg-white" type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
                     <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
                     </button>
                     </div>
@@ -172,12 +192,12 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
 
                     </div>{/* search */}
                     <div className="col-md-2 d-flex justify-content-start">
-                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {total} </p>
+                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p>
                     </div>
                     <div className="col-md-1 d-flex justify-content-end align-items-center">
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
-                        <label className="form-check-label fw-bold" for="flexCheckDefault">
+                        <label className="form-check-label font-bold text-white" for="flexCheckDefault">
                             A-Z
                         </label>
                         </div> {/* form check */}
@@ -194,7 +214,7 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
                 <div className="card-container">
                     {liveData?liveData.map((company,index)=>{
                         return (
-                            <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
+                            <CompanyCard company={company} index={index} handleLoading={handleLoading} key={index}/>
                         )
                     }):<Loader />}
                    
@@ -216,17 +236,25 @@ const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/
 
 export async function getServerSideProps(context) {
 
-    const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/companies` || `http://localhost:5000/companies`);
-
-    const data = await res.json();
-  
-    if (!data) {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+        },
+      });
+    
+      const data = await res.json();
+      const cleanNullValues = await data.values.filter(
+        (company) => company.cluster !== null || company.category !== null
+      );
+    
+      if (!data) {
+        return {
+          notFound: true,
+        };
+      }
+    
       return {
-        notFound: true,
+        props: { data: { values: cleanNullValues } },
       };
-    }
-  
-    return {
-      props: { data },
-    };
   }

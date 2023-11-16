@@ -116,7 +116,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[#083ECB]">Founded</p>
+              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
             </div>
             <div>
               {" "}
@@ -192,10 +192,9 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
         <div className="orangeBorder rounded-md p-2  flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
-            {handleScore(
-              company.womanInManagement,
-              company.nonWhitePeopleInManagement
-            )}
+            {
+              company.totalProducts
+            }
           </p>
           <span className="text-[#083ECB]">Active products</span>
           <img

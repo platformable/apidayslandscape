@@ -83,7 +83,7 @@ export default function Homepage({ data }) {
                 data={data}
               />
               <ReactTooltip
-                backgroundColor="#04a5b6"
+                backgroundColor="#083ECB"
                 textColor="#fff"
                 id="companyName-tooltip"
               />

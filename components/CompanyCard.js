@@ -175,10 +175,9 @@ export default function CompanyCard({company,index,handleLoading}) {
         <div className="orangeBorder rounded-md p-2  flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
-        {/*     {handleScore(
-              company.womanInManagement,
-              company.nonWhitePeopleInManagement
-            )} */}---
+          {
+              company.totalProducts
+            }
           </p>
           <span className="text-[#083ECB] text-center">Active products</span>
           <img

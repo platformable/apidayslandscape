@@ -188,7 +188,7 @@ return category
       )}
 
       <section className="cards my-2">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="card-container">
             {liveData ? (
               liveData.map((company, index) => {

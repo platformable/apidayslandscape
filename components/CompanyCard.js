@@ -71,11 +71,6 @@ export default function CompanyCard({company,index,handleLoading}) {
             )}
           </div>
 
-   {/*        <div className="company-decription my-3">
-            <p className=" text-[#243672]">{company.description}</p>
-          </div> */}
-
-          {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
 
           <div className="flex gap-x-5 items-center mt-3">
             <div>

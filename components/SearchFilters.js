@@ -5,7 +5,7 @@ export default function SearchFilters({categories,subcategoryList,clusters,total
 
 
   return (
-    <section className="filer bg-[#083ECB] py-5">
+    <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
             <div className="container mx-auto">
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3">
                 <div className="clusters">

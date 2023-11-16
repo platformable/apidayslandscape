@@ -46,10 +46,10 @@ export default function CompanyCard({company,index,handleLoading}) {
   const categories = [...new Set(company?.category?.split(","))];
   const subcategories = [...new Set(company?.subcategory?.split(","))];
     return (
-      <div className="company-card bg-white" key={index}>
+      <div className="company-card bg-white rounded-lg shadow-lg p-3" key={index}>
       <div className="card-top">
         <div className="">
-          <h6 className="fw-bold text-company-color text-center text-[#243672]">
+          <h6 className="font-bold text-company-color text-center text-[#243672] mb-5">
             {" "}
             {company.name}
           </h6>
@@ -94,12 +94,12 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[#083ECB]">Founded</p>
+              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
             </div>
             <div>
               {" "}
               <p className="md-text font-bold  m-0 p-0 text-[#243672]">
-                {company.headquartersCity},{company.headquartersCountry}
+                {company.headquartersCity}, {company.headquartersCountry}
               </p>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           
           <p className="font-bold my-2 text-[#243672]">
           {
-              company.totalProducts
+              company.totalProducts ? company.totalProducts :'-'
             }
           </p>
           <span className="text-[#083ECB] text-center">Active products</span>

@@ -631,7 +631,7 @@ display: flex;
 
 /* COMPANIES CARDS */
 
-.card-container {
+/* .card-container {
 display:grid;
 grid-template-columns: repeat(4, 1fr);
 grid-column-gap:10px;
@@ -651,7 +651,7 @@ display:grid;
 grid-template-columns: 1fr;
 grid-column-gap:5px;
 }
-}
+} */
 
 
 h3 {

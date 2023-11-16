@@ -189,7 +189,7 @@ return category
 
       <section className="cards my-2">
         <div className="container mx-auto">
-          <div className="card-container">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5">
             {liveData ? (
               liveData.map((company, index) => {
                 return (

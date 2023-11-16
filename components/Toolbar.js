@@ -81,7 +81,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </button>
         <div>
           <div className="flex gap-x-2">
-            <button className=" bg-light text-black shadow d-none d-md-block px-4 rounded font-bold h-14 text-xl">
+            <button className=" bg-white text-black shadow hidden md:block px-4 rounded font-bold h-14 text-xl">
               {totalValues.length}
             </button>{" "}
             <LinkedinShareButton

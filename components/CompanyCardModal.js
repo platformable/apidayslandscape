@@ -111,37 +111,27 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
       </div>{" "}
       {/* <!--cardtop--> */}
       <div className="flex flex-col gap-x-1 gap-y-2 my-4">
-        {newParentCategorySlug?.map((cluster, index) => {
-          return (
+        
             <span
               className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder px-1 text-sm`}
             >
-              {cluster}
+              {newParentCategorySlug[0]}
             </span>
-          );
-        })}
-{/* 
-        {categories?.map((category, index) => {
-          return (
+         
             <span
               key={index}
               className={`text-center bg-[#E6EFFF] text-[#083ECB] orangeBorder px-1 rounded text-sm`}
             >
-              {category}
+              {categories[0]}
             </span>
-          );
-        })}
-
-        {subcategories?.map((subcategory, index) => {
-          return (
+         
             <span
               key={index}
               className={`text-center bg-[#ffffff] text-[#083ECB] d orangeBorder px-1 rounded text-sm`}
             >
-              {subcategory}
+              {subcategories[0]}
             </span>
-          );
-        })} */}
+         
       </div>
       {/* <!--card middle--> */}
       <div className="grid grid-cols-3 gap-x-2 mb-3">

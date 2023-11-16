@@ -33,29 +33,8 @@ export default function CompanyDetailsName({ data }) {
     }
   }
 
-  const reduceNumber=(total)=>{
+  
 
-    let result
-    if(total.length>=7){
-
-     result= `${total / 1000000}M`
-
-    }
- 
-     return result
-   }
-
-
-   const reduceThounsand=(total)=>{
-    let result = total
-    if(total.length>=4){
-   
-     result= `$${total /1000}K`
-   
-    }
-
-     return result
-   }
 
    
 
@@ -66,70 +45,6 @@ export default function CompanyDetailsName({ data }) {
       return url
     }
     }
-
-  const {
-    name,
-    logo,
-    url,
-    description,
-    category,
-    subcategory,
-    yearFounded,
-    founderNames,
-    headquartersCountry,
-    headquartersCity,
-    crunchbase,
-    linkedin,
-    github,
-    twitter,
-    developerPortal,
-    estimatedRevenueRange,
-    numbersOfCustomers,
-    headcount,
-    nonWhitePeopleInManagement,
-    womanInManagement,
-    numberOfPositionsVacantInPastYear,
-    totalNumberOfNewProducFeaturesInLastYear,
-    totalProductsActive,
-    patentsGranted,
-    acquisitions,
-    activeTechCount,
-    itSpend,
-    acquiredBy,
-    privacyBreaches,
-    top5Investors,
-    stage,
-    totalFunding,
-    lastFundingDate,
-    numberLeadOfLeadInvestors,
-    numberOfInvestors,
-    acquisitionPrice,
-    acquisitionType,
-    ipoDate,
-    moneyRaisedAtIpo,
-    valuationAtIpo,
-    industryGroups,
-    knownPartnershipsNonApi,
-    knownPartnershipsApi,
-    apidays2018,
-    apidays2019,
-    apidays2020,
-    apidays2021,
-    logoApiIndustry,
-    privacySpecificFeaturesIncluded,
-    blogQ12021,
-    blogQ22021,
-    blogQ32021,
-    blogQ42021,
-    openSource
-  } = data;
-
-  
-
-
-  const newParentCategorySlug = [...new Set(category.split(","))]
-
-  const newSubCategorySlug = [...new Set(subcategory.split(","))]
 
 
   const handleScore = (wm,dm)=>{
@@ -171,11 +86,11 @@ export default function CompanyDetailsName({ data }) {
         </Head>
 
 
-      <div className="container shadow-r-md">
-       <div className="grid lg:grid-cols-[1fr_2fr]   gap-x-10">
+      <div className="container mx-auto shadow-r-md">
+       <div className="grid lg:grid-cols-[1fr_2fr]  max-md:pt-6 gap-10">
         <ProfileLeftSide selectedCompany={data} handleImages={handleImages}/>
 
-        <ProfileRightSide selectedCompany={data} handleImages={handleImages} reduceNumber={reduceNumber} reduceThounsand={reduceThounsand} handleScore={handleScore}/>
+        <ProfileRightSide selectedCompany={data} handleImages={handleImages} handleScore={handleScore}/>
        </div> 
       </div> 
     </Layout>

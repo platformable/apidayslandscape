@@ -18,6 +18,8 @@ import Toolbar from "../components/Toolbar";
 export default function Homepage({ data }) {
   // console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
+  const [showModal, setShowModal] = useState(false);
+
   const [selectedEntity, setSelectedEntity] = useState([]);
   const [loading, setLoading] = useState(false);
   const [withZoom, setWithZoom] = useState(false);
@@ -31,20 +33,14 @@ export default function Homepage({ data }) {
     },
     shadowBlur: 5,
   });
+  console.log("modal",showModal)
 
-  const isInitialMount = useRef(true);
-
-  /*   useEffect(() => {
-    if (isInitialMount.current) {
-      getBusinessANDMessaginApis(data);
-      getBusinessANDKYC(data);
-      isInitialMount.current = false;
-    } else {
-    }
-  }, []); */
+ 
 
   const handleCompany = (entity) => {
     setSelectedEntity(entity);
+    setShowModal(true)
+
   };
 
   const [searchResult, setSearchResult] = useState(false);
@@ -160,64 +156,10 @@ export default function Homepage({ data }) {
             </div>
           </section>
 
-          {/* MOBILE ********************************************************/}
-
-          {/* {Object.entries(newModel)?.map(([clusterName, values], index) => {
-            return (
-              // <div className={``}>
-              <section
-                className="mobile-landscape hidden"
-                key={index}
-              >
-                <div className="container">
-                  <div className="">
-                    <center>{clusterName}</center>
-
-                    <div className="bg-white px-0">
-                      {Object.entries(values?.categories).map(
-                        ([categorieName, values], index) => (
-                          <div key={index}>
-                            <h3
-                              className="sm-text text-center mobile-bg-dark-company-color text-white py-2"
-                              data-tip={values?.description}
-                              data-for="category-tooltip"
-                            >
-                              {categorieName}
-
-                            </h3>
-                            {values.subcategories?.map((subcat, index) => {
-                              // console.log("subcat,", subcat)
-                              const filteredSubcategory = data.values.filter(
-                                (company, index) =>
-                                  company?.subcategory?.includes(subcat.name)
-                              );
-                              filteredSubcategory.sort((a, b) =>
-                                a.name.localeCompare(b.name)
-                              );
-                              return (
-                                <div className="subcat" key={index}>
-                                  <HomepageSubcategory
-                                    subcategory={subcat}
-                                    handleCompany={handleEntity}
-                                    filteredSubcategory={filteredSubcategory}
-                                  />
-                                </div>
-                              );
-                            })}
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </section>
-            );
-          })} */}
-
-          {/* END MOBILE */}
+          
 
           <Methodology />
-      <Modal selectedEntity={selectedEntity} setLoading={setLoading} />
+      <Modal selectedEntity={selectedEntity} setLoading={setLoading} setShowModal={setShowModal} showModal={showModal}/>
     </Layout>
   );
 }

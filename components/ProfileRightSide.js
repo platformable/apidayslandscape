@@ -269,7 +269,7 @@ export default function ProfileRightSide({
         <div className="text-left text-sm w-full font-semibold">
           Check the content addressing:
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
           <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
             <img src="/profile/banking_icon.svg" alt="icon" />
             <span className="text-sm">Banking/Finance</span>

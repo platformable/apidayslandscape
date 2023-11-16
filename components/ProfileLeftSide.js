@@ -27,7 +27,7 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
   const textNewBlue = 'text-[#243672] text-lg'
   const foundedRows = 'flex items-center gap-x-2 items-center'  
   return (
-    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue}  p-5`}>
+    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue} px-2 py-4 md:px-4`}>
       <div className="company-name">
         <h3 className="p-0 m-0 mb-5 font-bold text-center ">
           {name}

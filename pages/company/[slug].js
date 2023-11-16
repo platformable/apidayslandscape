@@ -172,7 +172,7 @@ export default function CompanyDetailsName({ data }) {
 
 
       <div className="container shadow-r-md">
-       <div className="grid lg:grid-cols-[1fr_2fr]   gap-x-10">
+       <div className="grid lg:grid-cols-[1fr_2fr]  max-md:pt-6 gap-10">
         <ProfileLeftSide selectedCompany={data} handleImages={handleImages}/>
 
         <ProfileRightSide selectedCompany={data} handleImages={handleImages} reduceNumber={reduceNumber} reduceThounsand={reduceThounsand} handleScore={handleScore}/>

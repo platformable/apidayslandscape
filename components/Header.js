@@ -11,7 +11,7 @@ export default function Header() {
           href="/"
           className="flex items-center space-x-3 "
         >
-          <img src="/logo_top.svg" className="h-14" alt="APIDays" />
+          <img src="/logo_top.svg" className="w-56 md:w-full h-14" alt="APIDays" />
         </Link>
         <button
           onClick={() => {

@@ -12,6 +12,9 @@ import SearchFilters from "../components/SearchFilters";
 export default function companiesCards({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
 
+
+/*   console.log("data",data) */
+
   const newData = data.values.filter(
     (items) =>
       (items.parentCategorySlug !== "API Standards/Protocols" &&
@@ -77,41 +80,61 @@ export default function companiesCards({ data }) {
       handleCompanyName(company.searchInput);
     }
 
-    if (selectedSubcategory === "All" && selectedCategory === "All") {
+    if (selectedCluster === 'All' && selectedSubcategory === "All" && selectedCategory === "All") {
+        console.log("todos all")
       setLiveData(data.values);
       setSubcategoryList(subcategories);
     }
 
-    if (selectedCategory !== "All" && selectedSubcategory === "All") {
+    if (selectedCluster !== "All" && selectedCategory === "All" && selectedSubcategory ==='All') {
+        console.log("cluster selecctionado")
       const result = data.values.filter((company, index) =>
-        company.parentCategorySlug?.includes(selectedCategory)
+        company.cluster?.includes(selectedCluster)
       );
-      const subcatgeoriesOfSelectedCategory =
-        categoriesWithSubcategories.filter(
-          (category, index) => category.name === selectedCategory
-        );
-
       setLiveData(result);
-      setCategoriesList(subcatgeoriesOfSelectedCategory);
-      setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategories);
+    //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+    //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
     }
 
-    if (selectedCategory !== "All" && selectedSubcategory !== "All") {
+    if (selectedCluster == "All" && selectedCategory !== "All" && selectedSubcategory ==='All') {
+      console.log("cluster selecctionado")
+    const result = data.values.filter((company, index) =>
+      company.category?.includes(selectedCategory)
+    );
+    setLiveData(result);
+  //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+  //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+  }
+
+  if (selectedCluster == "All" && selectedCategory === "All" && selectedSubcategory !=='All') {
+    console.log("cluster selecctionado")
+  const result = data.values.filter((company, index) =>
+    company.subcategory?.includes(selectedSubcategory)
+  );
+  setLiveData(result);
+//  setCategoriesList(subcatgeoriesOfSelectedCategory);
+//  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+}
+
+ 
+/*     if (selectedCategory !== "All" && selectedSubcategory !== "All") {
       const result = data.values.filter(
         (company, index) =>
           company.parentCategorySlug?.includes(selectedCategory) &&
           company.subcategory?.includes(selectedSubcategory)
       );
       setLiveData(result);
-    }
+    } */
 
-    if (selectedCategory === "All" && selectedSubcategory !== "All") {
+  /*   if (selectedCategory === "All" && selectedSubcategory !== "All") {
       const result = data.values.filter((company, index) =>
         company.subcategory?.includes(selectedSubcategory)
       );
       setLiveData(result);
-    }
+    } */
   };
+
+  
 
   const handleLoading = () => {
     setLoading(!loading);
@@ -124,16 +147,9 @@ export default function companiesCards({ data }) {
     setTimeout(function () {
       setLoader(false);
     }, 1000);
-  }, [selectedCategory, selectedSubcategory]);
+  }, [selectedCategory, selectedSubcategory,selectedCluster]);
 
   const clusters = Object.keys(newModel);
-
-  /* const categories = Object.entries(newModel).map(([clusters,values],index)=>{
- const data = Object.entries(values.categories).map(([category,value],i)=>{
-return category
- })
- return data
-}) */
 
   const categories = Object.entries(newModel)
     .map(([clusters, values], index) => {
@@ -147,7 +163,7 @@ return category
     })
     .flat();
 
-  console.log("categories", categories);
+
 
   const subcategories = Object.entries(newModel).map(([clusters,values],index)=>{
     return Object.entries(values.categories).map(([category,value],i)=>{
@@ -158,7 +174,11 @@ return category
    }).flat()
 
 
-  console.log("sub", subcategories);
+   console.log("selectedCluster",selectedCluster)
+    console.log("selectedCategory",selectedCategory)
+    console.log("selectedSubcategory",selectedSubcategory)
+
+    console.log("liveData",liveData)
 
   return (
     <Layout>
@@ -169,7 +189,7 @@ return category
       {loading && <TopBarProgress />}
       <SearchFilters
         categories={categories}
-        subcategoryList={subcategoryList}
+        subcategoryList={subcategories}
         clusters={clusters}
         total={total}
         handleSorted={handleSorted}
@@ -179,17 +199,18 @@ return category
         sorted={sorted}
         selectedCluster={selectedCluster}
         setSelectedCluster={setSelectedCluster}
+        subcategories={subcategories}
       />
 
       {loader && (
-        <div className="text-center d-flex justify-content-center my-5">
+        <div className="container mx-auto text-center flex justify-center my-5">
           <img src="../Spinner-1s-44px.gif" />{" "}
         </div>
       )}
 
-      <section className="cards my-2">
+      <section className="cards ">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5 my-10">
             {liveData ? (
               liveData.map((company, index) => {
                 return (
@@ -202,7 +223,9 @@ return category
                 );
               })
             ) : (
+                <div className="flex justify-center">
               <Loader />
+              </div>
             )}
 
             {liveData.length <= 0 && !loader ? "No Data..." : ""}

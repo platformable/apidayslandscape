@@ -46,7 +46,7 @@ export default function CompanyCard({company,index,handleLoading}) {
   const categories = [...new Set(company?.category?.split(","))];
   const subcategories = [...new Set(company?.subcategory?.split(","))];
     return (
-      <div className="company-card bg-white rounded-lg shadow-lg p-3" key={index}>
+      <div className="company-card bg-white rounded-lg shadow-lg p-3 " key={index}>
       <div className="card-top">
         <div className="">
           <h6 className="font-bold text-company-color text-center text-[#243672] mb-5">
@@ -106,41 +106,8 @@ export default function CompanyCard({company,index,handleLoading}) {
         </div>
       </div>{" "}
       {/* <!--cardtop--> */}
-      <div className="my-2">
- {/*        {newParentCategorySlug?.map((cluster, index) => {
-          return (
-            <span
-              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] d-block border-[#F69902] orangeBorder`}
-            >
-              {cluster}
-            </span>
-          );
-        })}
-
-        {categories?.map((category, index) => {
-          return (
-            <span
-              key={index}
-              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] d-block orangeBorder`}
-            >
-              {category}
-            </span>
-          );
-        })}
-
-        {subcategories?.map((subcategory, index) => {
-          return (
-            <span
-              key={index}
-              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] d-block orangeBorder`}
-            >
-              {subcategory}
-            </span>
-          );
-        })} */}
-      </div>
-      {/* <!--card middle--> */}
-      <div className="grid grid-cols-3 gap-x-2 mb-3">
+   
+      <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
         <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">

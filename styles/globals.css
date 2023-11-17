@@ -72,7 +72,13 @@ max-width: 209px;
 --company-color:#0c4b6e;
 --company-orange-color:#f34d08;
 --dark-purple:#5a0c78;
+--extralight-purple: #EDE5FF;
 }
+
+.bg-section-security {
+  background-color: var(--extralight-purple);
+  
+  }
 
 .bg-category-container-purple {
 background-color: rgba(157, 0, 255, 0.071);

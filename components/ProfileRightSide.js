@@ -235,9 +235,9 @@ export default function ProfileRightSide({
         </div>
         <div className="profile-stats-card">
           <Link href="#">
-            <button className="font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] shadow-md rounded-md ">
+            <button className="font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] text-[var(--dark-blue)] shadow-md rounded-md ">
               Pricing page
-            </button>
+            </button> 
           </Link>
           <img src="/profile/pricing_page_icon.svg" alt="icon" className="" />
         </div>
@@ -251,19 +251,19 @@ export default function ProfileRightSide({
           Check the content addressing:
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
-          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
             <img src="/profile/banking_icon.svg" alt="icon" />
             <span className="text-sm">Banking/Finance</span>
           </button>
-          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
             <img src="/profile/health_sector_icon.svg" alt="icon" />
             <span className="text-sm">Health Sector</span>
           </button>
-          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
             <img src="/profile/government_icon.svg" alt="icon" />
             <span className="text-sm">Government</span>
           </button>
-          <button className="font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
+          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
             <img src="/profile/sustainability_icon.svg" alt="icon" />
             <span className="text-sm">Sustainability</span>
           </button>

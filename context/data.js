@@ -60,7 +60,7 @@ export const newModel = {
      },
       "Security Pureplay": {
       description: "",
-      color: "",
+      color: "bg-section-security",
       subcategories: [
       {
         name: 'API Security',
@@ -91,7 +91,7 @@ export const newModel = {
      },
       "Embedded Security": {
       description: "",
-      color: "",
+      color: "bg-section-security",
       subcategories: [
       {
         name: 'Vulnerability identification/scanners',
@@ -107,7 +107,7 @@ export const newModel = {
      },
       "Security Adjacent": {
       description: "",
-      color: "",
+      color: "bg-section-security",
       subcategories: [
       {
         name: 'API testing',

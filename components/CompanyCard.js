@@ -52,7 +52,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           </div>
 
 
-          <div className={`${foundedRows}`}>
+          <div className={`${foundedRows} mt-5`}>
             <div>
               <img src="/founded_icon.svg" alt="" className="" />
             </div>

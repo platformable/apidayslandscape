@@ -1,7 +1,7 @@
 
 
 export const newModel = {
-  "API lifecycle": {
+  "API Lifecycle": {
     description: "",
     color: '',
     categories: {

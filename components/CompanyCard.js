@@ -46,10 +46,10 @@ export default function CompanyCard({company,index,handleLoading}) {
   const categories = [...new Set(company?.category?.split(","))];
   const subcategories = [...new Set(company?.subcategory?.split(","))];
     return (
-      <div className="company-card bg-white" key={index}>
+      <div className="company-card bg-white rounded-lg shadow-lg p-3 " key={index}>
       <div className="card-top">
         <div className="">
-          <h6 className="fw-bold text-company-color text-center text-[#243672]">
+          <h6 className="font-bold text-company-color text-center text-[#243672] mb-5">
             {" "}
             {company.name}
           </h6>
@@ -71,11 +71,6 @@ export default function CompanyCard({company,index,handleLoading}) {
             )}
           </div>
 
-   {/*        <div className="company-decription my-3">
-            <p className=" text-[#243672]">{company.description}</p>
-          </div> */}
-
-          {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
 
           <div className="flex gap-x-5 items-center mt-3">
             <div>
@@ -99,53 +94,20 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[#083ECB]">Founded</p>
+              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
             </div>
             <div>
               {" "}
               <p className="md-text font-bold  m-0 p-0 text-[#243672]">
-                {company.headquartersCity},{company.headquartersCountry}
+                {company.headquartersCity}, {company.headquartersCountry}
               </p>
             </div>
           </div>
         </div>
       </div>{" "}
       {/* <!--cardtop--> */}
-      <div className="my-2">
- {/*        {newParentCategorySlug?.map((cluster, index) => {
-          return (
-            <span
-              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] d-block border-[#F69902] orangeBorder`}
-            >
-              {cluster}
-            </span>
-          );
-        })}
-
-        {categories?.map((category, index) => {
-          return (
-            <span
-              key={index}
-              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] d-block orangeBorder`}
-            >
-              {category}
-            </span>
-          );
-        })}
-
-        {subcategories?.map((subcategory, index) => {
-          return (
-            <span
-              key={index}
-              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] d-block orangeBorder`}
-            >
-              {subcategory}
-            </span>
-          );
-        })} */}
-      </div>
-      {/* <!--card middle--> */}
-      <div className="grid grid-cols-3 gap-x-2 mb-3">
+   
+      <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
         <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
@@ -176,7 +138,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           
           <p className="font-bold my-2 text-[#243672]">
           {
-              company.totalProducts
+              company.totalProducts ? company.totalProducts :'-'
             }
           </p>
           <span className="text-[#083ECB] text-center">Active products</span>

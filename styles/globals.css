@@ -992,11 +992,11 @@ dialog {
   overflow: auto;
 }
 .strip-banner {
-  height: 9vh; 
+  height: 8vh; 
   background-image: url("/strip1.webp");
   background-repeat: repeat-x;
   background-size: contain;
-  clip-path: inset(10px 0px 10px 0);
+  /* clip-path: inset(10px 0px 10px 0); */
 }
 
 

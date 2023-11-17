@@ -73,7 +73,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             <div>
               {" "}
               <p className="md-text font-bold  m-0 p-0 text-[#243672]">
-                {company.headquartersCity}, {company.headquartersCountry}
+                {company?.headquartersCity ? `${company?.headquartersCity}, ` : '-'} {company.headquartersCountry}
               </p>
             </div>
           </div>

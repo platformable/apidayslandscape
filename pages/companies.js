@@ -238,6 +238,7 @@ export default function companiesCards({ data }) {
         selectedCluster={selectedCluster}
         setSelectedCluster={setSelectedCluster}
         subcategories={subcategories}
+        datalength={liveData.length}
       />
 
       {loader && (

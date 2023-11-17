@@ -12,13 +12,14 @@ export default function SearchFilters({
   selectedCluster,
   handleCompanyName,
   sorted,
-  subcategories
+  subcategories,
+  datalength
 }) {
   return (
     <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3">
-          <div className="clusters">
+        <div className="grid md:grid-cols-2 lg:flex gap-y-3">
+          <div className="clusters flex-1">
             <select
               className="bg-white px-2 py-1 w-full rounded-lg mb-2"
               ariaLabel="Default select example"
@@ -40,7 +41,7 @@ export default function SearchFilters({
                 : ""}
             </select>
           </div>
-          <div className="categories">
+          <div className="categories flex-1">
             <select
               className="bg-white px-2 py-1 w-full rounded-lg mb-2"
               ariaLabel="Default select example"
@@ -62,7 +63,7 @@ export default function SearchFilters({
                 : ""}
             </select>
           </div>
-          <div className="subcategories ">
+          <div className="subcategories flex-1">
             <select
               className="bg-white px-2 py-1 rounded-lg mb-2 w-full"
               onChange={(e) => setSelectedSubcategory(e.target.value)}
@@ -83,7 +84,7 @@ export default function SearchFilters({
             </select>
           </div>{" "}
           {/* subcategory */}
-          <div className="search">
+          <div className="search flex-1">
             {/*         <div className=" mb-2">
                     <input type="text" className="form-control " id="inputGroupFile04" 
                     aria-describedby="inputGroupFileAddon04" aria-label="" 
@@ -110,10 +111,11 @@ export default function SearchFilters({
             </div>
           </div>
           {/* search */}
+          {/* <div></div>
           <div></div>
-          <div></div>
-          <div className=""></div>
-          <div className="flex justify-end items-center gap-x-">
+          <div className=""></div> */}
+          <div className="flex max-md:justify-center items-center gap-x-3">
+            <div className="py-2 px-4 font-bold bg-white text-lg">{datalength}</div>
             <div className="form-check">
               <input
                 className="form-check-input"

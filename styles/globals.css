@@ -1002,6 +1002,11 @@ dialog {
   background-size: contain;
   /* clip-path: inset(10px 0px 10px 0); */
 }
+@media (max-width: 768px) {
+  .strip-banner {
+    background-size: cover;
+  }
+}
 
 
 /* METHODOLOGY */

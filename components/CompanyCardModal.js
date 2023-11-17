@@ -53,7 +53,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
             {company.name}
           </h3>
 
-          <div className="card-logo flex justify-center mb-3">
+          <div className="card-logo flex  justify-center mb-3">
             {company.logo === "" || null ? (
               <img
                 src={`../../../apidaysReplacementLogo.png`}
@@ -113,7 +113,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
       <div className="flex flex-col gap-x-1 gap-y-2 my-4">
         
             <span
-              className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder px-1 text-sm`}
+              className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder px-1 rounded text-sm`}
             >
               {newParentCategorySlug[0]}
             </span>

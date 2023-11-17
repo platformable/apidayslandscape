@@ -31,7 +31,7 @@ export default function SubcategoryContainer({
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
-    <div id="subcategory" className="bg-white flex-grow-1  flex-shrink-0 py-2" key={index}>
+    <div id="subcategory" className="bg-white flex-grow  flex-shrink-0 py-2" key={index}>
       {/* {data <= 0 && <Loader />} */}
       <h6
         className="text-center sm-text px-2 font-bold text-[#083ECB] tracking-wide leading-normal mt-1 mb-2"

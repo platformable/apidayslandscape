@@ -1,0 +1,16 @@
+<svg id="add_API_Tool_icon" data-name="add API Tool_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_252" data-name="Rectangle 252" width="15.636" height="15.632" fill="#1060ff"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_3265" data-name="Rectangle 3265" width="24" height="25" fill="#fff"/>
+  <rect id="Rectangle_3266" data-name="Rectangle 3266" width="24" height="24" transform="translate(0 30)" fill="#98bdff"/>
+  <rect id="Rectangle_3267" data-name="Rectangle 3267" width="25" height="25" transform="translate(29)" fill="#98bdff"/>
+  <rect id="Rectangle_3268" data-name="Rectangle 3268" width="25" height="24" transform="translate(29 30)" fill="#98bdff"/>
+  <g id="Group_5494" data-name="Group 5494" transform="translate(4.107 5.572)">
+    <g id="Group_3977" data-name="Group 3977" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_6064" data-name="Path 6064" d="M9.968,5.686V2.242A2.154,2.154,0,0,0,7.9,0h0a2.154,2.154,0,0,0-2.24,2.064h0V2.22c-.015.989,0,1.975,0,2.963,0,.151-.015.3-.025.5H5.091c-.989,0-1.976-.015-2.963,0A2.1,2.1,0,0,0,0,7.759H0v.134A2.134,2.134,0,0,0,2.194,9.965h.029c.988,0,1.975,0,2.963-.008h.474v3.509a2.143,2.143,0,0,0,2.12,2.166h0a2.135,2.135,0,0,0,1.048-.262,2.023,2.023,0,0,0,1.123-1.831c.025-1.018,0-2.038.008-3.057,0-.164.017-.329.028-.525h3.388a2.692,2.692,0,0,0,.7-.082A2.125,2.125,0,0,0,15.61,7.49a2.17,2.17,0,0,0-2.045-1.807c-1,.01-2.007,0-3.015,0Z" transform="translate(0 0)" fill="#1060ff"/>
+    </g>
+  </g>
+</svg>

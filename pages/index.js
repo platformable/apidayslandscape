@@ -71,7 +71,7 @@ export default function Homepage({ data }) {
       {loading && <TopBarProgress />}
         <Meta />
           <Hero />
-          <section className="bg-[#083ECB] px-1">
+          <section className="bg-[#083ECB]">
             <div className="px-2 md:px-6 lg:px-10">
               <Toolbar
                 setLoading={setLoading}
@@ -96,8 +96,7 @@ export default function Homepage({ data }) {
                 className="categoryToolTip"
               />
 
-              <div className="">
-                <div className="row" id="cluster-container">
+                <section className="grid gap-10" id="cluster-container">
                   {Object.entries(newModel)?.map(
                     ([clusterName, values], index) => {
                       return (
@@ -151,8 +150,7 @@ export default function Homepage({ data }) {
                       );
                     }
                   )}
-                </div>
-              </div>
+                </section>
             </div>
           </section>
 

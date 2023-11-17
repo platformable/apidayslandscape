@@ -106,34 +106,40 @@ export default function Methodology() {
             </div>
           </section>  */}
 
-          <section className="pb-24 pt-14 bg-[var(--dark-blue)] ">
+          <section className="py-20 lg:py-24 2xl:py-32 bg-[var(--dark-blue)] ">
             <div className="max-w-screen-lg mx-auto">
               {/* <h3 className="text-center fw-bold my-5 text-white">
                 See something you want to change?
               </h3> */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div className="change-box grid gap-y-5">
+                <button className="change-box grid gap-y-5 btn-transition"
+                onClick={() =>
+                  handleForm("https://airtable.com/shr07pWSbRnQfnZZd")
+                }>
                   <div className="flex justify-center ">
                     <img
-                      src="../about-btn1.png"
+                      src="/add_API_icon.svg"
                       alt=""
                       className="w-[80px] h-[80px]"
                     />
                   </div>
-                  <button
-                    className="btn-about text-white font-bold uppercase text-[18px]"
-                    onClick={() =>
-                      handleForm("https://airtable.com/shr07pWSbRnQfnZZd")
-                    }
+                  <div
+                    className=" text-white font-bold uppercase text-[18px]"
+                    
                   >
                     Add your API tool
-                  </button>
-                </div>
+                  </div>
+                </button>
 
-                <div className="change-box grid gap-y-5">
+                <button className="change-box grid gap-y-5 btn-transition"
+                onClick={() =>
+                  handleForm(
+                    "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
+                  )
+                }>
                     <div className="flex justify-center">
                       <img
-                        src="../about-btn2.png"
+                        src="/report_bug_icon.svg"
                         alt=""
                         className="w-[80px] h-[80px]"
                       />
@@ -142,22 +148,25 @@ export default function Methodology() {
                       Report a bug including problems with the website or with
                       the data for a specific tool provider
                     </p> */}
-                    <button
-                      className="btn-about text-white font-bold uppercase text-[18px]"
-                      onClick={() =>
-                        handleForm(
-                          "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
-                        )
-                      }
+                    <div
+                      className=" text-white font-bold uppercase text-[18px]"
+                      
                     >
                       Report a bug
-                    </button>
-                </div>
+                    </div>
+                </button>
 
-                <div className="change-box grid gap-y-5">
+                <button className="change-box grid gap-y-5 btn-transition py-5"
+                
+                onClick={() =>
+                  handleForm(
+                    "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
+                  )
+                }
+                >
                     <div className="flex justify-center">
                       <img
-                        src="../about-btn3.png"
+                        src="/new_feature_icon.svg"
                         alt=""
                         className="w-[80px] h-[80px]"
                       />
@@ -166,17 +175,13 @@ export default function Methodology() {
                       Share a new feature idea, including any additional data
                       points you would like to see{" "}
                     </p> */}
-                    <button
-                      className="btn-about text-white font-bold uppercase text-[18px]"
-                      onClick={() =>
-                        handleForm(
-                          "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
-                        )
-                      }
+                    <div
+                      className=" text-white font-bold uppercase text-[18px]"
+                      
                     >
                       New feature idea
-                    </button>
-                </div>
+                    </div>
+                </button>
               </div>
             </div>
           </section>

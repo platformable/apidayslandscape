@@ -46,25 +46,25 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
     <div id="toolbar" className="pt-14 pb-8 container mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 font-semibold">
         <button
-          className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase"
+          className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
           onClick={() => handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}
         >
           Add your API Tool
         </button>
         <button
-          className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase"
+          className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
           onClick={() => handleLinks("companies")}
         >
           Search
         </button>
         <button
-          className="rounded m-0  bg-[var(--main-blue)]  self-start h-14 text-white uppercase"
+          className="rounded m-0  bg-[var(--main-blue)]  self-start h-14 text-white uppercase btn-transition"
           onClick={() => setWithZoom((prev) => !prev)}
         >
           Zoom
         </button>
         <button
-          className="rounded bg-[var(--orange)] text-white  self-start h-14 shadow-md uppercase"
+          className="rounded bg-[var(--orange)] text-white  self-start h-14 shadow-md uppercase btn-transition"
           href="../apilandscape.png"
           download="apilandscape"
         >
@@ -73,7 +73,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
        
         {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
         <button
-          className=" m-0 bg-[var(--orange)] uppercase text-white self-start h-14 rounded shadow-md"
+          className=" m-0 bg-[var(--orange)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
           target="_blank"
           onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3")}
         >

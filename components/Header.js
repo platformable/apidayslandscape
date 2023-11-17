@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Banner from "./Banner";
 
 export default function Header() {
   const [displayNav, setDisplayNav] = useState(false);
@@ -89,9 +90,7 @@ export default function Header() {
           </ul>
         </div>
       </nav>
-      <div>
-        <img src="/strip.png" alt="" />
-      </div>
+     <Banner />
     </header>
   );
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Banner from "./Banner";
 
 export default function Footer() {
   return (
     <footer className=" bg-[var(--dark-blue)] text-white">
-      <div>
-        <img src="/strip.png" alt="" />
-      </div>
-      <div className="container px-1 md:px-0 py-14">
+      <Banner />
+      <div className="container mx-auto px-1 md:px-0 py-14">
         <p className="flex gap-x-1 items-center justify-center mb-0 text-[12px] md:text-base flex-wrap">
           &copy; This website was built for apidays by{" "}
           <Link href="https://www.platformable.com" target="_blank" className="flex  items-center gap-x-1">
@@ -24,7 +23,7 @@ export default function Footer() {
         </p>
       </div>
       <div
-        className={`text-white flex flex-col justify-center items-center  pt-5 pb-8 border-t border-white border-solid`}
+        className={`text-white flex flex-col justify-center items-center  pt-5 pb-8 border-t border-white border-solid border-opacity-50`}
       >
         <Link href="#header">
           <div className="text-white flex flex-col items-center gap-2">

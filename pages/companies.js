@@ -12,8 +12,7 @@ import SearchFilters from "../components/SearchFilters";
 export default function companiesCards({ data }) {
   const [company, setCompany] = useContext(CompanyContext);
 
-
-/*   console.log("data",data) */
+  /*   console.log("data",data) */
 
   const newData = data.values.filter(
     (items) =>
@@ -35,12 +34,12 @@ export default function companiesCards({ data }) {
   const [selectedCluster, setSelectedCluster] = useState("All");
   const [selectedSubcategory, setSelectedSubcategory] = useState("All");
 
-  const total = liveData.filter(
+  /* const total = liveData.filter(
     (items) =>
       (items.parentCategorySlug !== "API Standards/Protocols" &&
         items.parentCategorySlug !== "Media/Associations") ||
       company.searchInput
-  ).length;
+  ).length; */
 
   //console.log("cluster", clusters)
 
@@ -80,74 +79,115 @@ export default function companiesCards({ data }) {
       handleCompanyName(company.searchInput);
     }
 
-    if (selectedCluster === 'All' && selectedSubcategory === "All" && selectedCategory === "All") {
-        console.log("todos all")
+    if (
+      selectedCluster === "All" &&
+      selectedSubcategory === "All" &&
+      selectedCategory === "All"
+    ) {
       setLiveData(data.values);
       setSubcategoryList(subcategories);
     }
 
-    if (selectedCluster !== "All" && selectedCategory === "All" && selectedSubcategory ==='All') {
-        console.log("cluster selecctionado")
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory === "All"
+    ) {
       const result = data.values.filter((company, index) =>
         company.cluster?.includes(selectedCluster)
       );
       setLiveData(result);
-    //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-    //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
     }
 
-    if (selectedCluster == "All" && selectedCategory !== "All" && selectedSubcategory ==='All') {
-      console.log("cluster selecctionado")
-    const result = data.values.filter((company, index) =>
-      company.category?.includes(selectedCategory)
-    );
-    setLiveData(result);
-  //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-  //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-  }
-
-  if (selectedCluster == "All" && selectedCategory === "All" && selectedSubcategory !=='All') {
-    console.log("cluster selecctionado")
-  const result = data.values.filter((company, index) =>
-    company.subcategory?.includes(selectedSubcategory)
-  );
-  setLiveData(result);
-//  setCategoriesList(subcatgeoriesOfSelectedCategory);
-//  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-}
-
- 
-/*     if (selectedCategory !== "All" && selectedSubcategory !== "All") {
-      const result = data.values.filter(
-        (company, index) =>
-          company.parentCategorySlug?.includes(selectedCategory) &&
-          company.subcategory?.includes(selectedSubcategory)
+    if (
+      selectedCluster == "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+      const result = data.values.filter((company, index) =>
+        company.category?.includes(selectedCategory)
       );
       setLiveData(result);
-    } */
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
 
-  /*   if (selectedCategory === "All" && selectedSubcategory !== "All") {
+    if (
+      selectedCluster == "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory !== "All"
+    ) {
+      
       const result = data.values.filter((company, index) =>
         company.subcategory?.includes(selectedSubcategory)
       );
       setLiveData(result);
-    } */
-  };
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
 
-  
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory)
+      );
+
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster and category relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory !== "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory) &&
+          company.subcategory.includes(selectedSubcategory) 
+
+      );
+
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster, category or subcategory relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+
+  };
 
   const handleLoading = () => {
     setLoading(!loading);
   };
 
   useEffect(() => {
-    liveData.sort((a, b) => a.name.localeCompare(b.name));
+    liveData.length> 0 ?liveData.sort((a, b) => a.name.localeCompare(b.name)) : null
     handleFilter();
 
     setTimeout(function () {
       setLoader(false);
     }, 1000);
-  }, [selectedCategory, selectedSubcategory,selectedCluster]);
+  }, [selectedCategory, selectedSubcategory, selectedCluster]);
 
   const clusters = Object.keys(newModel);
 
@@ -163,22 +203,20 @@ export default function companiesCards({ data }) {
     })
     .flat();
 
+  const subcategories = Object.entries(newModel)
+    .map(([clusters, values], index) => {
+      return Object.entries(values.categories)
+        .map(([category, value], i) => {
+          return Object.entries(value.subcategories)
+            .map(([sub, v], ind) => {
+              return v.name;
+            })
+            .flat();
+        })
+        .flat();
+    })
+    .flat();
 
-
-  const subcategories = Object.entries(newModel).map(([clusters,values],index)=>{
-    return Object.entries(values.categories).map(([category,value],i)=>{
-       return Object.entries(value.subcategories).map(([sub,v],ind)=>{
-     return v.name
-   }).flat()
-    }).flat()
-   }).flat()
-
-
-   console.log("selectedCluster",selectedCluster)
-    console.log("selectedCategory",selectedCategory)
-    console.log("selectedSubcategory",selectedSubcategory)
-
-    console.log("liveData",liveData)
 
   return (
     <Layout>
@@ -191,7 +229,7 @@ export default function companiesCards({ data }) {
         categories={categories}
         subcategoryList={subcategories}
         clusters={clusters}
-        total={total}
+        // total={total}
         handleSorted={handleSorted}
         setSelectedCategory={setSelectedCategory}
         setSelectedSubcategory={setSelectedSubcategory}
@@ -210,9 +248,11 @@ export default function companiesCards({ data }) {
 
       <section className="cards ">
         <div className="container mx-auto">
+        {liveData.message ? <p className="font-bold text-center bg-blue-50 rounded-lg px-2 py-1">{liveData.message}</p> : ""}
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5 my-10">
-            {liveData ? (
-              liveData.map((company, index) => {
+           
+            {liveData.length > 0 ? (
+              liveData?.map((company, index) => {
                 return (
                   <CompanyCard
                     company={company}
@@ -223,9 +263,9 @@ export default function companiesCards({ data }) {
                 );
               })
             ) : (
-                <div className="flex justify-center">
-              <Loader />
-              </div>
+              
+             <></>
+           
             )}
 
             {liveData.length <= 0 && !loader ? "No Data..." : ""}

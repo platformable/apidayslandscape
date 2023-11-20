@@ -260,7 +260,9 @@ font-size:7px !important;
 
 font-size:5px !important;
 }
-
+div[id="companyName-tooltip"] {
+  z-index: 100;
+}
 .landscape-img {
 width:36px;
 height:36px;

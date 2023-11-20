@@ -3,7 +3,7 @@ import { newModel } from "../context/data";
 import Layout from "../components/Layout";
 import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from 'react-tooltip'
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from "../components/Modal";
 import Methodology from "../components/Methodology";
@@ -78,22 +78,29 @@ export default function Homepage({ data }) {
                 setWithZoom={setWithZoom}
                 data={data}
               />
-              <ReactTooltip
+              <Tooltip
                 backgroundColor="#083ECB"
                 textColor="#fff"
                 id="companyName-tooltip"
               />
-              <ReactTooltip
-                backgroundColor="#0c4b6e"
-                textColor="#fff"
-                id="subcategory-tooltip"
-              />
-              <ReactTooltip
+              <Tooltip
                 backgroundColor="#0c4b6e"
                 textColor="#fff"
                 id="category-tooltip"
                 place="right"
-                className="categoryToolTip"
+                className="cluster-tooltip"
+              />
+              <Tooltip
+                backgroundColor="#0c4b6e"
+                textColor="#fff"
+                id="category-tooltip"
+                place="right"
+                className="category-tooltip"
+              />
+              <Tooltip
+                backgroundColor="#0c4b6e"
+                textColor="#fff"
+                id="subcategory-tooltip"
               />
 
                 <section className="grid gap-10" id="cluster-container">

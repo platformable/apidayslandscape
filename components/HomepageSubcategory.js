@@ -35,11 +35,11 @@ export default function homepageSubcategory({
     <>
       <h6
         className="text-center sm-text pt-1 bg-warning px-2"
-        data-tip={getSubcategoryDescription(
+        data-tooltip-content={getSubcategoryDescription(
           subcategoriesDescriptions,
           subcategoryName
         )}
-        data-for="subcategory-tooltip"
+        data-tooltip-id="subcategory-tooltip"
       >
         {subcategoryName} <br/>({filteredSubcategory.length})
       </h6>
@@ -58,8 +58,8 @@ export default function homepageSubcategory({
                     <div
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
-                      data-tip={row.name}
-                      data-for="companyName-tooltip"
+                      data-tooltip-content={row.name}
+                      data-tooltip-id="companyName-tooltip"
                       className={
                         !withZoom
                           ? "landscape-img border "

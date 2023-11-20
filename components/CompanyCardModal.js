@@ -135,7 +135,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
       </div>
       {/* <!--card middle--> */}
       <div className="grid grid-cols-3 gap-x-2 mb-3">
-        <div className="greenBorder rounded-md p-2 flex flex-col items-center">
+        <div className="purpleBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
             {company.headcount ? company.headcount : "-"}
@@ -148,7 +148,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
           />
         </div>
 
-        <div className="purpleBorder rounded-md p-2 flex flex-col items-center">
+        <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           
           <p className="font-bold my-2 text-[#243672]">
             {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}

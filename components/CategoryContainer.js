@@ -8,7 +8,7 @@ export default function CategoryContainer({
   return (
     <div
       id="categorie"
-      className={`${index === 0 && 'border-l-2 border-l-[var(--orange)] rounded-tr-md' }  px-2 2xl:px-3 py-4 flex-grow ${sectionColor}`}
+      className={`px-2 2xl:px-3 py-4 flex-grow ${sectionColor} border-2 border-[var(--orange)] rounded`}
       key={index}
     >
       <center className="mb-4 font-bold text-[#083ECB]">{categorieName}</center>

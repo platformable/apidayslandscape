@@ -78,7 +78,7 @@ export default function SubcategoryContainer({
                       />
                     ) : (
                       <img
-                        srcSet={`${handleImages(row.logo)}`}
+                        src={row.logo}
                         alt=""
                         className=""
                         // width={34.4}

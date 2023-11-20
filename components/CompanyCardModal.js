@@ -6,7 +6,6 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
   const handleCompany = (company) => {
     router.push(`/company/${company.name}`);
   };
-
  
 
   const handleScore = (wm, dm) => {
@@ -76,7 +75,7 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
 
           {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
 
-          <div className="flex gap-x-5 items-center mb-3">
+          <div className="flex gap-x-2 items-center mb-3">
             <div>
               <img src="/founded_icon.svg" alt="" className="" />
             </div>
@@ -84,26 +83,26 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
               {" "}
               <p className="md-text m-0 p-0 text-[#083ECB]">Founded</p>
             </div>
-            <div>
+            <div className="ml-2">
               {" "}
-              <p className="font-bold  m-0 p-0 text-[#243672]">
+              <p className="font-bold p-0 text-[#243672]">
                 {company.yearFounded ? `${company.yearFounded}` : "-"}
               </p>
             </div>
           </div>
 
-          <div className="flex gap-x-5 items-center">
+          <div className="flex gap-x-2 items-center">
             <div>
               <img src="/headquarter_icon.svg" alt="" className="" />
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
+              <p className="md-text p-0  text-[#083ECB]">Headquarter</p>
             </div>
-            <div>
+            <div className="ml-2">
               {" "}
-              <p className="md-text font-bold  m-0 p-0 text-[#243672]">
-                {company.headquartersCity},{company.headquartersCountry}
+              <p className="md-text font-bold p-0 text-[#243672]">
+                {company.headquartersCity ? `${company.headquartersCity}, ${company.headquartersCountry}` : '-' }
               </p>
             </div>
           </div>
@@ -113,21 +112,21 @@ export default function CompanyCardModal({ company, index, loading, handleRoute,
       <div className="flex flex-col gap-x-1 gap-y-2 my-4">
         
             <span
-              className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder px-1 rounded text-sm`}
+              className={`text-center bg-[#98BDFF] text-[#083ECB] orangeBorder p-1 text-sm`}
             >
               {newParentCategorySlug[0]}
             </span>
          
             <span
               key={index}
-              className={`text-center bg-[#E6EFFF] text-[#083ECB] orangeBorder px-1 rounded text-sm`}
+              className={`text-center bg-[#E6EFFF] text-[#083ECB] orangeBorder p-1 text-sm`}
             >
               {categories[0]}
             </span>
          
             <span
               key={index}
-              className={`text-center bg-[#ffffff] text-[#083ECB] d orangeBorder px-1 rounded text-sm`}
+              className={`text-center bg-[#ffffff] text-[#083ECB] d orangeBorder p-1 text-sm`}
             >
               {subcategories[0]}
             </span>

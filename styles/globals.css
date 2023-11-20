@@ -89,13 +89,13 @@ background-color:var(--company-orange-color) !important;
 }
 
 .cluster-label {
-width:40px;
-writing-mode:vertical-rl;
-transform:rotate(180deg);
-text-align:center;
+/* width:40px; */
+/* writing-mode:vertical-rl; */
+/* transform:rotate(180deg); */
+/* text-align:center; */
 display:flex;
 align-items:center;
-justify-content:center;
+/* justify-content:center; */
 }
 
 .bg-dark-purple {

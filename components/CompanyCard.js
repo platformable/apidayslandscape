@@ -70,6 +70,13 @@ export default function CompanyCard({company,index,handleLoading}) {
               {" "}
               <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
             </div>
+            {company.headquartersCountry && (
+              <img
+                src={`https://flagsapi.com/${company.headquartersCountry}/flat/64.png`}
+                alt=""
+                className="w-7"
+              />
+            )}
             <div>
               {" "}
               <p className="md-text font-bold  m-0 p-0 text-[#243672]">
@@ -82,7 +89,7 @@ export default function CompanyCard({company,index,handleLoading}) {
       {/* <!--cardtop--> */}
    
       <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
-        <div className="greenBorder rounded-md p-2 flex flex-col gap-2 items-center">
+        <div className="purpleBorder rounded-md p-2 flex flex-col gap-2 items-center">
           
           <p className="font-bold my-2 text-[#243672]">
             {company.headcount ? company.headcount : "-"}
@@ -95,7 +102,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           />
         </div>
 
-        <div className="purpleBorder rounded-md p-2 flex flex-col gap-2 items-center">
+        <div className="greenBorder rounded-md p-2 flex flex-col gap-2 items-center">
           
           <p className="font-bold my-2 text-[#243672]">
             {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}

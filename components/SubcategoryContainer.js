@@ -63,14 +63,14 @@ export default function SubcategoryContainer({
                   data-tooltip-content={row.name}
                   data-tooltip-id="companyName-tooltip"
                 >
-                  <div
+                  {/* <div
                    
                     className={
                       !withZoom
                         ? "landscape-img border "
                         : "homepage-landscape-img border "
                     }
-                  >
+                  > */}
                     {row.logo === "" || row.logo === null ? (
                       <img
                         src={`/apidaysReplacementLogo.png`}
@@ -83,12 +83,16 @@ export default function SubcategoryContainer({
                       <img
                         src={row.logo}
                         alt=""
-                        className=""
+                        className={
+                          !withZoom
+                            ? "w-8 h-8 object-contain border "
+                            : "homepage-landscape-img border "
+                        }
                         // width={34.4}
                         // height={34.4}
                       />
                     )}
-                  </div>
+                  {/* </div> */}
                   {!withZoom ? (
                     <p className="index-company-text text-center mt-1">
                       {row.name.substr(0, 10)}

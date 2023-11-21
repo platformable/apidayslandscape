@@ -18,10 +18,10 @@ export default function SearchFilters({
   return (
     <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 lg:flex gap-y-3">
-          <div className="clusters flex-1">
+        <div className="grid md:grid-cols-2 lg:flex gap-y-3 gap-x-5">
+          <div className="clusters flex-1 ">
             <select
-              className="bg-white px-2 py-1 w-full rounded-lg mb-2"
+              className="bg-white px-2 py-3 w-full rounded-lg mb-2"
               ariaLabel="Default select example"
               onChange={(e) => setSelectedCluster(e.target.value)}
             >
@@ -43,7 +43,7 @@ export default function SearchFilters({
           </div>
           <div className="categories flex-1">
             <select
-              className="bg-white px-2 py-1 w-full rounded-lg mb-2"
+              className="bg-white px-2 py-3 w-full rounded-lg mb-2"
               ariaLabel="Default select example"
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
@@ -65,7 +65,7 @@ export default function SearchFilters({
           </div>
           <div className="subcategories flex-1">
             <select
-              className="bg-white px-2 py-1 rounded-lg mb-2 w-full"
+              className="bg-white px-2 py-3 rounded-lg mb-2 w-full"
               onChange={(e) => setSelectedSubcategory(e.target.value)}
             >
               <option selected disabled>
@@ -99,13 +99,13 @@ export default function SearchFilters({
                 type="search"
                 onChange={(e) => handleCompanyName(e.target.value)}
                 id="default-search"
-                className="block w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full px-2 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder=""
               />
               <img
                 src="https://cdn-icons-png.flaticon.com/512/107/107122.png"
                 alt=""
-                className="sm-icon absolute end-2.5 bottom-1"
+                className="sm-icon absolute end-2.5 bottom-2"
                 width={20}
               />
             </div>
@@ -114,9 +114,8 @@ export default function SearchFilters({
           {/* <div></div>
           <div></div>
           <div className=""></div> */}
-          <div className="flex max-md:justify-center items-center gap-x-3">
-            <div className="py-2 px-4 font-bold bg-white text-lg">{datalength}</div>
-            <div className="form-check">
+          <div className="flex max-md:justify-center items-center rounded gap-x-3">
+          <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -132,6 +131,8 @@ export default function SearchFilters({
                 A-Z
               </label>
             </div>
+            <div><div className="py-2 px-4 font-bold bg-white text-lg w-20">{datalength}</div></div>
+            
             {/*   <p className="rounded font-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p> */}
           </div>
         </div>

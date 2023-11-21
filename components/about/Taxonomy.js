@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Taxonomy() {
   return (
-    <section id="taxonomy" className="bg-white">
+    <section id="taxonomy" className="bg-white border-t-2 border-[var(--orange)]">
       <div className="container mx-auto py-20">
         <div className="taxonomy">
           <img src="/logo_top.svg" alt="APIDays" />

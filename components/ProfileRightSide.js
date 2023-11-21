@@ -6,7 +6,6 @@ import { reduceMillion } from "../helpers/functions.js";
 
 export default function ProfileRightSide({
   selectedCompany,
-  handleImages,
   handleScore,
 }) {
   const {
@@ -328,7 +327,7 @@ export default function ProfileRightSide({
               logoApiIndustry.split(",").map((logo, index) => {
                 return (
                   <div className="partnertship-logo">
-                    <img src={handleImages(logo)} className="img-fluid me-1" />
+                    <img src={logo} className="img-fluid me-1" />
                   </div>
                 );
               })

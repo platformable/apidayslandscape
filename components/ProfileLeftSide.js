@@ -3,7 +3,7 @@ import styles from "../styles/Profilepage.module.css";
 
 const textNewBlue = 'text-[#243672]'
 
-function ProfileLeftSide({ selectedCompany, handleImages }) {
+function ProfileLeftSide({ selectedCompany }) {
   const {
     name,
     logo,
@@ -21,9 +21,9 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
     openSource,
   } = selectedCompany;
 
-  const newParentCategorySlug = [...new Set(cluster.split(","))];
-  const categories = [...new Set(category.split(","))];
-  const subcategories = [...new Set(subcategory.split(","))];
+  const newParentCategorySlug = [...new Set(cluster?.split(","))];
+  const categories = [...new Set(category?.split(","))];
+  const subcategories = [...new Set(subcategory?.split(","))];
   
   const textNewBlue = 'text-[#243672] text-lg'
   const foundedRows = 'flex items-center gap-x-2 items-center'  
@@ -40,14 +40,14 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
           {logo === "" || null ? (
             <img
               src={`../../../apidaysReplacementLogo.png`}
-              alt="icon"
+              alt="company logo"
               className=""
             />
           ) : (
             <img
-              srcSet={`${handleImages(logo)} 2x`}
-              alt="icon"
-              className="img-fluid"
+              src={logo}
+              alt={`${name} logo`}
+              className="max-h-[170px]"
             />
           )}
         </a>
@@ -133,7 +133,15 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
               <img src="/headquarter_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-              <span className="text-sm text-[#083ECB]">Headquarter</span>
+              <span className="text-sm text-[#083ECB] mr-2">Headquarter</span>
+              {headquartersCountry && (
+              <img
+                src={`https://flagsapi.com/${headquartersCountry}/flat/64.png`}
+                alt=""
+                className="w-7"
+              />
+            )}
+
               <span className="font-bold text-base">
               {headquartersCity ? `${headquartersCity}, ${headquartersCountry}` : '-' }
 
@@ -213,9 +221,9 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
         <Link
           href="https://platformable.typeform.com/to/KDwe0Tbk"
           target="_blank"
-          className="bg-[#1060FF] shadow-md px-10 py-3  uppercase rounded"
+          className="bg-[#1060FF] btn-transition shadow-md px-10 py-3  uppercase rounded"
         >
-          <center className="text-white">
+          <center className="text-white ">
             Update details here
           </center>
         </Link>

@@ -88,9 +88,9 @@ export default function CompanyDetailsName({ data }) {
 
       <div className="container mx-auto shadow-r-md">
        <div className="grid lg:grid-cols-[1fr_2fr]  max-md:pt-6 gap-10">
-        <ProfileLeftSide selectedCompany={data} handleImages={handleImages}/>
+        <ProfileLeftSide selectedCompany={data} />
 
-        <ProfileRightSide selectedCompany={data} handleImages={handleImages} handleScore={handleScore}/>
+        <ProfileRightSide selectedCompany={data}  handleScore={handleScore}/>
        </div> 
       </div> 
     </Layout>
@@ -107,8 +107,6 @@ export async function getServerSideProps(context) {
   });
 
   const data = await res.json();
-  console.log(data)
-
   if (!data) {
     return {
       notFound: true,

@@ -3,7 +3,7 @@ import { newModel } from "../context/data";
 import Layout from "../components/Layout";
 import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from "../components/Modal";
 import Methodology from "../components/Methodology";
@@ -16,7 +16,6 @@ import ClusterContainer from "../components/ClusterContainer";
 import Toolbar from "../components/Toolbar";
 
 export default function Homepage({ data }) {
-  // console.log("data", data)
   const [company, setCompany] = useContext(CompanyContext);
   const [showModal, setShowModal] = useState(false);
 
@@ -33,14 +32,11 @@ export default function Homepage({ data }) {
     },
     shadowBlur: 5,
   });
-  console.log("modal",showModal)
-
- 
+  // console.log("modal",showModal)
 
   const handleCompany = (entity) => {
     setSelectedEntity(entity);
-    setShowModal(true)
-
+    setShowModal(true);
   };
 
   const [searchResult, setSearchResult] = useState(false);
@@ -69,106 +65,100 @@ export default function Homepage({ data }) {
   return (
     <Layout>
       {loading && <TopBarProgress />}
-        <Meta />
-          <Hero />
-          <section className="bg-[#083ECB]">
-            <div className="px-2 md:px-6 lg:px-10">
-              <Toolbar
-                setLoading={setLoading}
-                setWithZoom={setWithZoom}
-                data={data}
-              />
-              <Tooltip
-                backgroundColor="#083ECB"
-                textColor="#fff"
-                id="companyName-tooltip"
-              />
-              <Tooltip
-                backgroundColor="#0c4b6e"
-                textColor="#fff"
-                id="category-tooltip"
-                place="right"
-                className="cluster-tooltip"
-              />
-              <Tooltip
-                backgroundColor="#0c4b6e"
-                textColor="#fff"
-                id="category-tooltip"
-                place="right"
-                className="category-tooltip"
-              />
-              <Tooltip
-                backgroundColor="#0c4b6e"
-                textColor="#fff"
-                id="subcategory-tooltip"
-              />
+      <Meta />
+      <Hero />
+      <section className="bg-[#083ECB]">
+        <div className="px-2 md:px-6 lg:px-10">
+          <Toolbar
+            setLoading={setLoading}
+            setWithZoom={setWithZoom}
+            data={data}
+          />
+          <Tooltip
+            backgroundColor="#083ECB"
+            textColor="#fff"
+            id="companyName-tooltip"
+          />
+          <Tooltip
+            backgroundColor="#0c4b6e"
+            textColor="#fff"
+            id="category-tooltip"
+            place="right"
+            className="cluster-tooltip"
+          />
+          <Tooltip
+            backgroundColor="#0c4b6e"
+            textColor="#fff"
+            id="category-tooltip"
+            place="right"
+            className="category-tooltip"
+          />
+          <Tooltip
+            backgroundColor="#0c4b6e"
+            textColor="#fff"
+            id="subcategory-tooltip"
+          />
 
-                <section className="grid gap-10" id="cluster-container">
-                  {Object.entries(newModel)?.map(
-                    ([clusterName, values], index) => {
+          <section className="grid gap-10" id="cluster-container">
+            {Object.entries(newModel)?.map(([clusterName, values], index) => {
+              return (
+                <ClusterContainer
+                  clusterName={clusterName}
+                  values={values}
+                  index={index}
+                  key={index}
+                >
+                  {Object.entries(values?.categories).map(
+                    ([categorieName, values], index) => {
                       return (
-                        <ClusterContainer
-                          clusterName={clusterName}
-                          values={values}
+                        <CategoryContainer
+                          categorieName={categorieName}
                           index={index}
+                          values={values}
                           key={index}
                         >
-                          {Object.entries(values?.categories).map(
-                            ([categorieName, values], index) => {
-                              return (
-                                <CategoryContainer
-                                  categorieName={categorieName}
-                                  index={index}
-                                  values={values}
-                                  key={index}
-                                >
-                                  {values?.subcategories?.map(
-                                    (subcat, index) => {
-                                      // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
-                                      const filteredSubcategory =
-                                        data.values.filter((company, index) =>
-                                          // company.category?.includes(categorieName) &&
-                                          company?.subcategory?.includes(
-                                            subcat.name
-                                          )
-                                        );
-                                      filteredSubcategory.sort((a, b) =>
-                                        a.name.localeCompare(b.name)
-                                      );
-                                      return (
-                                        <SubcategoryContainer
-                                          subcategory={subcat}
-                                          handleCompany={handleCompany}
-                                          filteredSubcategory={
-                                            filteredSubcategory
-                                          }
-                                          withZoom={withZoom}
-                                          index={index}
-                                          key={index}
-                                        />
-                                      );
-                                    }
-                                  )}
-                                </CategoryContainer >
-                              );
-                            }
-                          )}
-                        </ClusterContainer>
+                          {values?.subcategories?.map((subcat, index) => {
+                            // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
+                            const filteredSubcategory = data?.values.filter(
+                              (company, index) =>
+                                // company.category?.includes(categorieName) &&
+                                company?.subcategory?.includes(subcat.name)
+                            );
+                            filteredSubcategory.sort((a, b) =>
+                              a.name.localeCompare(b.name)
+                            );
+                            return (
+                              <SubcategoryContainer
+                                subcategory={subcat}
+                                handleCompany={handleCompany}
+                                filteredSubcategory={filteredSubcategory}
+                                withZoom={withZoom}
+                                index={index}
+                                key={index}
+                              />
+                            );
+                          })}
+                        </CategoryContainer>
                       );
                     }
                   )}
-                </section>
-            </div>
+                </ClusterContainer>
+              );
+            })}
           </section>
+        </div>
+      </section>
 
-          
-
-          <Methodology />
-      <Modal selectedEntity={selectedEntity} setLoading={setLoading} setShowModal={setShowModal} showModal={showModal}/>
+      <Methodology />
+      <Modal
+        selectedEntity={selectedEntity}
+        setLoading={setLoading}
+        setShowModal={setShowModal}
+        showModal={showModal}
+      />
     </Layout>
   );
 }
-
 export async function getServerSideProps(context) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
     method: "GET",
@@ -176,6 +166,7 @@ export async function getServerSideProps(context) {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
     },
   });
+  console.log("app fetching");
 
   const data = await res.json();
   const cleanNullValues = await data.values.filter(

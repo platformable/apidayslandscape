@@ -233,9 +233,9 @@ export default function ProfileRightSide({
           <span className="font-semibold text-sm">Pricing Model</span>
           <img src="/profile/pricing_icon.svg" alt="icon" className="" />
         </div>
-        <div className="profile-stats-card">
+        <div className="profile-stats-card ">
           <Link href="#">
-            <button className="font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] text-[var(--dark-blue)] shadow-md rounded-md ">
+            <button className="btn-transition  font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] text-[var(--dark-blue)] shadow-md rounded-md ">
               Pricing page
             </button> 
           </Link>

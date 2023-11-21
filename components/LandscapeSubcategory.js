@@ -14,7 +14,7 @@ export default function LandscapeSubcategory({handleCompany,subcategoryName,filt
                   className="landscape-card mb-3"
                   key={index}
                 >
-                  <div onClick={() => handleCompany(row)} data-tip={row.name}>
+                  <div onClick={() => handleCompany(row)} data-tooltip-content={row.name}>
                     
                     <img src={row.logo} alt="" />
                     <p className="xs-text">{row.name}</p>

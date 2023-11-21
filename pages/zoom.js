@@ -1111,8 +1111,8 @@ export default function Homepage({ data }) {
                 <div className="col-md-12 bg-white px-0">
                   <h3
                     className="sm-text text-center mobile-bg-dark-company-color text-white py-2"
-                    data-tip={APILifecyclePlatformsDescription}
-                    data-for="category-tooltip"
+                    data-tooltip-content={APILifecyclePlatformsDescription}
+                    data-tooltip-id="category-tooltip"
                   >
                     Lifecycle Platform ({APILifecyclePlatform.length})
                   </h3>
@@ -1213,8 +1213,8 @@ export default function Homepage({ data }) {
                 <div className="col-md-12 bg-white px-0">
                   <h3
                     className="sm-text text-center bg-dark-purple text-white py-2"
-                    data-tip={APILifecyclePlatformsDescription}
-                    data-for="category-tooltip"
+                    data-tooltip-content={APILifecyclePlatformsDescription}
+                    data-tooltip-id="category-tooltip"
                   >
                     API Lifecycle Platform (Security Pureplay) ({APILifecyclePlatformSecurityPureplay.length})
                   </h3>
@@ -1268,8 +1268,8 @@ export default function Homepage({ data }) {
                 <div className="col-md-12 bg-white px-0">
                   <h3
                     className="sm-text text-center bg-dark-purple text-white py-2"
-                    data-tip={APILifecyclePlatformsDescription}
-                    data-for="category-tooltip"
+                    data-tooltip-content={APILifecyclePlatformsDescription}
+                    data-tooltip-id="category-tooltip"
                   >
                     API Lifecycle (Embedded Security) ({APILifecyclePlatformEmbeddedSecurity.length})
                   </h3>
@@ -1306,8 +1306,8 @@ export default function Homepage({ data }) {
                 <div className="col-md-12 bg-white px-0">
                   <h3
                     className="sm-text text-center bg-dark-purple text-white py-2"
-                    data-tip={APILifecyclePlatformsDescription}
-                    data-for="category-tooltip"
+                    data-tooltip-content={APILifecyclePlatformsDescription}
+                    data-tooltip-id="category-tooltip"
                   >
                     API Lifecycle (Adjacent Security Solutions) ({APILifecyclePlatformAdjacentSecuritySolutions.length})
                   </h3>
@@ -1760,8 +1760,8 @@ export default function Homepage({ data }) {
                     <div className="bg-dark-company-color">
                       <span
                         className="text-white"
-                        data-tip={APILifecyclePlatformsDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={APILifecyclePlatformsDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         API Lifecycle <br />
                         Platform ({APILifecyclePlatform.length})
@@ -1901,8 +1901,8 @@ export default function Homepage({ data }) {
                     <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
-                        data-tip={verticalApiDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={verticalApiDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         API Lifecycle (Security Pureplay) (
                         {VerticalAPIAbstractions.length})
@@ -1977,8 +1977,8 @@ export default function Homepage({ data }) {
                     <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
-                        data-tip={verticalApiDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={verticalApiDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         API Lifecycle (Embedded Security) (
                         {APILifecyclePlatformEmbeddedSecurity.length})
@@ -2019,8 +2019,8 @@ export default function Homepage({ data }) {
                     <div className="bg-company-dark-purple-color">
                       <span
                         className="text-white"
-                        data-tip={verticalApiDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={verticalApiDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         API Lifecycle (Adjacent Security Solutions) (
                         {APILifecyclePlatformAdjacentSecuritySolutions.length})
@@ -2103,8 +2103,8 @@ export default function Homepage({ data }) {
                     <div className="bg-dark-company-color">
                       <span
                         className="text-white"
-                        data-tip={BackendBuildingToolsDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={BackendBuildingToolsDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         Backend Building <br /> Tools (
                         {BackendBuildingTools.length})
@@ -2205,10 +2205,10 @@ export default function Homepage({ data }) {
                     <div className="bg-dark-company-color">
                       <span
                         className="cat-name text-white"
-                        data-tip={
+                        data-tooltip-content={
                           BusinessprocessesasanAPIAPIasaProductDescription
                         }
-                        data-for="category-tooltip"
+                        data-tooltip-id="category-tooltip"
                       >
                         Business processes as an <br /> API/API-as-a-Product (
                         {BusinessprocessesasanAPIAPIasaProduct.length})
@@ -2411,8 +2411,8 @@ export default function Homepage({ data }) {
                     <div className="bg-dark-company-color">
                       <span
                         className="text-white"
-                        data-tip={integrationPlatformDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={integrationPlatformDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         Integration Platform <br /> as a Service (
                         {IntegrationPlatformAsAService.length})
@@ -2482,8 +2482,8 @@ export default function Homepage({ data }) {
                     <div className="bg-dark-company-color">
                       <span
                         className="text-white"
-                        data-tip={verticalApiDescription}
-                        data-for="category-tooltip"
+                        data-tooltip-content={verticalApiDescription}
+                        data-tooltip-id="category-tooltip"
                       >
                         Vertical API <br /> Abstractions (
                         {VerticalAPIAbstractions.length})

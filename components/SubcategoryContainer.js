@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-import Image from "next/image";
 
 export default function SubcategoryContainer({
   handleCompany,
   subcategory,
   filteredSubcategory,
   withZoom,
-  index
+  index,
 }) {
   const router = useRouter();
   const handleImages = (url) => {
@@ -31,37 +29,42 @@ export default function SubcategoryContainer({
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
-    <div id="subcategory" className="bg-white flex-grow  flex-shrink-0 py-2" key={index}>
+    <div
+      id="subcategory"
+      className="bg-white flex-grow  px-4  py-2"
+      key={index}
+    >
       {/* {data <= 0 && <Loader />} */}
-      <h6
-        className="text-center sm-text px-2 font-bold text-[#083ECB] tracking-wide leading-normal mt-1 mb-2"
-        data-tip={getSubcategoryDescription(
-          subcategoriesDescriptions,
-          subcategory.name
-        )}
-        data-for="subcategory-tooltip"
-      >
-        {subcategory.name} 
-        <span className="opacity-80">{' '}
-        ({filteredSubcategory.length})
-          </span>
-      </h6>
-
+      <header className="flex gap-3">
+        <h4 className="sm-text font-bold text-[#083ECB] tracking-wide leading-normal mt-1 mb-2 block text-left">
+          {subcategory.name}
+          <span className="opacity-80"> ({filteredSubcategory.length})</span>
+        </h4>
+        <div
+          className="cursor-pointer bg-blue-500 rounded-full text-sm text-white w-5 h-5 grid place-content-center"
+          data-tooltip-content={
+            subcategory.description || "No description provided"
+          }
+          data-tooltip-id="subcategory-tooltip"
+        >
+          ?
+        </div>
+      </header>
       {/* <div className=""> */}
-      <div className="flex flex-wrap gap-1 px-2">
+      <div className="flex flex-wrap gap-1 ">
         {filteredSubcategory
           ? filteredSubcategory.map((row, index) => {
               return (
                 <div
                   href="https://nextjs.org/docs"
-                  className="max-h-[48px] cursor-pointer  mb-0  mt-0 "
+                  className="max-h-[48px] cursor-pointer mb-0  mt-0 "
                   key={index}
                   onClick={() => handleCompany(row)}
+                  data-tooltip-content={row.name}
+                  data-tooltip-id="companyName-tooltip"
                 >
                   <div
-                    
-                    data-tip={row.name}
-                    data-for="companyName-tooltip"
+                   
                     className={
                       !withZoom
                         ? "landscape-img border "
@@ -78,7 +81,7 @@ export default function SubcategoryContainer({
                       />
                     ) : (
                       <img
-                        srcSet={`${handleImages(row.logo)}`}
+                        src={row.logo}
                         alt=""
                         className=""
                         // width={34.4}

@@ -95,7 +95,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
             </LinkedinShareButton>
             <EmailShareButton
               url=""
-              title="The API Landscape"
+              title="send email"
               subject="The API Landscape from apidays"
               separator=" "
               body="Get to know more about the API Landscape, visit http://apilandscape.com"

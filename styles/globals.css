@@ -89,13 +89,13 @@ background-color:var(--company-orange-color) !important;
 }
 
 .cluster-label {
-width:40px;
-writing-mode:vertical-rl;
-transform:rotate(180deg);
-text-align:center;
+/* width:40px; */
+/* writing-mode:vertical-rl; */
+/* transform:rotate(180deg); */
+/* text-align:center; */
 display:flex;
 align-items:center;
-justify-content:center;
+/* justify-content:center; */
 }
 
 .bg-dark-purple {
@@ -260,7 +260,9 @@ font-size:7px !important;
 
 font-size:5px !important;
 }
-
+div[id="companyName-tooltip"] {
+  z-index: 100;
+}
 .landscape-img {
 width:36px;
 height:36px;

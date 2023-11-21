@@ -1,14 +1,23 @@
 module.exports = {
     images: {
-      domains: [
-        'http://localhost:3000/',
-        'http://www.dummyimage.com',
-        'http://www.netlify.com/',
-        'http://apidays.global',
-        'http://vercel.com',
-        'http://cloudflare.com',
-        'http://strapi.io',
-        'https://drive.google.com/thumbnail'
+      // domains: [
+      //   'http://*',
+      //   'https://www.dummyimage.com',
+      //   // 'https://www.netlify.com/',
+      //   'https://apidays.global',
+      //   // 'https://vercel.com',
+      //   'https://cloudflare.com',
+      //   // 'https://strapi.io',
+      //   'https://cloudinary.com/platformable',
+      //   'https://drive.google.com/thumbnail',
+      //   'https://logo.clearbit.com',
+  
+      // ],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: '**.*',
+        },
       ],
     },
   }

@@ -117,14 +117,14 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
               <span className={`${textNewBlue} text-base font-bold`}>{yearFounded}</span>
           </div>
           {/*  founded top left */}
-          <div className={`flex gap-x-2 items-start`}>
+          <div className={`${foundedRows} `}>
             <div className="flex items-center gap-x-2">
               <img src="/founder_icon.svg" alt="icon" className="icon" />
               <span className="text-sm text-[#083ECB]">Founder(s)</span>
 
             </div>{" "}
             {/* icon */}
-              <span className="font-bold text-base">{founderNames}</span>
+              <span className="font-bold text-base">{founderNames ||'-'}</span>
           </div>
           {/*  founded top left */}
 
@@ -135,7 +135,8 @@ function ProfileLeftSide({ selectedCompany, handleImages }) {
             {/* icon */}
               <span className="text-sm text-[#083ECB]">Headquarter</span>
               <span className="font-bold text-base">
-                {headquartersCity}, {headquartersCountry}
+              {headquartersCity ? `${headquartersCity}, ${headquartersCountry}` : '-' }
+
               </span>
           </div>
           {/*  founded top left */}

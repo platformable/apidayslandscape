@@ -14,7 +14,7 @@ export default function Modal({ selectedEntity, setLoading, showModal, setShowMo
     <>
 
 
-<dialog className="" open={showModal}>
+<dialog className="" open={showModal} onClick={() => setShowModal(false)}>
 <div className="mx-auto mt-10 rounded-xl modal bg-white max-w-[500px] md:px-0 pb-4 pt-2">
   <div className="modal-top flex justify-end px-2 md:px-4 ">
     {/*   <h5 className="modal-title" id="exampleModalLabel">{selectedEntity.name}</h5> */}
@@ -40,9 +40,7 @@ export default function Modal({ selectedEntity, setLoading, showModal, setShowMo
       selectedEntity={selectedEntity}
     />
   </div>
-  <div className="modal-footer">
-    {/*    <button type="button" className="btn bg-dark-orange text-white" data-bs-dismiss="modal" onClick={()=>handleRoute(selectedEntity)}>Go deeper</button> */}
-  </div>
+ 
 </div>
 </dialog>
 

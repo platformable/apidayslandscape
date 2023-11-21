@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactTooltip from "react-tooltip";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";

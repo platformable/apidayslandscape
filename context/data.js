@@ -532,58 +532,53 @@ export const newModel = {
     }
   },
   "API Consumption": {
-    description: "",
+    description: "API products built to expose a specific functionality or dataset to enable use programmatically in apps, websites, workflows, AI systems, and so on",
     color: '',
     categories: {
      "Aggregators/Integration Platforms": {
-      description: "",
+      description: "Tooling that enables APIs to be consumed",
       color: "",
       subcategories: [
       {
-        name: 'IPaaS',
-        description: "",
-        color: "",
-      },
-      {
-        name: 'Financial Aggregators',
-        description: "",
+        name: 'IPaaS/ESB',
+        description: "Integration Platform as a Service and Enterprise Service Bus tooling that enables APIs to be consumed and integrated into existing IT infrastructures",
         color: "",
       },
       {
         name: 'Health Aggregators',
-        description: "",
+        description: "Aggregation platforms that normalise and standardise a broader range of health provider and health data APIs into a core suite of API tools",
         color: "",
       },
       {
         name: 'Government Aggregators',
-        description: "",
+        description: "Aggregation platforms that normalise and standardise a broader range of public service APIs into a core suite of API tools",
         color: "",
       },
       {
         name: 'General Aggregators',
-        description: "",
+        description: "Aggregation platforms that normalise and standardise a range of APIs into a core suite of API tools",
         color: "",
       },
       ]
      },
      "Marketplaces": {
-      description: "",
+      description: "Marketplaces that make it possible to discover and use APIs",
       color: "",
       subcategories: [
       {
         name: 'API Marketplaces',
-        description: "",
+        description: "Catalogs and marketplaces and other tooling that makes APIs discoverable",
         color: "",
       },
       {
         name: 'Data Marketplaces',
-        description: "",
+        description: "Catalogs and marketplaces and other tooling that makes data discoverable",
         color: "",
       },
       ]
      },
      "Licensing": {
-      description: "",
+      description: "Tooling that enables APIs to be consumed",
       color: "",
       subcategories: [
       {
@@ -596,12 +591,17 @@ export const newModel = {
         description: "",
         color: "",
       },
+      {
+        name: 'Financial Aggregators',
+        description: "Aggregation platforms that normalise and standardise a broader range of bank and fintech APIs into a core suite of API tools",
+        color: "",
+      },
       ]
      },
     }
   },
   "API Knowledge": {
-    description: "",
+    description: "Tools and services that support the maturity of the API industry by sharing and expanding knowledge amongst API practitioners",
     color: '',
     categories: {
       "API Consulting": {

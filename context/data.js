@@ -125,11 +125,6 @@ export const newModel = {
         color: "",
       },
       {
-        name: 'API Monitoring',
-        description: "",
-        color: "",
-      },
-      {
         name: 'API Analytics/Monitoring',
         description: "Tools that help measure the use of APIs (such as rate limiting) and developer adoption, etc",
         color: "",
@@ -158,17 +153,6 @@ export const newModel = {
       {
         name: 'CI/CD',
         description: "Tools that support continuous integration and continuous development of APIs as they are deployed",
-        color: "",
-      },
-      ]
-     },
-      "Sustainability": {
-      description: "",
-      color: "",
-      subcategories: [
-      {
-        name: 'API sustainability tools',
-        description: "",
         color: "",
       },
       ]
@@ -607,7 +591,7 @@ export const newModel = {
       },
       {
         name: 'API Licensing',
-        description: "",
+        description: "Tooling that stipulates and or monitors the conditions under which an API may be used",
         color: "",
       },
       {

@@ -19,7 +19,7 @@ export default function Sources() {
                 <strong>Platformable reviews</strong> the tool’s website and
                 documentation, scans LinkedIn for headcount, calculates the
                 diversity of founding and management teams, and categorizes the
-                tools according to the below taxonomy
+                tools according to the below taxonomy.
               </p>
               <img src="/methodology_01.png" alt="" className="w-[50%]"/>
             </div>
@@ -30,7 +30,7 @@ export default function Sources() {
               <p className="[text-wrap:balance] text-center md:text-left leading-normal text-xl ">
                 <strong>Crunchbase data</strong> is used to identify the
                 founders, and key financing metrics ( total funding to date,
-                last funding date and any IPO data if relevant)
+                last funding date and any IPO data if relevant).
               </p>
               <img src="/methodology_02.png" alt="" className="w-[50%]"/>
             </div>

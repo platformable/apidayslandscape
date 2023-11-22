@@ -125,7 +125,7 @@ export default function SearchFilters({
               />
               <label
                 className="form-check-label font-bold text-white"
-                for="flexCheckDefault"
+                htmlFor="flexCheckDefault"
               >
                 {" "}
                 A-Z

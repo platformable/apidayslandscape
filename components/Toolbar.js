@@ -43,8 +43,8 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
 
   const router = useRouter();
   return (
-    <div id="toolbar" className="pt-14 pb-8 container mx-auto">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 font-semibold">
+    <div id="toolbar" className="pt-14 pb-8 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 font-semibold">
         <button
           className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
           onClick={() => handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}

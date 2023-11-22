@@ -332,7 +332,7 @@ export const newModel = {
     }
   },
   "API Products": {
-    description: "",
+    description: "API products built to expose a specific functionality or dataset to enable use programmatically in apps, websites, workflows, AI systems, and so on",
     color: '',
     categories: {
      "Email/Messaging/CPaaS": {

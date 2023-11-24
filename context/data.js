@@ -564,11 +564,12 @@ export const newModel = {
       description: "Tooling that enables APIs to be consumed",
       color: "",
       subcategories: [
-      {
-        name: 'IPaaS/ESB',
-        description: "Integration Platform as a Service and Enterprise Service Bus tooling that enables APIs to be consumed and integrated into existing IT infrastructures",
-        color: "",
-      },
+        {
+          name: 'Financial Aggregators',
+          description: "Aggregation platforms that normalise and standardise a broader range of bank and fintech APIs into a core suite of API tools",
+          color: "",
+        },
+    
       {
         name: 'General Aggregators',
         description: "Aggregation platforms that normalise and standardise a range of APIs into a core suite of API tools",
@@ -583,6 +584,11 @@ export const newModel = {
       {
         name: 'Health Aggregators',
         description: "Aggregation platforms that normalise and standardise a broader range of health provider and health data APIs into a core suite of API tools",
+        color: "",
+      },
+      {
+        name: 'IPaaS/ESB',
+        description: "Integration Platform as a Service and Enterprise Service Bus tooling that enables APIs to be consumed and integrated into existing IT infrastructures",
         color: "",
       },
      
@@ -618,11 +624,7 @@ export const newModel = {
         description: "Tooling that stipulates and or monitors the conditions under which an API may be used",
         color: "",
       },
-      {
-        name: 'Financial Aggregators',
-        description: "Aggregation platforms that normalise and standardise a broader range of bank and fintech APIs into a core suite of API tools",
-        color: "",
-      },
+
       ]
      },
     }

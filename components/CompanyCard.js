@@ -37,9 +37,10 @@ export default function CompanyCard({company,index,handleLoading}) {
           <div className="card-logo flex justify-center relative aspect-w-1 aspect-h-1 h-20 items-center">
             {company.logo === "" || null ? (
               <img
-                src={`../../../apidaysReplacementLogo.png`}
+                src={`/landscape_logo.svg`}
                 alt=""
-                className='object-cover object-center w-full h-full'
+                className='object-cover object-center'
+                
               />
             ) : (
               <img

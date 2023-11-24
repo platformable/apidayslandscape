@@ -38,11 +38,12 @@ function ProfileLeftSide({ selectedCompany }) {
       <div className="company-logo flex justify-center items-center my-5">
         <a href={url} target="_blank">
           {logo === "" || null ? (
-            <img
-              src={`../../../apidaysReplacementLogo.png`}
-              alt="company logo"
-              className=""
-            />
+           <img
+           src={`/landscape_logo.svg`}
+           alt=""
+           className='object-cover object-center'
+           
+         />
           ) : (
             <img
               src={logo}
@@ -154,7 +155,7 @@ function ProfileLeftSide({ selectedCompany }) {
                 <img src="/website_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-                <span className="text-sm font-semibold underline">{url}</span>
+                <p className="text-sm font-semibold underline break-all ">{url}</p>
             </div>
           )}
           {github && (

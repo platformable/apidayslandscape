@@ -1,0 +1,12 @@
+<svg id="founder_icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Ellipse_6" data-name="Ellipse 6" fill="#f5f9ff" stroke="#083ecb" stroke-width="2">
+    <circle cx="21" cy="21" r="21" stroke="none"/>
+    <circle cx="21" cy="21" r="20" fill="none"/>
+  </g>
+  <g id="Group_3856" data-name="Group 3856" transform="translate(12.611 8.121)">
+    <g id="Group_3857" data-name="Group 3857" transform="translate(0 0)">
+      <path id="Path_21" data-name="Path 21" d="M.689,29.188A.735.735,0,0,1,0,28.407V20.472a5.293,5.293,0,0,1,5.3-5.287h.027c1.522,0,3.045,0,4.568.005.619,0,1.233-.029,1.846.009a5.181,5.181,0,0,1,4.293,2.6,4.992,4.992,0,0,1,.737,2.665q0,3.954,0,7.909a.792.792,0,0,1-.755.827h-.063c-.367-.019-14.812.01-15.268-.012" transform="translate(0 -3.442)" fill="#083ecb" stroke="#e6efff" stroke-width="1"/>
+      <path id="Path_22" data-name="Path 22" d="M9.183,11.25A5.625,5.625,0,1,1,9.127,0h.016a5.616,5.616,0,0,1,5.662,5.567V5.61a5.632,5.632,0,0,1-5.622,5.64" transform="translate(-0.8 0)" fill="#083ecb" stroke="#e6efff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

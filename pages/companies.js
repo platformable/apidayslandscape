@@ -1,232 +1,303 @@
-import React, {useState,useEffect,useRef,useContext} from 'react'
-import Layout from '../components/Layout'
+import React, { useState, useEffect, useRef, useContext } from "react";
+import Layout from "../components/Layout";
 import Head from "next/head";
-import CompanyCard from '../components/CompanyCard'
+import CompanyCard from "../components/CompanyCard";
 import TopBarProgress from "react-topbar-progress-indicator";
-import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
-import Loader from '../components/Loader';
+//import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
+import Loader from "../components/Loader";
 import { CompanyContext } from "../context/CompanyContext";
-export default function companiesCards({data}) {
-    
-    const [company, setCompany] = useContext(CompanyContext);
-    
-    const newData = data.values.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations" || company.searchInput)
+import { newModel } from "../context/data";
+import SearchFilters from "../components/SearchFilters";
+
+export default function companiesCards({ data }) {
 
 
-    const [loading,setLoading]=useState(false)
-    const [loader,setLoader]=useState(true)
-    const [search,setSearch]=useState("")
-    const [noData,setNoData]=useState(true)
-    
-    const [liveData,setLiveData]=useState( [] || newData);
-    const [categoriesList,setCategoriesList]=useState([])
-    const [sorted,setSorted]=useState(true)
-    const [subcategoryList,setSubcategoryList]=useState(subcategories  || [])
-    const [selectedCategory,setSelectedCategory]=useState("All")
-    const [selectedSubcategory,setSelectedSubcategory]=useState("All")
-  
-const total = liveData.filter(items=>items.parentCategorySlug !=="API Standards/Protocols" && items.parentCategorySlug !=="Media/Associations" || company.searchInput).length
-  
-  
-    TopBarProgress.config({
-        barColors: {
-          "0": "#fdb43e",
-          "1.0": "#fdb43e"
-        },
-        shadowBlur: 5
-      });
-   
-   
-    const handleCompanyName= (text)=>{
-       
-        
-        const result = data.values.filter(
-            (company, index) =>
-            company.name.toLowerCase().includes(text.toLowerCase())
-        );
+  const [company, setCompany] = useContext(CompanyContext);
 
-        setLiveData(result)
-        if(result.length<=0){
-            setNoData(true)
-        }else{
-            setNoData(false)
-        }
-     
-    }
+  /*   console.log("data",data) */
 
-    const handleSorted =()=>{
-    
-    setSorted(!sorted)
 
-    if(sorted){ 
-       
-       setLiveData(liveData.sort((b, a) => a.name.localeCompare(b.name))) 
+
+  const [loading, setLoading] = useState(false);
+  const [loader, setLoader] = useState(true);
+  const [search, setSearch] = useState("");
+  const [noData, setNoData] = useState(true);
+
+  const [liveData, setLiveData] = useState(data.values);
+  const [categoriesList, setCategoriesList] = useState([]);
+  const [sorted, setSorted] = useState(true);
+  const [subcategoryList, setSubcategoryList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCluster, setSelectedCluster] = useState("All");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("All");
+
+
+  TopBarProgress.config({
+    barColors: {
+      0: "#fdb43e",
+      "1.0": "#fdb43e",
+    },
+    shadowBlur: 5,
+  });
+
+  const handleCompanyName = (text) => {
+    const result = data.values.filter((company, index) =>
+      company.name.toLowerCase().includes(text.toLowerCase())
+    );
+
+    setLiveData(result);
+    if (result.length <= 0) {
+      setNoData(true);
     } else {
+      setNoData(false);
+    }
+  };
+
+  const handleSorted = () => {
+
+    setSorted(!sorted);
+    if (sorted) {
+      setLiveData(liveData.sort((a, b) => b.name.localeCompare(a.name)));
+    } 
+    if (!sorted){ 
+      setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)));
+    }
+  };
+
+
+
+  const handleFilter = () => {
+    if (company.searchInput !== "") {
+      handleCompanyName(company.searchInput);
+    }
+
+    if (
+      selectedCluster === "All" &&
+      selectedSubcategory === "All" &&
+      selectedCategory === "All"
+    ) {
+      setLiveData(data.values);
+      setSubcategoryList(subcategories);
+    }
+
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory === "All"
+    ) {
+      const result = data.values.filter((company, index) =>
+        company.cluster?.includes(selectedCluster)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+    if (
+      selectedCluster == "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+      const result = data.values.filter((company, index) =>
+        company.category?.includes(selectedCategory)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+    if (
+      selectedCluster == "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory !== "All"
+    ) {
       
-        setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)))
+      const result = data.values.filter((company, index) =>
+        company.subcategory?.includes(selectedSubcategory)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
     }
-    }
 
-    const handleFilter = () => {
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory)
+      );
 
-        if(company.searchInput !==""){
-            handleCompanyName(company.searchInput)
-         }
-  
-        if(selectedSubcategory === "All" && selectedCategory === "All"){
-            setLiveData(data.values)
-            setSubcategoryList(subcategories)
-        }
-
-        if (selectedCategory !=="All" && selectedSubcategory === "All"){
-            const result =  data.values.filter((company, index) =>company.parentCategorySlug?.includes(selectedCategory));
-            const subcatgeoriesOfSelectedCategory = categoriesWithSubcategories.filter((category,index)=>category.name===selectedCategory)
-            
-            setLiveData(result)
-            setCategoriesList(subcatgeoriesOfSelectedCategory)
-            setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategories)
-        }
-
-        if (selectedCategory !=="All" && selectedSubcategory !== "All"){
-            const result =  data.values.filter(
-                (company, index) =>
-                company.parentCategorySlug?.includes(selectedCategory) && company.subcategory?.includes(selectedSubcategory));
-                setLiveData(result)
-        }
-
-        if (selectedCategory ==="All" && selectedSubcategory !== "All"){
-            const result =  data.values.filter(
-                (company, index) =>
-                company.subcategory?.includes(selectedSubcategory)
-            );
-            setLiveData(result)
-        }
-
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster and category relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
     }
 
 
-    const handleLoading = ()=>{
-        setLoading(!loading)
-      }
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory !== "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory) &&
+          company.subcategory.includes(selectedSubcategory) 
+
+      );
+
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster, category or subcategory relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+
+  };
+
+  const handleLoading = () => {
+    setLoading(!loading);
+  };
+
+ 
+/*   useEffect(() => {
+       
+
+      }, [sorted]); */
+
+
+  useEffect(() => {
     
-   
+    handleFilter();
 
-   useEffect(()=>{ 
-   
+    setTimeout(function () {
+      setLoader(false);
+    }, 1000);
+  }, [selectedCategory, selectedSubcategory, selectedCluster]);
 
-    liveData.sort((a, b) => a.name.localeCompare(b.name))
-    handleFilter()
-   
-    setTimeout(function(){
-        setLoader(false)
-    },1000)
+  const clusters = Object.keys(newModel);
 
-   },[selectedCategory,selectedSubcategory])
+  const categories = Object.entries(newModel)
+    .map(([clusters, values], index) => {
+      const allCategories = [];
+      const data = Object.entries(values.categories).map(
+        ([category, value], i) => {
+          return allCategories.push(category);
+        }
+      );
+      return allCategories;
+    })
+    .flat();
+
+  const subcategories = Object.entries(newModel)
+    .map(([clusters, values], index) => {
+      return Object.entries(values.categories)
+        .map(([category, value], i) => {
+          return Object.entries(value.subcategories)
+            .map(([sub, v], ind) => {
+              return v.name;
+            })
+            .flat();
+        })
+        .flat();
+    })
+    .flat();
 
 
+  return (
+    <Layout>
+      <Head>
+        <title>apidays Landscape - Companies</title>
+        <meta name="description" content="apidays landscape companies" />
+      </Head>
+      {loading && <TopBarProgress />}
+      <SearchFilters
+        categories={categories}
+        subcategoryList={subcategories}
+        clusters={clusters}
+        // total={total}
+        handleSorted={handleSorted}
+        setSelectedCategory={setSelectedCategory}
+        setSelectedSubcategory={setSelectedSubcategory}
+        handleCompanyName={handleCompanyName}
+        sorted={sorted}
+        selectedCluster={selectedCluster}
+        setSelectedCluster={setSelectedCluster}
+        subcategories={subcategories}
+        datalength={liveData.length}
+      />
 
-    return (
-        <Layout>
-            <Head>
-          <title>apidays Landscape - Companies</title>
-          <meta name="description" content="apidays landscape companies" />
-        </Head>
-        {loading && <TopBarProgress />}
-        <section className="filter bg-white py-5">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-3">
-                    <select className="form-select mb-2" ariaLabel="Default select example" onChange={e => setSelectedCategory(e.target.value)} >
-                        <option selected>Select a Category</option>
-                        <option value="All">All</option>
-                
-                        {categories?categories.map((category,index)=>{
-                            return (
-                                <option value={category} >{category}</option>
-                            )   
-                        }):""}
-                    </select>
-                    </div>
-                    <div className="col-md-3">
-                    <select className="form-select mb-2" ariaLabel="Default select example" onChange={e => setSelectedSubcategory(e.target.value)}>
-                        <option >Select a subcategory</option>
-                        <option value="All">All</option>
-                        {subcategoryList?subcategoryList.map((subcategory,index)=>{
-                            return (
-                                <option value={subcategory}>{subcategory}</option>
-                            )   
-                        }):""}
-                    </select>
-                    </div> {/* subcategory */}
-                    <div className="col-md-3">
-                    <div className="input-group mb-2">
-                    <input type="text" class="form-control " id="inputGroupFile04" 
-                    aria-describedby="inputGroupFileAddon04" aria-label="" 
-                    onChange={(e)=>handleCompanyName(e.target.value)} />
-                    <button className="btn border " type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
-                    <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
-                    </button>
-                    </div>
+      {loader && (
+        <div className="container mx-auto text-center flex justify-center my-5">
+          <img src="../Spinner-1s-44px.gif" />{" "}
+        </div>
+      )}
 
-                    
-
-                    </div>{/* search */}
-                    <div className="col-md-2 d-flex justify-content-start">
-                       <p className="rounded fw-bold  text-center shadow py-2 px-4 text-company-color"> {total} </p>
-                    </div>
-                    <div className="col-md-1 d-flex justify-content-end align-items-center">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={handleSorted}/>
-                        <label class="form-check-label fw-bold" for="flexCheckDefault">
-                            A-Z
-                        </label>
-                        </div> {/* form check */}
-                        </div> 
-                </div>
-               
-            </div> {/* container */}
-        </section>
-
-        {loader &&   <div className="text-center d-flex justify-content-center my-5"><img src="../Spinner-1s-44px.gif"/> </div> }
-                        
-        <section className="cards my-2">
-            <div className="container">
-                <div className="card-container">
-                    {liveData?liveData.map((company,index)=>{
-                        return (
-                            <CompanyCard company={company} index={index} handleLoading={handleLoading}/>
-                        )
-                    }):<Loader />}
-                   
-                    {liveData.length <=0  && !loader ? "No Data..." :""}
+      <section className="cards ">
+        <div className="container mx-auto">
+        {liveData.message ? <p className="font-bold text-center bg-blue-50 rounded-lg px-2 py-1">{liveData.message}</p> : ""}
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5 my-10">
            
-                   
-                {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
-                    
-                    
-                </div>
-            </div>
-        </section>
+            {liveData.length > 0 ? (
+              liveData?.map((company, index) => {
+                return (
+                  <CompanyCard
+                    company={company}
+                    index={index}
+                    handleLoading={handleLoading}
+                    key={index}
+                  />
+                )
+              })
+            ) : (
+              
+             <></>
+           
+            )}
 
-            
-        </Layout>
-    )
+            {liveData.length <= 0 && !loader ? "No Data..." : ""}
+
+            {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
 
-
 export async function getServerSideProps(context) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+    },
+  });
 
-    const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app/companies` || `http://localhost:5000/companies`);
+  const data = await res.json();
+  const cleanNullValues = await data.values.filter(
+    (company) => company.cluster !== null || company.category !== null
+  );
 
-    const data = await res.json();
-  
-    if (!data) {
-      return {
-        notFound: true,
-      };
-    }
-  
+  if (!data) {
     return {
-      props: { data },
+      notFound: true,
     };
   }
+
+  return {
+    props: { data: { values: cleanNullValues.sort((a, b) => a.name.localeCompare(b.name)) } },
+  };
+}

@@ -1,18 +1,15 @@
-import React, {useEffect} from 'react'
-import '../styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.css';
-import { CompanyProvider } from '../context/CompanyContext';
-import Script from 'next/script' 
+import React, { useEffect } from "react";
+import "../styles/globals.css";
+// import 'bootstrap/dist/css/bootstrap.css';
+import { CompanyProvider } from "../context/CompanyContext";
+import Script from "next/script";
+import PlausibleProvider from "next-plausible";
 
 function MyApp({ Component, pageProps }) {
-
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
-}, []);
-
-  return <>
-  <Script src={`https://www.googletagmanager.com/gtag/js?id=G-KEPJR2KRS1`} strategy='lazyOnload'/>
-  <Script
+  return (
+    <>
+      {/* <Script src={`https://www.googletagmanager.com/gtag/js?id=G-KEPJR2KRS1`} strategy='lazyOnload'/> */}
+      {/* <Script
   dangerouslySetInnerHTML={{
     __html: `
     window.dataLayer = window.dataLayer || [];
@@ -22,11 +19,17 @@ function MyApp({ Component, pageProps }) {
   gtag('config', 'G-KEPJR2KRS1');
   `
   }}>
-  </Script>
-  <CompanyProvider>
-  <Component {...pageProps} />
-  </CompanyProvider>
-  </>
-}
+  </Script> */}
+      {/* <PlausibleProvider domain="openbankingvalue.platformable.com" enabled taggedEvents trackFileDownloads> */}
 
-export default MyApp
+      <CompanyProvider>
+        <Component {...pageProps} />
+      </CompanyProvider>
+      {/* </PlausibleProvider> */}
+    </>
+  )
+  }
+
+ 
+
+export default MyApp;

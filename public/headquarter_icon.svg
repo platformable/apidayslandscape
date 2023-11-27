@@ -1,0 +1,11 @@
+<svg id="headquarter_icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Ellipse_7" data-name="Ellipse 7" fill="#f5f9ff" stroke="#083ecb" stroke-width="2">
+    <circle cx="21" cy="21" r="21" stroke="none"/>
+    <circle cx="21" cy="21" r="20" fill="none"/>
+  </g>
+  <g id="Group_3859" data-name="Group 3859" transform="translate(12 11)">
+    <g id="Group_3860" data-name="Group 3860">
+      <path id="Path_23" data-name="Path 23" d="M8.656,0A8.6,8.6,0,0,0,0,8.546v.11a8.31,8.31,0,0,0,2.6,6.182c.124.124,5.069,4.575,5.193,4.7a1.3,1.3,0,0,0,1.607,0c.124-.124,5.193-4.575,5.193-4.7a8.31,8.31,0,0,0,2.6-6.182A8.424,8.424,0,0,0,9.007,0c-.117,0-.234,0-.351,0m0,11.128a2.473,2.473,0,1,1,2.473-2.473,2.473,2.473,0,0,1-2.473,2.473" fill="#083ecb"/>
+    </g>
+  </g>
+</svg>

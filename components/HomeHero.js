@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function HomeHero() {
     return (
-        <div class="px-4 py-5  text-center">
-        <h1 class="display-5 fw-bold text-white">Hello,</h1>
-        <h1 class="display-5 fw-bold text-white">Welcome to</h1>
+        <div className="px-4 py-5  text-center">
+        <h1 className="display-5 fw-bold text-white">Hello,</h1>
+        <h1 className="display-5 fw-bold text-white">Welcome to</h1>
         <h3 className="text-center bg-home-keyindicator d-inline-block px-5 py-3 text-white">apidays landscape</h3>
         <p className="text-center text-white">KEY INDICATORS</p>
         <div className="text-center my-3"><img src="../homepage/zig_zag line.png" alt="" width="125px"/></div>

@@ -1,35 +1,12 @@
 import React from 'react'
-
+import { reduceMillion } from '../helpers/functions';
 import { useRouter } from "next/router";
 export default function CompanyCard({company,index,handleLoading}) {
   const handleCompany = (company) => {
     handleLoading()
     router.push(`/company/${company.name}`);
   };
-  const reduceNumber=(total)=>{
-    let result
-    if(total.length>=7){
-   
-     result= `$${total.slice(0, 1)}M`
 
-    }
-
-    if(total.length>=8){
-      result= `$${total.slice(0, 2)}M`
-
-     }
-
-     if(total.length>=9){
-      result= `$${total.slice(0, 3)}M`
-
-     }
-     if(total.length>=10){
-      result= `$${total.slice(0, 4)}M`
-
-     }
- 
-     return result
-   }
 
    const handleImages = (url)=>{
     if(url.includes("https://drive.google.com")){
@@ -42,75 +19,129 @@ export default function CompanyCard({company,index,handleLoading}) {
   const router = useRouter();
 
 
-  const newParentCategorySlug = [...new Set(company?.parentCategorySlug?.split(","))]
+  const newParentCategorySlug = [...new Set(company?.cluster?.split(","))];
+  const categories = [...new Set(company?.category?.split(","))];
+  const subcategories = [...new Set(company?.subcategory?.split(","))];
+
+  const foundedRows = 'flex items-center gap-x-2 items-center'
+
     return (
-        <div className="company-card  rounded bg-white" key={index} onClick={() => handleCompany(company)}>
-        <div className="card-top">
-  
-            <div className="card-logo">
-            {company.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt=""  className=""/> : <img srcSet={`${handleImages(company.logo)} 2x`} alt="" className="img-fluid" /> }
-{/*               <img src={handleImages(company.logo)} alt="" onClick={() => handleCompany(company)}/> */}
+      <div className="company-card bg-white rounded-lg shadow-lg p-3 " key={index}>
+      <div className="card-top">
+        <div className="">
+          <h6 className="font-bold text-company-color text-center text-[#243672] mb-5">
+            {" "}
+            {company.name}
+          </h6>
+
+          <div className="card-logo flex justify-center relative aspect-w-1 aspect-h-1 h-20 items-center">
+            {company.logo === "" || null ? (
+              <img
+                src={`/landscape_logo.svg`}
+                alt=""
+                className='object-cover object-center'
+                
+              />
+            ) : (
+              <img
+                srcSet={`${handleImages(company.logo)} 2x`}
+                alt=""
+                className='object-contain object-center w-full h-full'
+                
+              />
+            )}
+          </div>
+
+
+          <div className={`${foundedRows} mt-5`}>
+            <div>
+              <img src="/founded_icon.svg" alt="" className="" />
             </div>
-            <div className="card-description">
-              <h6 className="fw-bold text-company-color" onClick={() => handleCompany(company)}> {company.name}</h6>
-              {/* <h6><span class="badge bg-dark-orange text-white">Go Deeper</span></h6> */}
-              {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
-              <div className="card-founded-container">
-                <div className="founded-icon">
-                <img src="../../apilandscape__founded_in_40x40.png" alt="" className="icon m-0 p-0" />
-   
-                </div>
-                <div className="founded-year">
-                <p className="xs-text m-0 p-0 fw-bold">Founded</p>
-                  <p className="xs-text">{company.yearFounded ? `${company.yearFounded}`: "-"}</p>
-                  
-                </div>
-              </div> {/*  <!--card founded--> */}
-              <div className="card-founded-container">
-                <div className="founded-icon">
-                <img src="../../apilandscape__headquarter_40x40.png" alt="" className="icon" />
-                </div>
-                <div className="founded-year">
-                <p className="xs-text m-0 p-0 fw-bold">Headquarter</p>
-                  <p className="xs-text">{company.headquartersCity},{company.headquartersCountry}</p>
-                </div>
-              </div>  {/* <!--card founded--> */}
+              <p className="md-text m-0 p-0 text-[#083ECB]">Founded</p>
+              <p className="font-bold  m-0 p-0 text-[#243672]">
+                {company.yearFounded ? `${company.yearFounded}` : "-"}
+              </p>
+          </div>
+
+          <div className={`${foundedRows} mt-3`}>
+            <div>
+              <img src="/headquarter_icon.svg" alt="" className="" />
             </div>
-          </div> {/* <!--cardtop--> */}
-        <div className="card-middle mt-1">
-                {newParentCategorySlug?.map((category,index)=>{
-                  return (<span className={`card-middle-tag mb-1 me-1 text-black
-                  ${category.includes("API Lifecycle Platform") && "bg-dark-main-color text-white"}
-                  ${category==="API Standards/Protocols" && "bg-dark-main-color text-white"}
-                  ${category==="Backend Building Tools" && "bg-dark-main-color text-white"}
-                  ${category==="Business processes as an API/API-as a Product" && "bg-dark-main-color text-white"}
-                  ${category==="Business processes as an API/API-as a Products" && "bg-dark-main-color text-white"}
-                  ${category==="Integration Platform as a Service" && "bg-dark-main-color text-white"}
-                  ${category==="Vertical API Abstractions" && "bg-dark-main-color text-white"}
-                  `}>{category}</span>)
-                })}
+            <div>
+              {" "}
+              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
+            </div>
+            {company.headquartersCountry && (
+              <img
+                src={`https://flagsapi.com/${company.headquartersCountry}/flat/64.png`}
+                alt=""
+                className="w-7"
+              />
+            )}
+            <div>
+              {" "}
+              <p className="md-text font-bold  m-0 p-0 text-[#243672]">
+                {company?.headquartersCity ? `${company?.headquartersCity}, ` : '-'} {company.headquartersCountry}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>{" "}
+      {/* <!--cardtop--> */}
    
-              </div>{/* <!--card middle--> */}
-        
-        <div className="card-bottom">
-          <div className="card-bottom-left">
-            <span className="sm-text">Headcount</span>
-            <p className="fw-bold">{company.headcount?company.headcount:"-"}</p>
-            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
-            
-          </div>{/*  <!--card-bottom -left--> */}
-          <div className="card-bottom-center">
-             <span>Total Funding</span>
-            <p className="fw-bold ">{company.totalFunding? reduceNumber(company.totalFunding) : "-"}</p>
-            <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
-          </div> {/* <!--card-bottom -center--> */}
-          <div className="card-bottom-right">
-             <span>Estimated Revenue</span>
-            <p className="sm-text fw-bold text-center">{company.estimatedRevenueRange?company.estimatedRevenueRange: "-"}</p>
-            <img src="../../money-line.png" alt="" />
-          </div> {/* <!--card-bottom -right--> */}
-        </div> {/* card-bottom */}
-      
-      </div> /* company card */
+      <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
+        <div className="purpleBorder rounded-md p-2 flex flex-col gap-2 items-center">
+          
+          <p className="font-bold my-2 text-[#243672]">
+            {company.headcount ? company.headcount : "-"}
+          </p>
+          <span className="text-[#083ECB]">Headcount</span>
+          <img
+            src="/headcount_icon.svg"
+            alt=""
+            className="sd-icon mt-auto"
+          />
+        </div>
+
+        <div className="greenBorder rounded-md p-2 flex flex-col gap-2 items-center">
+          
+          <p className="font-bold my-2 text-[#243672]">
+            {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
+          </p>
+          <span className="text-[#083ECB] text-center">Total Funding</span>
+          <img
+            src="/total funding_icon.svg"
+            alt=""
+            className="md-icon mt-auto"
+          />
+        </div>
+
+        <div className="orangeBorder rounded-md p-2  flex flex-col gap-2 items-center">
+          
+          <p className="font-bold my-2 text-[#243672]">
+          {
+              company.totalProducts ? company.totalProducts :'-'
+            }
+          </p>
+          <span className="text-[#083ECB] text-center">Active products</span>
+          <img
+            src="/active products_icon.svg"
+            alt=""
+            className="xd-icon mt-auto "
+          />
+        </div>
+      </div>
+
+      <div className="my-1 grid">
+    
+        <button
+         onClick={()=>handleCompany(company)}
+          className="bg-[#083ECB] shadow-md px-10 py-3  text-white uppercase rounded text-center"
+        >
+         View complete profile
+        </button>
+        {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
+      </div>
+    </div>
     )
 }

@@ -1,17 +1,41 @@
-import React from 'react'
+import React from "react";
+import Link from "next/link";
+import Banner from "./Banner";
 
 export default function Footer() {
-    return (
-        
-  <footer class="d-flex flex-wrap justify-content-between align-items-center pt-3  border-top bg-white">
-    <div class="container">
-    <p class="col-md-12 mb-0 text-center">&copy; This website was built for apidays by <a href="http://www.platformable.com" target="_blank"><img src="../footer_platformable.png" alt="" className="footer-logo"/></a>proudly <img src="../footer_heart.png" alt="" className="footer-icon"/> based in Barcelona </p>  
-
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"></svg>
-    </a>
-    </div>
-  </footer>
-
-    )
+  return (
+    <footer className=" bg-[var(--dark-blue)] text-white">
+      <Banner />
+      <div className="container mx-auto px-1 md:px-0 py-14">
+        <p className="flex gap-x-1 items-center justify-center mb-0 text-[12px] md:text-base flex-wrap">
+          &copy; This website was built for apidays by{" "}
+          <Link href="https://www.platformable.com" target="_blank" className="flex  items-center gap-x-1">
+            <img
+              src="/footer_platformable.png"
+              alt=""
+              className="max-w-[125px]"
+            />
+            <span className="text-white font-semibold">Platformable.com</span>
+          </Link>
+          proudly{" "}
+          <img src="/heart_icon.png" alt="" className="footer-icon" /> based
+          in Barcelona{" "}
+        </p>
+      </div>
+      <div
+        className={`text-white flex flex-col justify-center items-center  pt-5 pb-8 border-t border-white border-solid border-opacity-50`}
+      >
+        <Link href="#header">
+          <div className="text-white flex flex-col items-center gap-2">
+            <img
+              src="/arrow_collapse_top.svg"
+              alt="arrow icon"
+              className="cursor-pointer"
+            />
+            GO TO TOP
+          </div>
+        </Link>
+      </div>
+    </footer>
+  );
 }

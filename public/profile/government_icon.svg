@@ -1,0 +1,12 @@
+<svg id="government_icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_3936" data-name="Group 3936">
+    <rect id="Rectangle_143" data-name="Rectangle 143" width="50" height="50" fill="none"/>
+    <g id="Group_3954" data-name="Group 3954" transform="translate(7.458 -2.785)">
+      <path id="Path_6031" data-name="Path 6031" d="M15.7,13.442V6.931c0-1.035.012-2.069,0-3.105-.009-.61-.062-1.048.688-1.041.659,0,.668.74.668.74a15.276,15.276,0,0,1,4.047,1.758A7.463,7.463,0,0,0,25.35,6.645v6.146A6.543,6.543,0,0,1,20.66,11.4,6.726,6.726,0,0,0,16.8,9.862v3.572c3.862.35,8.478,2.178,11.185,5.149a15.994,15.994,0,0,1,3.212,5.223H2.2a16.661,16.661,0,0,1,5.348-7.188,15.7,15.7,0,0,1,8.16-3.176" transform="translate(0.905 0)" fill="#083ecb"/>
+      <path id="Path_6032" data-name="Path 6032" d="M0,33.918v-4.61H2.873V25.744H32.289v3.512h2.874v4.658Z" transform="translate(0 15.802)" fill="#083ecb"/>
+      <rect id="Rectangle_229" data-name="Rectangle 229" width="4.844" height="15.56" transform="translate(3.1 24.961)" fill="#ff7805"/>
+      <rect id="Rectangle_230" data-name="Rectangle 230" width="4.844" height="15.56" transform="translate(14.721 24.917)" fill="#ff7805"/>
+      <rect id="Rectangle_231" data-name="Rectangle 231" width="4.895" height="15.56" transform="translate(27.204 24.961)" fill="#ff7805"/>
+    </g>
+  </g>
+</svg>

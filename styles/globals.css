@@ -220,8 +220,8 @@ image-rendering: crisp-edges;
 
 a {
 text-decoration: none !important;
-color:#333 !important;
-margin-left:10px;
+/* color:#333 !important; */
+/* margin-left:10px; */
 }
 
 .text-gray {

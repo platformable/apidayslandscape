@@ -9,103 +9,7 @@ export default function Methodology() {
   };
   return (
     <>
-    {/* <section className="methodology py-5 bg-white">
-            <div className="container">
-              <div className="methodology-title d-flex justify-content-center align-items-center my-5">
-                <img
-                  src="../methodology_icon.png"
-                  alt=""
-                  className=" mx-2 xd-icon"
-                />
-
-                <h3 className="fw-bold text-center mx-2 text-company-color">
-                  Methodology
-                </h3>
-              </div>
-              <div className="row d-flex align-items-center bg-light rounded shadow py-5 my-2 px-3">
-                <div className="col-md-3 ">
-                  <img src="../logo_dark.png" alt="" />
-                </div>
-                <div className="col-md-9 ">
-                  <p className="mt-3 text-company-color">
-                    Our dataset has been built on 3 years of apidays industry
-                    analysis and data collection. APIs are at the core of all
-                    digital ecosystems and infrastructures. APIs make it
-                    possible for businesses, governments, non-profits,
-                    researchers and media to build digital solutions at scale
-                    and in partnership with a wide variety of stakeholders. It
-                    is essential to be able to review the dynamism and breadth
-                    of the API industry, but it is challenging to find data that
-                    captures all of the work being done by various players. This
-                    API Landscape aims to capture all of the tools available
-                    that enable digital ecosystem expansion and to give insights
-                    into the dynamism and growth of APIs around the world and
-                    across all industries.
-                  </p>
-                </div>
-              </div>
-
-              <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
-                <div className="col-md-3 d-flex align-items-center">
-                  <img src="../about-icon1.png" alt="" className="xd-icon" />
-                  <h5 className="ms-3 fw-bold text-company-color">
-                    Industry <br />
-                    categorisations
-                  </h5>
-                </div>
-                <div className="col-md-9 ">
-                  <p className="mt-3 text-company-color">
-                    We have categorised API tool providers into their
-                    predominant function, however, at times, tools have been
-                    allocated to more than one category when their feature range
-                    is sufficiently diverse
-                  </p>
-                </div>
-              </div>
-
-              <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
-                <div className="col-md-3 d-flex align-items-center">
-                  <img src="../about-icon2.png" alt="" className="xd-icon" />
-                  <h5 className="ms-3 fw-bold text-company-color">
-                    Why isn’t my tool listed?
-                  </h5>
-                </div>
-                <div className="col-md-9 ">
-                  <p className="mt-3 text-company-color">
-                    We aim to be comprehensive in our list of all tools. Please
-                    complete our form to{" "}
-                    <a
-                      href="https://airtable.com/shr07pWSbRnQfnZZd"
-                      className="m-0 badge bg-dark-orange text-white rounded"
-                      target="_blank"
-                    >
-                      add your tool
-                    </a>{" "}
-                    to our catalogue
-                  </p>
-                </div>
-              </div>
-
-              <div className="row d-flex bg-light rounded shadow py-5 my-2 px-3">
-                <div className="col-md-3 d-flex align-items-center">
-                  <img src="../about-icon3.png" alt="" className="xd-icon" />
-                  <h5 className="ms-3  fw-bold text-company-color">
-                    Where does the data come from?
-                  </h5>
-                </div>
-                <div className="col-md-9 ">
-                  <p className="mt-3 text-company-color">
-                    We manually check each API tool provider at least once
-                    annually and we collect data on blog posts, positions vacant
-                    and new feature development on a quarterly basis. We also
-                    confirm data against industry leading datasets including
-                    Crunchbase, LinkedIn, Clearbit and API Evangelist.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>  */}
-
+  
           <section className="py-20 lg:py-24 2xl:py-32 bg-[var(--dark-blue)] ">
             <div className="max-w-screen-lg mx-auto">
               {/* <h3 className="text-center fw-bold my-5 text-white">
@@ -114,7 +18,7 @@ export default function Methodology() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <button className="change-box grid gap-y-5 btn-transition"
                 onClick={() =>
-                  handleForm("https://airtable.com/shr07pWSbRnQfnZZd")
+                  handleForm("https://airtable.com/appObH1ILShMbYp30/pagMQR4dALkHUDMBS/form")
                 }>
                   <div className="flex justify-center ">
                     <img
@@ -134,7 +38,7 @@ export default function Methodology() {
                 <button className="change-box grid gap-y-5 btn-transition"
                 onClick={() =>
                   handleForm(
-                    "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
+                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
                   )
                 }>
                     <div className="flex justify-center">
@@ -160,7 +64,7 @@ export default function Methodology() {
                 
                 onClick={() =>
                   handleForm(
-                    "https://airtable.com/appURuyaoJN8JyTMv/shrZv8zH54LDpDq8i"
+                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
                   )
                 }
                 >

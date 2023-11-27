@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "0.1.2",
+  "name": "apilandscape",
+  "version": "2.0.0",
   "private": false,
   "scripts": {
     "dev": "next dev",

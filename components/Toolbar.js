@@ -76,7 +76,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         <button
           className=" m-0 bg-[var(--orange)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
           target="_blank"
-          onClick={() => handleForm("https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s")}
+          onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")}
         >
           Report
         </button>

@@ -121,11 +121,12 @@ export default function SearchFilters({
                 type="checkbox"
                 value={sorted}
                 id="flexCheckDefault"
-                onClick={handleSorted}
+                defaultChecked={sorted ? true : false}
+                onClick={()=>handleSorted()}
               />
               <label
                 className="form-check-label font-bold text-white"
-                for="flexCheckDefault"
+                htmlFor="flexCheckDefault"
               >
                 {" "}
                 A-Z

@@ -75,26 +75,28 @@ export default function Homepage({ data }) {
             data={data}
           />
           <Tooltip
-            backgroundColor="#083ECB"
+            /*  style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="companyName-tooltip"
           />
           <Tooltip
-            backgroundColor="#0c4b6e"
+/*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="category-tooltip"
             place="right"
             className="cluster-tooltip"
+
           />
           <Tooltip
-            backgroundColor="#0c4b6e"
+         
+/*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="category-tooltip"
             place="right"
             className="category-tooltip"
           />
           <Tooltip
-            backgroundColor="#0c4b6e"
+     /*       style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="subcategory-tooltip"
           />

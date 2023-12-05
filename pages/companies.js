@@ -10,23 +10,20 @@ import { newModel } from "../context/data";
 import SearchFilters from "../components/SearchFilters";
 
 export default function companiesCards({ data }) {
+
+
   const [company, setCompany] = useContext(CompanyContext);
 
   /*   console.log("data",data) */
 
-  const newData = data.values.filter(
-    (items) =>
-      (items.parentCategorySlug !== "API Standards/Protocols" &&
-        items.parentCategorySlug !== "Media/Associations") ||
-      company.searchInput
-  );
+
 
   const [loading, setLoading] = useState(false);
   const [loader, setLoader] = useState(true);
   const [search, setSearch] = useState("");
   const [noData, setNoData] = useState(true);
 
-  const [liveData, setLiveData] = useState([] || newData);
+  const [liveData, setLiveData] = useState(data.values);
   const [categoriesList, setCategoriesList] = useState([]);
   const [sorted, setSorted] = useState(true);
   const [subcategoryList, setSubcategoryList] = useState([]);
@@ -34,14 +31,6 @@ export default function companiesCards({ data }) {
   const [selectedCluster, setSelectedCluster] = useState("All");
   const [selectedSubcategory, setSelectedSubcategory] = useState("All");
 
-  /* const total = liveData.filter(
-    (items) =>
-      (items.parentCategorySlug !== "API Standards/Protocols" &&
-        items.parentCategorySlug !== "Media/Associations") ||
-      company.searchInput
-  ).length; */
-
-  //console.log("cluster", clusters)
 
   TopBarProgress.config({
     barColors: {
@@ -65,14 +54,17 @@ export default function companiesCards({ data }) {
   };
 
   const handleSorted = () => {
-    setSorted(!sorted);
 
+    setSorted(!sorted);
     if (sorted) {
-      setLiveData(liveData.sort((b, a) => a.name.localeCompare(b.name)));
-    } else {
+      setLiveData(liveData.sort((a, b) => b.name.localeCompare(a.name)));
+    } 
+    if (!sorted){ 
       setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)));
     }
   };
+
+
 
   const handleFilter = () => {
     if (company.searchInput !== "") {
@@ -180,8 +172,15 @@ export default function companiesCards({ data }) {
     setLoading(!loading);
   };
 
+ 
+/*   useEffect(() => {
+       
+
+      }, [sorted]); */
+
+
   useEffect(() => {
-    liveData.length> 0 ?liveData.sort((a, b) => a.name.localeCompare(b.name)) : null
+    
     handleFilter();
 
     setTimeout(function () {
@@ -261,7 +260,7 @@ export default function companiesCards({ data }) {
                     handleLoading={handleLoading}
                     key={index}
                   />
-                );
+                )
               })
             ) : (
               
@@ -299,6 +298,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { data: { values: cleanNullValues } },
+    props: { data: { values: cleanNullValues.sort((a, b) => a.name.localeCompare(b.name)) } },
   };
 }

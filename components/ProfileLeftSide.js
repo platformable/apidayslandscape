@@ -149,13 +149,17 @@ function ProfileLeftSide({ selectedCompany }) {
           </div>
           {/*  founded top left */}
           {url && (
-            <div className={`${foundedRows} `}>
+              <div className={`${foundedRows} `}>
               <div className="icon">
                 <img src="/website_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-                <span className="text-sm font-semibold underline">{url}</span>
+              <Link href={url || '#'} >
+
+                <span className="text-sm text-[#243672] font-semibold underline">{url}</span>
+              </Link>
             </div>
+            
           )}
           {github && (
             <div className={`${foundedRows} `}>
@@ -163,7 +167,9 @@ function ProfileLeftSide({ selectedCompany }) {
                 <img src="/github_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-                <span className="text-sm font-semibold underline">{github}</span>
+              <Link href={github || '#'} >
+                <span className="text-sm text-[#243672] font-semibold underline">{github}</span>
+              </Link>
             </div>
           )}
           {linkedin && (
@@ -172,7 +178,11 @@ function ProfileLeftSide({ selectedCompany }) {
                 <img src="/linkedin_icon.svg" alt="icon" className="icon" />
               </div>{" "}
               {/* icon */}
-                <span className="text-sm font-semibold underline">{linkedin}</span>
+
+              <Link href={linkedin || '#'} >
+                <span className="text-sm text-[#243672] font-semibold underline">{linkedin}</span>
+              </Link>
+
             </div>
           )}
         </div>

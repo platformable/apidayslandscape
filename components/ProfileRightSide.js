@@ -2,12 +2,9 @@ import Link from "next/link";
 import Unknown from "./Unknown";
 import styles from "../styles/Profilepage.module.css";
 import { reduceMillion } from "../helpers/functions.js";
+import { Tooltip } from "react-tooltip";
 
-
-export default function ProfileRightSide({
-  selectedCompany,
-  handleScore,
-}) {
+export default function ProfileRightSide({ selectedCompany, handleScore }) {
   const {
     name,
     logo,
@@ -57,6 +54,11 @@ export default function ProfileRightSide({
     apidays2019,
     apidays2020,
     apidays2021,
+    contentAddressingBanking,
+    contentAddressingGovernment,
+    contentAddressingHealth,
+    contentAddressingSustainability,
+    pricingPage,
     logoApiIndustry,
     privacySpecificFeaturesIncluded,
     blogQ12021,
@@ -66,8 +68,7 @@ export default function ProfileRightSide({
     openSource,
   } = selectedCompany;
 
-
-  const textFormat = 'text-[#243672] text-lg'
+  const textFormat = "text-[#243672] text-lg";
 
   return (
     <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)] my-5">
@@ -77,7 +78,9 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {headcount ? (
-            <span className={`${textFormat} font-semibold my-2`}>{headcount}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {headcount}
+            </span>
           ) : (
             <span className={`${textFormat} font-semibold my-2`}> - </span>
           )}
@@ -90,13 +93,19 @@ export default function ProfileRightSide({
           <span className={`${textFormat} font-semibold my-2`}>
             {handleScore(womanInManagement, nonWhitePeopleInManagement)}
           </span>
-          <span className="font-semibold text-sm">Diversity Scoress</span>
-          <img src="/profile/diversity_score_icon.svg" alt="icon" className="" />
+          <span className="font-semibold text-sm">Diversity Scores</span>
+          <img
+            src="/profile/diversity_score_icon.svg"
+            alt="icon"
+            className=""
+          />
         </div>
 
         <div className="profile-stats-card">
           {womanInManagement ? (
-            <span className={`${textFormat} font-semibold my-2`}>{womanInManagement}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {womanInManagement}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -123,7 +132,9 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {totalFunding ? (
-            <span className={`${textFormat} font-semibold my-2`}>{reduceMillion(totalFunding)}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {reduceMillion(totalFunding)}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -133,14 +144,18 @@ export default function ProfileRightSide({
         </div>
 
         <div className="profile-stats-card">
-          <span className={`${textFormat} font-semibold my-2`}>{stage ? stage : "-"}</span>
+          <span className={`${textFormat} font-semibold my-2`}>
+            {stage ? stage : "-"}
+          </span>
           <span className="font-semibold text-sm">Stage (Seed, A, B, C)</span>
           <img src="/profile/stage_icon.svg" alt="icon" className="" />
         </div>
-        
+
         <div className="profile-stats-card">
           {lastFundingDate ? (
-            <span className={`${textFormat} font-semibold my-2`}>{lastFundingDate}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {lastFundingDate}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -156,7 +171,9 @@ export default function ProfileRightSide({
       >
         <div className="profile-stats-card">
           {ipoDate ? (
-            <span className={`${textFormat} font-semibold my-2`}>{ipoDate}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {ipoDate}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -166,7 +183,9 @@ export default function ProfileRightSide({
 
         <div className="profile-stats-card">
           {moneyRaisedAtIpo ? (
-            <span className={`${textFormat} font-semibold my-2`}>{moneyRaisedAtIpo}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {moneyRaisedAtIpo}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -188,7 +207,9 @@ export default function ProfileRightSide({
 
         <div className="profile-stats-card">
           {acquisitions ? (
-            <span className={`${textFormat} font-semibold my-2`}>{acquisitions}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {acquisitions}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -212,11 +233,17 @@ export default function ProfileRightSide({
             <Unknown />
           )}
           <span className="font-semibold text-sm">Active products</span>
-          <img src="/profile/active_products_icon.svg" alt="icon" className="" />
+          <img
+            src="/profile/active_products_icon.svg"
+            alt="icon"
+            className=""
+          />
         </div>{" "}
         <div className="profile-stats-card">
           {patentsGranted ? (
-            <span className={`${textFormat} font-semibold my-2`}>{patentsGranted}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {patentsGranted}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -225,7 +252,9 @@ export default function ProfileRightSide({
         </div>
         <div className="profile-stats-card">
           {patentsGranted ? (
-            <span className={`${textFormat} font-semibold my-2`}>{patentsGranted}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {patentsGranted}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -233,15 +262,34 @@ export default function ProfileRightSide({
           <img src="/profile/pricing_icon.svg" alt="icon" className="" />
         </div>
         <div className="profile-stats-card ">
-          <Link href="#">
-            <button className="btn-transition  font-semibold text-sm mt-3 px-4 py-3 shadow bg-[#F5F9FF] text-[var(--dark-blue)] shadow-md rounded-md ">
+          <Link
+            target="_blank"
+            href={pricingPage || "#"}
+            className={`${!pricingPage ? "cursor-pointer" : "btn-transition"}`}
+          >
+            <button
+              disabled={!pricingPage}
+              data-tooltip-id="content-addressing"
+              data-tooltip-content={
+                pricingPage ? "" : "Information not available"
+              }
+              className={`${
+                pricingPage ? "shadow-md " : "opacity-75"
+              }  font-semibold text-sm mt-3 px-4 py-3 bg-[#F5F9FF] text-[var(--dark-blue)] rounded-md `}
+            >
               Pricing page
-            </button> 
+            </button>
           </Link>
           <img src="/profile/pricing_page_icon.svg" alt="icon" className="" />
         </div>
       </section>
-
+      <Tooltip
+        backgroundColor="#0c4b6e"
+        textColor="#fff"
+        id="content-addressing"
+        place="top"
+        className="cluster-tooltip"
+      />
       <section
         id="fifth-row"
         className="save-section profile-stats-card text-left px-4"
@@ -250,29 +298,105 @@ export default function ProfileRightSide({
           Check the content addressing:
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
-          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
-            <img src="/profile/banking_icon.svg" alt="icon" />
-            <span className="text-sm">Banking/Finance</span>
-          </button>
-          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
-            <img src="/profile/health_sector_icon.svg" alt="icon" />
-            <span className="text-sm">Health Sector</span>
-          </button>
-          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
-            <img src="/profile/government_icon.svg" alt="icon" />
-            <span className="text-sm">Government</span>
-          </button>
-          <button className="btn-transition font-semibold py-2 px-1 md:px-2 xl:px-3 shadow bg-[#F5F9FF] shadow-md rounded-md flex items-center gap-2 md:gap-3">
-            <img src="/profile/sustainability_icon.svg" alt="icon" />
-            <span className="text-sm">Sustainability</span>
-          </button>
+          <Link
+            target="_blank"
+            href={contentAddressingBanking || "#"}
+            className={`${
+              !contentAddressingBanking ? "cursor-pointer" : "btn-transition"
+            } `}
+          >
+            <button
+              disabled={!contentAddressingBanking}
+              data-tooltip-content={
+                contentAddressingBanking ? "" : "Information not available"
+              }
+              data-tooltip-id="content-addressing"
+              className={`${
+                contentAddressingBanking ? "shadow-md " : "opacity-75"
+              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+            >
+              <img src="/profile/banking_icon.svg" alt="icon" />
+              <span className="text-sm">Banking/Finance</span>
+            </button>
+          </Link>
+          <Link
+            target="_blank"
+            href={contentAddressingHealth || "#"}
+            className={`${
+              !contentAddressingHealth ? "cursor-pointer" : "btn-transition"
+            } `}
+          >
+            <button
+              disabled={!contentAddressingHealth}
+              data-tooltip-content={
+                contentAddressingHealth ? "" : "Information not available"
+              }
+              data-tooltip-id="content-addressing"
+              className={`${
+                contentAddressingHealth ? "shadow-md " : "opacity-75"
+              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+            >
+              <img src="/profile/health_sector_icon.svg" alt="icon" />
+              <span className="text-sm">Health Sector</span>
+            </button>
+          </Link>
+          <Link
+            target="_blank"
+            href={contentAddressingGovernment || "#"}
+            className={`${
+              !contentAddressingGovernment ? "cursor-pointer" : "btn-transition"
+            } `}
+          >
+            <button
+              disabled={!contentAddressingGovernment}
+              data-tooltip-content={
+                contentAddressingGovernment ? "" : "Information not available"
+              }
+              data-tooltip-id="content-addressing"
+              className={`${
+                contentAddressingGovernment ? "shadow-md " : "opacity-75"
+              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+            >
+              <img src="/profile/government_icon.svg" alt="icon" />
+              <span className="text-sm">Government</span>
+            </button>
+          </Link>
+          <Link
+            target="_blank"
+            href={contentAddressingSustainability || "#"}
+            className={`${
+              !contentAddressingSustainability
+                ? "cursor-pointer"
+                : "btn-transition"
+            } `}
+          >
+            <button
+              disabled={!contentAddressingSustainability}
+              data-tooltip-content={
+                contentAddressingSustainability
+                  ? ""
+                  : "Information not available"
+              }
+              data-tooltip-id="content-addressing"
+              className={`${
+                contentAddressingSustainability ? "shadow-md " : "opacity-75"
+              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+            >
+              <img src="/profile/sustainability_icon.svg" alt="icon" />
+              <span className="text-sm">Sustainability</span>
+            </button>
+          </Link>
         </div>
       </section>
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/known_standards_icon.svg" alt="icon" className="" />
+            <img
+              src="/profile/known_standards_icon.svg"
+              alt="icon"
+              className=""
+            />
             <span className="font-semibold text-sm">
               Known standards used/integrated
             </span>
@@ -291,7 +415,11 @@ export default function ProfileRightSide({
 
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/privacy_specific_icon.svg" alt="icon" className="" />
+            <img
+              src="/profile/privacy_specific_icon.svg"
+              alt="icon"
+              className=""
+            />
             <span className="font-semibold text-sm">
               Privacy specific features included
             </span>
@@ -339,7 +467,11 @@ export default function ProfileRightSide({
         </div>
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
-            <img src="/profile/known_non_API_icon.svg" alt="icon" className="" />
+            <img
+              src="/profile/known_non_API_icon.svg"
+              alt="icon"
+              className=""
+            />
             <span className="font-semibold text-sm">
               Known partnerships (Non-API industry)
             </span>

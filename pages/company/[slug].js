@@ -107,7 +107,7 @@ export async function getServerSideProps(context) {
   });
 
   const data = await res.json();
-  if (!data) {
+  if (data?.message === 'No company found with that name, try again') {
     return {
       notFound: true,
     };

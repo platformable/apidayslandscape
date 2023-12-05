@@ -166,7 +166,6 @@ export async function getServerSideProps(context) {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
     },
   });
-  console.log("app fetching");
 
   const data = await res.json();
   const cleanNullValues = await data.values.filter(

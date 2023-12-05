@@ -230,7 +230,7 @@ function ProfileLeftSide({ selectedCompany }) {
           Is this your tool?
         </h4>
         <Link
-          href="https://platformable.typeform.com/to/KDwe0Tbk"
+          href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
           target="_blank"
           className="bg-[#1060FF] btn-transition shadow-md px-10 py-3  uppercase rounded"
         >

@@ -747,7 +747,6 @@ export default function Homepage({ data }) {
     a.name.localeCompare(b.name)
   );
 
-  console.log("APILifecyclePlatformSecurityPureplayAndApiSecurity",APILifecyclePlatformSecurityPureplayAndApiSecurity)
 //
   const APILifecyclePlatformSecurityPureplayAndApiThreadManagement =
     data.values.filter(
@@ -831,10 +830,6 @@ export default function Homepage({ data }) {
     a.name.localeCompare(b.name)
   );
 
-  console.log(
-    "APILifecyclePlatformEmbeddedSecurityWebApplicationFirewalls",
-    APILifecyclePlatformEmbeddedSecurityWebApplicationFirewalls
-  );
 
   //
 

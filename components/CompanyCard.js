@@ -9,7 +9,7 @@ export default function CompanyCard({company,index,handleLoading}) {
 
 
    const handleImages = (url)=>{
-    if(url.includes("https://drive.google.com")){
+    if(url?.includes("https://drive.google.com")){
       return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
     }else {
       return url

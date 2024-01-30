@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Unknown from "./Unknown";
 import styles from "../styles/Profilepage.module.css";
-import { reduceMillion } from "../helpers/functions.js";
+import { reduceMillion, reduceThounsand } from "../helpers/functions.js";
 import { Tooltip } from "react-tooltip";
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
@@ -147,7 +147,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="profile-stats-card">
           {moneyRaisedAtIpo ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {moneyRaisedAtIpo}
+              {reduceMillion(moneyRaisedAtIpo)}
             </span>
           ) : (
             <Unknown />
@@ -160,7 +160,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
 
         <div className="profile-stats-card">
           {ipoValuation ? (
-            <span className="font-semiboldmy-2 ">{ipoValuation}</span>
+            <span className={`${textFormat} font-semibold my-2`}>{reduceMillion(ipoValuation)}</span>
           ) : (
             <Unknown />
           )}
@@ -171,7 +171,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="profile-stats-card">
           {acquisition ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {acquisition}
+              {acquisition.split(",").join(", ")}
             </span>
           ) : (
             <Unknown />

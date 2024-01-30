@@ -5,6 +5,7 @@ import { reduceMillion } from "../helpers/functions.js";
 import { Tooltip } from "react-tooltip";
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
+  console.log("seleceted company", selectedCompany)
   const {
     headcount,
     nonWhitePeopleInManagement,
@@ -26,6 +27,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     contentAddressingHealth,
     contentAddressingSustainability,
     pricingPage,
+    pricingModel,
     privacySpecific,
   } = selectedCompany;
 
@@ -212,9 +214,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           <img src="/profile/patents_icon.svg" alt="icon" className="" />
         </div>
         <div className="profile-stats-card">
-          {patentsGranted ? (
+          {pricingModel ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {patentsGranted}
+              {pricingModel}
             </span>
           ) : (
             <Unknown />
@@ -411,22 +413,20 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               Known partnerships (API industry)
             </span>
           </div>
-          <div className="known-partnership-logo flex flex-wrap align-items-center ">
+          <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
             {knownPartnership ? (
-              knownPartnership.split(",").map((logo, index) => {
-                return (
-                  <span className="font-semibold text-sm my-2  me-1">
-                    {logo},
-                  </span>
-                );
-              })
+                 (
+                  <p className="font-semibold text-sm my-2 whitespace-pre-wrap">
+                    {knownPartnership.split(',').join(", ")}
+                  </p>
+              )
             ) : (
               <Unknown />
             )}
           </div>{" "}
           {/* known-partnership-logo */}
         </div>
-        <div className="bg-white border-2 border-[var(--orange)] rounded-[10px] p-4 flex flex-col gap-4 items-start shadow-lg">
+        <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_non_API_icon.svg"
@@ -439,11 +439,10 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>
           <div className={`${textFormat} flex gap-x-2 flex-wrap`}>
             {knownPartnershipNonAPI ? (
-              knownPartnershipNonAPI.split(",").map((partner, index) => {
-                return (
-                    <img  src={partner} className="partnertship-logo  img-fluid me-1" width={28} height={28}/>
-                );
-              })
+              
+                <span className="font-semibold text-sm my-2  me-1">
+                    {knownPartnershipNonAPI.split(",").join(", ")}
+                  </span>
             ) : (
               <Unknown />
             )}

@@ -5,30 +5,28 @@ import { reduceMillion } from "../helpers/functions.js";
 import { Tooltip } from "react-tooltip";
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
-  console.log("selected company", selectedCompany)
   const {
     headcount,
     nonWhitePeopleInManagement,
     womanInManagement,
     activeProducts,
     patentsGranted,
-    acquisitions,
+    acquisition,
     stage,
     totalFunding,
     lastFunding,
-    ipoDate,
     moneyRaisedAtIpo,
-    valuationAtIpo,
+    ipoDate,
+    ipoValuation,
+    knownPartnership,
     knownPartnershipNonAPI,
-    knownStandardsUsed,
+    knownStandardsUsed ,
     contentAddressingBanking,
     contentAddressingGovernment,
     contentAddressingHealth,
     contentAddressingSustainability,
     pricingPage,
-    knownPartnership,
     privacySpecific,
-  
   } = selectedCompany;
 
   const textFormat = "text-[#243672] text-lg";
@@ -159,8 +157,8 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {valuationAtIpo ? (
-            <span className="font-semiboldmy-2 ">{valuationAtIpo}</span>
+          {ipoValuation ? (
+            <span className="font-semiboldmy-2 ">{ipoValuation}</span>
           ) : (
             <Unknown />
           )}
@@ -169,9 +167,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {acquisitions ? (
+          {acquisition ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {acquisitions}
+              {acquisition}
             </span>
           ) : (
             <Unknown />
@@ -190,8 +188,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="profile-stats-card">
           {activeProducts ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {activeProducts
-}
+              {activeProducts}
             </span>
           ) : (
             <Unknown />
@@ -367,9 +364,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <span className="font-semibold text-center md-text">
-            {knownStandardsUsed ? (
+            {knownStandardsUsed  ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownStandardsUsed}
+                {knownStandardsUsed }
               </span>
             ) : (
               <Unknown />
@@ -414,13 +411,13 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               Known partnerships (API industry)
             </span>
           </div>
-          <div className="known-partnership-logo d-flex flex-wrap align-items-center ">
+          <div className="known-partnership-logo flex flex-wrap align-items-center ">
             {knownPartnership ? (
               knownPartnership.split(",").map((logo, index) => {
                 return (
-                  <div className="partnertship-logo">
-                    <img src={logo} className="img-fluid me-1" />
-                  </div>
+                  <span className="font-semibold text-sm my-2  me-1">
+                    {logo},
+                  </span>
                 );
               })
             ) : (
@@ -429,7 +426,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* known-partnership-logo */}
         </div>
-        <div className="profile-stats-card">
+        <div className="bg-white border-2 border-[var(--orange)] rounded-[10px] p-4 flex flex-col gap-4 items-start shadow-lg">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_non_API_icon.svg"
@@ -440,15 +437,11 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               Known partnerships (Non-API industry)
             </span>
           </div>
-          <div className={`${textFormat}`}>
+          <div className={`${textFormat} flex gap-x-2 flex-wrap`}>
             {knownPartnershipNonAPI ? (
               knownPartnershipNonAPI.split(",").map((partner, index) => {
                 return (
-                  <>
-                    <span className="font-semibold text-sm my-2  me-1">
-                      {partner}
-                    </span>
-                  </>
+                    <img  src={partner} className="partnertship-logo  img-fluid me-1" width={28} height={28}/>
                 );
               })
             ) : (

@@ -5,67 +5,30 @@ import { reduceMillion } from "../helpers/functions.js";
 import { Tooltip } from "react-tooltip";
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
+  console.log("selected company", selectedCompany)
   const {
-    name,
-    logo,
-    url,
-    description,
-    category,
-    subcategory,
-    yearFounded,
-    founderNames,
-    headquartersCountry,
-    headquartersCity,
-    crunchbase,
-    linkedin,
-    github,
-    twitter,
-    developerPortal,
-    estimatedRevenueRange,
-    numbersOfCustomers,
     headcount,
     nonWhitePeopleInManagement,
     womanInManagement,
-    numberOfPositionsVacantInPastYear,
-    totalNumberOfNewProducFeaturesInLastYear,
-    totalProductsActive,
+    activeProducts,
     patentsGranted,
     acquisitions,
-    activeTechCount,
-    itSpend,
-    acquiredBy,
-    privacyBreaches,
-    top5Investors,
     stage,
     totalFunding,
-    lastFundingDate,
-    numberLeadOfLeadInvestors,
-    numberOfInvestors,
-    acquisitionPrice,
-    acquisitionType,
+    lastFunding,
     ipoDate,
     moneyRaisedAtIpo,
     valuationAtIpo,
-    industryGroups,
-    knownPartnershipsNonApi,
-    knownPartnershipsApi,
+    knownPartnershipNonAPI,
     knownStandardsUsed,
-    apidays2018,
-    apidays2019,
-    apidays2020,
-    apidays2021,
     contentAddressingBanking,
     contentAddressingGovernment,
     contentAddressingHealth,
     contentAddressingSustainability,
     pricingPage,
-    logoApiIndustry,
-    privacySpecificFeaturesIncluded,
-    blogQ12021,
-    blogQ22021,
-    blogQ32021,
-    blogQ42021,
-    openSource,
+    knownPartnership,
+    privacySpecific,
+  
   } = selectedCompany;
 
   const textFormat = "text-[#243672] text-lg";
@@ -152,9 +115,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {lastFundingDate ? (
+          {lastFunding ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {lastFundingDate}
+              {lastFunding}
             </span>
           ) : (
             <Unknown />
@@ -225,9 +188,10 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         className="save-section profile-row profile-row-4"
       >
         <div className="profile-stats-card">
-          {totalProductsActive ? (
+          {activeProducts ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {totalProductsActive}
+              {activeProducts
+}
             </span>
           ) : (
             <Unknown />
@@ -425,9 +389,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          {privacySpecificFeaturesIncluded ? (
+          {privacySpecific ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {privacySpecificFeaturesIncluded}
+              {privacySpecific}
             </span>
           ) : (
             <Unknown />
@@ -451,8 +415,8 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>
           <div className="known-partnership-logo d-flex flex-wrap align-items-center ">
-            {logoApiIndustry ? (
-              logoApiIndustry.split(",").map((logo, index) => {
+            {knownPartnership ? (
+              knownPartnership.split(",").map((logo, index) => {
                 return (
                   <div className="partnertship-logo">
                     <img src={logo} className="img-fluid me-1" />
@@ -477,8 +441,8 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>
           <div className={`${textFormat}`}>
-            {knownPartnershipsNonApi ? (
-              knownPartnershipsNonApi.split(",").map((partner, index) => {
+            {knownPartnershipNonAPI ? (
+              knownPartnershipNonAPI.split(",").map((partner, index) => {
                 return (
                   <>
                     <span className="font-semibold text-sm my-2  me-1">

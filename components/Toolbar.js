@@ -47,7 +47,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 font-semibold">
         <button
           className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
-          onClick={() => handleForm("https://airtable.com/shr07pWSbRnQfnZZd")}
+          onClick={() => handleForm("https://airtable.com/appObH1ILShMbYp30/pagMQR4dALkHUDMBS/form")}
         >
           Add your API Tool
         </button>

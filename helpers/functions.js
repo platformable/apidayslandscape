@@ -15,7 +15,7 @@ export const reduceMillion=(total)=>{
     let result
     if(total.length>=7){
 
-     result= `${total / 1000000}M`
+     result= `${(total / 1000000).toFixed(2)}M`
 
     }
  

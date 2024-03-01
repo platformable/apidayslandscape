@@ -161,7 +161,7 @@ export default function Homepage({ data }) {
     </Layout>
   );
 }
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
     method: "GET",
     headers: {
@@ -182,5 +182,6 @@ export async function getServerSideProps(context) {
 
   return {
     props: { data: { values: cleanNullValues } },
+    revalidate:60
   };
 }

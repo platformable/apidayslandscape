@@ -278,7 +278,7 @@ export default function companiesCards({ data }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
     method: "GET",
     headers: {
@@ -299,5 +299,6 @@ export async function getServerSideProps(context) {
 
   return {
     props: { data: { values: cleanNullValues.sort((a, b) => a.name.localeCompare(b.name)) } },
+    revalidate:60
   };
 }

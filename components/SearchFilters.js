@@ -1,20 +1,135 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+const initialStateForFilters = 'All'
 
 export default function SearchFilters({
   categories,
-  subcategoryList,
   clusters,
-  total,
+  data,
   handleSorted,
-  setSelectedCategory,
-  setSelectedSubcategory,
-  setSelectedCluster,
-  selectedCluster,
+  setLiveData,
   handleCompanyName,
   sorted,
   subcategories,
+  setLoader,
   datalength
 }) {
+  const [selectedCategory, setSelectedCategory] = useState(initialStateForFilters);
+  const [selectedCluster, setSelectedCluster] = useState(initialStateForFilters);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(initialStateForFilters);
+
+
+
+  useEffect(() => {
+    
+    handleFilter();
+
+    setTimeout(function () {
+      setLoader(false);
+    }, 1000);
+  }, [selectedCategory, selectedSubcategory, selectedCluster]);
+  const handleFilter = () => {
+    // if (company.searchInput !== "") {
+    //   handleCompanyName(company.searchInput);
+    // }
+
+    if (
+      selectedCluster === "All" &&
+      selectedSubcategory === "All" &&
+      selectedCategory === "All"
+    ) {
+      setLiveData(data.values);
+      // setSubcategoryList(subcategories);
+    }
+
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory === "All"
+    ) {
+
+      const result = data.values.filter((company, index) =>
+        company.cluster?.includes(selectedCluster)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+    if (
+      selectedCluster == "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+
+      const result = data.values.filter((company, index) =>
+        company.category?.includes(selectedCategory)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+    if (
+      selectedCluster == "All" &&
+      selectedCategory === "All" &&
+      selectedSubcategory !== "All"
+    ) {
+      
+      const result = data.values.filter((company, index) =>
+        company.subcategory?.includes(selectedSubcategory)
+      );
+      setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory === "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory)
+      );
+
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster and category relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+
+    if (
+      selectedCluster !== "All" &&
+      selectedCategory !== "All" &&
+      selectedSubcategory !== "All"
+    ) {
+      
+      const result = data.values.filter(
+        (company, index) =>
+          company.cluster?.includes(selectedCluster) &&
+          company.category.includes(selectedCategory) &&
+          company.subcategory.includes(selectedSubcategory) 
+
+      );
+
+      result.length === 0
+        ? setLiveData({
+            message: "No data with that cluster, category or subcategory relation",
+          })
+        : setLiveData(result);
+      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
+      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
+    }
+
+
+  };
   return (
     <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
       <div className="container mx-auto">
@@ -22,7 +137,7 @@ export default function SearchFilters({
           <div className="clusters flex-1 ">
             <select
               className="bg-white px-2 py-3 w-full rounded-lg mb-2"
-              ariaLabel="Default select example"
+              aria-label="Default select example"
               onChange={(e) => setSelectedCluster(e.target.value)}
             >
               <option selected disabled>
@@ -44,7 +159,7 @@ export default function SearchFilters({
           <div className="categories flex-1">
             <select
               className="bg-white px-2 py-3 w-full rounded-lg mb-2"
-              ariaLabel="Default select example"
+              aria-label="Default select example"
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option selected disabled>
@@ -53,10 +168,10 @@ export default function SearchFilters({
               <option value="All">All</option>
 
               {categories
-                ? categories.map((category, index) => {
+                ? categories.filter(category => selectedCluster !== 'All' ? category.cluster === selectedCluster : true).map((category, index) => {
                     return (
-                      <option value={category} key={index}>
-                        {category}
+                      <option value={category?.label} key={index}>
+                        {category?.label}
                       </option>
                     );
                   })
@@ -73,10 +188,10 @@ export default function SearchFilters({
               </option>
               <option value="All">All</option>
               {subcategories
-                ? subcategories.map((subcategory, index) => {
+                ? subcategories.filter(subcategory =>  selectedCategory !== 'All' ? subcategory.category === selectedCategory : true).map((subcategory, index) => {
                     return (
-                      <option value={subcategory} key={index}>
-                        {subcategory}
+                      <option value={subcategory.label} key={index}>
+                        {subcategory.label}
                       </option>
                     );
                   })
@@ -94,7 +209,7 @@ export default function SearchFilters({
                     </button>
                     </div> */}
 
-            <div class="relative">
+            <div className="relative">
               <input
                 type="search"
                 onChange={(e) => handleCompanyName(e.target.value)}

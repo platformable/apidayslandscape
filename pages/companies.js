@@ -14,8 +14,6 @@ export default function companiesCards({ data }) {
 
   const [company, setCompany] = useContext(CompanyContext);
 
-  /*   console.log("data",data) */
-
 
 
   const [loading, setLoading] = useState(false);
@@ -24,12 +22,8 @@ export default function companiesCards({ data }) {
   const [noData, setNoData] = useState(true);
 
   const [liveData, setLiveData] = useState(data.values);
-  const [categoriesList, setCategoriesList] = useState([]);
   const [sorted, setSorted] = useState(true);
-  const [subcategoryList, setSubcategoryList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedCluster, setSelectedCluster] = useState("All");
-  const [selectedSubcategory, setSelectedSubcategory] = useState("All");
+
 
 
   TopBarProgress.config({
@@ -66,157 +60,42 @@ export default function companiesCards({ data }) {
 
 
 
-  const handleFilter = () => {
-    if (company.searchInput !== "") {
-      handleCompanyName(company.searchInput);
-    }
 
-    if (
-      selectedCluster === "All" &&
-      selectedSubcategory === "All" &&
-      selectedCategory === "All"
-    ) {
-      setLiveData(data.values);
-      setSubcategoryList(subcategories);
-    }
-
-    if (
-      selectedCluster !== "All" &&
-      selectedCategory === "All" &&
-      selectedSubcategory === "All"
-    ) {
-      const result = data.values.filter((company, index) =>
-        company.cluster?.includes(selectedCluster)
-      );
-      setLiveData(result);
-      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-    }
-
-    if (
-      selectedCluster == "All" &&
-      selectedCategory !== "All" &&
-      selectedSubcategory === "All"
-    ) {
-      const result = data.values.filter((company, index) =>
-        company.category?.includes(selectedCategory)
-      );
-      setLiveData(result);
-      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-    }
-
-    if (
-      selectedCluster == "All" &&
-      selectedCategory === "All" &&
-      selectedSubcategory !== "All"
-    ) {
-      
-      const result = data.values.filter((company, index) =>
-        company.subcategory?.includes(selectedSubcategory)
-      );
-      setLiveData(result);
-      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-    }
-
-    if (
-      selectedCluster !== "All" &&
-      selectedCategory !== "All" &&
-      selectedSubcategory === "All"
-    ) {
-      
-      const result = data.values.filter(
-        (company, index) =>
-          company.cluster?.includes(selectedCluster) &&
-          company.category.includes(selectedCategory)
-      );
-
-      result.length === 0
-        ? setLiveData({
-            message: "No data with that cluster and category relation",
-          })
-        : setLiveData(result);
-      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-    }
-
-
-    if (
-      selectedCluster !== "All" &&
-      selectedCategory !== "All" &&
-      selectedSubcategory !== "All"
-    ) {
-      
-      const result = data.values.filter(
-        (company, index) =>
-          company.cluster?.includes(selectedCluster) &&
-          company.category.includes(selectedCategory) &&
-          company.subcategory.includes(selectedSubcategory) 
-
-      );
-
-      result.length === 0
-        ? setLiveData({
-            message: "No data with that cluster, category or subcategory relation",
-          })
-        : setLiveData(result);
-      //  setCategoriesList(subcatgeoriesOfSelectedCategory);
-      //  setSubcategoryList(subcatgeoriesOfSelectedCategory[0]?.subcategorxies);
-    }
-
-
-  };
 
   const handleLoading = () => {
     setLoading(!loading);
   };
 
+
  
-/*   useEffect(() => {
-       
-
-      }, [sorted]); */
-
-
-  useEffect(() => {
-    
-    handleFilter();
-
-    setTimeout(function () {
-      setLoader(false);
-    }, 1000);
-  }, [selectedCategory, selectedSubcategory, selectedCluster]);
 
   const clusters = Object.keys(newModel);
-
   const categories = Object.entries(newModel)
-    .map(([clusters, values], index) => {
+    .map(([cluster, values], index) => {
       const allCategories = [];
       const data = Object.entries(values.categories).map(
         ([category, value], i) => {
-          return allCategories.push(category);
+          return allCategories.push({label: category, cluster });
         }
       );
       return allCategories;
     })
     .flat();
 
-  const subcategories = Object.entries(newModel)
-    .map(([clusters, values], index) => {
-      return Object.entries(values.categories)
-        .map(([category, value], i) => {
-          return Object.entries(value.subcategories)
-            .map(([sub, v], ind) => {
-              return v.name;
-            })
-            .flat();
-        })
-        .flat();
+    const subcategories = Object.entries(newModel)
+    .map(([cluster, values], index) => {
+      const allSubcategories = [];
+      // console.log("make subcategories", cluster, values)
+      const data = Object.entries(values.categories).map(
+        ([category, value], i) => {
+          value?.subcategories.forEach(subcat => allSubcategories.push({label: subcat.name, category }))
+        }
+      );
+      return allSubcategories;
     })
     .flat();
 
-
+ 
   return (
     <Layout>
       <Head>
@@ -226,16 +105,13 @@ export default function companiesCards({ data }) {
       {loading && <TopBarProgress />}
       <SearchFilters
         categories={categories}
-        subcategoryList={subcategories}
         clusters={clusters}
-        // total={total}
+        data={data}
+        setLiveData={setLiveData}
+        setLoader={setLoader}
         handleSorted={handleSorted}
-        setSelectedCategory={setSelectedCategory}
-        setSelectedSubcategory={setSelectedSubcategory}
         handleCompanyName={handleCompanyName}
         sorted={sorted}
-        selectedCluster={selectedCluster}
-        setSelectedCluster={setSelectedCluster}
         subcategories={subcategories}
         datalength={liveData.length}
       />

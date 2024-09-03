@@ -54,6 +54,11 @@ export const newModel = {
         color: "",
       },
       {
+        name: 'API consumption management',
+        description: "A tool that takes an API call, routes it to defined services, collects the response and delivers the results ",
+        color: "",
+      },
+      {
         name: 'API management solutions',
         description: "Tools that enable a comprehensive range of tasks involved in managing APIs for an organisation including security, access, usage, and monetisation",
         color: "",

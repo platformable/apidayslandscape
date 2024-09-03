@@ -74,7 +74,7 @@ export default function SubcategoryContainer({
                     {row.logo === "" || row.logo === null ? (
                       <img
                         src={`/apidaysReplacementLogo.png`}
-                        srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
+                        //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
                         alt=""
                         className=""
                         width={34.4}

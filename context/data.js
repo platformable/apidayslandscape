@@ -272,7 +272,7 @@ export const newModel = {
       color: "",
       subcategories: [
         {
-          name: 'Event architeture',
+          name: 'Event architecture',
           description: "IT infrastructure focused on enabling an events-based approach to operate",
           color: "",
         },

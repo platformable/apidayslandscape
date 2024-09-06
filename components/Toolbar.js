@@ -65,8 +65,8 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </button>
         <a
           className="rounded bg-[var(--orange)] text-white self-start h-14 shadow-md uppercase flex items-center justify-center btn-transition"
-          href="/API_Landscape_2023.png"
-          download="apilandscape2023.png"
+          href="/API_Landscape_2024.png"
+          download="apilandscape2024.png"
           target="_blank"
         >
           Download the map

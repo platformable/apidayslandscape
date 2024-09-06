@@ -37,7 +37,7 @@ function ProfileLeftSide({ selectedCompany }) {
       {/* company name */}
       <div className="company-logo flex justify-center items-center my-5">
         <a href={url} target="_blank">
-          {logo === "" || null ? (
+          {!logo || logo === "" || null ? (
            <img
            src={`/landscape_logo.svg`}
            alt=""

@@ -54,6 +54,11 @@ export const newModel = {
         color: "",
       },
       {
+        name: 'API consumption management',
+        description: "A tool that takes an API call, routes it to defined services, collects the response and delivers the results ",
+        color: "",
+      },
+      {
         name: 'API management solutions',
         description: "Tools that enable a comprehensive range of tasks involved in managing APIs for an organisation including security, access, usage, and monetisation",
         color: "",
@@ -267,7 +272,7 @@ export const newModel = {
       color: "",
       subcategories: [
         {
-          name: 'Event architeture',
+          name: 'Event architecture',
           description: "IT infrastructure focused on enabling an events-based approach to operate",
           color: "",
         },
@@ -557,7 +562,7 @@ export const newModel = {
     }
   },
   "API Consumption": {
-    description: "API products built to expose a specific functionality or dataset to enable use programmatically in apps, websites, workflows, AI systems, and so on",
+    description: "Tools that help manage consumption of third party APIs",
     color: '',
     categories: {
      "Aggregators/Integration Platforms": {

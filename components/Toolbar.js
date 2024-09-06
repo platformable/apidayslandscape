@@ -107,7 +107,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
           </div>
 
           <p className="text-white text-[12px] mt-2 font-bold">
-            Last Update:{" "}
+            Last Update: {" "}
             {new Date().toLocaleDateString("en-US", {
               day: "numeric",
               month: "long",

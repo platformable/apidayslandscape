@@ -86,8 +86,8 @@ export default function CompanyDetailsName({ data }) {
         </Head>
 
 
-      <div className="container mx-auto shadow-r-md">
-       <div className="grid lg:grid-cols-[1fr_2fr]  max-md:pt-6 gap-10">
+      <div className="container mx-auto shadow-r-md bg-[#E1F6F8]">
+       <div className="grid lg:grid-cols-[1fr_2fr]  pt-6 gap-10">
         <ProfileLeftSide selectedCompany={data} />
 
         <ProfileRightSide selectedCompany={data}  handleScore={handleScore}/>

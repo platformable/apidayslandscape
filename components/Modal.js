@@ -36,8 +36,6 @@ export default function Modal({ selectedEntity, setLoading, showModal, setShowMo
     <CompanyCardModal
       company={selectedEntity}
       data-bs-dismiss="modal"
-      handleRoute={handleRoute}
-      selectedEntity={selectedEntity}
     />
   </div>
  

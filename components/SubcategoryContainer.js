@@ -31,7 +31,7 @@ export default function SubcategoryContainer({
   return (
     <div
       id="subcategory"
-      className="bg-white flex-grow  px-4  py-2"
+      className="bg-white flex-grow rounded-md px-4  py-2"
       key={index}
     >
       {/* {data <= 0 && <Loader />} */}

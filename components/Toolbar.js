@@ -64,7 +64,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
           Zoom
         </button>
         <a
-          className="rounded bg-[var(--orange)] text-white self-start h-14 shadow-md uppercase flex items-center justify-center btn-transition"
+          className="rounded bg-[var(--main-green)] text-white self-start h-14 shadow-md uppercase flex items-center justify-center btn-transition"
           href="/API_Landscape_2023.png"
           download="apilandscape2023.png"
           target="_blank"
@@ -74,7 +74,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
        
         {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
         <button
-          className=" m-0 bg-[var(--orange)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
+          className=" m-0 bg-[var(--main-green)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
           target="_blank"
           onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")}
         >
@@ -82,7 +82,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </button>
         <div>
           <div className="flex gap-x-2">
-            <button className=" bg-white text-black shadow hidden md:block px-4 rounded font-bold h-14 text-xl">
+            <button className=" bg-white text-[var(--main-blue)] border-2 border-[var(--main-blue)] shadow hidden md:block px-4 rounded font-bold h-14 text-xl">
               {totalValues.length}
             </button>{" "}
             <LinkedinShareButton
@@ -92,7 +92,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
               summary="The API Landscape"
               
             >
-              <LinkedinIcon size={60} round={true} bgStyle={{fill:"#1060FF"}} />
+              <LinkedinIcon size={60} round={true} bgStyle={{fill:"var(--main-blue)"}} />
             </LinkedinShareButton>
             <EmailShareButton
               url=""
@@ -102,11 +102,11 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
               body="Get to know more about the API Landscape, visit https://www.apilandscape.apiscene.io"
               
             >
-              <EmailIcon size={60} round={true} bgStyle={{fill:"#1060FF"}}/>
+              <EmailIcon size={60} round={true} bgStyle={{fill:"var(--main-blue)"}}/>
             </EmailShareButton>
           </div>
 
-          <p className="text-white text-[12px] mt-2 font-bold">
+          <p className="text-[var(--main-blue)] text-[12px] mt-2 font-bold">
             Last Update:{" "}
             {new Date().toLocaleDateString("en-US", {
               day: "numeric",

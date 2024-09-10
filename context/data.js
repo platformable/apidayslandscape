@@ -123,7 +123,7 @@ export const newModel = {
      },
      "Security Adjacent": {
       description: "Tooling that has multiple purposes in the API Lifecycle but that can be used to enhance security management",
-      color: "bg-section-security",
+      color: "",
       subcategories: [
         {
           name: 'API Analytics/Monitoring',
@@ -158,7 +158,7 @@ export const newModel = {
      },
      "Security Embedded": {
       description: "Tooling to enhance security, often added as features or additional elements to other products",
-      color: "bg-section-security",
+      color: "",
       subcategories: [
       {
         name: 'Vulnerability identification/scanners',
@@ -174,7 +174,7 @@ export const newModel = {
      },
       "Security Pureplay": {
       description: "Products and services designed to address API security risks and vulnerabilities",
-      color: "bg-section-security",
+      color: "",
       subcategories: [
         {
           name: 'API Discovery & Risk management',

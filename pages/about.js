@@ -24,7 +24,7 @@ export default function about() {
     return (
         <Layout>
              <Head>
-                <title>apidays landscape</title>
+                <title>About - APIdays Landscape</title>
                 <meta name="description" content="apidays landscape" />
             </Head>
             <Hero />

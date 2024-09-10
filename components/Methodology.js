@@ -10,8 +10,8 @@ export default function Methodology() {
   return (
     <>
   
-          <section className="py-20 lg:py-24 2xl:py-32 bg-[var(--dark-blue)] ">
-            <div className="max-w-screen-lg mx-auto">
+          <section className="px-2 md:px-6 lg:px-10 py-20 lg:py-24 2xl:py-32 bg-[#E1F6F8]">
+            <div className="max-w-screen-lg  mx-auto">
               {/* <h3 className="text-center fw-bold my-5 text-white">
                 See something you want to change?
               </h3> */}
@@ -22,7 +22,7 @@ export default function Methodology() {
                 }>
                   <div className="flex justify-center ">
                     <img
-                      src="/add_API_icon.svg"
+                      src="/add_API_icon2.svg"
                       alt=""
                       className="w-[80px] h-[80px]"
                     />
@@ -43,7 +43,7 @@ export default function Methodology() {
                 }>
                     <div className="flex justify-center">
                       <img
-                        src="/report_bug_icon.svg"
+                        src="/report_bug_icon2.svg"
                         alt=""
                         className="w-[80px] h-[80px]"
                       />
@@ -70,7 +70,7 @@ export default function Methodology() {
                 >
                     <div className="flex justify-center">
                       <img
-                        src="/new_feature_icon.svg"
+                        src="/new_feature_icon2.svg"
                         alt=""
                         className="w-[80px] h-[80px]"
                       />

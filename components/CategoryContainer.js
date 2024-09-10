@@ -4,15 +4,15 @@ export default function CategoryContainer({
   index,
   children,
 }) {
-  const sectionColor = values.color ? `${values.color}` : "bg-[#E6EFFF]";
+  const sectionColor = values.color ? `${values.color}` : "bg-[var(--main-green)]";
   return (
     <div
       id="categorie"
-      className={`px-5 py-4 flex-grow ${sectionColor} border-2 border-[var(--orange)] rounded-md`}
+      className={`px-5 py-4 flex-grow ${sectionColor} rounded-md`}
       key={index}
     >
       <header className="flex gap-3">
-        <h3 className="mb-4 font-bold text-[#083ECB] block text-left">
+        <h3 className="mb-4 font-bold text-white block text-left">
           {categorieName}
         </h3>
         <div

@@ -38,14 +38,14 @@ export default function CompanyCard({company,index,handleLoading}) {
             {company.logo === "" || null ? (
               <img
                 src={`/landscape_logo.svg`}
-                alt=""
+                alt="Landscape default company logo"
                 className='object-cover object-center'
                 
               />
             ) : (
               <img
                 srcSet={`${handleImages(company.logo)} 2x`}
-                alt=""
+                alt="Landscape company logo"
                 className='object-contain object-center w-full h-full'
                 
               />
@@ -55,7 +55,7 @@ export default function CompanyCard({company,index,handleLoading}) {
 
           <div className={`${foundedRows} mt-5`}>
             <div>
-              <img src="/founded_icon.svg" alt="" className="" />
+              <img src="/founded_icon.svg" alt="founded icon" className="" />
             </div>
               <p className="md-text m-0 p-0 text-[#083ECB]">Founded</p>
               <p className="font-bold  m-0 p-0 text-[#243672]">
@@ -65,7 +65,7 @@ export default function CompanyCard({company,index,handleLoading}) {
 
           <div className={`${foundedRows} mt-3`}>
             <div>
-              <img src="/headquarter_icon.svg" alt="" className="" />
+              <img src="/headquarter_icon.svg" alt="Headquarter icon" className="" />
             </div>
             <div>
               {" "}
@@ -74,7 +74,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             {company.headquartersCountry && (
               <img
                 src={`https://flagsapi.com/${company.headquartersCountry}/flat/64.png`}
-                alt=""
+                alt="flag icon"
                 className="w-7"
               />
             )}
@@ -98,7 +98,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           <span className="text-[#083ECB]">Headcount</span>
           <img
             src="/headcount_icon.svg"
-            alt=""
+            alt="Headcount icon"
             className="sd-icon mt-auto"
           />
         </div>
@@ -111,7 +111,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           <span className="text-[#083ECB] text-center">Total Funding</span>
           <img
             src="/total funding_icon.svg"
-            alt=""
+            alt="Total funding icon"
             className="md-icon mt-auto"
           />
         </div>
@@ -126,7 +126,7 @@ export default function CompanyCard({company,index,handleLoading}) {
           <span className="text-[#083ECB] text-center">Active products</span>
           <img
             src="/active products_icon.svg"
-            alt=""
+            alt="Active products icon"
             className="xd-icon mt-auto "
           />
         </div>

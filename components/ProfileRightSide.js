@@ -5,7 +5,6 @@ import { reduceMillion, reduceThounsand } from "../helpers/functions.js";
 import { Tooltip } from "react-tooltip";
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
-  console.log("seleceted company", selectedCompany)
   const {
     headcount,
     nonWhitePeopleInManagement,
@@ -31,10 +30,10 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     privacySpecific,
   } = selectedCompany;
 
-  const textFormat = "text-[#243672] text-lg";
+  const textFormat = "text-black text-lg";
 
   return (
-    <div className="profile-right-side grid gap-y-5 text-[var(--dark-blue)] my-5">
+    <div className="profile-right-side grid gap-y-5 text-[var(--main-blue)] my-5">
       <section
         id="first-row"
         className="save-section profile-row profile-row-4"
@@ -238,7 +237,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               }
               className={`${
                 pricingPage ? "shadow-md " : "opacity-75"
-              }  font-semibold text-sm mt-3 px-4 py-3 bg-[#F5F9FF] text-[var(--dark-blue)] rounded-md `}
+              }  font-semibold text-sm mt-3 px-4 py-3 bg-[#F0F4EC] text-[var(--main-blue)] rounded-md `}
             >
               Pricing page
             </button>
@@ -276,7 +275,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               data-tooltip-id="content-addressing"
               className={`${
                 contentAddressingBanking ? "shadow-md " : "opacity-75"
-              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+              } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/banking_icon.svg" alt="icon" />
               <span className="text-sm">Banking/Finance</span>
@@ -297,7 +296,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               data-tooltip-id="content-addressing"
               className={`${
                 contentAddressingHealth ? "shadow-md " : "opacity-75"
-              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+              } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/health_sector_icon.svg" alt="icon" />
               <span className="text-sm">Health Sector</span>
@@ -318,7 +317,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               data-tooltip-id="content-addressing"
               className={`${
                 contentAddressingGovernment ? "shadow-md " : "opacity-75"
-              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+              } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/government_icon.svg" alt="icon" />
               <span className="text-sm">Government</span>
@@ -343,7 +342,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               data-tooltip-id="content-addressing"
               className={`${
                 contentAddressingSustainability ? "shadow-md " : "opacity-75"
-              } text-[var(--blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F5F9FF] rounded-md flex items-center gap-2 md:gap-3`}
+              } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/sustainability_icon.svg" alt="icon" />
               <span className="text-sm">Sustainability</span>
@@ -353,6 +352,29 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
       </section>
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
+      <div className="profile-stats-card">
+          <div className="flex gap-3 items-center w-full">
+            <img
+              src="/profile/known_protocols_icon.svg"
+              alt="icon"
+              className=""
+            />
+            <span className="font-semibold text-sm">
+              Known protocols/specifications used
+            </span>
+          </div>{" "}
+          {/* features-top */}
+          <span className="font-semibold text-center md-text">
+            {knownStandardsUsed  ? (
+              <span className={`${textFormat} font-semibold text-sm p-3`}>
+                {knownStandardsUsed }
+              </span>
+            ) : (
+              <Unknown />
+            )}
+          </span>
+        </div>
+
         <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
             <img
@@ -376,7 +398,11 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </span>
         </div>
 
-        <div className="profile-stats-card">
+       
+      </section>
+      <section id="sixt-row" className="save-section profile-row profile-row-2">
+            
+      <div className="profile-stats-card">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/privacy_specific_icon.svg"
@@ -396,8 +422,28 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             <Unknown />
           )}
         </div>
-      </section>
 
+        <div className="profile-stats-card">
+          <div className="flex gap-3 items-center w-full">
+            <img
+              src="/profile/AI_features_icon.svg"
+              alt="icon"
+              className=""
+            />
+            <span className="font-semibold text-sm">
+              Includes AI features?
+            </span>
+          </div>{" "}
+          {/* features-top */}
+          {privacySpecific ? (
+            <span className={`${textFormat} font-semibold text-sm p-3`}>
+              {privacySpecific}
+            </span>
+          ) : (
+            <Unknown />
+          )}
+        </div>
+      </section>
       <section
         id="seventh-row"
         className="save-section profile-row profile-row-2"

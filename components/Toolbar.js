@@ -10,6 +10,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from "react-share";
+import APISCounter from "./APISCounter";
 export default function Toolbar({ setLoading, setWithZoom, data }) {
   const totalValues = data.values.filter(
     (items) =>
@@ -82,9 +83,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </button>
         <div>
           <div className="flex gap-x-2">
-            <button className=" bg-white text-[var(--main-blue)] border-2 border-[var(--main-blue)] shadow hidden md:block px-4 rounded font-bold h-14 text-xl">
-              {totalValues.length}
-            </button>{" "}
+            <APISCounter count={totalValues?.length}/>
             <LinkedinShareButton
               url="apilandscape.apiscene.io"
               title="The API Landscape"

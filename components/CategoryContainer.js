@@ -16,7 +16,7 @@ export default function CategoryContainer({
           {categorieName}
         </h3>
         <div
-          className="cursor-pointer bg-blue-500 rounded-full text-sm text-white w-5 h-5 grid place-content-center"
+          className="cursor-pointer bg-[var(--tooltip-bg)] rounded-full text-sm  w-5 h-5 grid place-content-center"
           data-tooltip-content={
             values.description || "No description provided"
           }

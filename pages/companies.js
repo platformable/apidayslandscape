@@ -122,10 +122,9 @@ export default function companiesCards({ data }) {
         </div>
       )}
 
-      <section className="cards ">
-        <div className="container mx-auto">
-        {liveData.message ? <p className="font-bold text-center bg-blue-50 rounded-lg px-2 py-1">{liveData.message}</p> : ""}
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 rounded md:px-0 px-5 my-10">
+      <section id="cards" className="container mx-auto py-10"> 
+        {liveData.message ? <p className="font-bold text-center bg-[#E1F6F8] rounded-lg px-2 py-1">{liveData.message}</p> : ""}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded md:px-0 px-5 ">
            
             {liveData.length > 0 ? (
               liveData?.map((company, index) => {
@@ -148,7 +147,6 @@ export default function companiesCards({ data }) {
 
             {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
           </div>
-        </div>
       </section>
     </Layout>
   );

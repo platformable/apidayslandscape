@@ -75,6 +75,8 @@ max-width: 209px;
 --dark-purple:#5a0c78;
 --extralight-purple: #EDE5FF;
 --bg-extra-light: #F5F9FF;
+
+--tooltip-bg: #4FDAE0;
 }
 
 .bg-section-security {

@@ -41,10 +41,10 @@ export default function Header() {
           </svg>
         </button>
         <div
-          className={`${displayNav ? "" : "hidden"} w-full md:block md:w-auto`}
+          className={`${displayNav ? "" : "hidden"} w-full md:block md:w-auto md:pt-4 xl:pt-0`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col  md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white text-nav ">
+          <ul className="font-medium flex flex-col rounded-lg  md:flex-row md:space-x-14  rtl:space-x-reverse md:border-0 md:bg-white text-nav ">
             <li>
               <Link
                 href="/about"

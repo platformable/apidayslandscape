@@ -57,8 +57,8 @@ export default function CompanyCard({company,index,handleLoading}) {
             <div>
               <img src="/founded_icon.svg" alt="founded icon" className="" />
             </div>
-              <p className="md-text m-0 p-0 text-[#083ECB]">Founded</p>
-              <p className="font-bold  m-0 p-0 text-[#243672]">
+              <p className="md-text m-0 p-0 text-[var(--main-blue)]">Founded</p>
+              <p className="font-bold  m-0 p-0 ">
                 {company.yearFounded ? `${company.yearFounded}` : "-"}
               </p>
           </div>
@@ -69,7 +69,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[#083ECB]">Headquarter</p>
+              <p className="md-text m-0 p-0  text-[var(--main-blue)]">Headquarter</p>
             </div>
             {company.headquartersCountry && (
               <img
@@ -80,7 +80,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             )}
             <div>
               {" "}
-              <p className="md-text font-bold  m-0 p-0 text-[#243672]">
+              <p className="md-text font-bold  m-0 p-0 ">
                 {company?.headquartersCity ? `${company?.headquartersCity}, ` : '-'} {company.headquartersCountry}
               </p>
             </div>
@@ -95,9 +95,9 @@ export default function CompanyCard({company,index,handleLoading}) {
           <p className="font-bold my-2 text-[#243672]">
             {company.headcount ? company.headcount : "-"}
           </p>
-          <span className="text-[#083ECB]">Headcount</span>
+          <span className="text-[var(--main-blue)]">Headcount</span>
           <img
-            src="/headcount_icon.svg"
+            src="/profile/headcount_icon.svg"
             alt="Headcount icon"
             className="sd-icon mt-auto"
           />
@@ -108,9 +108,9 @@ export default function CompanyCard({company,index,handleLoading}) {
           <p className="font-bold my-2 text-[#243672]">
             {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
           </p>
-          <span className="text-[#083ECB] text-center">Total Funding</span>
+          <span className="text-[var(--main-blue)] text-center">Total Funding</span>
           <img
-            src="/total funding_icon.svg"
+            src="/profile/total_funding_icon.svg"
             alt="Total funding icon"
             className="md-icon mt-auto"
           />
@@ -123,9 +123,9 @@ export default function CompanyCard({company,index,handleLoading}) {
               company.totalProducts ? company.totalProducts :'-'
             }
           </p>
-          <span className="text-[#083ECB] text-center">Active products</span>
+          <span className="text-[var(--main-blue)] text-center">Active products</span>
           <img
-            src="/active products_icon.svg"
+            src="/profile/active_products_icon.svg"
             alt="Active products icon"
             className="xd-icon mt-auto "
           />
@@ -136,7 +136,7 @@ export default function CompanyCard({company,index,handleLoading}) {
     
         <button
          onClick={()=>handleCompany(company)}
-          className="bg-[#083ECB] shadow-md px-10 py-3  text-white uppercase rounded text-center"
+          className="bg-[var(--main-blue)] shadow-md px-10 py-3  text-white uppercase rounded text-center"
         >
          View complete profile
         </button>

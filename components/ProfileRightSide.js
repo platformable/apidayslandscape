@@ -28,6 +28,8 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     pricingPage,
     pricingModel,
     privacySpecific,
+    knownProtocolsUsed,
+    hasAIFeatures
   } = selectedCompany;
 
   const textFormat = "text-black text-lg";
@@ -352,7 +354,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
       </section>
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
-      <div className="profile-stats-card">
+      <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_protocols_icon.svg"
@@ -364,18 +366,18 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          <span className="font-semibold text-center md-text">
-            {knownStandardsUsed  ? (
+          <div className="">
+            {knownProtocolsUsed  ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownStandardsUsed }
+                {knownProtocolsUsed }
               </span>
             ) : (
               <Unknown />
             )}
-          </span>
+          </div>
         </div>
 
-        <div className="profile-stats-card">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_standards_icon.svg"
@@ -387,22 +389,22 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          <span className="font-semibold text-center md-text">
-            {knownStandardsUsed  ? (
-              <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownStandardsUsed }
-              </span>
-            ) : (
-              <Unknown />
-            )}
-          </span>
+          <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
+              {knownStandardsUsed  ? (
+                <span className={`${textFormat} font-semibold text-sm p-3`}>
+                  {knownStandardsUsed }
+                </span>
+              ) : (
+                <Unknown />
+              )}
+          </div>
         </div>
 
        
       </section>
       <section id="sixt-row" className="save-section profile-row profile-row-2">
             
-      <div className="profile-stats-card">
+      <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/privacy_specific_icon.svg"
@@ -414,16 +416,19 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          {privacySpecific ? (
-            <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {privacySpecific}
-            </span>
-          ) : (
-            <Unknown />
-          )}
+          <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
+            {privacySpecific ? (
+              <span className={`${textFormat} font-semibold text-sm p-3`}>
+                {privacySpecific}
+              </span>
+            ) : (
+              <Unknown />
+            )}
+          </div>
+          
         </div>
 
-        <div className="profile-stats-card">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/AI_features_icon.svg"
@@ -435,9 +440,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          {privacySpecific ? (
+          {hasAIFeatures ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {privacySpecific}
+              {hasAIFeatures === true ? 'Yes' : 'No'}
             </span>
           ) : (
             <Unknown />
@@ -448,7 +453,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         id="seventh-row"
         className="save-section profile-row profile-row-2"
       >
-        <div className="profile-stats-card">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_partnership_icon.svg"
@@ -472,7 +477,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* known-partnership-logo */}
         </div>
-        <div className="profile-stats-card">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_non_API_icon.svg"

@@ -442,7 +442,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           {/* features-top */}
           {hasAIFeatures ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {hasAIFeatures === true ? 'Yes' : 'No'}
+              {hasAIFeatures === 'TRUE' ? 'Yes' : 'No'}
             </span>
           ) : (
             <Unknown />

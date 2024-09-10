@@ -33,10 +33,10 @@ export default function CompanyCardModal({
           </h3>
 
           <div className="card-logo flex  justify-center mb-3">
-            {company.logo === "" || null ? (
-              <img srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg 2x" alt={`${company?.name} logo`} />
+            {!company.logo ||company.logo === "" || null ? (
+              <img src="/apidaysReplacementLogo.png" alt="Company default logo" className="card-logo"/>
             ) : (
-              <img srcSet={`${handleImages(company.logo)} 2x`} alt="Company default logo" />
+              <img srcSet={`${handleImages(company.logo)} 2x`} alt={`${company?.name} logo`} />
             )}
           </div>
 

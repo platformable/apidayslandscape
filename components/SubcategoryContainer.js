@@ -54,6 +54,7 @@ export default function SubcategoryContainer({
       <div className="flex flex-wrap gap-1 ">
         {filteredSubcategory
           ? filteredSubcategory.map((row, index) => {
+            
               return (
                 <div
                   href="https://nextjs.org/docs"
@@ -71,12 +72,12 @@ export default function SubcategoryContainer({
                         : "homepage-landscape-img border "
                     }
                   > */}
-                    {row.logo === "" || row.logo === null ? (
+                    {!row.logo || row.logo === "" || row.logo === null ? (
                       <img
                         src={`/apidaysReplacementLogo.png`}
                         //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
-                        alt=""
-                        className=""
+                        alt="apidays"
+                        className="border"
                         width={34.4}
                         height={34.4}
                       />

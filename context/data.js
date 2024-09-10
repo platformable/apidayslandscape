@@ -562,7 +562,7 @@ export const newModel = {
     }
   },
   "API Consumption": {
-    description: "API products built to expose a specific functionality or dataset to enable use programmatically in apps, websites, workflows, AI systems, and so on",
+    description: "Tools that help manage consumption of third party APIs",
     color: '',
     categories: {
      "Aggregators/Integration Platforms": {

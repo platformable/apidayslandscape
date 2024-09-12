@@ -21,7 +21,7 @@ export default function Sources() {
                 diversity of founding and management teams, and categorizes the
                 tools according to the below taxonomy.
               </p>
-              <img src="/methodology_01.png" alt="" className="w-[50%]"/>
+              <img src="/methodology_01.png" alt="Step 1" className="w-[50%]"/>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-x-7">
               <span className="text-[var(--main-green)] text-5xl text-center font-bold">
@@ -32,7 +32,7 @@ export default function Sources() {
                 founders, and key financing metrics ( total funding to date,
                 last funding date and any IPO data if relevant).
               </p>
-              <img src="/methodology_02.png" alt="" className="w-[50%]"/>
+              <img src="/methodology_02.png" alt="Step 2" className="w-[50%]"/>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-x-7">
               <span className="text-[var(--main-green)] text-5xl text-center font-bold">
@@ -44,7 +44,7 @@ export default function Sources() {
                 which is reviewed by Platformable’s data analyst team and then
                 added to the database.
               </p>
-              <img src="/methodology_03.png" alt="" className="w-[50%]"/>
+              <img src="/methodology_03.png" alt="Step 3" className="w-[50%]"/>
             </div>
           </div>
         </article>

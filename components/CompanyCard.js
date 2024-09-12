@@ -57,7 +57,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             <div>
               <img src="/founded_icon.svg" alt="founded icon" className="" />
             </div>
-              <p className="md-text m-0 p-0 text-[var(--main-blue)]">Founded</p>
+              <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">Founded</p>
               <p className="font-bold  m-0 p-0 ">
                 {company.yearFounded ? `${company.yearFounded}` : "-"}
               </p>
@@ -69,7 +69,7 @@ export default function CompanyCard({company,index,handleLoading}) {
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[var(--main-blue)]">Headquarter</p>
+              <p className="md-text m-0 p-0  text-[var(--main-blue)] font-bold">Headquarter</p>
             </div>
             {company.headquartersCountry && (
               <img

@@ -366,7 +366,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>{" "}
           {/* features-top */}
-          <div className="">
+          <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
             {knownProtocolsUsed  ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
                 {knownProtocolsUsed }

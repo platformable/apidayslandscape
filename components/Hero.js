@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section id="hero" className="md:py-10 py-2 bg-white">
       <div className="text-center container mx-auto md:py-10 py-5">
-        <center><img src="/apilandscape_logo2.svg" alt="" className="text-center "/></center>
+        <center><img src="/apilandscape_logo2.svg" alt="API Landscape logo" className="text-center "/></center>
         <h1 className="text-[var(--main-blue)] text-[33px] opacity-90 text-center pt-4 pb-2 font-bold">
           A comprehensive view of all stakeholders creating the programmable
           economy

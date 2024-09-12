@@ -54,7 +54,7 @@ export default function CompanyCardModal({
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0 text-[var(--main-blue)]">Founded in</p>
+              <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">Founded in</p>
             </div>
             <div className="ml-2">
               {" "}
@@ -69,7 +69,7 @@ export default function CompanyCardModal({
               <img src="/headquarter_icon.svg" alt="headquarter icon" className="" />
             </div>
             <div>
-              <p className="md-text p-0  text-[var(--main-blue)] mr-2">Headquarter</p>
+              <p className="md-text p-0  text-[var(--main-blue)] font-bold">Headquarter</p>
             </div>
             {company.headquartersCountry && (
               <img

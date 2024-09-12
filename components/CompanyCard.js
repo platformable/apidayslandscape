@@ -92,10 +92,10 @@ export default function CompanyCard({company,index,handleLoading}) {
       <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
         <div className="purpleBorder rounded-md p-2 flex flex-col gap-2 items-center">
           
-          <p className="font-bold my-2 text-[#243672]">
+          <p className="font-bold my-2 text-[#000000]">
             {company.headcount ? company.headcount : "-"}
           </p>
-          <span className="text-[var(--main-blue)]">Headcount</span>
+          <span className="text-[var(--main-blue)] font-bold">Headcount</span>
           <img
             src="/profile/headcount_icon.svg"
             alt="Headcount icon"
@@ -105,10 +105,10 @@ export default function CompanyCard({company,index,handleLoading}) {
 
         <div className="greenBorder rounded-md p-2 flex flex-col gap-2 items-center">
           
-          <p className="font-bold my-2 text-[#243672]">
+          <p className="font-bold my-2 text-[#000000]">
             {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
           </p>
-          <span className="text-[var(--main-blue)] text-center">Total Funding</span>
+          <span className="text-[var(--main-blue)] text-center font-bold">Total Funding</span>
           <img
             src="/profile/total_funding_icon.svg"
             alt="Total funding icon"
@@ -118,12 +118,12 @@ export default function CompanyCard({company,index,handleLoading}) {
 
         <div className="orangeBorder rounded-md p-2  flex flex-col gap-2 items-center">
           
-          <p className="font-bold my-2 text-[#243672]">
+          <p className="font-bold my-2 text-[#000000]">
           {
               company.totalProducts ? company.totalProducts :'-'
             }
           </p>
-          <span className="text-[var(--main-blue)] text-center">Active products</span>
+          <span className="text-[var(--main-blue)] text-center font-bold">Active products</span>
           <img
             src="/profile/active_products_icon.svg"
             alt="Active products icon"

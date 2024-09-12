@@ -16,7 +16,7 @@ export default function LandscapeSubcategory({handleCompany,subcategoryName,filt
                 >
                   <div onClick={() => handleCompany(row)} data-tooltip-content={row.name}>
                     
-                    <img src={row.logo} alt="" />
+                    <img src={row.logo} alt={`${row?.name} company logo`} />
                     <p className="xs-text">{row.name}</p>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ export default function Loader() {
     return (
         <div className="container mx-auto">
             <div className="flex justify-center">
-            <img src="../loader.gif" alt="" />
+            <img src="../loader.gif" alt="Loader" />
         </div>
         </div>
     )

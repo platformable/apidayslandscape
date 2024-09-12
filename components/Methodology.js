@@ -23,7 +23,7 @@ export default function Methodology() {
                   <div className="flex justify-center ">
                     <img
                       src="/add_API_icon2.svg"
-                      alt=""
+                      alt="Add API icon"
                       className="w-[80px] h-[80px]"
                     />
                   </div>
@@ -44,7 +44,7 @@ export default function Methodology() {
                     <div className="flex justify-center">
                       <img
                         src="/report_bug_icon2.svg"
-                        alt=""
+                        alt="Report bug icon"
                         className="w-[80px] h-[80px]"
                       />
                     </div>
@@ -71,7 +71,7 @@ export default function Methodology() {
                     <div className="flex justify-center">
                       <img
                         src="/new_feature_icon2.svg"
-                        alt=""
+                        alt="New feature icon"
                         className="w-[80px] h-[80px]"
                       />
                     </div>

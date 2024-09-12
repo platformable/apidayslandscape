@@ -99,7 +99,7 @@ export default function companiesCards({ data }) {
   return (
     <Layout>
       <Head>
-        <title>apidays Landscape - Companies</title>
+        <title>APIdays Landscape - Companies</title>
         <meta name="description" content="apidays landscape companies" />
       </Head>
       {loading && <TopBarProgress />}
@@ -121,33 +121,35 @@ export default function companiesCards({ data }) {
           <img src="../Spinner-1s-44px.gif" />{" "}
         </div>
       )}
+      <section className="bg-[#E1F6F8]">
+        <div id="cards" className="container mx-auto py-10"> 
+          {liveData.message ? <p className="font-bold text-center bg-[#E1F6F8] rounded-lg px-2 py-1">{liveData.message}</p> : ""}
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded md:px-0 px-5 ">
+            
+              {liveData.length > 0 ? (
+                liveData?.map((company, index) => {
+                  return (
+                    <CompanyCard
+                      company={company}
+                      index={index}
+                      handleLoading={handleLoading}
+                      key={index}
+                    />
+                  )
+                })
+              ) : (
+                
+              <></>
+            
+              )}
 
-      <section id="cards" className="container mx-auto py-10"> 
-        {liveData.message ? <p className="font-bold text-center bg-[#E1F6F8] rounded-lg px-2 py-1">{liveData.message}</p> : ""}
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded md:px-0 px-5 ">
-           
-            {liveData.length > 0 ? (
-              liveData?.map((company, index) => {
-                return (
-                  <CompanyCard
-                    company={company}
-                    index={index}
-                    handleLoading={handleLoading}
-                    key={index}
-                  />
-                )
-              })
-            ) : (
-              
-             <></>
-           
-            )}
+              {liveData.length <= 0 && !loader ? "No Data..." : ""}
 
-            {liveData.length <= 0 && !loader ? "No Data..." : ""}
-
-            {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
-          </div>
+              {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
+            </div>
+        </div>
       </section>
+     
     </Layout>
   );
 }

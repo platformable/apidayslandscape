@@ -19,14 +19,14 @@ export default function Taxonomy() {
             <div></div>
             <div className="flex flex-col md:flex-row md:gap-x-24 gap-y-20 justify-center">
               <div className="grid justify-center text-center gap-y-5">
-                <img src="/Medhi.png" alt="" className="" />
+                <img src="/Medhi.png" alt="Mehdi Medjoaui image profile" className="" />
                 <p className="text-[#123A5A]  text-2xl font-bold">
                   Mehdi Medjoaui
                 </p>
                 <p className="text-[#123A5A] text-xl ">Founder of apidays</p>
               </div>
               <div className="grid justify-center text-center text-center gap-y-5">
-                <img src="/Mark.png" alt="" className="" />
+                <img src="/Mark.png" alt="Mark Boyd image profile" className="" />
                 <p className="text-[#123A5A]  text-2xl font-bold">Mark Boyd</p>
                 <p className="text-[#123A5A] text-xl ">
                   Director at Platformable

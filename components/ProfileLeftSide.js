@@ -37,14 +37,14 @@ function ProfileLeftSide({ selectedCompany }) {
           {!logo || logo === "" || null ? (
            <img
            src={`/landscape_logo.svg`}
-           alt=""
+           alt="Company default logo"
            className='object-cover object-center'
            
          />
           ) : (
             <img
               src={logo}
-              alt={`${name} logo`}
+              alt={`${name} company logo`}
               className="max-h-[170px]"
             />
           )}
@@ -111,14 +111,14 @@ function ProfileLeftSide({ selectedCompany }) {
               <img src="/founded_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-              <span className="text-sm text-[var(--main-blue)]">Founded in</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Founded in</span>
               <span className={`text-black text-base font-bold`}>{yearFounded}</span>
           </div>
           {/*  founded top left */}
           <div className={`${foundedRows} `}>
             <div className="flex items-center gap-x-2">
               <img src="/founder_icon.svg" alt="icon" className="icon" />
-              <span className="text-sm text-[var(--main-blue)]">Founder(s)</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Founder(s)</span>
 
             </div>{" "}
             {/* icon */}
@@ -131,11 +131,11 @@ function ProfileLeftSide({ selectedCompany }) {
               <img src="/headquarter_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-              <span className="text-sm text-[var(--main-blue)] mr-2">Headquarter</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Headquarter</span>
               {headquartersCountry && (
               <img
                 src={`https://flagsapi.com/${headquartersCountry}/flat/64.png`}
-                alt=""
+                alt="flag icon"
                 className="w-7"
               />
             )}

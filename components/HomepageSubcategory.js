@@ -68,7 +68,7 @@ export default function homepageSubcategory({
                       {row.logo === "" || null ? (
                         <Image
                           src={`/apidaysReplacementLogo.png`}
-                          alt=""
+                          alt="Company default logo"
                           className=""
                           width={34.4}
                           height={34.4}
@@ -76,7 +76,7 @@ export default function homepageSubcategory({
                       ) : (
                         <img
                           srcSet={`${handleImages(row.logo)}`}
-                          alt=""
+                          alt={`${row.name} company logo`}
                           className=""
                           width={34.4}
                           height={34.4}

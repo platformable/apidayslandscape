@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import APISCounter from "./APISCounter";
 const initialStateForFilters = 'All'
 
 export default function SearchFilters({
@@ -131,7 +132,7 @@ export default function SearchFilters({
 
   };
   return (
-    <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
+    <section id="search-filter" className="bg-[var(--main-green)] py-5 md:px-0 px-5">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:flex gap-y-3 gap-x-5">
           <div className="clusters flex-1 ">
@@ -214,13 +215,13 @@ export default function SearchFilters({
                 type="search"
                 onChange={(e) => handleCompanyName(e.target.value)}
                 id="default-search"
-                className="block w-full px-2 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full px-2 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-[var(--main-green)]"
                 placeholder=""
               />
               <img
                 src="https://cdn-icons-png.flaticon.com/512/107/107122.png"
-                alt=""
-                className="sm-icon absolute end-2.5 bottom-2"
+                alt="Search icon"
+                className="sm-icon absolute end-2.5 bottom-2.5"
                 width={20}
               />
             </div>
@@ -247,7 +248,8 @@ export default function SearchFilters({
                 A-Z
               </label>
             </div>
-            <div><div className="py-2 px-4 font-bold bg-white text-lg w-20">{datalength}</div></div>
+            <APISCounter count={datalength}/>
+
             
             {/*   <p className="rounded font-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p> */}
           </div>

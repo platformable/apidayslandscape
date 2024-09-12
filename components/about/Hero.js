@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="bg-[var(--dark-blue)] text-white py-20  text-2xl  border-b-2 border-[var(--orange)]">
+    <section className="bg-[var(--main-green)] text-white py-20  text-2xl">
       <article className="container mx-auto leading-normal tracking-wide">
       apidays is the world’s leading API conference series, with 2024 events
       already organised in 6 cities around the globe: Singapore, New York,

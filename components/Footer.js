@@ -4,21 +4,21 @@ import Banner from "./Banner";
 
 export default function Footer() {
   return (
-    <footer className=" bg-[var(--dark-blue)] text-white">
-      <Banner />
+    <footer className=" bg-[var(--main-blue)] text-white">
+      {/* <Banner /> */}
       <div className="container mx-auto px-1 md:px-0 py-14">
         <p className="flex gap-x-1 items-center justify-center mb-0 text-[12px] md:text-base flex-wrap">
           &copy; This website was built for apidays by{" "}
           <Link href="https://www.platformable.com" target="_blank" className="flex  items-center gap-x-1">
             <img
               src="/footer_platformable.png"
-              alt=""
+              alt="Platformable logo"
               className="max-w-[125px]"
             />
             <span className="text-white font-semibold">Platformable.com</span>
           </Link>
           proudly{" "}
-          <img src="/heart_icon.png" alt="" className="footer-icon" /> based
+          <img src="/heart_icon.png" alt="Heart proud icon" className="footer-icon" /> based
           in Barcelona{" "}
         </p>
       </div>
@@ -35,6 +35,11 @@ export default function Footer() {
             GO TO TOP
           </div>
         </Link>
+      </div>
+      <div
+        className={`border-t border-white border-solid border-opacity-50 h-16 md:h-32`}
+      >
+      
       </div>
     </footer>
   );

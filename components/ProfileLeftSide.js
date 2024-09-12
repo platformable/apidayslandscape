@@ -1,8 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/Profilepage.module.css";
 
-const textNewBlue = 'text-[#243672]'
-
 function ProfileLeftSide({ selectedCompany }) {
   const {
     name,
@@ -25,12 +23,11 @@ function ProfileLeftSide({ selectedCompany }) {
   const categories = [...new Set(category?.split(","))];
   const subcategories = [...new Set(subcategory?.split(","))];
   
-  const textNewBlue = 'text-[#243672] text-lg'
   const foundedRows = 'flex items-center gap-x-2 items-center'  
   return (
-    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  ${textNewBlue} px-2 py-5 lg:py-10 md:px-4 xl:px-7`}>
+    <div className={`company-profile-left-column bg-white ${styles.rightShadow}  px-2 py-5 lg:py-10 md:px-4 xl:px-7`}>
       <div className="company-name">
-        <h3 className="p-0 m-0 mb-5 font-bold text-center ">
+        <h3 className="p-0 m-0 mb-5 font-bold text-center text-xl">
           {name}
         </h3>
       </div>{" "}
@@ -40,14 +37,14 @@ function ProfileLeftSide({ selectedCompany }) {
           {!logo || logo === "" || null ? (
            <img
            src={`/landscape_logo.svg`}
-           alt=""
+           alt="Company default logo"
            className='object-cover object-center'
            
          />
           ) : (
             <img
               src={logo}
-              alt={`${name} logo`}
+              alt={`${name} company logo`}
               className="max-h-[170px]"
             />
           )}
@@ -63,7 +60,7 @@ function ProfileLeftSide({ selectedCompany }) {
           return (
             <span
               key={index}
-              className={`text-center bg-[#98BDFF] my-1 text-[#083ECB] block border-[#F69902] ${styles.orangeBorder}`}
+              className={`text-center bg-[var(--main-blue)] my-2 text-white block`}
             >
               {cluster}
             </span>
@@ -74,7 +71,7 @@ function ProfileLeftSide({ selectedCompany }) {
           return (
             <span
               key={index}
-              className={`text-center bg-[#E6EFFF] my-1 text-[#083ECB] block ${styles.orangeBorder}`}
+              className={`text-center bg-[var(--main-green)] my-2 text-white block`}
             >
               {category}
             </span>
@@ -85,7 +82,7 @@ function ProfileLeftSide({ selectedCompany }) {
           return (
             <span
               key={index}
-              className={`text-center bg-[#ffffff] my-1 text-[#083ECB] block ${styles.orangeBorder}`}
+              className={`text-center  my-2 text-[var(--main-blue)] block border-2 border-[var(--main-green)]`}
             >
               {subcategory}
             </span>
@@ -103,8 +100,8 @@ function ProfileLeftSide({ selectedCompany }) {
         </div>
       </div>{" "}
       {/* company category */}
-      <div className="description mt-4 mb-5">
-        <p className={`${textNewBlue}`}>{description}</p>
+      <div className="description mt-6 mb-14 font-bold">
+        <p className={`text-black text-xl`}>{description}</p>
       </div>{" "}
       {/* company description */}
       <div className="founded">
@@ -114,18 +111,18 @@ function ProfileLeftSide({ selectedCompany }) {
               <img src="/founded_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-              <span className="text-sm text-[#083ECB]">Founded in</span>
-              <span className={`${textNewBlue} text-base font-bold`}>{yearFounded}</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Founded in</span>
+              <span className={`text-black text-base font-bold`}>{yearFounded}</span>
           </div>
           {/*  founded top left */}
           <div className={`${foundedRows} `}>
             <div className="flex items-center gap-x-2">
               <img src="/founder_icon.svg" alt="icon" className="icon" />
-              <span className="text-sm text-[#083ECB]">Founder(s)</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Founder(s)</span>
 
             </div>{" "}
             {/* icon */}
-              <span className="font-bold text-base">{founderNames ||'-'}</span>
+              <span className="font-bold text-base text-black">{founderNames ||'-'}</span>
           </div>
           {/*  founded top left */}
 
@@ -134,16 +131,16 @@ function ProfileLeftSide({ selectedCompany }) {
               <img src="/headquarter_icon.svg" alt="icon" className="icon" />
             </div>{" "}
             {/* icon */}
-              <span className="text-sm text-[#083ECB] mr-2">Headquarter</span>
+              <span className="text-sm text-[var(--main-blue)] font-bold">Headquarter</span>
               {headquartersCountry && (
               <img
                 src={`https://flagsapi.com/${headquartersCountry}/flat/64.png`}
-                alt=""
+                alt="flag icon"
                 className="w-7"
               />
             )}
 
-              <span className="font-bold text-base">
+              <span className="font-bold text-base text-black">
               {headquartersCity ? `${headquartersCity}, ${headquartersCountry}` : '-' }
 
               </span>
@@ -157,7 +154,7 @@ function ProfileLeftSide({ selectedCompany }) {
               {/* icon */}
               <Link href={url || '#'} >
 
-                <span className="text-sm text-[#243672] font-semibold underline">{url}</span>
+                <span className="text-sm text-black font-semibold underline">{url}</span>
               </Link>
             </div>
             
@@ -169,7 +166,7 @@ function ProfileLeftSide({ selectedCompany }) {
               </div>{" "}
               {/* icon */}
               <Link href={github || '#'} >
-                <span className="text-sm text-[#243672] font-semibold underline">{github}</span>
+                <span className="text-sm text-black font-semibold underline">{github}</span>
               </Link>
             </div>
           )}
@@ -181,60 +178,25 @@ function ProfileLeftSide({ selectedCompany }) {
               {/* icon */}
 
               <Link href={linkedin || '#'} >
-                <span className="text-sm text-[#243672] font-semibold underline">{linkedin}</span>
+                <span className="text-sm text-black font-semibold underline">{linkedin}</span>
               </Link>
 
             </div>
           )}
         </div>
       </div>{" "}
-      {/* company founded */}
-      {/*  <div className="company-social-urls ">
-      
-        {github && (
-          <li className="list-group-item border-0 ">
-            <img
-              src="/github_icon.svg"
-              alt="icon"
-              className="rounded"
-              onClick={() => handleSocial(crunchbase)}
-            />
-          </li>
-        )}
-        {linkedin && (
-          <li className="list-group-item border-0">
-            {" "}
-            <img
-              src="/linkedin_icon.svg"
-              alt="icon"
-              className="rounded"
-              onClick={() => handleSocial(linkedin)}
-            />
-          </li>
-        )}
-        {github && (
-          <li className="list-group-item border-0">
-            <img
-              src="https://logo.clearbit.com/github.com"
-              alt="icon"
-              className="rounded"
-              onClick={() => handleSocial(github)}
-            />
-          </li>
-        )}
-       
-      </div>{" "} */}
+     
       {/* company-socials-url */}
       <div className="update-company justify-content-center bg-gray my-5 grid">
-        <h4 className="font-bold text-[#083ECB] text-center mb-5">
+        <h4 className="font-bold text-2xl text-[var(--main-blue)] text-center mb-5">
           Is this your tool?
         </h4>
         <Link
           href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
           target="_blank"
-          className="bg-[#1060FF] btn-transition shadow-md px-10 py-3  uppercase rounded"
+          className="bg-[var(--main-blue)] btn-transition shadow-md px-10 py-3  uppercase rounded"
         >
-          <center className="text-white ">
+          <center className="text-white text-lg font-medium ">
             Update details here
           </center>
         </Link>

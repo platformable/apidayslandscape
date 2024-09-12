@@ -4,8 +4,8 @@ import Banner from "./Banner";
 
 export default function Footer() {
   return (
-    <footer className=" bg-[var(--dark-blue)] text-white">
-      <Banner />
+    <footer className=" bg-[var(--main-blue)] text-white">
+      {/* <Banner /> */}
       <div className="container mx-auto px-1 md:px-0 py-14">
         <p className="flex gap-x-1 items-center justify-center mb-0 text-[12px] md:text-base flex-wrap">
           &copy; This website was built for apidays by{" "}
@@ -35,6 +35,11 @@ export default function Footer() {
             GO TO TOP
           </div>
         </Link>
+      </div>
+      <div
+        className={`border-t border-white border-solid border-opacity-50 h-16 md:h-32`}
+      >
+      
       </div>
     </footer>
   );

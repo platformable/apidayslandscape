@@ -4,19 +4,19 @@ export default function CategoryContainer({
   index,
   children,
 }) {
-  const sectionColor = values.color ? `${values.color}` : "bg-[#E6EFFF]";
+  const sectionColor = values.color ? `${values.color}` : "bg-[var(--main-green)]";
   return (
     <div
       id="categorie"
-      className={`px-5 py-4 flex-grow ${sectionColor} border-2 border-[var(--orange)] rounded-md`}
+      className={`px-5 py-4 flex-grow ${sectionColor} rounded-md`}
       key={index}
     >
       <header className="flex gap-3">
-        <h3 className="mb-4 font-bold text-[#083ECB] block text-left">
+        <h3 className="mb-4 font-bold text-white block text-left">
           {categorieName}
         </h3>
         <div
-          className="cursor-pointer bg-blue-500 rounded-full text-sm text-white w-5 h-5 grid place-content-center"
+          className="cursor-pointer bg-[var(--tooltip-bg)] rounded-full text-sm  w-5 h-5 grid place-content-center"
           data-tooltip-content={
             values.description || "No description provided"
           }

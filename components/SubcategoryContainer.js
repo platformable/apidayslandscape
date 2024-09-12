@@ -31,17 +31,17 @@ export default function SubcategoryContainer({
   return (
     <div
       id="subcategory"
-      className="bg-white flex-grow  px-4  py-2"
+      className="bg-white flex-grow rounded-md px-4  py-2"
       key={index}
     >
       {/* {data <= 0 && <Loader />} */}
       <header className="flex gap-3">
-        <h4 className="sm-text font-bold text-[#083ECB] tracking-wide leading-normal mt-1 mb-2 block text-left">
+        <h4 className="sm-text font-bold text-[var(--main-blue)] tracking-wide leading-normal mt-1 mb-2 block text-left">
           {subcategory.name}
-          <span className="opacity-80"> ({filteredSubcategory.length})</span>
+          <span className=""> ({filteredSubcategory.length})</span>
         </h4>
         <div
-          className="cursor-pointer bg-blue-500 rounded-full text-sm text-white w-5 h-5 grid place-content-center"
+          className="cursor-pointer bg-[var(--tooltip-bg)] rounded-full text-sm w-5 h-5 grid place-content-center"
           data-tooltip-content={
             subcategory.description || "No description provided"
           }
@@ -76,7 +76,7 @@ export default function SubcategoryContainer({
                       <img
                         src={`/apidaysReplacementLogo.png`}
                         //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
-                        alt="apidays"
+                        alt="Company default logo"
                         className="border"
                         width={34.4}
                         height={34.4}
@@ -84,7 +84,7 @@ export default function SubcategoryContainer({
                     ) : (
                       <img
                         src={row.logo}
-                        alt=""
+                        alt={`${row.name} company`}
                         className={
                           !withZoom
                             ? "w-8 h-8 object-contain border "

@@ -25,7 +25,7 @@ color:#083ECB;
 }
 
 .text-nav {
-  color:#083ECB !important;
+  color: var(--main-blue) !important;
 }
 
 .orangeBorder {
@@ -57,7 +57,8 @@ max-width: 209px;
 }
 :root {
 --dark-blue:#083ECB;
---main-blue:#1060FF;
+--main-blue:#1B4965;
+--main-green: #00A6B6;
 --text-gray:#aaa;
 --lightpink:#fef1de;
 --lightblue:lavender;
@@ -74,6 +75,8 @@ max-width: 209px;
 --dark-purple:#5a0c78;
 --extralight-purple: #EDE5FF;
 --bg-extra-light: #F5F9FF;
+
+--tooltip-bg: #4FDAE0;
 }
 
 .bg-section-security {
@@ -999,10 +1002,10 @@ dialog {
   overflow: auto;
 }
 .strip-banner {
-  height: 8vh; 
-  background-image: url("/strip1.webp");
-  background-repeat: repeat-x;
-  background-size: contain;
+  height: 15vh; 
+  background-image: url("/apidays24_fond-min.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   /* clip-path: inset(10px 0px 10px 0); */
 }
 @media (max-width: 768px) {

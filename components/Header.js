@@ -12,7 +12,7 @@ export default function Header() {
           href="/"
           className="flex items-center space-x-3 "
         >
-          <img src="/logo_top.svg" className="w-56 md:w-full h-14" alt="APIDays" />
+          <img src="/logo_top2.svg" className="w-56 md:w-full h-14" alt="APIDays" />
         </Link>
         <button
           onClick={() => {
@@ -24,7 +24,6 @@ export default function Header() {
           aria-controls="navbar-default"
           aria-expanded="false"
         >
-          <span className="sr-only">Open main menu</span>
           <svg
             className="w-5 h-5"
             aria-hidden="true"
@@ -42,10 +41,10 @@ export default function Header() {
           </svg>
         </button>
         <div
-          className={`${displayNav ? "" : "hidden"} w-full md:block md:w-auto`}
+          className={`${displayNav ? "" : "hidden"} w-full md:block md:w-auto md:pt-4 xl:pt-0`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col  md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white text-nav ">
+          <ul className="font-medium flex flex-col rounded-lg  md:flex-row md:space-x-14  rtl:space-x-reverse md:border-0 md:bg-white text-nav ">
             <li>
               <Link
                 href="/about"

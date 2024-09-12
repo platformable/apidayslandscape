@@ -13,11 +13,9 @@ import ProfileLeftSide from "../../components/ProfileLeftSide";
 export default function CompanyDetailsName({ data }) {
   const router = useRouter();
 
-
-  
   const { slug } = router.query;
 
-  
+console.log("profile data", data)  
 
   const [company,setCompany]=useContext(CompanyContext)
   const [details,setDetails]=useState(false)
@@ -32,10 +30,6 @@ export default function CompanyDetailsName({ data }) {
       );
     }
   }
-
-  
-
-
    
 
    const handleImages = (url)=>{
@@ -81,13 +75,13 @@ export default function CompanyDetailsName({ data }) {
   return (
     <Layout>
         <Head>
-          <title>APIdays landscape - {slug} </title>
+          <title>APIdays Landscape - {slug} </title>
           <meta name="description" content="apidays landscape" />
         </Head>
 
 
-      <div className="container mx-auto shadow-r-md">
-       <div className="grid lg:grid-cols-[1fr_2fr]  max-md:pt-6 gap-10">
+      <div className="container mx-auto shadow-r-md bg-[#E1F6F8]">
+       <div className="grid lg:grid-cols-[1fr_2fr]  pt-6 gap-10">
         <ProfileLeftSide selectedCompany={data} />
 
         <ProfileRightSide selectedCompany={data}  handleScore={handleScore}/>

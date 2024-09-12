@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import APISCounter from "./APISCounter";
 const initialStateForFilters = 'All'
 
 export default function SearchFilters({
@@ -131,7 +132,7 @@ export default function SearchFilters({
 
   };
   return (
-    <section className="filer bg-[#083ECB] py-5 md:px-0 px-5">
+    <section id="search-filter" className="bg-[var(--main-green)] py-5 md:px-0 px-5">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:flex gap-y-3 gap-x-5">
           <div className="clusters flex-1 ">
@@ -247,7 +248,8 @@ export default function SearchFilters({
                 A-Z
               </label>
             </div>
-            <div><div className="py-2 px-4 font-bold bg-white text-lg w-20">{datalength}</div></div>
+            <APISCounter count={datalength}/>
+
             
             {/*   <p className="rounded font-bold  text-center shadow py-2 px-4 text-[#083ECB] bg-white"> {total} </p> */}
           </div>

@@ -67,7 +67,7 @@ export default function Homepage({ data }) {
       {loading && <TopBarProgress />}
       <Meta />
       <Hero />
-      <section className="bg-[#083ECB]">
+      <section className="bg-[#E1F6F8]">
         <div className="px-2 md:px-6 lg:px-10">
           <Toolbar
             setLoading={setLoading}

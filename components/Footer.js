@@ -12,13 +12,13 @@ export default function Footer() {
           <Link href="https://www.platformable.com" target="_blank" className="flex  items-center gap-x-1">
             <img
               src="/footer_platformable.png"
-              alt=""
+              alt="Platformable logo"
               className="max-w-[125px]"
             />
             <span className="text-white font-semibold">Platformable.com</span>
           </Link>
           proudly{" "}
-          <img src="/heart_icon.png" alt="" className="footer-icon" /> based
+          <img src="/heart_icon.png" alt="Heart proud icon" className="footer-icon" /> based
           in Barcelona{" "}
         </p>
       </div>

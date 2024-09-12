@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
 import { CompanyContext } from "../context/CompanyContext";
 import { useRouter } from "next/router";
-import ReactTooltip from "react-tooltip";
+import {ReactTooltip} from "react-tooltip";
 import HomepageSubcategory from "../components/HomepageSubcategory";
 import Modal from "../components/Modal";
 import Methodology from "../components/Methodology";

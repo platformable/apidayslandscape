@@ -532,7 +532,7 @@ export const newModel = {
       color: "",
       subcategories: [
       {
-        name: 'Automative/Vehicles',
+        name: 'Automotive/Vehicles',
         description: "APIs that enable cars, fleets, bicycles and other vehicles to be managed via mobile or computer",
         color: "",
       },

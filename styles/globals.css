@@ -278,10 +278,7 @@ place-items: center;
 .homepage-landscape-img {
 width:44px;
 height:44px;
-margin-bottom:2px;
-display: grid;
-place-items: center;
-
+object-fit: contain;
 }
 
 
@@ -1034,3 +1031,9 @@ padding: 2.5rem 3.25rem;
 color: white;
 
 }
+
+/* better performance of render */
+.categories-container, .entity-wrapper, .company-card {
+  content-visibility: auto;
+}
+/*  */

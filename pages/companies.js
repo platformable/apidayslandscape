@@ -155,7 +155,7 @@ export default function companiesCards({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v3/companies`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,

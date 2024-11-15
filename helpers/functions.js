@@ -13,11 +13,11 @@ export const reduceThounsand=(total)=>{
 export const reduceMillion=(total)=>{
 
     let result
-    if(total.length>=7){
+    if(Number(total.length)>=7){
 
-     result= `${(total / 1000000).toFixed(2)}M`
+     result= `${(Number(total) / 1000000).toFixed(2)}M`
 
     }
- 
+
      return result
    }

@@ -26,7 +26,7 @@ export default function SubcategoryContainer({
     const search = obj[subcategory.name]?.[0]?.description;
     return search;
   }
-  useEffect(() => {
+/*   useEffect(() => {
     const handleLoad = () => {
       const hash = window.location.hash;
       if (hash) {
@@ -40,7 +40,7 @@ export default function SubcategoryContainer({
 
     window.addEventListener('load', handleLoad);
     return () => window.removeEventListener('load', handleLoad);
-  }, []);
+  }, []); */
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
@@ -108,7 +108,7 @@ export default function SubcategoryContainer({
                         }
                         width={34.4}
                         height={34.4}
-                        loading="lazy" // Lazy loading
+                     /*    loading="lazy" // Lazy loading */
                       />
                     )}
                   {/* </div> */}

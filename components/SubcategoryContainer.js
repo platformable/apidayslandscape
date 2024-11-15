@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-import Image from "next/image";
+
 export default function SubcategoryContainer({
   handleCompany,
   subcategory,
@@ -26,21 +26,6 @@ export default function SubcategoryContainer({
     const search = obj[subcategory.name]?.[0]?.description;
     return search;
   }
-/*   useEffect(() => {
-    const handleLoad = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        setTimeout(() => {
-          document.querySelector(hash)?.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }, 1000); // Ajusta el tiempo según sea necesario
-      }
-    };
-
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
-  }, []); */
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
   return (
@@ -88,17 +73,16 @@ export default function SubcategoryContainer({
                     }
                   > */}
                     {!row.logo || row.logo === "" || row.logo === null ? (
-                      <Image
+                      <img
                         src={`/apidaysReplacementLogo.png`}
                         //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
                         alt="Company default logo"
                         className="border aspect-square"
                         width={34.4}
                         height={34.4}
-
                       />
                     ) : (
-                      <Image
+                      <img
                         src={row.logo}
                         alt={`${row.name} company`}
                         className={
@@ -106,9 +90,8 @@ export default function SubcategoryContainer({
                             ? "w-8 h-8 object-contain border aspect-square"
                             : "homepage-landscape-img border aspect-square"
                         }
-                        width={34.4}
-                        height={34.4}
-                     /*    loading="lazy" // Lazy loading */
+                        // width={34.4}
+                        // height={34.4}
                       />
                     )}
                   {/* </div> */}

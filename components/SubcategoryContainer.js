@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
 import { useRouter } from "next/router";
 import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-
+import Image from "next/image";
 export default function SubcategoryContainer({
   handleCompany,
   subcategory,
@@ -90,8 +90,8 @@ export default function SubcategoryContainer({
                             ? "w-8 h-8 object-contain border aspect-square"
                             : "homepage-landscape-img border aspect-square"
                         }
-                        // width={34.4}
-                        // height={34.4}
+                        width={34.4}
+                        height={34.4}
                       />
                     )}
                   {/* </div> */}

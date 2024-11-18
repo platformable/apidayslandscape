@@ -77,7 +77,7 @@ export default function SubcategoryContainer({
                         src={`/apidaysReplacementLogo.png`}
                         //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
                         alt="Company default logo"
-                        className="border aspect-square"
+                        className="border aspect-square object-cover"
                         width={34.4}
                         height={34.4}
                       />
@@ -87,8 +87,8 @@ export default function SubcategoryContainer({
                         alt={`${row.name} company`}
                         className={
                           !withZoom
-                            ? "w-8 h-8 object-contain border aspect-square"
-                            : "homepage-landscape-img border aspect-square"
+                            ? "w-8 h-8 object-contain border aspect-square object-cover"
+                            : "homepage-landscape-img border aspect-square object-cover"
                         }
                         width={34.4}
                         height={34.4}

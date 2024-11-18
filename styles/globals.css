@@ -1036,4 +1036,19 @@ color: white;
 .categories-container, .entity-wrapper, .company-card {
   content-visibility: auto;
 }
+
+
+/* .entity-wrapper {
+  position: relative;
+  width: 34.4px;
+  padding-top: 34.4px;
+}
+
+.wrapper__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto; 
+} */
 /*  */

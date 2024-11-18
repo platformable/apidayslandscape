@@ -29,10 +29,12 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     pricingModel,
     privacySpecific,
     knownProtocolsUsed,
-    hasAIFeatures
+    hasAIFeatures,diversemanagement
   } = selectedCompany;
 
   const textFormat = "text-black text-lg";
+
+
 
   return (
     <div className="profile-right-side grid gap-y-5 text-[var(--main-blue)] my-5">
@@ -68,22 +70,26 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="profile-stats-card">
           {womanInManagement ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {womanInManagement}
+              Yes
             </span>
           ) : (
-            <Unknown />
+            <span className={`${textFormat} font-semibold my-2`}>
+           No
+          </span>
           )}
           <span className="font-semibold text-sm">Women in management?</span>
           <img src="/profile/women_icon.svg" alt="icon" className="" />
         </div>
 
         <div className="profile-stats-card">
-          {nonWhitePeopleInManagement ? (
+          {diversemanagement ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {nonWhitePeopleInManagement}
+              Yes
             </span>
           ) : (
-            <Unknown />
+            <span className={`${textFormat} font-semibold my-2`}>
+           No
+          </span>
           )}
           <span className="font-semibold text-sm">Diverse management?</span>
           <img src="/profile/diverse_icon.svg" alt="icon" className="" />
@@ -149,6 +155,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           {moneyRaisedAtIpo ? (
             <span className={`${textFormat} font-semibold my-2`}>
               {reduceMillion(moneyRaisedAtIpo)}
+              {}
             </span>
           ) : (
             <Unknown />

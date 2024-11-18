@@ -15,7 +15,7 @@ export default function CompanyDetailsName({ data }) {
 
   const { slug } = router.query;
 
-console.log("profile data", data)  
+
 
   const [company,setCompany]=useContext(CompanyContext)
   const [details,setDetails]=useState(false)
@@ -43,18 +43,18 @@ console.log("profile data", data)
 
   const handleScore = (wm,dm)=>{
         let score="-"
-      if(wm === "Yes" && dm === "Yes"){
+      if(wm === true && dm === true){
         score="A+"
       }
 
-      if(wm === "Yes" && dm === "No"){
+      if(wm === true && dm === null){
         score="A"
       }
-      if(wm === "No" && dm === "Yes"){
+      if(wm === null && dm === true){
         score="A"
       }
 
-      if (wm === "No" && dm ==="No"){
+      if (wm === null && dm ===null){
         score="-"
       }
 
@@ -93,7 +93,7 @@ console.log("profile data", data)
 
 export async function getServerSideProps(context) {
   const {slug} = context.params
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/companies/${slug}`,  {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v3/companies/${slug}`,  {
     method: "GET",
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,

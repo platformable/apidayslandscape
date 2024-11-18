@@ -1,7 +1,7 @@
 export default function ClusterContainer({clusterName, values, index, children}) {
   return (
-    // <div id={clusterName.split(' ').join('_').toLowerCase()} className="" key={index}>
-    <div id={clusterName} className="" key={index}>
+     <div id={clusterName.split(' ').join('_').toLowerCase()} className="" key={index}>
+    {/* <div id={clusterName} className="" key={index}> */}
       {/* <a href={`/#${clusterName}`}></a> */}
       <div className="flex flex-col bg-[var(--main-blue)] rounded-lg px-4 pb-10">
         <div className={`cluster-label py-3  ${values.color || 'transparent'} rounded-t-lg`}>

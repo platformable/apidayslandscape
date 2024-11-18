@@ -57,7 +57,7 @@ export default function SubcategoryContainer({
             
               return (
                 <div
-                  href="https://nextjs.org/docs"
+                  
                   className="entity-wrapper max-h-[48px] cursor-pointer mb-0  mt-0 "
                   key={index}
                   onClick={() => handleCompany(row)}
@@ -77,7 +77,7 @@ export default function SubcategoryContainer({
                         src={`/apidaysReplacementLogo.png`}
                         //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
                         alt="Company default logo"
-                        className="border aspect-square object-cover"
+                        className="border aspect-square object-cover wrapper__img"
                         width={34.4}
                         height={34.4}
                       />
@@ -87,8 +87,8 @@ export default function SubcategoryContainer({
                         alt={`${row.name} company`}
                         className={
                           !withZoom
-                            ? "w-8 h-8 object-contain border aspect-square object-cover"
-                            : "homepage-landscape-img border aspect-square object-cover"
+                            ? "w-8 h-8 object-contain border aspect-square object-cover wrapper__img"
+                            : "homepage-landscape-img border aspect-square object-cover wrapper__img"
                         }
                         width={34.4}
                         height={34.4}

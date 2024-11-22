@@ -1037,7 +1037,8 @@ color: white;
   content-visibility: auto;
 }
 
-.entity-wrapper {
+
+/* .entity-wrapper {
   position: relative;
   width: 34.4px;
   padding-top: 34.4px;
@@ -1049,5 +1050,5 @@ color: white;
   left: 0;
   max-width: 100%;
   height: auto; 
-}
+} */
 /*  */

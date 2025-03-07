@@ -16,13 +16,15 @@ function ProfileLeftSide({ selectedCompany }) {
     headquartersCity,
     linkedin,
     github,
-    openSource,
+    opensource,
   } = selectedCompany;
 
   const newParentCategorySlug = [...new Set(cluster?.split(","))];
   const categories = [...new Set(category?.split(","))];
   const subcategories = [...new Set(subcategory?.split(","))];
   
+
+  console.log("selectedCompany",selectedCompany)
   const foundedRows = 'flex items-center gap-x-2 items-center'  
   return (
     <div className={`company-profile-left-column bg-white ${styles.rightShadow}  px-2 py-5 lg:py-10 md:px-4 xl:px-7`}>
@@ -89,7 +91,7 @@ function ProfileLeftSide({ selectedCompany }) {
           );
         })}
 
-        <div className="open-source flex justify-center">
+       {/*  <div className="open-source flex justify-center">
           {openSource === "TRUE" ? (
             <p className="text-sm mt-1 ml-2 open-source-text me-2 font-bold text-center">
               Open source
@@ -97,12 +99,23 @@ function ProfileLeftSide({ selectedCompany }) {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
       </div>{" "}
       {/* company category */}
-      <div className="description mt-6 mb-14 font-bold">
+      <div className="description mt-6 mb-5 font-bold">
         <p className={`text-black text-xl`}>{description}</p>
       </div>{" "}
+      <div className="open-source flex  mb-10">
+        
+            <>
+            <img src="/openSource_icon.svg" alt="icon" className="icon" />
+            <p className="text-[var(--main-blue)] text-sm mt-1 ml-2  me-2 font-bold">
+              Open source : 
+            </p>
+            <p className="text-sm mt-1 ml-2  me-2 font-bold">{opensource ? 'Yes' : 'No'}</p>
+            </>
+         
+        </div>
       {/* company description */}
       <div className="founded">
         <div className="founded-top grid gap-y-3">

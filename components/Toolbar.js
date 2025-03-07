@@ -48,7 +48,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 font-semibold">
         <button
           className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
-          onClick={() => handleForm("https://airtable.com/appObH1ILShMbYp30/pagMQR4dALkHUDMBS/form")}
+          onClick={() => handleForm("https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336")}
         >
           Add your API Tool
         </button>
@@ -74,13 +74,13 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </a>
        
         {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
-        <button
+        <Link href="/report"
           className=" m-0 bg-[var(--main-green)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
-          target="_blank"
-          onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")}
+        /*   target="_blank" */
+          /* onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")} */
         >
           Report
-        </button>
+        </Link>
         <div>
           <div className="flex gap-x-2">
             <APISCounter count={totalValues?.length}/>

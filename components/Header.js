@@ -55,7 +55,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://airtable.com/appObH1ILShMbYp30/pagMQR4dALkHUDMBS/form"
+                href="https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336"
                 target="_blank"
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
@@ -64,8 +64,9 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
-                target="_blank"
+                /* href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s" */
+                href="/report"
+                
                 className="block text-[#083ECB] py-2 px-3 text-nav  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 REPORT A BUG
@@ -73,9 +74,9 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
+                 href="/report"
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                target="_blank"
+             
              >
                 NEW FEATURE IDEA
               </Link>

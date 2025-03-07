@@ -18,7 +18,7 @@ export default function Methodology() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <button className="change-box grid gap-y-5 btn-transition"
                 onClick={() =>
-                  handleForm("https://airtable.com/appObH1ILShMbYp30/pagMQR4dALkHUDMBS/form")
+                  handleForm("https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336")
                 }>
                   <div className="flex justify-center ">
                     <img

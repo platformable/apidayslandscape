@@ -57,8 +57,7 @@ export default function Methodology() {
 
                 <Link className="change-box grid gap-y-5 btn-transition py-5"
                 
-                href={
-                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"}>
+                href={"/report"}>
                     <div className="flex justify-center">
                       <img
                         src="/new_feature_icon2.svg"

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export default function Methodology() {
@@ -16,10 +17,8 @@ export default function Methodology() {
                 See something you want to change?
               </h3> */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <button className="change-box grid gap-y-5 btn-transition"
-                onClick={() =>
-                  handleForm("https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336")
-                }>
+                <a className="change-box grid gap-y-5 btn-transition text-center" target='_blank'
+                href={"https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336"}>
                   <div className="flex justify-center ">
                     <img
                       src="/add_API_icon2.svg"
@@ -33,14 +32,10 @@ export default function Methodology() {
                   >
                     Add your API tool
                   </div>
-                </button>
+                </a>
 
-                <button className="change-box grid gap-y-5 btn-transition"
-                onClick={() =>
-                  handleForm(
-                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
-                  )
-                }>
+                <Link className="change-box grid gap-y-5 btn-transition"
+                href={"/report"}>
                     <div className="flex justify-center">
                       <img
                         src="/report_bug_icon2.svg"
@@ -53,21 +48,17 @@ export default function Methodology() {
                       the data for a specific tool provider
                     </p> */}
                     <div
-                      className=" text-white font-bold uppercase text-[18px]"
+                      className=" text-white font-bold uppercase text-[18px] text-center"
                       
                     >
                       Report a bug
                     </div>
-                </button>
+                </Link>
 
-                <button className="change-box grid gap-y-5 btn-transition py-5"
+                <Link className="change-box grid gap-y-5 btn-transition py-5"
                 
-                onClick={() =>
-                  handleForm(
-                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"
-                  )
-                }
-                >
+                href={
+                    "https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s"}>
                     <div className="flex justify-center">
                       <img
                         src="/new_feature_icon2.svg"
@@ -80,12 +71,12 @@ export default function Methodology() {
                       points you would like to see{" "}
                     </p> */}
                     <div
-                      className=" text-white font-bold uppercase text-[18px]"
+                      className=" text-white font-bold uppercase text-[18px] text-center"
                       
                     >
                       New feature idea
                     </div>
-                </button>
+                </Link>
               </div>
             </div>
           </section>

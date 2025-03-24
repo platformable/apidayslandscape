@@ -75,7 +75,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
        
         {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
         <Link href="/report"
-          className=" m-0 bg-[var(--main-green)] uppercase text-white self-start h-14 rounded shadow-md btn-transition"
+          className=" m-0 bg-[var(--main-green)] uppercase text-white self-start h-14 rounded shadow-md btn-transition items-center justify-center flex"
         /*   target="_blank" */
           /* onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")} */
         >

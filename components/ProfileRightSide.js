@@ -77,7 +77,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {diversemanagement ? (
+          {nonWhitePeopleInManagement ? (
             <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
             <span className={`${textFormat} font-semibold my-2`}>No</span>

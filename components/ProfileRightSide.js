@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Unknown from "./Unknown";
-import styles from "../styles/Profilepage.module.css";
-import { reduceMillion, reduceThounsand } from "../helpers/functions.js";
-import { Tooltip } from "react-tooltip";
+import Link from "next/link"
+import Unknown from "./Unknown"
+import styles from "../styles/Profilepage.module.css"
+import { reduceMillion, reduceThounsand } from "../helpers/functions.js"
+import { Tooltip } from "react-tooltip"
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
   const {
@@ -20,7 +20,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     ipoValuation,
     knownPartnership,
     knownPartnershipNonAPI,
-    knownStandardsUsed ,
+    knownStandardsUsed,
     contentAddressingBanking,
     contentAddressingGovernment,
     contentAddressingHealth,
@@ -29,12 +29,11 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     pricingModel,
     privacySpecific,
     knownProtocolsUsed,
-    hasAIFeatures,diversemanagement
-  } = selectedCompany;
+    hasAIFeatures,
+    diversemanagement,
+  } = selectedCompany
 
-  const textFormat = "text-black text-lg";
-
-
+  const textFormat = "text-black text-lg"
 
   return (
     <div className="profile-right-side grid gap-y-5 text-[var(--main-blue)] my-5">
@@ -69,13 +68,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
 
         <div className="profile-stats-card">
           {womanInManagement ? (
-            <span className={`${textFormat} font-semibold my-2`}>
-              Yes
-            </span>
+            <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
-            <span className={`${textFormat} font-semibold my-2`}>
-           No
-          </span>
+            <span className={`${textFormat} font-semibold my-2`}>No</span>
           )}
           <span className="font-semibold text-sm">Women in management?</span>
           <img src="/profile/women_icon.svg" alt="icon" className="" />
@@ -83,13 +78,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
 
         <div className="profile-stats-card">
           {diversemanagement ? (
-            <span className={`${textFormat} font-semibold my-2`}>
-              Yes
-            </span>
+            <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
-            <span className={`${textFormat} font-semibold my-2`}>
-           No
-          </span>
+            <span className={`${textFormat} font-semibold my-2`}>No</span>
           )}
           <span className="font-semibold text-sm">Diverse management?</span>
           <img src="/profile/diverse_icon.svg" alt="icon" className="" />
@@ -168,7 +159,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
 
         <div className="profile-stats-card">
           {ipoValuation ? (
-            <span className={`${textFormat} font-semibold my-2`}>{reduceMillion(ipoValuation)}</span>
+            <span className={`${textFormat} font-semibold my-2`}>
+              {reduceMillion(ipoValuation)}
+            </span>
           ) : (
             <Unknown />
           )}
@@ -361,7 +354,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
       </section>
 
       <section id="sixt-row" className="save-section profile-row profile-row-2">
-      <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/known_protocols_icon.svg"
@@ -374,9 +367,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-            {knownProtocolsUsed  ? (
+            {knownProtocolsUsed ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownProtocolsUsed }
+                {knownProtocolsUsed}
               </span>
             ) : (
               <Unknown />
@@ -397,21 +390,18 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-              {knownStandardsUsed  ? (
-                <span className={`${textFormat} font-semibold text-sm p-3`}>
-                  {knownStandardsUsed }
-                </span>
-              ) : (
-                <Unknown />
-              )}
+            {knownStandardsUsed ? (
+              <span className={`${textFormat} font-semibold text-sm p-3`}>
+                {knownStandardsUsed}
+              </span>
+            ) : (
+              <Unknown />
+            )}
           </div>
         </div>
-
-       
       </section>
       <section id="sixt-row" className="save-section profile-row profile-row-2">
-            
-      <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
+        <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
             <img
               src="/profile/privacy_specific_icon.svg"
@@ -432,24 +422,17 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
               <Unknown />
             )}
           </div>
-          
         </div>
 
         <div className="flex flex-col justify-between bg-white p-4 rounded-md shadow-lg border-2 border-[var(--orange)]">
           <div className="flex gap-3 items-center w-full">
-            <img
-              src="/profile/AI_features_icon.svg"
-              alt="icon"
-              className=""
-            />
-            <span className="font-semibold text-sm">
-              Includes AI features?
-            </span>
+            <img src="/profile/AI_features_icon.svg" alt="icon" className="" />
+            <span className="font-semibold text-sm">Includes AI features?</span>
           </div>{" "}
           {/* features-top */}
           {hasAIFeatures ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {hasAIFeatures === 'TRUE' ? 'Yes' : 'No'}
+              {hasAIFeatures ? "Yes" : "No"}
             </span>
           ) : (
             <Unknown />
@@ -473,11 +456,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
             {knownPartnership ? (
-                 (
-                  <p className="font-semibold text-sm my-2 whitespace-pre-wrap">
-                    {knownPartnership.split(',').join(", ")}
-                  </p>
-              )
+              <p className="font-semibold text-sm my-2 whitespace-pre-wrap">
+                {knownPartnership.split(",").join(", ")}
+              </p>
             ) : (
               <Unknown />
             )}
@@ -497,10 +478,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>
           <div className={`${textFormat} flex gap-x-2 flex-wrap`}>
             {knownPartnershipNonAPI ? (
-              
-                <span className="font-semibold text-sm my-2  me-1">
-                    {knownPartnershipNonAPI.split(",").join(", ")}
-                  </span>
+              <span className="font-semibold text-sm my-2  me-1">
+                {knownPartnershipNonAPI.split(",").join(", ")}
+              </span>
             ) : (
               <Unknown />
             )}
@@ -510,5 +490,5 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
       </section>
     </div>
-  );
+  )
 }

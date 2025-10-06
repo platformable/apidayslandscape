@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Loader from "./Loader";
-import { useRouter } from "next/router";
-import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories";
-import Image from "next/image";
+import React, { useState, useEffect } from "react"
+import Loader from "./Loader"
+import { useRouter } from "next/router"
+import { subcategoriesDescriptions } from "../utils/categoriesAndSubcategories"
+import Image from "next/image"
 export default function SubcategoryContainer({
   handleCompany,
   subcategory,
@@ -10,21 +10,21 @@ export default function SubcategoryContainer({
   withZoom,
   index,
 }) {
-  const router = useRouter();
+  const router = useRouter()
   const handleImages = (url) => {
     if (url.includes("https://drive.google.com")) {
       return `https://drive.google.com/thumbnail?id=${
         url.split("/d/").pop().split("/view?usp=sharing")[0]
-      }`;
+      }`
     } else {
-      return url;
+      return url
     }
-  };
+  }
 
   function getSubcategoryDescription(obj, subcategory) {
     // console.log("homepagesubcategory", obj[subcategory.name]?.[0]);
-    const search = obj[subcategory.name]?.[0]?.description;
-    return search;
+    const search = obj[subcategory.name]?.[0]?.description
+    return search
   }
 
   /* console.log(Object.keys(subcategoriesDescriptions)); */
@@ -54,11 +54,10 @@ export default function SubcategoryContainer({
       <div className="flex flex-wrap gap-1 ">
         {filteredSubcategory
           ? filteredSubcategory.map((row, index) => {
-            
               return (
                 <div
                   href="https://nextjs.org/docs"
-                  className="entity-wrapper max-h-[48px] cursor-pointer mb-0  mt-0 "
+                  className="entity-wrapper  cursor-pointer mb-0  mt-0 "
                   key={index}
                   onClick={() => handleCompany(row)}
                   data-tooltip-content={row.name}
@@ -72,38 +71,40 @@ export default function SubcategoryContainer({
                         : "homepage-landscape-img border "
                     }
                   > */}
-                    {!row.logo || row.logo === "" || row.logo === null ? (
-                      <img
-                        src={`/apidaysReplacementLogo.png`}
-                        //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
-                        alt="Company default logo"
-                        className="border aspect-square object-contain "
-                        width={34.4}
-                        height={34.4}
-                      />
-                    ) : (
-                      <img
-                        src={row.logo}
-                        alt={`${row.name} company`}
-                        className={
-                          !withZoom
-                            ? "object-contain border aspect-square object-contain "
-                            : "homepage-landscape-img border aspect-square object-contain "
-                        }
-                        width={34.4}
-                        height={34.4}
-                      />
-                    )}
+                  {!row.logo || row.logo === "" || row.logo === null ? (
+                    <img
+                      src={`https://datasetstorage.ams3.digitaloceanspaces.com/nc/uploads/noco/Core%20Dataset%20Prod/Entities/EntityLogo/rec0dRAVJ7irXViKB`}
+                      //srcset="https://res.cloudinary.com/platformable/image/upload/v1700497226/apilandscape/api_landscape_logo_zd3nba.svg"
+                      alt="Company default logo"
+                      className="border aspect-square object-contain "
+                      width={withZoom ? 64.4 : 34.4}
+                      height={withZoom ? 64.4 : 34.4}
+                    />
+                  ) : (
+                    <img
+                      src={row.logo}
+                      alt={`${row.name} company`}
+                      className={
+                        !withZoom
+                          ? "object-contain border aspect-square object-contain "
+                          : "homepage-landscape-img border aspect-square object-contain "
+                      }
+                      width={34.4}
+                      height={34.4}
+                    />
+                  )}
                   {/* </div> */}
                   {!withZoom ? (
                     <p className="index-company-text text-center mt-1">
                       {row.name.substr(0, 10)}
                     </p>
                   ) : (
-                    ""
+                    <p className="text-xs text-center mt-1">
+                      {row.name.substr(0, 10)}
+                    </p>
                   )}
                 </div>
-              );
+              )
             })
           : "no data"}
       </div>
@@ -112,5 +113,5 @@ export default function SubcategoryContainer({
 
       {/* MODAL */}
     </div>
-  );
+  )
 }

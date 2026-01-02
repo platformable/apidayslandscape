@@ -1,32 +1,35 @@
-import React from 'react'
-import { reduceMillion } from '../helpers/functions';
-import { useRouter } from "next/router";
-export default function CompanyCard({company,index,handleLoading}) {
+import React from "react"
+import { reduceMillion } from "../helpers/functions"
+import { useRouter } from "next/router"
+export default function CompanyCard({ company, index, handleLoading }) {
   const handleCompany = (company) => {
     handleLoading()
-    router.push(`/company/${company.name}`);
-  };
+    router.push(`/company/${company.name}`)
+  }
 
-
-   const handleImages = (url)=>{
-    if(url?.includes("https://drive.google.com")){
-      return (`https://drive.google.com/thumbnail?id=${url.split('d/').pop().split('/view?usp=sharing')[0]}`)
-    }else {
+  const handleImages = (url) => {
+    if (url?.includes("https://drive.google.com")) {
+      return `https://drive.google.com/thumbnail?id=${
+        url.split("d/").pop().split("/view?usp=sharing")[0]
+      }`
+    } else {
       return url
     }
-    }
+  }
 
-  const router = useRouter();
+  const router = useRouter()
 
+  const newParentCategorySlug = [...new Set(company?.cluster?.split(","))]
+  const categories = [...new Set(company?.category?.split(","))]
+  const subcategories = [...new Set(company?.subcategory?.split(","))]
 
-  const newParentCategorySlug = [...new Set(company?.cluster?.split(","))];
-  const categories = [...new Set(company?.category?.split(","))];
-  const subcategories = [...new Set(company?.subcategory?.split(","))];
+  const foundedRows = "flex items-center gap-x-2 items-center"
 
-  const foundedRows = 'flex items-center gap-x-2 items-center'
-
-    return (
-      <div className="company-card bg-white rounded-lg shadow-lg p-3 " key={index}>
+  return (
+    <div
+      className="company-card bg-white rounded-lg shadow-lg p-3 "
+      key={index}
+    >
       <div className="card-top">
         <div className="">
           <h6 className="font-bold text-company-color text-center text-[#243672] mb-5">
@@ -39,41 +42,46 @@ export default function CompanyCard({company,index,handleLoading}) {
               <img
                 src={`/landscape_logo.svg`}
                 alt="Landscape default company logo"
-                className='object-cover object-center'
-                
+                className="object-cover object-center"
               />
             ) : (
               <img
                 srcSet={`${handleImages(company.logo)} 2x`}
                 alt="Landscape company logo"
-                className='object-contain object-center w-full h-full'
-                
+                className="object-contain object-center w-full h-full"
               />
             )}
           </div>
-
 
           <div className={`${foundedRows} mt-5`}>
             <div>
               <img src="/founded_icon.svg" alt="founded icon" className="" />
             </div>
-              <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">Founded</p>
-              <p className="font-bold  m-0 p-0 ">
-                {company.yearFounded ? `${company.yearFounded}` : "-"}
-              </p>
+            <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">
+              Founded
+            </p>
+            <p className="font-bold  m-0 p-0 ">
+              {company.yearfounded ? `${company.yearfounded}` : "-"}
+            </p>
           </div>
 
           <div className={`${foundedRows} mt-3`}>
             <div>
-              <img src="/headquarter_icon.svg" alt="Headquarter icon" className="" />
+              <img
+                src="/headquarter_icon.svg"
+                alt="Headquarter icon"
+                className=""
+              />
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0  text-[var(--main-blue)] font-bold">Headquarter</p>
+              <p className="md-text m-0 p-0  text-[var(--main-blue)] font-bold">
+                Headquarter
+              </p>
             </div>
-            {company.headquartersCountry && (
+            {company.isocountrycode && (
               <img
-                src={`https://flagsapi.com/${company.headquartersCountry}/flat/64.png`}
+                src={`https://flagsapi.com/${company.isocountrycode}/flat/64.png`}
                 alt="flag icon"
                 className="w-7"
               />
@@ -81,17 +89,16 @@ export default function CompanyCard({company,index,handleLoading}) {
             <div>
               {" "}
               <p className="md-text font-bold  m-0 p-0 ">
-                {company?.headquartersCity ? `${company?.headquartersCity}, ` : '-'} {company.headquartersCountry}
+                {company?.hqlocation ? `${company?.hqlocation} ` : "-"}{" "}
+                {company.CountryName}
               </p>
             </div>
           </div>
         </div>
       </div>{" "}
       {/* <!--cardtop--> */}
-   
       <div className="grid grid-cols-3 gap-x-2 mb-3 mt-5">
         <div className="purpleBorder rounded-md p-2 flex flex-col gap-2 items-center">
-          
           <p className="font-bold my-2 text-[#000000]">
             {company.headcount ? company.headcount : "-"}
           </p>
@@ -104,11 +111,12 @@ export default function CompanyCard({company,index,handleLoading}) {
         </div>
 
         <div className="greenBorder rounded-md p-2 flex flex-col gap-2 items-center">
-          
           <p className="font-bold my-2 text-[#000000]">
-            {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
+            {company.totalfunding ? reduceMillion(company.totalfunding) : "-"}
           </p>
-          <span className="text-[var(--main-blue)] text-center font-bold">Total Funding</span>
+          <span className="text-[var(--main-blue)] text-center font-bold">
+            Total Funding
+          </span>
           <img
             src="/profile/total_funding_icon.svg"
             alt="Total funding icon"
@@ -117,13 +125,12 @@ export default function CompanyCard({company,index,handleLoading}) {
         </div>
 
         <div className="orangeBorder rounded-md p-2  flex flex-col gap-2 items-center">
-          
           <p className="font-bold my-2 text-[#000000]">
-          {
-              company.totalProducts ? company.totalProducts :'-'
-            }
+            {company.totalproducts ? company.totalproducts : "-"}
           </p>
-          <span className="text-[var(--main-blue)] text-center font-bold">Active products</span>
+          <span className="text-[var(--main-blue)] text-center font-bold">
+            Active products
+          </span>
           <img
             src="/profile/active_products_icon.svg"
             alt="Active products icon"
@@ -131,17 +138,15 @@ export default function CompanyCard({company,index,handleLoading}) {
           />
         </div>
       </div>
-
       <div className="my-1 grid">
-    
         <button
-         onClick={()=>handleCompany(company)}
+          onClick={() => handleCompany(company)}
           className="bg-[var(--main-blue)] shadow-md px-10 py-3  text-white uppercase rounded text-center"
         >
-         View complete profile
+          View complete profile
         </button>
         {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
       </div>
     </div>
-    )
+  )
 }

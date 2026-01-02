@@ -1,24 +1,22 @@
-import React from "react";
-import { reduceMillion } from "../helpers/functions";
-import Unknown from "./Unknown";
-import Link from "next/link";
-export default function CompanyCardModal({
-  company,
-  index,
-}) {
-  const newParentCategorySlug = [...new Set(company?.cluster?.split(","))];
-  const categories = [...new Set(company?.category?.split(","))];
-  const subcategories = [...new Set(company?.subcategory?.split(","))];
+import React from "react"
+import { reduceMillion } from "../helpers/functions"
+import Unknown from "./Unknown"
+import Link from "next/link"
+export default function CompanyCardModal({ company, index }) {
+  const newParentCategorySlug = [...new Set(company?.cluster?.split(","))]
+  const categories = [...new Set(company?.category?.split(","))]
+  const subcategories = [...new Set(company?.subcategory?.split(","))]
 
+  console.log("company in modal", company)
   const handleImages = (url) => {
     if (url?.includes("https://drive.google.com")) {
       return `https://drive.google.com/thumbnail?id=${
         url.split("d/").pop().split("/view?usp=sharing")[0]
-      }`;
+      }`
     } else {
-      return url;
+      return url
     }
-  };
+  }
 
   return (
     <div
@@ -33,17 +31,22 @@ export default function CompanyCardModal({
           </h3>
 
           <div className="card-logo flex  justify-center mb-3">
-            {!company.logo ||company.logo === "" || null ? (
-              <img src="/apidaysReplacementLogo.png" alt="Company default logo" className="card-logo"/>
+            {!company.logo || company.logo === "" || null ? (
+              <img
+                src="/apidaysReplacementLogo.png"
+                alt="Company default logo"
+                className="card-logo"
+              />
             ) : (
-              <img srcSet={`${handleImages(company.logo)} 2x`} alt={`${company?.name} logo`} />
+              <img
+                srcSet={`${handleImages(company.logo)} 2x`}
+                alt={`${company?.name} logo`}
+              />
             )}
           </div>
 
           <div className="company-decription mb-8">
-            <p className="text-center font-medium">
-              {company.description}
-            </p>
+            <p className="text-center font-medium">{company.description}</p>
           </div>
 
           {/* <span className="xs-text badge tex-black">{company?.url?.length>6? "find out more":""}</span> */}
@@ -54,26 +57,34 @@ export default function CompanyCardModal({
             </div>
             <div>
               {" "}
-              <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">Founded in</p>
+              <p className="md-text m-0 p-0 text-[var(--main-blue)] font-bold">
+                Founded in
+              </p>
             </div>
             <div className="ml-2">
               {" "}
               <p className="font-bold p-0">
-                {company.yearFounded ? `${company.yearFounded}` : "-"}
+                {company.yearfounded ? `${company.yearfounded}` : "-"}
               </p>
             </div>
           </div>
 
           <div className="flex gap-x-2 items-center">
             <div>
-              <img src="/headquarter_icon.svg" alt="headquarter icon" className="" />
+              <img
+                src="/headquarter_icon.svg"
+                alt="headquarter icon"
+                className=""
+              />
             </div>
             <div>
-              <p className="md-text p-0  text-[var(--main-blue)] font-bold">Headquarter</p>
+              <p className="md-text p-0  text-[var(--main-blue)] font-bold">
+                Headquarter
+              </p>
             </div>
-            {company.headquartersCountry && (
+            {company.hqlocation && (
               <img
-                src={`https://flagsapi.com/${company.headquartersCountry}/flat/64.png`}
+                src={`https://flagsapi.com/${company.isocountrycode}/flat/64.png`}
                 alt="flag icon"
                 className="w-7"
               />
@@ -81,8 +92,8 @@ export default function CompanyCardModal({
 
             <div className="">
               <p className="md-text font-bold p-0">
-                {company.headquartersCity
-                  ? `${company.headquartersCity}, ${company.headquartersCountry}`
+                {company.hqlocation
+                  ? `${company.isocountrycode}, ${company.hqlocation}`
                   : "-"}
               </p>
             </div>
@@ -128,20 +139,28 @@ export default function CompanyCardModal({
             {company.headcount ? company.headcount : "-"}
           </p>
           <span className="text-[#083ECB]">Headcount</span>
-          <img src="/profile/headcount_icon.svg" alt="headcount icon" className="sd-icon mt-3" />
+          <img
+            src="/profile/headcount_icon.svg"
+            alt="headcount icon"
+            className="sd-icon mt-3"
+          />
         </div>
 
         <div className="greenBorder rounded-md p-2 flex flex-col items-center">
           <p className="font-bold my-2 text-[#243672]">
-            {company.totalFunding ? reduceMillion(company.totalFunding) : "-"}
+            {company.totalfunding ? reduceMillion(company.totalfunding) : "-"}
           </p>
           <span className="text-[#083ECB]">Total Funding</span>
-          <img src="/profile/total_funding_icon.svg" alt="total funding icon" className="md-icon mt-3" />
+          <img
+            src="/profile/total_funding_icon.svg"
+            alt="total funding icon"
+            className="md-icon mt-3"
+          />
         </div>
 
         <div className="orangeBorder rounded-md p-2  flex flex-col items-center">
           <p className="font-bold my-2 text-[#243672]">
-            {company.totalProducts || "-"}
+            {company.totalproducts || "-"}
           </p>
           <span className="text-[#083ECB]">Active products</span>
           <img
@@ -161,5 +180,5 @@ export default function CompanyCardModal({
         {/* <span className="text-sm text-gray">Wrong info? suggest </span> */}
       </div>
     </div>
-  );
+  )
 }

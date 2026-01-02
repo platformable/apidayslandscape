@@ -38,7 +38,7 @@ export default function SubcategoryContainer({
       <header className="flex gap-3">
         <h4 className="sm-text font-bold text-[var(--main-blue)] tracking-wide leading-normal mt-1 mb-2 block text-left">
           {subcategory.name}
-          <span className=""> ({filteredSubcategory.length})</span>
+          <span className=""> ({filteredSubcategory?.length})</span>
         </h4>
         <div
           className="cursor-pointer bg-[var(--tooltip-bg)] rounded-full text-sm w-5 h-5 grid place-content-center"

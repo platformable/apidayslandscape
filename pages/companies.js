@@ -1,30 +1,24 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import Layout from "../components/Layout";
-import Head from "next/head";
-import CompanyCard from "../components/CompanyCard";
-import TopBarProgress from "react-topbar-progress-indicator";
+import React, { useState, useEffect, useRef, useContext } from "react"
+import Layout from "../components/Layout"
+import Head from "next/head"
+import CompanyCard from "../components/CompanyCard"
+import TopBarProgress from "react-topbar-progress-indicator"
 //import { categories,subcategories,categoriesWithSubcategories } from '../utils/categoriesAndSubcategories';
-import Loader from "../components/Loader";
-import { CompanyContext } from "../context/CompanyContext";
-import { newModel } from "../context/data";
-import SearchFilters from "../components/SearchFilters";
+import Loader from "../components/Loader"
+import { CompanyContext } from "../context/CompanyContext"
+import { newModel } from "../context/data"
+import SearchFilters from "../components/SearchFilters"
 
 export default function companiesCards({ data }) {
+  const [company, setCompany] = useContext(CompanyContext)
 
+  const [loading, setLoading] = useState(false)
+  const [loader, setLoader] = useState(true)
+  const [search, setSearch] = useState("")
+  const [noData, setNoData] = useState(true)
 
-  const [company, setCompany] = useContext(CompanyContext);
-
-
-
-  const [loading, setLoading] = useState(false);
-  const [loader, setLoader] = useState(true);
-  const [search, setSearch] = useState("");
-  const [noData, setNoData] = useState(true);
-
-  const [liveData, setLiveData] = useState(data.values);
-  const [sorted, setSorted] = useState(true);
-
-
+  const [liveData, setLiveData] = useState(data.values)
+  const [sorted, setSorted] = useState(true)
 
   TopBarProgress.config({
     barColors: {
@@ -32,70 +26,63 @@ export default function companiesCards({ data }) {
       "1.0": "#fdb43e",
     },
     shadowBlur: 5,
-  });
+  })
 
   const handleCompanyName = (text) => {
     const result = data.values.filter((company, index) =>
       company.name.toLowerCase().includes(text.toLowerCase())
-    );
+    )
 
-    setLiveData(result);
+    setLiveData(result)
     if (result.length <= 0) {
-      setNoData(true);
+      setNoData(true)
     } else {
-      setNoData(false);
+      setNoData(false)
     }
-  };
+  }
 
   const handleSorted = () => {
-
-    setSorted(!sorted);
+    setSorted(!sorted)
     if (sorted) {
-      setLiveData(liveData.sort((a, b) => b.name.localeCompare(a.name)));
-    } 
-    if (!sorted){ 
-      setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)));
+      setLiveData(liveData.sort((a, b) => b.name.localeCompare(a.name)))
     }
-  };
-
-
-
-
+    if (!sorted) {
+      setLiveData(liveData.sort((a, b) => a.name.localeCompare(b.name)))
+    }
+  }
 
   const handleLoading = () => {
-    setLoading(!loading);
-  };
+    setLoading(!loading)
+  }
 
-
- 
-
-  const clusters = Object.keys(newModel);
+  const clusters = Object.keys(newModel)
   const categories = Object.entries(newModel)
     .map(([cluster, values], index) => {
-      const allCategories = [];
+      const allCategories = []
       const data = Object.entries(values.categories).map(
         ([category, value], i) => {
-          return allCategories.push({label: category, cluster });
+          return allCategories.push({ label: category, cluster })
         }
-      );
-      return allCategories;
+      )
+      return allCategories
     })
-    .flat();
+    .flat()
 
-    const subcategories = Object.entries(newModel)
+  const subcategories = Object.entries(newModel)
     .map(([cluster, values], index) => {
-      const allSubcategories = [];
+      const allSubcategories = []
       // console.log("make subcategories", cluster, values)
       const data = Object.entries(values.categories).map(
         ([category, value], i) => {
-          value?.subcategories.forEach(subcat => allSubcategories.push({label: subcat.name, category }))
+          value?.subcategories.forEach((subcat) =>
+            allSubcategories.push({ label: subcat.name, category })
+          )
         }
-      );
-      return allSubcategories;
+      )
+      return allSubcategories
     })
-    .flat();
+    .flat()
 
- 
   return (
     <Layout>
       <Head>
@@ -122,59 +109,65 @@ export default function companiesCards({ data }) {
         </div>
       )}
       <section className="bg-[#E1F6F8]">
-        <div id="cards" className="container mx-auto py-10"> 
-          {liveData.message ? <p className="font-bold text-center bg-[#E1F6F8] rounded-lg px-2 py-1">{liveData.message}</p> : ""}
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded md:px-0 px-5 ">
-            
-              {liveData.length > 0 ? (
-                liveData?.map((company, index) => {
-                  return (
-                    <CompanyCard
-                      company={company}
-                      index={index}
-                      handleLoading={handleLoading}
-                      key={index}
-                    />
-                  )
-                })
-              ) : (
-                
+        <div id="cards" className="container mx-auto py-10">
+          {liveData.message ? (
+            <p className="font-bold text-center bg-[#E1F6F8] rounded-lg px-2 py-1">
+              {liveData.message}
+            </p>
+          ) : (
+            ""
+          )}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded md:px-0 px-5 ">
+            {liveData.length > 0 ? (
+              liveData?.map((company, index) => {
+                return (
+                  <CompanyCard
+                    company={company}
+                    index={index}
+                    handleLoading={handleLoading}
+                    key={index}
+                  />
+                )
+              })
+            ) : (
               <></>
-            
-              )}
+            )}
 
-              {liveData.length <= 0 && !loader ? "No Data..." : ""}
+            {liveData.length <= 0 && !loader ? "No Data..." : ""}
 
-              {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
-            </div>
+            {/* {noData ? <h3 className="fw-bold">No Data</h3>: <img src="../waiting.gif"/>}  */}
+          </div>
         </div>
       </section>
-     
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v3/companies`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v4/companies`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
     },
-  });
+  })
 
-  const data = await res.json();
+  const data = await res.json()
   const cleanNullValues = await data.values.filter(
     (company) => company.cluster !== null || company.category !== null
-  );
+  )
 
   if (!data) {
     return {
       notFound: true,
-    };
+    }
   }
 
   return {
-    props: { data: { values: cleanNullValues.sort((a, b) => a.name.localeCompare(b.name)) } },
-    revalidate:60
-  };
+    props: {
+      data: {
+        values: cleanNullValues.sort((a, b) => a.name.localeCompare(b.name)),
+      },
+    },
+    revalidate: 60,
+  }
 }

@@ -1,29 +1,29 @@
-import React, { useContext, useState, useRef } from "react";
-import { newModel } from "../context/data";
-import Layout from "../components/Layout";
-import { CompanyContext } from "../context/CompanyContext";
-import { useRouter } from "next/router";
-import { Tooltip } from "react-tooltip";
-import HomepageSubcategory from "../components/HomepageSubcategory";
-import Modal from "../components/Modal";
-import Methodology from "../components/Methodology";
-import TopBarProgress from "react-topbar-progress-indicator";
-import Meta from "../components/Meta";
-import Hero from "../components/Hero";
-import SubcategoryContainer from "../components/SubcategoryContainer";
-import CategoryContainer from "../components/CategoryContainer";
-import ClusterContainer from "../components/ClusterContainer";
-import Toolbar from "../components/Toolbar";
+import React, { useContext, useState, useRef } from "react"
+import { newModel } from "../context/data"
+import Layout from "../components/Layout"
+import { CompanyContext } from "../context/CompanyContext"
+import { useRouter } from "next/router"
+import { Tooltip } from "react-tooltip"
+import HomepageSubcategory from "../components/HomepageSubcategory"
+import Modal from "../components/Modal"
+import Methodology from "../components/Methodology"
+import TopBarProgress from "react-topbar-progress-indicator"
+import Meta from "../components/Meta"
+import Hero from "../components/Hero"
+import SubcategoryContainer from "../components/SubcategoryContainer"
+import CategoryContainer from "../components/CategoryContainer"
+import ClusterContainer from "../components/ClusterContainer"
+import Toolbar from "../components/Toolbar"
 
 export default function Homepage({ data }) {
-  const [company, setCompany] = useContext(CompanyContext);
-  const [showModal, setShowModal] = useState(false);
+  const [company, setCompany] = useContext(CompanyContext)
+  const [showModal, setShowModal] = useState(false)
 
-  const [selectedEntity, setSelectedEntity] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [withZoom, setWithZoom] = useState(false);
+  const [selectedEntity, setSelectedEntity] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [withZoom, setWithZoom] = useState(false)
 
-  const router = useRouter();
+  const router = useRouter()
 
   TopBarProgress.config({
     barColors: {
@@ -31,36 +31,36 @@ export default function Homepage({ data }) {
       "1.0": "#fdb43e",
     },
     shadowBlur: 5,
-  });
+  })
   // console.log("modal",showModal)
 
   const handleCompany = (entity) => {
-    setSelectedEntity(entity);
-    setShowModal(true);
-  };
+    setSelectedEntity(entity)
+    setShowModal(true)
+  }
 
-  const [searchResult, setSearchResult] = useState(false);
+  const [searchResult, setSearchResult] = useState(false)
 
   const handleSearchMessage = () => {
-    setSearchResult(true);
-    setTimeout(() => setSearchResult(false), 3000);
-  };
+    setSearchResult(true)
+    setTimeout(() => setSearchResult(false), 3000)
+  }
 
   const handleFoundCompany = (company) => {
-    setLoading(!loading);
-    router.push(`/company/${company}`);
-  };
+    setLoading(!loading)
+    router.push(`/company/${company}`)
+  }
 
   const handleSearch = () => {
     if (company.searchInput !== "") {
       const result = data.values.filter(
         (item, index) => item.name.toLowerCase() === company.searchInput
-      );
+      )
       result.length === 0
         ? handleSearchMessage()
-        : handleFoundCompany(result[0].name);
+        : handleFoundCompany(result[0].name)
     }
-  };
+  }
 
   return (
     <Layout>
@@ -80,23 +80,21 @@ export default function Homepage({ data }) {
             id="companyName-tooltip"
           />
           <Tooltip
-/*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
+            /*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="category-tooltip"
             place="right"
             className="cluster-tooltip"
-
           />
           <Tooltip
-         
-/*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
+            /*             style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="category-tooltip"
             place="right"
             className="category-tooltip"
           />
           <Tooltip
-     /*       style={{ backgroundColor: "#083ECB", color: "#fff" }} */
+            /*       style={{ backgroundColor: "#083ECB", color: "#fff" }} */
             textColor="#fff"
             id="subcategory-tooltip"
           />
@@ -121,14 +119,14 @@ export default function Homepage({ data }) {
                         >
                           {values?.subcategories?.map((subcat, index) => {
                             // if (subcat.name === 'Red Hat') console.log("subcat,", subcat, categorieName);
-                            const filteredSubcategory = data?.values.filter(
+                            const filteredSubcategory = data?.values?.filter(
                               (company, index) =>
                                 // company.category?.includes(categorieName) &&
                                 company?.subcategory?.includes(subcat.name)
-                            );
-                            filteredSubcategory.sort((a, b) =>
+                            )
+                            filteredSubcategory?.sort((a, b) =>
                               a.name.localeCompare(b.name)
-                            );
+                            )
                             return (
                               <SubcategoryContainer
                                 subcategory={subcat}
@@ -138,14 +136,14 @@ export default function Homepage({ data }) {
                                 index={index}
                                 key={index}
                               />
-                            );
+                            )
                           })}
                         </CategoryContainer>
-                      );
+                      )
                     }
                   )}
                 </ClusterContainer>
-              );
+              )
             })}
           </section>
         </div>
@@ -159,29 +157,30 @@ export default function Homepage({ data }) {
         showModal={showModal}
       />
     </Layout>
-  );
+  )
 }
 export async function getStaticProps(context) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v3/companies`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v4/companies`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
     },
-  });
+  })
 
-  const data = await res.json();
-  const cleanNullValues = await data.values.filter(
-    (company) => company.cluster !== null || company.category !== null
-  );
+  const data = await res.json()
+
+  const cleanNullValues = await data?.values?.filter(
+    (company) => company?.cluster !== null || company?.category !== null
+  )
 
   if (!data) {
     return {
       notFound: true,
-    };
+    }
   }
 
   return {
     props: { data: { values: cleanNullValues } },
-    revalidate:60
-  };
+    revalidate: 60,
+  }
 }

@@ -7,30 +7,31 @@ import { Tooltip } from "react-tooltip"
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
   const {
     headcount,
-    nonWhitePeopleInManagement,
-    womanInManagement,
-    activeProducts,
-    patentsGranted,
+    nonwhitepeopleinmanagement,
+    womeninmanagement,
+    activeproducts,
+    patentsgranted,
     acquisition,
     stage,
-    totalFunding,
-    lastFunding,
-    moneyRaisedAtIpo,
-    ipoDate,
-    ipoValuation,
-    knownPartnership,
-    knownPartnershipNonAPI,
-    knownStandardsUsed,
-    contentAddressingBanking,
-    contentAddressingGovernment,
-    contentAddressingHealth,
-    contentAddressingSustainability,
-    pricingPage,
-    pricingModel,
-    privacySpecific,
-    knownProtocolsUsed,
-    hasAIFeatures,
+    totalfunding,
+    lastfunding,
+    moneyraisedatipo,
+    ipodate,
+    ipovaluation,
+    knownpartnership,
+    knownpartnershipnonapi,
+    knownstandardsused,
+    contentaddressingbanking,
+    contentaddressinggovernment,
+    contentaddressinghealth,
+    contentaddressingsustainability,
+    pricingpage,
+    pricingmodel,
+    privacyspecific,
+    knownprotocolsused,
+    hasaifeatures,
     diversemanagement,
+    totalproducts,
   } = selectedCompany
 
   const textFormat = "text-black text-lg"
@@ -56,7 +57,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
 
         <div className="profile-stats-card">
           <span className={`${textFormat} font-semibold my-2`}>
-            {handleScore(womanInManagement, nonWhitePeopleInManagement)}
+            {handleScore(womeninmanagement, diversemanagement)}
           </span>
           <span className="font-semibold text-sm">Diversity Scores</span>
           <img
@@ -67,7 +68,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {womanInManagement ? (
+          {womeninmanagement ? (
             <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
             <span className={`${textFormat} font-semibold my-2`}>No</span>
@@ -77,7 +78,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {nonWhitePeopleInManagement ? (
+          {nonwhitepeopleinmanagement ? (
             <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
             <span className={`${textFormat} font-semibold my-2`}>No</span>
@@ -92,9 +93,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         className="save-section profile-row profile-row-3"
       >
         <div className="profile-stats-card">
-          {totalFunding ? (
+          {totalfunding ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {reduceMillion(totalFunding)}
+              {reduceMillion(totalfunding)}
             </span>
           ) : (
             <Unknown />
@@ -113,9 +114,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {lastFunding ? (
+          {lastfunding ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {lastFunding}
+              {lastfunding}
             </span>
           ) : (
             <Unknown />
@@ -131,9 +132,13 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         className="save-section profile-row profile-row-4"
       >
         <div className="profile-stats-card">
-          {ipoDate ? (
+          {ipodate ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {ipoDate}
+              {new Date(ipodate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+              })}
             </span>
           ) : (
             <Unknown />
@@ -143,9 +148,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {moneyRaisedAtIpo ? (
+          {moneyraisedatipo ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {reduceMillion(moneyRaisedAtIpo)}
+              {reduceMillion(moneyraisedatipo)}
               {}
             </span>
           ) : (
@@ -158,9 +163,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {ipoValuation ? (
+          {ipovaluation ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {reduceMillion(ipoValuation)}
+              {reduceMillion(ipovaluation)}
             </span>
           ) : (
             <Unknown />
@@ -189,9 +194,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         className="save-section profile-row profile-row-4"
       >
         <div className="profile-stats-card">
-          {activeProducts ? (
+          {totalproducts ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {activeProducts}
+              {totalproducts}
             </span>
           ) : (
             <Unknown />
@@ -204,9 +209,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           />
         </div>{" "}
         <div className="profile-stats-card">
-          {patentsGranted ? (
+          {patentsgranted ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {patentsGranted}
+              {patentsgranted}
             </span>
           ) : (
             <Unknown />
@@ -215,9 +220,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           <img src="/profile/patents_icon.svg" alt="icon" className="" />
         </div>
         <div className="profile-stats-card">
-          {pricingModel ? (
+          {pricingmodel ? (
             <span className={`${textFormat} font-semibold my-2`}>
-              {pricingModel}
+              {pricingmodel.replace(/[{}"]/g, "")}
             </span>
           ) : (
             <Unknown />
@@ -228,17 +233,17 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="profile-stats-card ">
           <Link
             target="_blank"
-            href={pricingPage || "#"}
-            className={`${!pricingPage ? "cursor-pointer" : "btn-transition"}`}
+            href={pricingpage || "#"}
+            className={`${!pricingpage ? "cursor-pointer" : "btn-transition"}`}
           >
             <button
-              disabled={!pricingPage}
+              disabled={!pricingpage}
               data-tooltip-id="content-addressing"
               data-tooltip-content={
-                pricingPage ? "" : "Information not available"
+                pricingpage ? "" : "Information not available"
               }
               className={`${
-                pricingPage ? "shadow-md " : "opacity-75"
+                pricingpage ? "shadow-md " : "opacity-75"
               }  font-semibold text-sm mt-3 px-4 py-3 bg-[#F0F4EC] text-[var(--main-blue)] rounded-md `}
             >
               Pricing page
@@ -264,19 +269,19 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 2xl:gap-8 w-full my-2">
           <Link
             target="_blank"
-            href={contentAddressingBanking || "#"}
+            href={contentaddressingbanking || "#"}
             className={`${
-              !contentAddressingBanking ? "cursor-pointer" : "btn-transition"
+              !contentaddressingbanking ? "cursor-pointer" : "btn-transition"
             } `}
           >
             <button
-              disabled={!contentAddressingBanking}
+              disabled={!contentaddressingbanking}
               data-tooltip-content={
-                contentAddressingBanking ? "" : "Information not available"
+                contentaddressingbanking ? "" : "Information not available"
               }
               data-tooltip-id="content-addressing"
               className={`${
-                contentAddressingBanking ? "shadow-md " : "opacity-75"
+                contentaddressingbanking ? "shadow-md " : "opacity-75"
               } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/banking_icon.svg" alt="icon" />
@@ -285,19 +290,19 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </Link>
           <Link
             target="_blank"
-            href={contentAddressingHealth || "#"}
+            href={contentaddressinghealth || "#"}
             className={`${
-              !contentAddressingHealth ? "cursor-pointer" : "btn-transition"
+              !contentaddressinghealth ? "cursor-pointer" : "btn-transition"
             } `}
           >
             <button
-              disabled={!contentAddressingHealth}
+              disabled={!contentaddressinghealth}
               data-tooltip-content={
-                contentAddressingHealth ? "" : "Information not available"
+                contentaddressinghealth ? "" : "Information not available"
               }
               data-tooltip-id="content-addressing"
               className={`${
-                contentAddressingHealth ? "shadow-md " : "opacity-75"
+                contentaddressinghealth ? "shadow-md " : "opacity-75"
               } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/health_sector_icon.svg" alt="icon" />
@@ -306,19 +311,19 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </Link>
           <Link
             target="_blank"
-            href={contentAddressingGovernment || "#"}
+            href={contentaddressinggovernment || "#"}
             className={`${
-              !contentAddressingGovernment ? "cursor-pointer" : "btn-transition"
+              !contentaddressinggovernment ? "cursor-pointer" : "btn-transition"
             } `}
           >
             <button
-              disabled={!contentAddressingGovernment}
+              disabled={!contentaddressinggovernment}
               data-tooltip-content={
-                contentAddressingGovernment ? "" : "Information not available"
+                contentaddressinggovernment ? "" : "Information not available"
               }
               data-tooltip-id="content-addressing"
               className={`${
-                contentAddressingGovernment ? "shadow-md " : "opacity-75"
+                contentaddressinggovernment ? "shadow-md " : "opacity-75"
               } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/government_icon.svg" alt="icon" />
@@ -327,23 +332,23 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </Link>
           <Link
             target="_blank"
-            href={contentAddressingSustainability || "#"}
+            href={contentaddressingsustainability || "#"}
             className={`${
-              !contentAddressingSustainability
+              !contentaddressingsustainability
                 ? "cursor-pointer"
                 : "btn-transition"
             } `}
           >
             <button
-              disabled={!contentAddressingSustainability}
+              disabled={!contentaddressingsustainability}
               data-tooltip-content={
-                contentAddressingSustainability
+                contentaddressingsustainability
                   ? ""
                   : "Information not available"
               }
               data-tooltip-id="content-addressing"
               className={`${
-                contentAddressingSustainability ? "shadow-md " : "opacity-75"
+                contentaddressingsustainability ? "shadow-md " : "opacity-75"
               } text-[var(--main-blue)]  font-semibold py-2 px-1 md:px-2 xl:px-3 w-full bg-[#F0F4EC] rounded-md flex items-center gap-2 md:gap-3`}
             >
               <img src="/profile/sustainability_icon.svg" alt="icon" />
@@ -367,9 +372,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-            {knownProtocolsUsed ? (
+            {knownprotocolsused ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownProtocolsUsed}
+                {knownprotocolsused}
               </span>
             ) : (
               <Unknown />
@@ -390,9 +395,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-            {knownStandardsUsed ? (
+            {knownstandardsused ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {knownStandardsUsed}
+                {knownstandardsused}
               </span>
             ) : (
               <Unknown />
@@ -414,9 +419,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
           </div>{" "}
           {/* features-top */}
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-            {privacySpecific ? (
+            {privacyspecific ? (
               <span className={`${textFormat} font-semibold text-sm p-3`}>
-                {privacySpecific}
+                {privacyspecific}
               </span>
             ) : (
               <Unknown />
@@ -430,9 +435,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             <span className="font-semibold text-sm">Includes AI features?</span>
           </div>{" "}
           {/* features-top */}
-          {hasAIFeatures ? (
+          {hasaifeatures ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {hasAIFeatures ? "Yes" : "No"}
+              {hasaifeatures ? "Yes" : "No"}
             </span>
           ) : (
             <Unknown />
@@ -455,9 +460,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>
           <div className={`${textFormat}  flex gap-x-2 flex-wrap`}>
-            {knownPartnership ? (
+            {knownpartnership ? (
               <p className="font-semibold text-sm my-2 whitespace-pre-wrap">
-                {knownPartnership.split(",").join(", ")}
+                {knownpartnership.split(",").join(", ")}
               </p>
             ) : (
               <Unknown />
@@ -477,9 +482,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             </span>
           </div>
           <div className={`${textFormat} flex gap-x-2 flex-wrap`}>
-            {knownPartnershipNonAPI ? (
+            {knownpartnershipnonapi ? (
               <span className="font-semibold text-sm my-2  me-1">
-                {knownPartnershipNonAPI.split(",").join(", ")}
+                {knownpartnershipnonapi.split(",").join(", ")}
               </span>
             ) : (
               <Unknown />

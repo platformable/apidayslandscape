@@ -10,20 +10,22 @@ function ProfileLeftSide({ selectedCompany }) {
     description,
     category,
     subcategory,
-    yearFounded,
-    founderNames,
-    headquartersCountry,
-    headquartersCity,
+    yearfounded,
+    foundernames,
+    headquarterscity,
+    hqlocation,
     linkedin,
     github,
     opensource,
+    isocountrycode,
   } = selectedCompany
+
+  console.log("selectedCompany", selectedCompany)
 
   const newParentCategorySlug = [...new Set(cluster?.split(","))]
   const categories = [...new Set(category?.split(","))]
   const subcategories = [...new Set(subcategory?.split(","))]
 
-  console.log("selectedCompany", selectedCompany)
   const foundedRows = "flex items-center gap-x-2 items-center"
   return (
     <div
@@ -103,7 +105,7 @@ function ProfileLeftSide({ selectedCompany }) {
       <div className="description mt-6 mb-5 font-bold">
         <p className={`text-black text-xl`}>{description}</p>
       </div>{" "}
-      <div className="open-source flex  mb-10">
+      <div className="open-source flex  mb-4">
         <>
           <img src="/openSource_icon.svg" alt="icon" className="icon" />
           <p className="text-[var(--main-blue)] text-sm mt-1 ml-2  me-2 font-bold">
@@ -126,7 +128,7 @@ function ProfileLeftSide({ selectedCompany }) {
               Founded in
             </span>
             <span className={`text-black text-base font-bold`}>
-              {yearFounded}
+              {yearfounded}
             </span>
           </div>
           {/*  founded top left */}
@@ -139,7 +141,7 @@ function ProfileLeftSide({ selectedCompany }) {
             </div>{" "}
             {/* icon */}
             <span className="font-bold text-base text-black">
-              {founderNames || "-"}
+              {foundernames || "-"}
             </span>
           </div>
           {/*  founded top left */}
@@ -152,17 +154,15 @@ function ProfileLeftSide({ selectedCompany }) {
             <span className="text-sm text-[var(--main-blue)] font-bold">
               Headquarter
             </span>
-            {headquartersCountry && (
+            {isocountrycode && (
               <img
-                src={`https://flagsapi.com/${headquartersCountry}/flat/64.png`}
+                src={`https://flagsapi.com/${isocountrycode}/flat/64.png`}
                 alt="flag icon"
                 className="w-7"
               />
             )}
             <span className="font-bold text-base text-black">
-              {headquartersCity
-                ? `${headquartersCity}, ${headquartersCountry}`
-                : "-"}
+              {isocountrycode ? `${isocountrycode}, ${headquarterscity}` : "-"}
             </span>
           </div>
           {/*  founded top left */}

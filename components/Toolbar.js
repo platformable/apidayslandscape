@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
 import {
   EmailShareButton,
@@ -9,46 +9,46 @@ import {
   EmailIcon,
   LinkedinIcon,
   TwitterIcon,
-} from "react-share";
-import APISCounter from "./APISCounter";
+} from "react-share"
+import APISCounter from "./APISCounter"
 export default function Toolbar({ setLoading, setWithZoom, data }) {
-  const totalValues = data.values.filter(
+  const totalValues = data?.values?.filter(
     (items) =>
       items.parentCategorySlug !== "API Standards/Protocols" &&
       items.parentCategorySlug !== "Media/Associations"
-  );
+  )
   const handleForm = (url) => {
     if (typeof window !== "undefined") {
-      window.open(url, "_blank");
+      window.open(url, "_blank")
     }
-  };
+  }
 
   const handleLinks = (url) => {
-    setLoading((prev) => !prev);
-    router.push(`/${url}`);
-  };
+    setLoading((prev) => !prev)
+    router.push(`/${url}`)
+  }
 
   const getDay = (date) => {
-    const lastUpdate = new Date();
+    const lastUpdate = new Date()
 
     return lastUpdate.toLocaleString("default", {
       month: "long",
       day: "2-digit",
       year: "numeric",
-    });
-  };
+    })
+  }
 
-
-
-
-
-  const router = useRouter();
+  const router = useRouter()
   return (
     <div id="toolbar" className="pt-14 pb-8 ">
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 font-semibold">
         <button
           className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
-          onClick={() => handleForm("https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336")}
+          onClick={() =>
+            handleForm(
+              "https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336"
+            )
+          }
         >
           Add your API Tool
         </button>
@@ -72,26 +72,30 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         >
           Download the map
         </a>
-       
+
         {/* <a className="btn btn-dark-gray  text-white" href="https://drive.google.com/u/0/uc?id=1J2DdAB54QU6QuPoACqQoNv4nImFjyAdx&export=download"  download="stateofthemarket2022">Report</a> */}
-        <Link href="/report"
+        <Link
+          href="/report"
           className=" m-0 bg-[var(--main-green)] uppercase text-white self-start h-14 rounded shadow-md btn-transition items-center justify-center flex"
-        /*   target="_blank" */
+          /*   target="_blank" */
           /* onClick={() => handleForm("https://apidays.typeform.com/to/YMTfJ3?typeform-source=www.apidays.global")} */
         >
           Report
         </Link>
         <div>
           <div className="flex gap-x-2">
-            <APISCounter count={totalValues?.length}/>
+            <APISCounter count={totalValues?.length} />
             <LinkedinShareButton
               url="apilandscape.apiscene.io"
               title="The API Landscape"
               source="apilandscape.apiscene.io"
               summary="The API Landscape"
-              
             >
-              <LinkedinIcon size={60} round={true} bgStyle={{fill:"var(--main-blue)"}} />
+              <LinkedinIcon
+                size={60}
+                round={true}
+                bgStyle={{ fill: "var(--main-blue)" }}
+              />
             </LinkedinShareButton>
             <EmailShareButton
               url=""
@@ -99,9 +103,12 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
               subject="The API Landscape from apidays"
               separator=" "
               body="Get to know more about the API Landscape, visit https://www.apilandscape.apiscene.io"
-              
             >
-              <EmailIcon size={60} round={true} bgStyle={{fill:"var(--main-blue)"}}/>
+              <EmailIcon
+                size={60}
+                round={true}
+                bgStyle={{ fill: "var(--main-blue)" }}
+              />
             </EmailShareButton>
           </div>
 
@@ -116,5 +123,5 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

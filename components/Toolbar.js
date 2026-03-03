@@ -15,7 +15,7 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
   const totalValues = data?.values?.filter(
     (items) =>
       items.parentCategorySlug !== "API Standards/Protocols" &&
-      items.parentCategorySlug !== "Media/Associations"
+      items.parentCategorySlug !== "Media/Associations",
   )
   const handleForm = (url) => {
     if (typeof window !== "undefined") {
@@ -44,11 +44,12 @@ export default function Toolbar({ setLoading, setWithZoom, data }) {
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 font-semibold">
         <button
           className="rounded bg-[var(--main-blue)] text-white  self-start h-14 shadow-md uppercase btn-transition"
-          onClick={() =>
+          /*  onClick={() =>
             handleForm(
               "https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336"
             )
-          }
+          } */
+          onClick={() => handleLinks("report")}
         >
           Add your API Tool
         </button>

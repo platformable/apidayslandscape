@@ -1,22 +1,23 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Banner from "./Banner";
+import React, { useState } from "react"
+import Link from "next/link"
+import Banner from "./Banner"
 
 export default function Header() {
-  const [displayNav, setDisplayNav] = useState(false);
+  const [displayNav, setDisplayNav] = useState(false)
 
   return (
     <header id="header" className="bg-white">
       <nav className="container flex flex-wrap items-center justify-between mx-auto py-3">
-        <Link
-          href="/"
-          className="flex items-center space-x-3 "
-        >
-          <img src="/logo_top2.svg" className="w-56 md:w-full h-14" alt="APIDays" />
+        <Link href="/" className="flex items-center space-x-3 ">
+          <img
+            src="/logo_top2.svg"
+            className="w-56 md:w-full h-14"
+            alt="APIDays"
+          />
         </Link>
         <button
           onClick={() => {
-            setDisplayNav(!displayNav);
+            setDisplayNav(!displayNav)
           }}
           data-collapse-toggle="navbar-default"
           type="button"
@@ -55,7 +56,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336"
+                href="/report"
+                /* href="https://nocodb-app-agy4g.ondigitalocean.app/dashboard/#/nc/form/d0bb366e-022c-4c20-b128-dd71029d5336" */
                 target="_blank"
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
@@ -66,7 +68,6 @@ export default function Header() {
               <Link
                 /* href="https://airtable.com/appObH1ILShMbYp30/shrubDVNRrBRF8I0s" */
                 href="/report"
-                
                 className="block text-[#083ECB] py-2 px-3 text-nav  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 REPORT A BUG
@@ -74,10 +75,9 @@ export default function Header() {
             </li>
             <li>
               <Link
-                 href="/report"
+                href="/report"
                 className="block text-[#083ECB] py-2 px-3 text-nav rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-             
-             >
+              >
                 NEW FEATURE IDEA
               </Link>
             </li>
@@ -93,7 +93,7 @@ export default function Header() {
           </ul>
         </div>
       </nav>
-     <Banner />
+      <Banner />
     </header>
-  );
+  )
 }

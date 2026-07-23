@@ -5,6 +5,7 @@ import { reduceMillion, reduceThounsand } from "../helpers/functions.js"
 import { Tooltip } from "react-tooltip"
 
 export default function ProfileRightSide({ selectedCompany, handleScore }) {
+  console.log("selectedCompany right side", selectedCompany)
   const {
     headcount,
     nonwhitepeopleinmanagement,
@@ -29,7 +30,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
     pricingmodel,
     privacyspecific,
     knownprotocolsused,
-    hasaifeatures,
+    hasaifeature,
     diversemanagement,
     totalproducts,
   } = selectedCompany
@@ -78,7 +79,7 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
         </div>
 
         <div className="profile-stats-card">
-          {nonwhitepeopleinmanagement ? (
+          {diversemanagement ? (
             <span className={`${textFormat} font-semibold my-2`}>Yes</span>
           ) : (
             <span className={`${textFormat} font-semibold my-2`}>No</span>
@@ -435,9 +436,9 @@ export default function ProfileRightSide({ selectedCompany, handleScore }) {
             <span className="font-semibold text-sm">Includes AI features?</span>
           </div>{" "}
           {/* features-top */}
-          {hasaifeatures ? (
+          {hasaifeature ? (
             <span className={`${textFormat} font-semibold text-sm p-3`}>
-              {hasaifeatures ? "Yes" : "No"}
+              {hasaifeature ? "Yes" : "No"}
             </span>
           ) : (
             <Unknown />
